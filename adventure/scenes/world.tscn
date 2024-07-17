@@ -1,23 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=7 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/character.tscn" id="1_pr2oj"]
+[ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/bich_tree.tscn" id="2_wwnik"]
+
+[sub_resource type="Gradient" id="Gradient_w0p8n"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.325441, 0.325441, 0.325441, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kuyoi"]
+gradient = SubResource("Gradient_w0p8n")
 
 [sub_resource type="Gradient" id="Gradient_sr5pj"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.805195)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.62987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0fphx"]
 gradient = SubResource("Gradient_sr5pj")
+width = 400
+height = 400
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="World" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(100, 100)
+texture = SubResource("GradientTexture2D_kuyoi")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_pr2oj")]
 position = Vector2(6.06475, -6.94122)
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+[node name="latarnia" type="PointLight2D" parent="CharacterBody2D"]
 position = Vector2(18.9352, 2.94122)
 shadow_enabled = true
+shadow_filter = 2
 texture = SubResource("GradientTexture2D_0fphx")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_wwnik")]
+position = Vector2(111, -34)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_wwnik")]
+position = Vector2(144, 40)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_wwnik")]
+position = Vector2(-32, -55)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_wwnik")]
+position = Vector2(178, -74)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_wwnik")]
+position = Vector2(-59, 17)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1
