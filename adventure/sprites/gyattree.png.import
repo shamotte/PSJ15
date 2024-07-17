@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwh7ujjk3f25g"
-path="res://.godot/imported/rizzard.png-d48a8e01c891d64898c88c7d0b1c0e58.ctex"
+uid="uid://sk3w51rufihu"
+path="res://.godot/imported/gyattree.png-b22e8f03092339fa32f358ba389fd2ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/rizzard.png"
-dest_files=["res://.godot/imported/rizzard.png-d48a8e01c891d64898c88c7d0b1c0e58.ctex"]
+source_file="res://adventure/sprites/gyattree.png"
+dest_files=["res://.godot/imported/gyattree.png-b22e8f03092339fa32f358ba389fd2ca.ctex"]
 
 [params]
 

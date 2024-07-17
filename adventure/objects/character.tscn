@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dulcf8h1hbabn"]
+
+[ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
+[ext_resource type="Texture2D" uid="uid://dwh7ujjk3f25g" path="res://adventure/sprites/rizzard.png" id="2_50jv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
+radius = 8.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3e8mx"]
+polygon = PackedVector2Array(5, -10, 7, -6, 8, -4, 8, 2, 7, 4, 6, 7, 5, 8, 4, 10, 2, 11, 0, 12, -3, 11, -5, 10, -6, 8, -7, 7, -8, 4, -8, 2, -7, 1, -6, 0, -6, -1, -7, -2, -7, -4, -8, -7, -7, -9, -6, -10, -5, -12, -3, -13, -1, -14, 2, -13, 4, -12)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_0ax45")
+
+[node name="Rizzard" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3, -2)
+rotation = 1.5708
+texture = ExtResource("2_50jv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gx2d2")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_3e8mx")

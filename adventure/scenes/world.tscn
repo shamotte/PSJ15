@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2crbh04dmg5d"]
+
+[ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/character.tscn" id="1_pr2oj"]
+
+[sub_resource type="Gradient" id="Gradient_sr5pj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.805195)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0fphx"]
+gradient = SubResource("Gradient_sr5pj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="World" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_pr2oj")]
+position = Vector2(6.06475, -6.94122)
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(18.9352, 2.94122)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_0fphx")
