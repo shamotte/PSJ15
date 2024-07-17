@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg3bu75mmymrk"]
+[gd_scene load_steps=8 format=3 uid="uid://cg3bu75mmymrk"]
 
 [ext_resource type="Texture2D" uid="uid://cs0ye4h4xqyfu" path="res://icon.svg" id="1_syg5d"]
+[ext_resource type="Texture2D" uid="uid://drbv7s7c825ih" path="res://sprites/very_bad_table.png" id="1_ts6cc"]
 [ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="2_sc6fj"]
 [ext_resource type="PackedScene" uid="uid://djvc41klqcjrg" path="res://components/comp_lightemitter.tscn" id="3_eylyq"]
+[ext_resource type="PackedScene" uid="uid://l3u3jexjoacx" path="res://scenes/journal.tscn" id="4_igplr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrwm"]
+radius = 80.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xehf8"]
 size = Vector2(50, 50)
@@ -12,9 +15,7 @@ size = Vector2(50, 50)
 [node name="Crafting" type="Node2D"]
 
 [node name="Table" type="Sprite2D" parent="."]
-position = Vector2(6.5, -2.49999)
-scale = Vector2(3.00781, 1.77344)
-texture = ExtResource("1_syg5d")
+texture = ExtResource("1_ts6cc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -30,7 +31,8 @@ grab_area = NodePath("../Area2D")
 
 [node name="Comp_LightEmitter" parent="Torch" instance=ExtResource("3_eylyq")]
 light_color = Color(1, 0.772549, 0.317647, 1)
-flicker = 10
+light_radius = 128
+flicker = 30
 
 [node name="Object" type="CharacterBody2D" parent="."]
 position = Vector2(0, -81)
@@ -47,5 +49,16 @@ shape = SubResource("RectangleShape2D_xehf8")
 [node name="Comp_Grabbable" parent="Object" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
 grab_area = NodePath("../Area2D")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="Journal" parent="." instance=ExtResource("4_igplr")]
+offset_left = -50.0
+offset_top = -80.0
+offset_right = 181.0
+offset_bottom = 130.0
+
+[node name="Comp_Grabbable" parent="Journal" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
+position = Vector2(22.56, 44.5)
+grab_area = NodePath("..")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Journal"]
+position = Vector2(50.06, 80)
 blend_mode = 1
