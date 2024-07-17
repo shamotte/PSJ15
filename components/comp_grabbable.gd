@@ -24,7 +24,7 @@ func _physics_process(delta):
 		if Input.is_action_just_released("craft_grab"):
 			mouse_grab = false
 		
-		var pos = get_viewport().get_mouse_position() - mouse_grab_offset
+		var pos := get_viewport().get_mouse_position() - mouse_grab_offset
 		get_parent().set_global_position(pos)
 		print(pos)
 		

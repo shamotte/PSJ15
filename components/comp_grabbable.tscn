@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" path="res://components/comp_grabbable.gd" id="1_lombd"]
 
-[node name="Comp_Grabbable" type="Node2D" node_paths=PackedStringArray("grab_area")]
+[node name="Comp_Grabbable" type="Node2D"]
 script = ExtResource("1_lombd")
-grab_area = NodePath("")

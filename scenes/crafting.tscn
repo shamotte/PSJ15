@@ -1,52 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg3bu75mmymrk"]
+[gd_scene load_steps=6 format=3 uid="uid://cg3bu75mmymrk"]
 
 [ext_resource type="Texture2D" uid="uid://cs0ye4h4xqyfu" path="res://icon.svg" id="1_syg5d"]
 [ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="2_sc6fj"]
+[ext_resource type="PackedScene" uid="uid://djvc41klqcjrg" path="res://components/comp_lightemitter.tscn" id="3_eylyq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h35ao"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcrwm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xehf8"]
+size = Vector2(50, 50)
 
 [node name="Crafting" type="Node2D"]
 
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(6.5, -2.49999)
+scale = Vector2(3.00781, 1.77344)
+texture = ExtResource("1_syg5d")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Torch" type="CharacterBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_syg5d")
+[node name="Area2D" type="Area2D" parent="Torch"]
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch/Area2D"]
+shape = SubResource("CircleShape2D_vcrwm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-shape = SubResource("RectangleShape2D_h35ao")
-
-[node name="Comp_Grabbable" parent="CharacterBody2D" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
+[node name="Comp_Grabbable" parent="Torch" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
 grab_area = NodePath("../Area2D")
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+[node name="Comp_LightEmitter" parent="Torch" instance=ExtResource("3_eylyq")]
+light_color = Color(1, 0.772549, 0.317647, 1)
+flicker = 10
+
+[node name="Object" type="CharacterBody2D" parent="."]
 position = Vector2(0, -81)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Object"]
+scale = Vector2(0.390625, 0.390625)
 texture = ExtResource("1_syg5d")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D2"]
+[node name="Area2D" type="Area2D" parent="Object"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/Area2D"]
-shape = SubResource("RectangleShape2D_h35ao")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object/Area2D"]
+shape = SubResource("RectangleShape2D_xehf8")
 
-[node name="Comp_Grabbable" parent="CharacterBody2D2" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
+[node name="Comp_Grabbable" parent="Object" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
 grab_area = NodePath("../Area2D")
 
-[node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
-position = Vector2(-60, 46)
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D3"]
-texture = ExtResource("1_syg5d")
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3/Area2D"]
-shape = SubResource("RectangleShape2D_h35ao")
-
-[node name="Comp_Grabbable" parent="CharacterBody2D3" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
-grab_area = NodePath("../Area2D")
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1
