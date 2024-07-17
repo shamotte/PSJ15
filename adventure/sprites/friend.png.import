@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktl31pprahd7"
-path="res://.godot/imported/shadow_hand.png-2172af65ecc2d07210b3667820ca4103.ctex"
+uid="uid://e3ubuosu5wd6"
+path="res://.godot/imported/friend.png-5e914a8fbbaa80261b38b95218efe85d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shadow_hand.png"
-dest_files=["res://.godot/imported/shadow_hand.png-2172af65ecc2d07210b3667820ca4103.ctex"]
+source_file="res://adventure/sprites/friend.png"
+dest_files=["res://.godot/imported/friend.png-5e914a8fbbaa80261b38b95218efe85d.ctex"]
 
 [params]
 

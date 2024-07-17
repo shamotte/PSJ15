@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u5uj2newua50"
-path="res://.godot/imported/eye_fruit.png-415bfddde7d0210172c4bb7fb714aa10.ctex"
+uid="uid://b6ik0j7il6h1a"
+path="res://.godot/imported/Leather_hand3.png-65979c44fb638206bae9f020a18b7ec8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/eye_fruit.png"
-dest_files=["res://.godot/imported/eye_fruit.png-415bfddde7d0210172c4bb7fb714aa10.ctex"]
+source_file="res://adventure/sprites/Leather_hand3.png"
+dest_files=["res://.godot/imported/Leather_hand3.png-65979c44fb638206bae9f020a18b7ec8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clee74vumjxjd"
-path="res://.godot/imported/candle.png-8a7b056351dc25afcb570e46a2c2ecf9.ctex"
+uid="uid://cbmrkxk1xa53j"
+path="res://.godot/imported/leather_hand2.png-1c062b6b1caa8d2d199e4d185019ff69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/candle.png"
-dest_files=["res://.godot/imported/candle.png-8a7b056351dc25afcb570e46a2c2ecf9.ctex"]
+source_file="res://adventure/sprites/leather_hand2.png"
+dest_files=["res://.godot/imported/leather_hand2.png-1c062b6b1caa8d2d199e4d185019ff69.ctex"]
 
 [params]
 

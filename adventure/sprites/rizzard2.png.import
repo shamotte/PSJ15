@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwu4dgdadv6c5"
-path="res://.godot/imported/quirkedupwhitespore.png-898eb60676ce806ca12cc9d29522116f.ctex"
+uid="uid://dyeih6h3xvi14"
+path="res://.godot/imported/rizzard2.png-f4ce340b5cc24c4b0fe91c5adb2b29bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/quirkedupwhitespore.png"
-dest_files=["res://.godot/imported/quirkedupwhitespore.png-898eb60676ce806ca12cc9d29522116f.ctex"]
+source_file="res://adventure/sprites/rizzard2.png"
+dest_files=["res://.godot/imported/rizzard2.png-f4ce340b5cc24c4b0fe91c5adb2b29bb.ctex"]
 
 [params]
 

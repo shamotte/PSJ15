@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ik0j7il6h1a"
-path="res://.godot/imported/Leather_hand3.png-98256c766fd014587e9c25608d1ec93f.ctex"
+uid="uid://dqhlgklwhx6nf"
+path="res://.godot/imported/fallen_tree2.png-36d427694f96622b5c97229d0d45741b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Leather_hand3.png"
-dest_files=["res://.godot/imported/Leather_hand3.png-98256c766fd014587e9c25608d1ec93f.ctex"]
+source_file="res://adventure/sprites/fallen_tree2.png"
+dest_files=["res://.godot/imported/fallen_tree2.png-36d427694f96622b5c97229d0d45741b.ctex"]
 
 [params]
 

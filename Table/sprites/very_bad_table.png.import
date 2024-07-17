@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dblo311d4xg1h"
-path="res://.godot/imported/shadow_knight_hand1.png-7ff388b0c79121cc88df19a0a4de4544.ctex"
+uid="uid://drbv7s7c825ih"
+path="res://.godot/imported/very_bad_table.png-a27b37ba869cc19ed40a6014b193bc88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shadow_knight_hand1.png"
-dest_files=["res://.godot/imported/shadow_knight_hand1.png-7ff388b0c79121cc88df19a0a4de4544.ctex"]
+source_file="res://Table/sprites/very_bad_table.png"
+dest_files=["res://.godot/imported/very_bad_table.png-a27b37ba869cc19ed40a6014b193bc88.ctex"]
 
 [params]
 

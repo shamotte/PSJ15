@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c700a8k37couu"
-path="res://.godot/imported/spider.png-ae90c432d762d58f0b72e2fb36352dc9.ctex"
+uid="uid://bgngk2hslb8l"
+path="res://.godot/imported/spider_leg.png-f8476c153475310f4093583f6d615360.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/spider.png"
-dest_files=["res://.godot/imported/spider.png-ae90c432d762d58f0b72e2fb36352dc9.ctex"]
+source_file="res://adventure/sprites/spider_leg.png"
+dest_files=["res://.godot/imported/spider_leg.png-f8476c153475310f4093583f6d615360.ctex"]
 
 [params]
 

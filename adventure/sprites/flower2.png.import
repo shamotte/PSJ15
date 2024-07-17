@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chb1ge8rspk5m"
-path="res://.godot/imported/flower2.png-63a50679b3c4642a00374cb51c0289b9.ctex"
+path="res://.godot/imported/flower2.png-d6d29b5347a62dbba8541d61e20acf94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/flower2.png"
-dest_files=["res://.godot/imported/flower2.png-63a50679b3c4642a00374cb51c0289b9.ctex"]
+source_file="res://adventure/sprites/flower2.png"
+dest_files=["res://.godot/imported/flower2.png-d6d29b5347a62dbba8541d61e20acf94.ctex"]
 
 [params]
 

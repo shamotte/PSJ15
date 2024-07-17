@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://meqtbqhj6mgk"
-path="res://.godot/imported/eye_fruit2.png-b58b6ac01aff34c819b92ca40b0b9605.ctex"
+path="res://.godot/imported/eye_fruit2.png-d74003497a24b5ba3bf0baa9acda063e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/eye_fruit2.png"
-dest_files=["res://.godot/imported/eye_fruit2.png-b58b6ac01aff34c819b92ca40b0b9605.ctex"]
+source_file="res://adventure/sprites/eye_fruit2.png"
+dest_files=["res://.godot/imported/eye_fruit2.png-d74003497a24b5ba3bf0baa9acda063e.ctex"]
 
 [params]
 

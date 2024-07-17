@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddsa4mdb3qfje"
-path="res://.godot/imported/shadow.png-0049ca2c90082486e7f945f45e0bfdde.ctex"
+uid="uid://bdi2kh3yr688v"
+path="res://.godot/imported/shadow_knight.png-46014827ea91a5856c1a9266c36cf02b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-0049ca2c90082486e7f945f45e0bfdde.ctex"]
+source_file="res://adventure/sprites/shadow_knight.png"
+dest_files=["res://.godot/imported/shadow_knight.png-46014827ea91a5856c1a9266c36cf02b.ctex"]
 
 [params]
 
