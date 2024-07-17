@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var grab_area: Area2D
+@export var grab_area: Node
 
 var mouse_grab: bool = false
 var mouse_grab_offset: Vector2
@@ -13,9 +13,11 @@ func _ready():
 
 func mouse_entered():
 	mouse_hovering = true
+	print("hover")
 
 func mouse_exited():
 	mouse_hovering = false
+	print("no hover")
 
 func _physics_process(delta):
 	
@@ -25,9 +27,7 @@ func _physics_process(delta):
 			mouse_grab = false
 		
 		var pos := get_viewport().get_mouse_position() - mouse_grab_offset
-		get_parent().set_global_position(pos)
-		print(pos)
-		
+		get_parent().set_global_position(round(pos))		
 		
 	else:
 		
