@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg3bu75mmymrk"]
+
+[ext_resource type="Texture2D" uid="uid://cs0ye4h4xqyfu" path="res://icon.svg" id="1_syg5d"]
+[ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="2_sc6fj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h35ao"]
+size = Vector2(128, 128)
+
+[node name="Crafting" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_syg5d")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_h35ao")
+
+[node name="Comp_Grabbable" parent="CharacterBody2D" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
+grab_area = NodePath("../Area2D")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(0, -81)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+texture = ExtResource("1_syg5d")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/Area2D"]
+shape = SubResource("RectangleShape2D_h35ao")
+
+[node name="Comp_Grabbable" parent="CharacterBody2D2" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
+grab_area = NodePath("../Area2D")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
+position = Vector2(-60, 46)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D3"]
+texture = ExtResource("1_syg5d")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3/Area2D"]
+shape = SubResource("RectangleShape2D_h35ao")
+
+[node name="Comp_Grabbable" parent="CharacterBody2D3" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
+grab_area = NodePath("../Area2D")

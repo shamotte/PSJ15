@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3qdu6uy0j81c"]
+
+[ext_resource type="Script" path="res://components/comp_grabbable.gd" id="1_lombd"]
+
+[node name="Comp_Grabbable" type="Node2D" node_paths=PackedStringArray("grab_area")]
+script = ExtResource("1_lombd")
+grab_area = NodePath("")
