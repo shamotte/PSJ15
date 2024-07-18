@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=10 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/character.tscn" id="1_pr2oj"]
+[ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/friend.tscn" id="2_476r1"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/bich_tree.tscn" id="2_wwnik"]
 [ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/fire_particle_emiter.tscn" id="3_33e7e"]
+[ext_resource type="PackedScene" uid="uid://mtfyfu7tyd8a" path="res://adventure/interface/DialogManager.tscn" id="4_q0cwu"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 offsets = PackedFloat32Array(1)
@@ -40,6 +42,12 @@ texture = SubResource("GradientTexture2D_0fphx")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="Friend" parent="NPC" instance=ExtResource("2_476r1")]
+position = Vector2(44, -162)
+rotation = -0.785398
+
 [node name="StaticBody2D" parent="." instance=ExtResource("2_wwnik")]
 position = Vector2(111, -34)
 
@@ -67,6 +75,22 @@ position = Vector2(-59, 17)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DialogManager" parent="UI" instance=ExtResource("4_q0cwu")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -114.0
+offset_right = -243.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [editable path="StaticBody2D4"]
 [editable path="StaticBody2D4/GPUParticles2D"]

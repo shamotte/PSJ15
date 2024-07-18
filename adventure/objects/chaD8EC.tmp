@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dulcf8h1hbabn"]
+[gd_scene load_steps=14 format=3 uid="uid://dulcf8h1hbabn"]
 
 [ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
 [ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/leather_hand2.png" id="2_1cqtu"]
 [ext_resource type="Texture2D" uid="uid://dyeih6h3xvi14" path="res://adventure/sprites/rizzard2.png" id="3_u1jc7"]
 [ext_resource type="PackedScene" uid="uid://bqu1gwna33sb2" path="res://adventure/components/CompPlayerInteraction.tscn" id="4_17uh0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c8tfb"]
+radius = 20.025
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
 radius = 8.0
@@ -118,7 +121,14 @@ _data = {
 motion_mode = 1
 script = ExtResource("1_0ax45")
 
-[node name="CompPlayerInteraction" parent="." instance=ExtResource("4_17uh0")]
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_c8tfb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gx2d2")
@@ -154,3 +164,5 @@ libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
 blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"gathering", &"idle", 0.5, &"move", &"gathering", 0.5, &"move", &"move", 0.5, &"move", &"idle", 1.0, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"idle", &"idle", 0.5]
+
+[node name="CompPlayerInteraction" parent="." instance=ExtResource("4_17uh0")]

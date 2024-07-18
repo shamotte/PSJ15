@@ -1,30 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://dulcf8h1hbabn"]
+[gd_scene load_steps=14 format=3 uid="uid://wjsduwhnwpuu"]
 
-[ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
-[ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/leather_hand2.png" id="2_1cqtu"]
-[ext_resource type="Texture2D" uid="uid://dyeih6h3xvi14" path="res://adventure/sprites/rizzard2.png" id="3_u1jc7"]
-[ext_resource type="PackedScene" uid="uid://bqu1gwna33sb2" path="res://adventure/components/CompPlayerInteraction.tscn" id="4_17uh0"]
+[ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/shadow_knight_hand1.png" id="1_c5f7t"]
+[ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_sislh"]
+[ext_resource type="Texture2D" uid="uid://e3ubuosu5wd6" path="res://adventure/sprites/friend.png" id="2_yrm6g"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="3_tx2em"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
-radius = 8.0
+radius = 14.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3e8mx"]
 polygon = PackedVector2Array(6, -10, 9, -7, 12, -4, 11, 2, 11, 6, 9, 8, 7, 10, 4, 11, 2, 11, 0, 11, -3, 10, -5, 11, -7, 9, -9, 7, -11, 4, -11, 2, -10, 1, -8, 0, -8, -1, -9, -2, -8, -4, -9, -7, -7, -9, -6, -10, -5, -11, -3, -11, -2, -11, 2, -12, 4, -11)
 
-[sub_resource type="Gradient" id="Gradient_i7ulp"]
+[sub_resource type="Gradient" id="Gradient_sr5pj"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.62987, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_caqlq"]
-gradient = SubResource("Gradient_i7ulp")
+gradient = SubResource("Gradient_sr5pj")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Animation" id="Animation_j2khf"]
 resource_name = "gathering"
 length = 2.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,7 +52,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_kuk7j"]
 resource_name = "idle"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,8 +78,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_b8gik"]
-resource_name = "move"
-loop_mode = 1
+resource_name = "moving"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -111,34 +108,37 @@ tracks/1/keys = {
 _data = {
 "gathering": SubResource("Animation_j2khf"),
 "idle": SubResource("Animation_kuk7j"),
-"move": SubResource("Animation_b8gik")
+"moving": SubResource("Animation_b8gik")
 }
 
-[node name="Wizard" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bs5g7"]
+radius = 30.0
+
+[node name="Friend" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_0ax45")
-
-[node name="CompPlayerInteraction" parent="." instance=ExtResource("4_17uh0")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_gx2d2")
+script = ExtResource("1_sislh")
 
 [node name="RightHand" type="Sprite2D" parent="."]
-position = Vector2(14, 10)
+position = Vector2(5, 10)
 rotation = 1.5708
-texture = ExtResource("2_1cqtu")
+texture = ExtResource("1_c5f7t")
 
 [node name="LeftHand" type="Sprite2D" parent="."]
-position = Vector2(14, -9)
+position = Vector2(15, -9)
 rotation = 1.5708
 scale = Vector2(-1, 1)
-texture = ExtResource("2_1cqtu")
+texture = ExtResource("1_c5f7t")
 
-[node name="Rizzard" type="Sprite2D" parent="."]
+[node name="Body" type="Sprite2D" parent="."]
 light_mask = 2
 texture_filter = 1
+position = Vector2(-3, 0)
 rotation = 1.5708
-texture = ExtResource("3_u1jc7")
+texture = ExtResource("2_yrm6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_gx2d2")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_3e8mx")
@@ -153,4 +153,13 @@ texture = SubResource("GradientTexture2D_caqlq")
 libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
-blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"gathering", &"idle", 0.5, &"move", &"gathering", 0.5, &"move", &"move", 0.5, &"move", &"idle", 1.0, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"idle", &"idle", 0.5]
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_bs5g7")
+
+[node name="CompInteractable" parent="." node_paths=PackedStringArray("InteractionArea") instance=ExtResource("3_tx2em")]
+InteractionArea = NodePath("../InteractionArea")
