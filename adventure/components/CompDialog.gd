@@ -7,6 +7,8 @@ extends Control
 var current_text : String = ""
 var index : int = 0
 
+var in_dialog : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$DialogTime.connect("timeout",hide_panel)
@@ -21,6 +23,8 @@ func _process(delta):
 	#if $Timer.get_time_left()
 
 func dialog_on():
+	in_dialog = true
+	show_tip(false)
 	#$ColorRect.visible = true
 	$Label.text = ""
 	current_text = ""
@@ -34,6 +38,7 @@ func dialog_on():
 func hide_panel():
 	$Label.visible = false
 	$DialogTime.stop()
+	in_dialog = false
 	print("dialog stop")
 	
 func write():
@@ -44,4 +49,10 @@ func write():
 	else:
 		$Timer.stop()
 		$DialogTime.start()
+		
+func show_tip(show : bool):
+	if in_dialog:
+		$PressE.visible = false
+		return
+	$PressE.visible = show
 

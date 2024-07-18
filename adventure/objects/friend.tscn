@@ -155,9 +155,11 @@ libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
 
-[node name="CompInteractable" parent="." node_paths=PackedStringArray("object") instance=ExtResource("3_tx2em")]
+[node name="CompInteractable" parent="." node_paths=PackedStringArray("object", "in_area_object") instance=ExtResource("3_tx2em")]
 object = NodePath("../CompDialog")
 function_name = "dialog_on"
+in_area_object = NodePath("../CompDialog")
+in_area_function_name = "show_tip"
 
 [node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("5_4bqov")]
 anchors_preset = 8
