@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chufv3ge8ewyh"
-path="res://.godot/imported/leather_hand.png-bfe484933153b62c30a1bf32c72fc6c5.ctex"
+uid="uid://c700a8k37couu"
+path="res://.godot/imported/spider.png-e01fe499c93714486ec3daec0f1fc5eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/leather_hand.png"
-dest_files=["res://.godot/imported/leather_hand.png-bfe484933153b62c30a1bf32c72fc6c5.ctex"]
+source_file="res://adventure/sprites/spider.png"
+dest_files=["res://.godot/imported/spider.png-e01fe499c93714486ec3daec0f1fc5eb.ctex"]
 
 [params]
 

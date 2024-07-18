@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgngk2hslb8l"
-path="res://.godot/imported/spider_leg.png-ddb550ac6c04b242b6dbe1fe8f2ace17.ctex"
+uid="uid://dicc2dk0wemma"
+path="res://.godot/imported/flower1.png-79011b0deea0c231655de7c838eef826.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/spider_leg.png"
-dest_files=["res://.godot/imported/spider_leg.png-ddb550ac6c04b242b6dbe1fe8f2ace17.ctex"]
+source_file="res://adventure/sprites/flower1.png"
+dest_files=["res://.godot/imported/flower1.png-79011b0deea0c231655de7c838eef826.ctex"]
 
 [params]
 

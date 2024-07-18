@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cg3bu75mmymrk"]
 
 [ext_resource type="Texture2D" uid="uid://cs0ye4h4xqyfu" path="res://icon.svg" id="1_syg5d"]
-[ext_resource type="Texture2D" uid="uid://drbv7s7c825ih" path="res://sprites/very_bad_table.png" id="1_ts6cc"]
+[ext_resource type="Texture2D" uid="uid://drbv7s7c825ih" path="res://Table/sprites/very_bad_table.png" id="1_ts6cc"]
 [ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="2_sc6fj"]
 [ext_resource type="PackedScene" uid="uid://djvc41klqcjrg" path="res://components/comp_lightemitter.tscn" id="3_eylyq"]
-[ext_resource type="PackedScene" uid="uid://l3u3jexjoacx" path="res://scenes/journal.tscn" id="4_igplr"]
+[ext_resource type="PackedScene" path="res://scenes/journal.tscn" id="4_igplr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcrwm"]
 radius = 80.0
