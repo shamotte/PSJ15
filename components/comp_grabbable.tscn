@@ -2,5 +2,10 @@
 
 [ext_resource type="Script" path="res://components/comp_grabbable.gd" id="1_lombd"]
 
-[node name="Comp_Grabbable" type="Node2D"]
+[node name="Comp_Grabbable" type="Node2D" groups=["comp_grabbable"]]
 script = ExtResource("1_lombd")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
