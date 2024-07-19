@@ -12,4 +12,5 @@ func _on_area_entered(area : Area2D):
 	if active: 
 		var rec : Receiver= area.get_node(receiver)
 		if rec:
+			pass
 			

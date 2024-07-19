@@ -124,12 +124,12 @@ script = ExtResource("1_0ax45")
 shape = SubResource("CircleShape2D_gx2d2")
 
 [node name="RightHand" type="Sprite2D" parent="."]
-position = Vector2(5, 10)
+position = Vector2(17, 5)
 rotation = 1.5708
 texture = ExtResource("2_1cqtu")
 
 [node name="LeftHand" type="Sprite2D" parent="."]
-position = Vector2(15, -9)
+position = Vector2(17, -4)
 rotation = 1.5708
 scale = Vector2(-1, 1)
 texture = ExtResource("2_1cqtu")
@@ -153,6 +153,4 @@ texture = SubResource("GradientTexture2D_caqlq")
 libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
-blend_times = [&"idle", &"idle", 0.5, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"move", &"idle", 1.0, &"move", &"gathering", 0.5, &"move", &"move", 0.5]
-
-[node name="Node2D" type="Node2D" parent="."]
+blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"gathering", &"idle", 0.5, &"move", &"gathering", 0.5, &"move", &"move", 0.5, &"move", &"idle", 1.0, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"idle", &"idle", 0.5]

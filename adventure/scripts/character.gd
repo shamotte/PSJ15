@@ -32,12 +32,12 @@ func normal():
 	var vertical := Input.get_axis("left", "right")
 	var horizontal := Input.get_axis("up","down")
 	
-	if horizontal == 0 and vertical == 0:
-		if $AnimationPlayer.current_animation != "idle":
-			$AnimationPlayer.play("idle")
-	else:
-		if $AnimationPlayer.current_animation != "move":
-			$AnimationPlayer.play("move")
+	#if horizontal == 0 and vertical == 0:
+		#if $AnimationPlayer.current_animation != "idle":
+			#$AnimationPlayer.play("idle")
+	#else:
+		#if $AnimationPlayer.current_animation != "move":
+			#$AnimationPlayer.play("move")
 	 
 	velocity = Vector2(vertical,horizontal)*current_speed
 	look_at(get_global_mouse_position())

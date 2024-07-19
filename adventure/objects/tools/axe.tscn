@@ -1,17 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dabgqjb4drvnm"]
+[gd_scene load_steps=4 format=3 uid="uid://dabgqjb4drvnm"]
 
 [ext_resource type="Script" path="res://adventure/scripts/tool.gd" id="1_kaowb"]
+[ext_resource type="Texture2D" uid="uid://bn0y75m3ddgd1" path="res://adventure/sprites/Leather_hand_axe.png" id="2_oxc6k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaj3d"]
-size = Vector2(30, 20)
+size = Vector2(13, 14)
 
 [node name="axe" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_kaowb")
 ui_name = "axe"
 receiver = "AxeReceiver"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(49, 1)
+position = Vector2(13.5, -2)
 shape = SubResource("RectangleShape2D_aaj3d")
+
+[node name="LeatherHandAxe" type="Sprite2D" parent="."]
+position = Vector2(9, 1)
+texture = ExtResource("2_oxc6k")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
