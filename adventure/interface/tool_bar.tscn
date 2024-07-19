@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://03j66ww550y"]
+
+[ext_resource type="Script" path="res://adventure/interface/tool_bar.gd" id="1_c8kyi"]
+[ext_resource type="PackedScene" uid="uid://xejr8r6a2fl7" path="res://adventure/interface/tool_frame.tscn" id="2_m56is"]
+
+[node name="ToolBar" type="Control"]
+custom_minimum_size = Vector2(180, 32)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c8kyi")
+tool_frame = ExtResource("2_m56is")
+number_of_items = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(160, 32)
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 44.0
+theme_override_constants/separation = 16
