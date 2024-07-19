@@ -38,5 +38,5 @@ wait_time = 0.1
 
 [node name="PressE" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(80, 80)
+position = Vector2(75, 80)
 texture = ExtResource("2_exkoo")

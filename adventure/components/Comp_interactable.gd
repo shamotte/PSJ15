@@ -1,49 +1,97 @@
 extends Node2D
 class_name InteractionArea
 
+@onready var parent : Node = get_parent() 
+
+@export_group("function_row")
+@export var more_interactions : bool = false
+@export var more_area : bool = false
+@export var more_end_interactions : bool = false
+
 @export_group("Interaction")
-@export var object : Node
-@export var function_name : String 
-@export var player_state : String
+@export var interactable_array : Array[InteractionComponent]
 var to_interact : Callable
+var to_interact_index : int = 0
 
 @export_group("In Area")
-@export var in_area_object : Node
-@export var in_area_function_name : String 
+@export var in_area_array : Array[InteractionComponent]
 var in_area_of_interaction : Callable
+var in_area_of_interaction_index : int = 0
 
 @export_group("End Interaction")
-@export var end_interaction_object : Node
-@export var end_interaction_function_name : String 
-@export var next_player_state : String
+@export var end_interaction_array : Array[InteractionComponent]
 var end_of_interaction : Callable
+var end_of_interaction_index : int = 0
+
+#@export var object : Node
+#@export var function_name : String 
+#@export var player_state : String
+#var to_interact : Callable
+
+#@export_group("In Area")
+#@export var in_area_object : Node
+#@export var in_area_function_name : String 
+#var in_area_of_interaction : Callable
+
+#@export_group("End Interaction")
+#@export var end_interaction_object : Node
+#@export var end_interaction_function_name : String 
+#@export var next_player_state : String
+#var end_of_interaction : Callable
 
 
 
 var tip_active : bool = true
 
 func _ready():
-	if object != null and function_name != "":
-		to_interact = Callable(object,function_name)
-	if in_area_object != null and in_area_function_name != "":
-		in_area_of_interaction = Callable(in_area_object,in_area_function_name)
-	if end_interaction_object != null and end_interaction_function_name != "":
-		end_of_interaction = Callable(end_interaction_object,end_interaction_function_name)
+	if not_null(interactable_array[to_interact_index]):
+		to_interact = set_Callable(interactable_array[to_interact_index])
+	if not_null(in_area_array[in_area_of_interaction_index]):	
+		in_area_of_interaction = set_Callable(in_area_array[in_area_of_interaction_index])
+	if not_null(end_interaction_array[end_of_interaction_index]):	
+		end_of_interaction = set_Callable(end_interaction_array[end_of_interaction_index])
+
 
 func interacted():
-	if object != null and function_name != "":
+	if not_null(interactable_array[to_interact_index]):
 		tip_active = false
 		to_interact.call()
-		return player_state
+		next_interaction()
+		next_area()
+		return interactable_array[to_interact_index].player_state
 	return "nothing"
 	
 func in_area(is_true: bool):
-	if in_area_object != null and in_area_function_name != "":
+	if not_null(in_area_array[in_area_of_interaction_index]):	
 		in_area_of_interaction.call(is_true)
 	
 func end_interaction():
-	if end_interaction_object != null and end_interaction_function_name != "":
+	if not_null(end_interaction_array[end_of_interaction_index]):	
 		end_of_interaction.call()
-		return next_player_state
-	return "nothing" 
+		return end_interaction_array[end_of_interaction_index].player_state
+	return "nothing"
+	#return "nothing" 
 
+func not_null(Component : InteractionComponent):
+	if interactable_array[to_interact_index].object != "" and interactable_array[to_interact_index].function_name != "":
+		return true
+	return false
+	
+func set_Callable(Component : InteractionComponent):
+	return Callable(parent.get_node(Component.object),Component.function_name)
+	
+func next_interaction():
+	if more_interactions:
+		if to_interact_index < len(interactable_array) - 1:
+			if not_null(interactable_array[to_interact_index+1]):
+				to_interact_index += 1
+				to_interact = set_Callable(interactable_array[to_interact_index])
+				
+func next_area():
+	if more_area:
+		if in_area_of_interaction_index < len(in_area_array) - 1:
+			if not_null(in_area_array[in_area_of_interaction_index+1]):
+				in_area_of_interaction_index += 1
+				in_area_of_interaction = set_Callable(in_area_array[in_area_of_interaction_index])
+				
+		

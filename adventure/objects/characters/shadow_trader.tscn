@@ -1,0 +1,262 @@
+[gd_scene load_steps=20 format=3 uid="uid://c6jwgejl4cs21"]
+
+[ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_4o8ix"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="1_7old3"]
+[ext_resource type="Texture2D" uid="uid://bm308vgpgso7j" path="res://adventure/sprites/MrL.png" id="1_8j720"]
+[ext_resource type="Texture2D" uid="uid://bn5ljqp0qjkhd" path="res://adventure/sprites/trader_hand.png" id="1_nmwit"]
+[ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="1_sgvv1"]
+[ext_resource type="Texture2D" uid="uid://ddlesbus4duh1" path="res://adventure/sprites/trader_eye.png" id="3_milo7"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="6_4tjdg"]
+[ext_resource type="PackedScene" uid="uid://dfoy0k5ilmoqn" path="res://adventure/components/comp_trade.tscn" id="7_hqvog"]
+
+[sub_resource type="Gradient" id="Gradient_sr5pj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.62987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_caqlq"]
+gradient = SubResource("Gradient_sr5pj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
+radius = 14.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3e8mx"]
+polygon = PackedVector2Array(5, -9, 6, -6, 8, -2, 8, 2, 7, 5, 6, 7, 6, 8, 4, 11, 3, 14, 1, 14, -2, 10, -2, 7, -4, 6, -7, 5, -11, 4, -13, 3, -15, 2, -18, 1, -18, 0, -13, -2, -11, -3, -8, -5, -6, -5, -4, -6, -2, -7, 0, -9, 2, -12, 4, -11)
+
+[sub_resource type="Animation" id="Animation_kuk7j"]
+resource_name = "idle"
+length = 7.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(2.2974, 1.8025, 2.73208, 1.8025, 1.93187, 2.14355),
+"update": 0,
+"values": [Vector2(6, -9.00003), Vector2(8, -9.00002), Vector2(6, -9.00003), Vector2(8, -9.00002), Vector2(6, -9.00003), Vector2(8, -9.00002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5),
+"transitions": PackedFloat32Array(2.63902, 2.2974, 3.605, 2.2974, 2.07053, 2.14355),
+"update": 0,
+"values": [Vector2(6, 9.00003), Vector2(8, 9.00002), Vector2(6, 9.00003), Vector2(8, 9.00002), Vector2(6, 9.00003), Vector2(8, 9.00002)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("eye1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 5.5, 5.8, 6, 6.2, 6.4, 6.7, 7),
+"transitions": PackedFloat32Array(2.37841, 1.86607, 2.92817, 1.86607, 1.86607, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, -9.00006), Vector2(18, -9.00006), Vector2(16, -9.00006), Vector2(18, -9.00006), Vector2(16, -9.00006), Vector2(22, -9.00008), Vector2(10.951, -18), Vector2(0.213182, -24.75), Vector2(-13.5245, -17.4999), Vector2(-20.7622, -2.24992), Vector2(-14.4097, 15.4001), Vector2(3.19273, 22.3), Vector2(20.4618, 10.8666)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("eye2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 5.5, 5.8, 6, 6.2, 6.4, 6.7, 7),
+"transitions": PackedFloat32Array(2.54912, 2.21914, 3.24901, 2.21914, 1.93187, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 7.99994), Vector2(18, 7.99994), Vector2(16, 7.99994), Vector2(18, 7.99994), Vector2(16, 7.99994), Vector2(22, 7.99992), Vector2(12.9571, 16), Vector2(1.71787, 25), Vector2(-13.5214, 16.3334), Vector2(-20.7607, 2.16675), Vector2(-14.4086, -16.6666), Vector2(2.19348, -23.5), Vector2(20.7957, -10.0001)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightHand:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.5708, 1.5708, 2.79253, 1.5708]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LeftHand:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.5708, 1.5708, 0.174533, 1.5708]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, 0), Vector2(-3, 0), Vector2(1, -1.43488e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_b8gik"]
+resource_name = "moving"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(15, -9), Vector2(4, -9), Vector2(15, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 10), Vector2(15, 10), Vector2(5, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8jga"]
+_data = {
+"idle": SubResource("Animation_kuk7j"),
+"moving": SubResource("Animation_b8gik")
+}
+
+[sub_resource type="Resource" id="Resource_2pguc"]
+script = ExtResource("6_4tjdg")
+object = "CompDialog"
+function_name = "dialog_on"
+player_state = "normal"
+
+[sub_resource type="Resource" id="Resource_2f2ht"]
+script = ExtResource("6_4tjdg")
+object = "CompDialog"
+function_name = "show_tip"
+player_state = ""
+
+[sub_resource type="Resource" id="Resource_6svhb"]
+script = ExtResource("6_4tjdg")
+object = "CompTrade"
+function_name = "show_trade"
+player_state = "normal"
+
+[sub_resource type="Resource" id="Resource_x1b4u"]
+script = ExtResource("6_4tjdg")
+object = ""
+function_name = ""
+player_state = ""
+
+[node name="MrL" type="CharacterBody2D"]
+rotation = 1.5708
+motion_mode = 1
+script = ExtResource("1_4o8ix")
+
+[node name="RightHand" type="Sprite2D" parent="."]
+position = Vector2(6, 9.00003)
+rotation = 1.5708
+texture = ExtResource("1_nmwit")
+
+[node name="LeftHand" type="Sprite2D" parent="."]
+position = Vector2(6, -9.00003)
+rotation = 1.5708
+scale = Vector2(-1, 1)
+texture = ExtResource("1_nmwit")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-3, 0)
+rotation = 1.5708
+texture = ExtResource("1_8j720")
+
+[node name="eye1" type="Sprite2D" parent="."]
+position = Vector2(16, -9.00006)
+rotation = -1.5708
+texture = ExtResource("3_milo7")
+
+[node name="PointLight2D2" type="PointLight2D" parent="eye1"]
+light_mask = 2
+position = Vector2(-4.3869e-05, -1.65774)
+rotation = 1.5708
+texture = SubResource("GradientTexture2D_caqlq")
+
+[node name="eye2" type="Sprite2D" parent="."]
+position = Vector2(16, 7.99994)
+rotation = -1.5708
+texture = ExtResource("3_milo7")
+
+[node name="PointLight2D" type="PointLight2D" parent="eye2"]
+light_mask = 2
+position = Vector2(-4.3869e-05, -1.624)
+rotation = 1.5708
+texture = SubResource("GradientTexture2D_caqlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_gx2d2")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_3e8mx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s8jga")
+}
+
+[node name="CompInteractable" parent="." instance=ExtResource("1_7old3")]
+more_interactions = true
+more_area = true
+interactable_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_2pguc")])
+in_area_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_2f2ht"), SubResource("Resource_6svhb")])
+end_interaction_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_x1b4u")])
+
+[node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("1_sgvv1")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -110.0
+offset_right = -75.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(75, 110)
+character = NodePath("..")
+text = Array[String](["Don't be afraid. We can make deals"])
+
+[node name="CompTrade" parent="." node_paths=PackedStringArray("character") instance=ExtResource("7_hqvog")]
+offset_left = -24.4994
+offset_top = -30.0011
+offset_right = -24.4994
+offset_bottom = -30.0011
+character = NodePath("..")
