@@ -15,6 +15,11 @@
 [ext_resource type="Resource" uid="uid://cxpax3q62q1iv" path="res://both/Ingridients/shroom.tres" id="6_vms6x"]
 [ext_resource type="Resource" uid="uid://ct76mem0rld0u" path="res://both/Ingridients/spikezalea.tres" id="7_01t23"]
 [ext_resource type="Resource" uid="uid://d20hh5ld28dpf" path="res://both/Ingridients/Fairycandy.tres" id="11_81bix"]
+[ext_resource type="PackedScene" path="res://adventure/interface/tool_bar.tscn" id="5_f25fo"]
+[ext_resource type="PackedScene" uid="uid://b8osndo80rp2f" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
+[ext_resource type="PackedScene" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
+[ext_resource type="PackedScene" path="res://adventure/objects/Interactable/Gatherable.tscn" id="6_japwo"]
+[ext_resource type="PackedScene" uid="uid://cg3bu75mmymrk" path="res://scenes/crafting.tscn" id="11_1nflc"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 offsets = PackedFloat32Array(1)
@@ -34,6 +39,14 @@ width = 400
 height = 400
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="GDScript" id="GDScript_0m20d"]
+script/source = "extends CanvasLayer
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		visible = !visible
+"
 
 [node name="World" type="Node2D"]
 
@@ -156,6 +169,12 @@ grow_vertical = 0
 
 [node name="MrL" parent="." instance=ExtResource("3_xq24q")]
 position = Vector2(226, -176)
+
+[node name="CraftingCanvasLayer" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_0m20d")
+
+[node name="Crafting" parent="CraftingCanvasLayer" instance=ExtResource("11_1nflc")]
+position = Vector2(320, 180)
 
 [editable path="StaticBody2D4"]
 [editable path="StaticBody2D4/GPUParticles2D"]
