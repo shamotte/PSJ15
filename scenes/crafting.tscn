@@ -20,7 +20,7 @@ size = Vector2(50, 50)
 size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyocc"]
-size = Vector2(141, 227)
+size = Vector2(260.5, 256.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fhnk"]
 size = Vector2(22, 42)
@@ -105,7 +105,7 @@ grab_area = NodePath("../Area2D")
 [node name="Journal" parent="MovableObjects" instance=ExtResource("4_igplr")]
 offset_left = -390.0
 offset_top = 61.0
-offset_right = -159.0
+offset_right = -190.0
 offset_bottom = 291.0
 
 [node name="Comp_Grabbable" parent="MovableObjects/Journal" node_paths=PackedStringArray("grab_area") instance=ExtResource("2_sc6fj")]
@@ -115,7 +115,7 @@ grab_area = NodePath("../Area2D")
 [node name="Area2D" type="Area2D" parent="MovableObjects/Journal"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovableObjects/Journal/Area2D"]
-position = Vector2(121.5, 78.5)
+position = Vector2(113.75, 114.75)
 shape = SubResource("RectangleShape2D_qyocc")
 
 [node name="Candle" type="CharacterBody2D" parent="MovableObjects"]
