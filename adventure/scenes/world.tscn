@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/Decoration/fire_particle_emiter.tscn" id="3_33e7e"]
 [ext_resource type="PackedScene" uid="uid://mtfyfu7tyd8a" path="res://adventure/interface/DialogManager.tscn" id="4_q0cwu"]
 [ext_resource type="Texture2D" uid="uid://buyl5jk1d453g" path="res://adventure/sprites/wizard.png" id="5_3wsd2"]
-[ext_resource type="PackedScene" uid="uid://b8osndo80rp2f" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
-[ext_resource type="PackedScene" uid="uid://ttwjdjkembi7" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
+[ext_resource type="PackedScene" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
+[ext_resource type="PackedScene" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
 [ext_resource type="PackedScene" uid="uid://bs6m46ho4wlgr" path="res://adventure/objects/Interactable/flower1.tscn" id="6_japwo"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
