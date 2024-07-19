@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://kinlskftsg0k"]
+
+[ext_resource type="Texture2D" uid="uid://cq77qq3ifwg2h" path="res://adventure/sprites/fire_particles.png" id="1_yn01l"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h73bf"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_is2to"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 12.0
+direction = Vector3(100, 0, 0)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+anim_offset_max = 1.0
+
+[sub_resource type="Gradient" id="Gradient_sr5pj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.62987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h63sn"]
+gradient = SubResource("Gradient_sr5pj")
+width = 400
+height = 400
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_h73bf")
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_is2to")
+texture = ExtResource("1_yn01l")
+
+[node name="latarnia" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(18.9352, 2.94122)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_h63sn")

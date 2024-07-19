@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=15 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/characters/friend.tscn" id="2_476r1"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/Decoration/fire_particle_emiter.tscn" id="3_33e7e"]
 [ext_resource type="PackedScene" uid="uid://mtfyfu7tyd8a" path="res://adventure/interface/DialogManager.tscn" id="4_q0cwu"]
 [ext_resource type="Texture2D" uid="uid://buyl5jk1d453g" path="res://adventure/sprites/wizard.png" id="5_3wsd2"]
-[ext_resource type="PackedScene" uid="uid://b8osndo80rp2f" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
-[ext_resource type="PackedScene" uid="uid://ttwjdjkembi7" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
-[ext_resource type="PackedScene" uid="uid://bs6m46ho4wlgr" path="res://adventure/objects/Interactable/flower1.tscn" id="6_japwo"]
+[ext_resource type="PackedScene" path="res://adventure/interface/tool_bar.tscn" id="5_f25fo"]
+[ext_resource type="PackedScene" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
+[ext_resource type="PackedScene" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
+[ext_resource type="PackedScene" path="res://adventure/objects/Interactable/Gatherable.tscn" id="6_japwo"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 offsets = PackedFloat32Array(1)
@@ -82,6 +83,12 @@ blend_mode = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="ToolBar" parent="UI" instance=ExtResource("5_f25fo")]
+offset_left = 7.0
+offset_top = 312.0
+offset_right = 167.0
+offset_bottom = 344.0
+
 [node name="PlayerInfo" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
@@ -94,7 +101,7 @@ offset_bottom = 48.0
 layout_mode = 1
 offset_left = 35.0
 offset_top = 16.0
-offset_right = 35.0
+offset_right = 136.0
 offset_bottom = -8.0
 character = NodePath("../../../PlayerCharacter")
 
