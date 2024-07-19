@@ -1,18 +1,34 @@
 extends CharacterBody2D
 
 
+@export var Comp_interaction : Area2D
+
 @export var speed : int = 100
+var current_speed : int
+
+var current_state : String = "normal"
+
 const JUMP_VELOCITY = -400.0
 
 func _ready():
 	$AnimationPlayer.play("idle")
+	current_speed = speed
 
 func _physics_process(delta):
-	# Add the gravity.
-	
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	if current_state == "gathering":
+		gathering()
+	else:	
+		normal()
+
+func change_state(new_state : String):
+	current_state = new_state
+
+func gathering():
+	print("gather")
+	$AnimationPlayer.play("gathering")
+	
+func normal():
 	var vertical := Input.get_axis("left", "right")
 	var horizontal := Input.get_axis("up","down")
 	
@@ -23,8 +39,8 @@ func _physics_process(delta):
 		if $AnimationPlayer.current_animation != "move":
 			$AnimationPlayer.play("move")
 	 
-	velocity = Vector2(vertical,horizontal)*speed
-
+	velocity = Vector2(vertical,horizontal)*current_speed
 	look_at(get_global_mouse_position())
 
 	move_and_slide()
+	

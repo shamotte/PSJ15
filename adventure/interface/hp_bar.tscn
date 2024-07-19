@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ttwjdjkembi7"]
+
+[ext_resource type="PackedScene" uid="uid://djyswjk4op0av" path="res://adventure/interface/HP.tscn" id="1_f71sj"]
+[ext_resource type="Script" path="res://adventure/interface/hp_bar.gd" id="1_nkya3"]
+
+[node name="HpBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nkya3")
+hp_scene = ExtResource("1_f71sj")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 1
+offset_right = 160.0
+offset_bottom = 16.0

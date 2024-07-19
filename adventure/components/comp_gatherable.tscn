@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmljq2sergiyk"]
+
+[ext_resource type="Script" path="res://adventure/components/comp_gatherable.gd" id="1_vffp6"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/Press E.png" id="2_5uj86"]
+
+[node name="CompGatherable" type="Node2D"]
+script = ExtResource("1_vffp6")
+
+[node name="PressE" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_5uj86")

@@ -158,6 +158,7 @@ libraries = {
 [node name="CompInteractable" parent="." node_paths=PackedStringArray("object", "in_area_object") instance=ExtResource("3_tx2em")]
 object = NodePath("../CompDialog")
 function_name = "dialog_on"
+player_state = "normal"
 in_area_object = NodePath("../CompDialog")
 in_area_function_name = "show_tip"
 

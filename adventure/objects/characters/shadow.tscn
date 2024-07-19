@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b0iqf07ahk4nt"]
 
-[ext_resource type="Texture2D" uid="uid://ktl31pprahd7" path="res://adventure/sprites/shadow_hand.png" id="1_ylroe"]
-[ext_resource type="Texture2D" uid="uid://ddsa4mdb3qfje" path="res://adventure/sprites/shadow.png" id="2_txrxs"]
+[ext_resource type="Texture2D" uid="uid://ktl31pprahd7" path="res://adventure/sprites/shadow_hand.png" id="1_n50gq"]
+[ext_resource type="Texture2D" uid="uid://ddsa4mdb3qfje" path="res://adventure/sprites/shadow.png" id="2_ik30m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfgf2"]
 
@@ -190,17 +190,17 @@ _data = {
 [node name="LeftHand" type="Sprite2D" parent="."]
 position = Vector2(12, -8)
 rotation = 1.5708
-texture = ExtResource("1_ylroe")
+texture = ExtResource("1_n50gq")
 
 [node name="RightHand" type="Sprite2D" parent="."]
 position = Vector2(12, 8)
 rotation = 1.5708
-texture = ExtResource("1_ylroe")
+texture = ExtResource("1_n50gq")
 
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(-1, -1)
 rotation = 1.5708
-texture = ExtResource("2_txrxs")
+texture = ExtResource("2_ik30m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sfgf2")
