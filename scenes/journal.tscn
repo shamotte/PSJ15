@@ -255,6 +255,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panes/Control2"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 8.0
 offset_right = 122.0
@@ -262,6 +263,7 @@ offset_bottom = 29.0
 text = "Crafting"
 
 [node name="Label2" type="Label" parent="Panes/Control2"]
+layout_mode = 0
 offset_top = 40.0
 offset_right = 124.0
 offset_bottom = 85.0
@@ -269,6 +271,7 @@ text = "Mash items together
 to combine them."
 
 [node name="Label3" type="Label" parent="Panes/Control2"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 96.0
 offset_right = 133.0
@@ -286,6 +289,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panes/Control3"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 6.0
 offset_right = 112.0
