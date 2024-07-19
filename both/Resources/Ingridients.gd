@@ -1,7 +1,8 @@
 extends Resource
 class_name Ingridient
 
-var name : String
-var adventure_sprite : Sprite2D
-var crafting_sprite : Sprite2D
+@export var name : String
+@export var icon : CompressedTexture2D
+@export var adventure_sprite : CompressedTexture2D
+@export var crafting_sprite : CompressedTexture2D
 

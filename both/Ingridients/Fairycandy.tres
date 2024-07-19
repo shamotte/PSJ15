@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://d20hh5ld28dpf"]
+
+[ext_resource type="Texture2D" uid="uid://dicc2dk0wemma" path="res://adventure/sprites/flower1.png" id="1_27oub"]
+[ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_exjxv"]
+
+[resource]
+script = ExtResource("1_exjxv")
+name = "Fairycandy"
+adventure_sprite = ExtResource("1_27oub")
