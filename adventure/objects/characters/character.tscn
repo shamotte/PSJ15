@@ -24,6 +24,110 @@ gradient = SubResource("Gradient_i7ulp")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="Animation" id="Animation_xlr86"]
+resource_name = "Take_item"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 8), Vector2(5, 8), Vector2(0, 1), Vector2(3, 11), Vector2(15, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, -8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightHand:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_1cqtu"), ExtResource("5_yqv2i")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 4.43828),
+"update": 0,
+"values": [1.5708, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_2fpro"]
+resource_name = "choping"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 8), Vector2(5, 8), Vector2(0, 1), Vector2(3, 11), Vector2(15, 18), Vector2(27, 11), Vector2(15, 18), Vector2(27, 11), Vector2(15, 18), Vector2(27, 11), Vector2(15, 18), Vector2(27, 11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, -8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightHand:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_1cqtu"), ExtResource("5_yqv2i"), ExtResource("2_1cqtu")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5),
+"transitions": PackedFloat32Array(1, 4.59479, 3.13834, 6.06286, 2, 4.5948, 1.62451, 6.06286, 2),
+"update": 0,
+"values": [1.5708, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0]
+}
+
 [sub_resource type="Animation" id="Animation_j2khf"]
 resource_name = "gathering"
 length = 2.5
@@ -124,110 +228,6 @@ tracks/1/keys = {
 "values": [Vector2(5, 10), Vector2(15, 10), Vector2(5, 10)]
 }
 
-[sub_resource type="Animation" id="Animation_2fpro"]
-resource_name = "choping"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RightHand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, 8), Vector2(5, 8), Vector2(0, 1), Vector2(3, 11), Vector2(15, 18), Vector2(27, 11), Vector2(15, 18), Vector2(27, 11), Vector2(15, 18), Vector2(27, 11), Vector2(15, 18), Vector2(27, 11)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LeftHand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, -8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RightHand:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_1cqtu"), ExtResource("5_yqv2i"), ExtResource("2_1cqtu")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RightHand:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5),
-"transitions": PackedFloat32Array(1, 4.59479, 3.13834, 6.06286, 2, 4.5948, 1.62451, 6.06286, 2),
-"update": 0,
-"values": [1.5708, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_xlr86"]
-resource_name = "Take_item"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RightHand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, 8), Vector2(5, 8), Vector2(0, 1), Vector2(3, 11), Vector2(15, 18)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LeftHand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, -8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RightHand:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("2_1cqtu"), ExtResource("5_yqv2i")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RightHand:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 4.59479),
-"update": 0,
-"values": [1.5708, 1.5708]
-}
-
 [sub_resource type="Animation" id="Animation_w6516"]
 resource_name = "swing"
 length = 4.0
@@ -307,8 +307,9 @@ max_hp = 4
 shape = SubResource("CircleShape2D_gx2d2")
 
 [node name="RightHand" type="Sprite2D" parent="."]
-position = Vector2(27, 11)
-texture = ExtResource("5_yqv2i")
+position = Vector2(16, 8)
+rotation = 1.5708
+texture = ExtResource("2_1cqtu")
 
 [node name="LeftHand" type="Sprite2D" parent="."]
 position = Vector2(16, -8)
@@ -335,4 +336,4 @@ texture = SubResource("GradientTexture2D_caqlq")
 libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
-blend_times = [&"idle", &"idle", 0.5, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"move", &"idle", 1.0, &"move", &"gathering", 0.5, &"move", &"move", 0.5]
+blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"gathering", &"idle", 0.5, &"move", &"gathering", 0.5, &"move", &"move", 0.5, &"move", &"idle", 1.0, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"idle", &"idle", 0.5]
