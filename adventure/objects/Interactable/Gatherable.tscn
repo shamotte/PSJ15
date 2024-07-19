@@ -1,31 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs6m46ho4wlgr"]
+[gd_scene load_steps=8 format=3 uid="uid://bs6m46ho4wlgr"]
 
+[ext_resource type="Script" path="res://adventure/objects/Interactable/Gatherable.gd" id="1_4wuxf"]
 [ext_resource type="Texture2D" uid="uid://dicc2dk0wemma" path="res://adventure/sprites/flower1.png" id="1_5wgjv"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_itcb5"]
 [ext_resource type="PackedScene" uid="uid://bmljq2sergiyk" path="res://adventure/components/comp_gatherable.tscn" id="3_eae0q"]
-
-[sub_resource type="Animation" id="Animation_t8dfu"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("flower:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_t3fw8"]
 resource_name = "disappear"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("flower:self_modulate")
+tracks/0/path = NodePath("texture:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,15 +34,32 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_t8dfu"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_flkmv"]
 _data = {
 "disappear": SubResource("Animation_t3fw8"),
 "idle": SubResource("Animation_t8dfu")
 }
 
-[node name="Flower1" type="Node2D"]
+[node name="Gatherable" type="Node2D"]
+script = ExtResource("1_4wuxf")
 
-[node name="flower" type="Sprite2D" parent="."]
+[node name="texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_5wgjv")
 
 [node name="CompInteractable" parent="." node_paths=PackedStringArray("object", "in_area_object", "end_interaction_object") instance=ExtResource("2_itcb5")]
