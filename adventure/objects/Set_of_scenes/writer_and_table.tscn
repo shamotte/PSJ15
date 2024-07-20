@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqila4rgvmh2y"]
 
-[ext_resource type="PackedScene" uid="uid://ba3e14mnx5ev1" path="res://adventure/objects/Decoration/table.tscn" id="1_y21wh"]
-[ext_resource type="PackedScene" uid="uid://nj11shkih51q" path="res://adventure/objects/characters/writer.tscn" id="2_vknu1"]
+[ext_resource type="PackedScene" uid="uid://f02hyfsoskxo" path="res://adventure/objects/Decoration/table.tscn" id="1_y21wh"]
+[ext_resource type="PackedScene" uid="uid://cbl5im8gamr6g" path="res://adventure/objects/characters/writer.tscn" id="2_vknu1"]
 
 [node name="WriterAndTable" type="Node2D"]
 

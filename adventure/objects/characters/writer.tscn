@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://nj11shkih51q"]
+[gd_scene load_steps=20 format=3 uid="uid://cbl5im8gamr6g"]
 
 [ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_6nkub"]
 [ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/leather_hand2.png" id="2_b80f8"]
