@@ -41,8 +41,11 @@ func _input(event):
 				#Component.in_area(false)
 		
 func interacted():
-	current_state = Interacted_component.end_interaction()
-	get_parent().change_state(current_state)
+	if Interacted_component != null:
+		current_state = Interacted_component.end_interaction()
+		get_parent().change_state(current_state)
+	else:
+		get_parent().change_state("normal")
 		
 func min_distance(area_array : Array[Area2D] ):
 	var min_dist : float = 99999
