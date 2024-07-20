@@ -80,7 +80,7 @@ func _physics_process(delta):
 			
 			var overlap_key = "+".join(overlap_names)
 			
-			print(overlap_key, overlap)
+			#print(overlap_key, overlap)
 			
 			if (overlap_key in crafting.keys()):
 				crafting[overlap_key].call(overlap)
