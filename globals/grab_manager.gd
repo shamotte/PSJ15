@@ -8,7 +8,7 @@ var mouse_grab_offset: Vector2
 func average_position(nodes: Array):
 	var pos_avg = Vector2.ZERO
 	for n in nodes:
-		pos_avg += n.global_position
+		pos_avg += n.position
 	pos_avg /= nodes.size()
 	return pos_avg
 
@@ -25,7 +25,7 @@ var crafting = {
 			
 		var eyeshrooms = load("res://Table/objects/eyeshrooms.tscn")
 		var e = eyeshrooms.instantiate()
-		e.global_position = pos_avg
+		e.position = pos_avg
 		tree.add_child(e),
 		
 	"Candle+FairyCandy": func(components: Array):
@@ -36,7 +36,7 @@ var crafting = {
 		
 		var hell_candy = load("res://Table/objects/hell_candy.tscn")
 		var h = hell_candy.instantiate()
-		h.global_position = pos_avg
+		h.position = pos_avg
 		tree.add_child(h),
 		
 	"Candle+Mushrooms": func(components: Array):
@@ -47,7 +47,7 @@ var crafting = {
 		
 		var burnshrooms = load("res://Table/objects/burnshrooms.tscn")
 		var b = burnshrooms.instantiate()
-		b.global_position = pos_avg
+		b.position = pos_avg
 		tree.add_child(b),
 }
 

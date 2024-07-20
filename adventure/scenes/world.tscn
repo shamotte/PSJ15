@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=21 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/characters/friend.tscn" id="2_476r1"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bs6m46ho4wlgr" path="res://adventure/objects/Interactable/Gatherable.tscn" id="6_japwo"]
 [ext_resource type="Resource" path="res://both/Ingridients/shroom.tres" id="6_vms6x"]
 [ext_resource type="Resource" uid="uid://ct76mem0rld0u" path="res://both/Ingridients/spikezalea.tres" id="7_01t23"]
-[ext_resource type="PackedScene" uid="uid://cg3bu75mmymrk" path="res://scenes/crafting.tscn" id="11_1nflc"]
 [ext_resource type="Resource" uid="uid://d20hh5ld28dpf" path="res://both/Ingridients/Fairycandy.tres" id="11_81bix"]
 [ext_resource type="PackedScene" uid="uid://bqila4rgvmh2y" path="res://adventure/objects/Set_of_scenes/writer_and_table.tscn" id="17_6cfga"]
 [ext_resource type="PackedScene" uid="uid://kun77gl1w0en" path="res://adventure/objects/Set_of_scenes/Trader_shop.tscn" id="19_6q5ja"]
@@ -36,14 +35,6 @@ width = 400
 height = 400
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="GDScript" id="GDScript_0m20d"]
-script/source = "extends CanvasLayer
-
-func _physics_process(delta):
-	if Input.is_action_just_pressed(\"ui_accept\"):
-		visible = !visible
-"
 
 [node name="World" type="Node2D"]
 
@@ -165,13 +156,6 @@ offset_right = -243.0
 offset_bottom = -114.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="CraftingCanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-script = SubResource("GDScript_0m20d")
-
-[node name="Crafting" parent="CraftingCanvasLayer" instance=ExtResource("11_1nflc")]
-position = Vector2(320, 180)
 
 [node name="TraderShop" parent="." instance=ExtResource("19_6q5ja")]
 position = Vector2(311, 44)
