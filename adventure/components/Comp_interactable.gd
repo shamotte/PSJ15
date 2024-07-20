@@ -56,10 +56,14 @@ func _ready():
 		end_of_interaction = set_Callable(end_interaction_array[end_of_interaction_index])
 
 
-func interacted():
+func interacted(trigger_node : Node):
 	if not_null(interactable_array[to_interact_index]):
 		tip_active = false
-		to_interact.call()
+		if interactable_array[to_interact_index].first_argument == "":
+			to_interact.call()
+		else:
+			to_interact.call(trigger_node)
+			
 		#next_interaction()
 		#next_area()
 		return interactable_array[to_interact_index].player_state
@@ -82,7 +86,13 @@ func not_null(Component : InteractionComponent):
 	return false
 	
 func set_Callable(Component : InteractionComponent):
-	return Callable(parent.get_node(Component.object),Component.function_name)
+	var function : Callable = Callable(parent.get_node(Component.object),Component.function_name)
+	if Component.first_argument != "":
+		function.bind(Component.first_argument)
+		#return Callable(parent.get_node(Component.object),Component.function_name,Component.first_argument)
+	#else:
+	#	return Callable(parent.get_node(Component.object),Component.function_name)
+	return function
 	
 func connect_new_signal(Component_array : Array[InteractionComponent],index : int,type : int):
 	if type == types.INTERACTION and Component_array[index].next_interaction_signal != "":

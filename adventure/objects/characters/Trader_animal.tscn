@@ -17,6 +17,7 @@ object = "CompDialog"
 function_name = "dialog_on"
 player_state = "normal"
 next_interaction_signal = ""
+need_trigger_node = false
 
 [sub_resource type="Resource" id="Resource_tfpjq"]
 script = ExtResource("3_j76vd")
@@ -24,6 +25,7 @@ object = "CompDialog"
 function_name = "show_tip"
 player_state = "normal"
 next_interaction_signal = ""
+need_trigger_node = false
 
 [sub_resource type="Resource" id="Resource_6u1ii"]
 script = ExtResource("3_j76vd")
@@ -31,6 +33,7 @@ object = ""
 function_name = ""
 player_state = ""
 next_interaction_signal = ""
+need_trigger_node = false
 
 [sub_resource type="Gradient" id="Gradient_sr5pj"]
 interpolation_mode = 2

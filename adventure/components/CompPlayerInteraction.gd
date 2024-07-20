@@ -36,7 +36,7 @@ func _input(event):
 		if len(Areas) > 0:
 			Interacted_component = min_distance(Areas)
 			if Interacted_component.has_method("interacted"):
-				current_state = Interacted_component.interacted()
+				current_state = Interacted_component.interacted(get_parent())
 				get_parent().change_state(current_state)
 				#Component.in_area(false)
 		
