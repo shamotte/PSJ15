@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5s7ptis65l5n"]
+
+[ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_7vaqb"]
+[ext_resource type="Texture2D" uid="uid://1gru488bj6jr" path="res://Table/sprites/hell_candy.png" id="1_s7fma"]
+[ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="2_d3qum"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vby4s"]
+radius = 29.1548
+
+[node name="HellCandy" type="CharacterBody2D"]
+position = Vector2(193, 110)
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_7vaqb")
+item_name = "HellCandy"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s7fma")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vby4s")
+
+[node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("2_d3qum")]
+grab_area = NodePath("../Area2D")
