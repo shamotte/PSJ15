@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://cxpax3q62q1iv"]
+
+[ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_wllf1"]
+[ext_resource type="Texture2D" uid="uid://u2r5wh5a7wi6" path="res://adventure/sprites/shroom1.png" id="1_x3a3i"]
+
+[resource]
+script = ExtResource("1_wllf1")
+name = "suspicious shroom"
+adventure_sprite = ExtResource("1_x3a3i")

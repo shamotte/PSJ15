@@ -18,11 +18,9 @@ func _process(delta):
 	pass
 	
 func gather():
-	print("gather")
 	in_interaction = true
 	
 func end_gathering():
-	print("end")
 	#TODO Miejsce na dodanie zasobów
 	if destroy_object:
 		anim.play("disappear")

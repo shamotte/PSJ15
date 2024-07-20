@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=3 uid="uid://cxpsocagneje3"]
+
+[ext_resource type="Texture2D" uid="uid://cxdmppb4l2at2" path="res://adventure/sprites/trader_animal2.png" id="1_7louo"]
+[ext_resource type="Texture2D" uid="uid://buslscd2h3rnq" path="res://adventure/sprites/trader_animal1.png" id="1_ltrxp"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_m131h"]
+[ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="3_h6wri"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="3_j76vd"]
+[ext_resource type="Texture2D" uid="uid://cpeenmjrj0l8u" path="res://adventure/sprites/trader_animal4.png" id="5_ajofi"]
+[ext_resource type="Texture2D" uid="uid://ckstnd865uc7p" path="res://adventure/sprites/trader_animal3.png" id="7_jh6xy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7v84"]
+size = Vector2(40, 22)
+
+[sub_resource type="Resource" id="Resource_ogrb4"]
+script = ExtResource("3_j76vd")
+object = "CompDialog"
+function_name = "dialog_on"
+player_state = "normal"
+next_interaction_signal = ""
+need_trigger_node = false
+
+[sub_resource type="Resource" id="Resource_tfpjq"]
+script = ExtResource("3_j76vd")
+object = "CompDialog"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+need_trigger_node = false
+
+[sub_resource type="Resource" id="Resource_6u1ii"]
+script = ExtResource("3_j76vd")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+need_trigger_node = false
+
+[sub_resource type="Gradient" id="Gradient_sr5pj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.62987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2x3at"]
+gradient = SubResource("Gradient_sr5pj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_k1ewk"]
+resource_name = "idle"
+length = 10.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.5, 4.5, 6.5, 7.5, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_ltrxp"), ExtResource("5_ajofi"), ExtResource("1_ltrxp"), ExtResource("1_7louo"), ExtResource("1_7louo"), ExtResource("7_jh6xy"), ExtResource("1_7louo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 6.5, 7.5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 4.43828, 2.54912, 2.92817, 4.28709, 2.37841),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8w0ea"]
+_data = {
+"idle": SubResource("Animation_k1ewk")
+}
+
+[node name="TraderAnimal" type="CharacterBody2D"]
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(0, 18)
+texture = ExtResource("5_ajofi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 21)
+shape = SubResource("RectangleShape2D_q7v84")
+
+[node name="CompInteractable" parent="." instance=ExtResource("2_m131h")]
+position = Vector2(0, 18)
+interactable_array = Array[ExtResource("3_j76vd")]([SubResource("Resource_ogrb4")])
+in_area_array = Array[ExtResource("3_j76vd")]([SubResource("Resource_tfpjq")])
+end_interaction_array = Array[ExtResource("3_j76vd")]([SubResource("Resource_6u1ii")])
+
+[node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("3_h6wri")]
+offset_left = -75.0
+offset_top = -80.0
+offset_right = -75.0
+offset_bottom = -80.0
+character = NodePath("..")
+text = Array[String](["Grrr!"])
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 2
+position = Vector2(12, 32)
+color = Color(3.96862e-34, 3.96862e-34, 3.96862e-34, 1)
+texture = SubResource("GradientTexture2D_2x3at")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8w0ea")
+}
+autoplay = "idle"

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfoy0k5ilmoqn"]
+
+[ext_resource type="Texture2D" uid="uid://1v5bjlukni24" path="res://adventure/sprites/hp2.png" id="1_tmuu7"]
+[ext_resource type="Script" path="res://adventure/components/comp_trade.gd" id="1_ychie"]
+[ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/sanity1.png" id="2_nkmgq"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/Press E.png" id="3_e0pp8"]
+
+[node name="CompTrade" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -30.0
+offset_right = -617.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 30)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+script = ExtResource("1_ychie")
+
+[node name="Container" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Payment" type="TextureRect" parent="Container"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -20.0
+offset_right = 17.0
+offset_bottom = -4.0
+texture = ExtResource("1_tmuu7")
+
+[node name="something" type="TextureRect" parent="Container"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = -4.0
+texture = ExtResource("2_nkmgq")
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -28.0
+offset_right = 31.0
+theme_override_font_sizes/font_size = 20
+text = "="
+
+[node name="interaction" type="TextureRect" parent="Container"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -7.0
+offset_right = 32.0
+offset_bottom = 9.0
+texture = ExtResource("3_e0pp8")

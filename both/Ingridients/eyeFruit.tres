@@ -1,3 +1,9 @@
-[gd_resource type="Resource" format=3 uid="uid://d0oj8ja7n20tb"]
+[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://ryed3fkkbjrd"]
+
+[ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_guhlf"]
+[ext_resource type="Texture2D" uid="uid://meqtbqhj6mgk" path="res://adventure/sprites/eye_fruit2.png" id="1_y1epq"]
 
 [resource]
+script = ExtResource("1_guhlf")
+name = "EyeFruit"
+adventure_sprite = ExtResource("1_y1epq")

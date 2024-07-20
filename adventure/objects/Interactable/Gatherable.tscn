@@ -1,9 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs6m46ho4wlgr"]
+[gd_scene load_steps=12 format=3 uid="uid://bs6m46ho4wlgr"]
 
 [ext_resource type="Script" path="res://adventure/objects/Interactable/Gatherable.gd" id="1_4wuxf"]
 [ext_resource type="Texture2D" uid="uid://dicc2dk0wemma" path="res://adventure/sprites/flower1.png" id="1_5wgjv"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_itcb5"]
 [ext_resource type="PackedScene" uid="uid://bmljq2sergiyk" path="res://adventure/components/comp_gatherable.tscn" id="3_eae0q"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="4_enb65"]
+
+[sub_resource type="Resource" id="Resource_8okrq"]
+script = ExtResource("4_enb65")
+object = "CompGatherable"
+function_name = "gather"
+player_state = "gathering"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_uvtlj"]
+script = ExtResource("4_enb65")
+object = "CompGatherable"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_i1kpc"]
+script = ExtResource("4_enb65")
+object = "CompGatherable"
+function_name = "end_gathering"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
 
 [sub_resource type="Animation" id="Animation_t3fw8"]
 resource_name = "disappear"
@@ -62,16 +87,11 @@ script = ExtResource("1_4wuxf")
 [node name="texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_5wgjv")
 
-[node name="CompInteractable" parent="." node_paths=PackedStringArray("object", "in_area_object", "end_interaction_object") instance=ExtResource("2_itcb5")]
+[node name="CompInteractable" parent="." instance=ExtResource("2_itcb5")]
 scale = Vector2(0.905, 0.905)
-object = NodePath("../CompGatherable")
-function_name = "gather"
-player_state = "gathering"
-in_area_object = NodePath("../CompGatherable")
-in_area_function_name = "show_tip"
-end_interaction_object = NodePath("../CompGatherable")
-end_interaction_function_name = "end_gathering"
-next_player_state = "normal"
+interactable_array = Array[ExtResource("4_enb65")]([SubResource("Resource_8okrq")])
+in_area_array = Array[ExtResource("4_enb65")]([SubResource("Resource_uvtlj")])
+end_interaction_array = Array[ExtResource("4_enb65")]([SubResource("Resource_i1kpc")])
 
 [node name="CompGatherable" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("3_eae0q")]
 position = Vector2(0, -35)

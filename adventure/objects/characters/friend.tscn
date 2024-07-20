@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://wjsduwhnwpuu"]
+[gd_scene load_steps=18 format=3 uid="uid://wjsduwhnwpuu"]
 
 [ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/shadow_knight_hand1.png" id="1_c5f7t"]
 [ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_sislh"]
 [ext_resource type="Texture2D" uid="uid://e3ubuosu5wd6" path="res://adventure/sprites/friend.png" id="2_yrm6g"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="3_tx2em"]
 [ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="5_4bqov"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_qobch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
 radius = 14.0
@@ -12,13 +13,13 @@ radius = 14.0
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3e8mx"]
 polygon = PackedVector2Array(5, -9, 6, -6, 8, -2, 8, 2, 7, 5, 6, 7, 6, 8, 4, 11, 3, 14, 1, 14, -2, 10, -2, 7, -4, 6, -7, 5, -11, 4, -13, 3, -15, 2, -18, 1, -18, 0, -13, -2, -11, -3, -8, -5, -6, -5, -4, -6, -2, -7, 0, -9, 2, -12, 4, -11)
 
-[sub_resource type="Gradient" id="Gradient_sr5pj"]
+[sub_resource type="Gradient" id="Gradient_1xrg7"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.62987, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_caqlq"]
-gradient = SubResource("Gradient_sr5pj")
+gradient = SubResource("Gradient_1xrg7")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -115,6 +116,30 @@ _data = {
 "moving": SubResource("Animation_b8gik")
 }
 
+[sub_resource type="Resource" id="Resource_mdn0b"]
+script = ExtResource("5_qobch")
+object = "CompDialog"
+function_name = "dialog_on"
+player_state = "normal"
+next_interaction_signal = ""
+need_trigger_node = false
+
+[sub_resource type="Resource" id="Resource_jar6c"]
+script = ExtResource("5_qobch")
+object = "CompDialog"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+need_trigger_node = false
+
+[sub_resource type="Resource" id="Resource_vu2ba"]
+script = ExtResource("5_qobch")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+need_trigger_node = false
+
 [node name="Friend" type="CharacterBody2D"]
 rotation = 1.5708
 motion_mode = 1
@@ -155,12 +180,10 @@ libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
 
-[node name="CompInteractable" parent="." node_paths=PackedStringArray("object", "in_area_object") instance=ExtResource("3_tx2em")]
-object = NodePath("../CompDialog")
-function_name = "dialog_on"
-player_state = "normal"
-in_area_object = NodePath("../CompDialog")
-in_area_function_name = "show_tip"
+[node name="CompInteractable" parent="." instance=ExtResource("3_tx2em")]
+interactable_array = Array[ExtResource("5_qobch")]([SubResource("Resource_mdn0b")])
+in_area_array = Array[ExtResource("5_qobch")]([SubResource("Resource_jar6c")])
+end_interaction_array = Array[ExtResource("5_qobch")]([SubResource("Resource_vu2ba")])
 
 [node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("5_4bqov")]
 anchors_preset = 8
@@ -177,3 +200,4 @@ grow_vertical = 2
 rotation = -1.5708
 pivot_offset = Vector2(75, 110)
 character = NodePath("..")
+text = Array[String](["witaj piękna noc. ", "są tutaj piękne kwiatki", "będziesz tak stać?"])

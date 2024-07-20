@@ -25,7 +25,6 @@ func change_state(new_state : String):
 	current_state = new_state
 
 func gathering():
-	print("gather")
 	$AnimationPlayer.play("gathering")
 	
 func normal():
