@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c6jwgejl4cs21"]
+[gd_scene load_steps=23 format=3 uid="uid://c6jwgejl4cs21"]
 
 [ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_4o8ix"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="1_7old3"]
@@ -154,24 +154,49 @@ script = ExtResource("6_4tjdg")
 object = "CompDialog"
 function_name = "dialog_on"
 player_state = "normal"
+next_interaction_signal = "dialog_end"
+
+[sub_resource type="Resource" id="Resource_k21b5"]
+script = ExtResource("6_4tjdg")
+object = "CompTrade"
+function_name = "trade"
+player_state = "normal"
+next_interaction_signal = "trading"
+
+[sub_resource type="Resource" id="Resource_m4uq7"]
+script = ExtResource("6_4tjdg")
+object = "CompDialog2"
+function_name = "dialog_on"
+player_state = "normal"
+next_interaction_signal = ""
 
 [sub_resource type="Resource" id="Resource_2f2ht"]
 script = ExtResource("6_4tjdg")
 object = "CompDialog"
 function_name = "show_tip"
 player_state = ""
+next_interaction_signal = "dialog_end"
 
 [sub_resource type="Resource" id="Resource_6svhb"]
 script = ExtResource("6_4tjdg")
 object = "CompTrade"
 function_name = "show_trade"
 player_state = "normal"
+next_interaction_signal = "trading"
+
+[sub_resource type="Resource" id="Resource_40f3d"]
+script = ExtResource("6_4tjdg")
+object = "CompDialog2"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
 
 [sub_resource type="Resource" id="Resource_x1b4u"]
 script = ExtResource("6_4tjdg")
 object = ""
 function_name = ""
 player_state = ""
+next_interaction_signal = ""
 
 [node name="MrL" type="CharacterBody2D"]
 rotation = 1.5708
@@ -233,8 +258,8 @@ libraries = {
 [node name="CompInteractable" parent="." instance=ExtResource("1_7old3")]
 more_interactions = true
 more_area = true
-interactable_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_2pguc")])
-in_area_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_2f2ht"), SubResource("Resource_6svhb")])
+interactable_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_2pguc"), SubResource("Resource_k21b5"), SubResource("Resource_m4uq7")])
+in_area_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_2f2ht"), SubResource("Resource_6svhb"), SubResource("Resource_40f3d")])
 end_interaction_array = Array[ExtResource("6_4tjdg")]([SubResource("Resource_x1b4u")])
 
 [node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("1_sgvv1")]
@@ -252,6 +277,7 @@ grow_vertical = 2
 rotation = -1.5708
 pivot_offset = Vector2(75, 110)
 character = NodePath("..")
+writing_speed = 0.05
 text = Array[String](["Don't be afraid. We can make deals"])
 
 [node name="CompTrade" parent="." node_paths=PackedStringArray("character") instance=ExtResource("7_hqvog")]
@@ -260,3 +286,21 @@ offset_top = -30.0011
 offset_right = -24.4994
 offset_bottom = -30.0011
 character = NodePath("..")
+
+[node name="CompDialog2" parent="." node_paths=PackedStringArray("character") instance=ExtResource("1_sgvv1")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0004
+offset_top = -110.0
+offset_right = -75.0004
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(75, 110)
+character = NodePath("..")
+writing_speed = 0.03
+text = Array[String](["Making deals with you is pleasure!", "Shadows rules this place. If you want to survive you need my help", "Different eyes looks differently. They give me inspiration for my next creation"])

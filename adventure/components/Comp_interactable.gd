@@ -3,6 +3,8 @@ class_name InteractionArea
 
 @onready var parent : Node = get_parent() 
 
+enum types {INTERACTION,IN_AREA,END_INTERACTION}
+
 @export_group("function_row")
 @export var more_interactions : bool = false
 @export var more_area : bool = false
@@ -46,8 +48,10 @@ var tip_active : bool = true
 func _ready():
 	if not_null(interactable_array[to_interact_index]):
 		to_interact = set_Callable(interactable_array[to_interact_index])
+		connect_new_signal(interactable_array,to_interact_index,types.INTERACTION)
 	if not_null(in_area_array[in_area_of_interaction_index]):	
 		in_area_of_interaction = set_Callable(in_area_array[in_area_of_interaction_index])
+		connect_new_signal(in_area_array,in_area_of_interaction_index,types.IN_AREA)
 	if not_null(end_interaction_array[end_of_interaction_index]):	
 		end_of_interaction = set_Callable(end_interaction_array[end_of_interaction_index])
 
@@ -56,8 +60,8 @@ func interacted():
 	if not_null(interactable_array[to_interact_index]):
 		tip_active = false
 		to_interact.call()
-		next_interaction()
-		next_area()
+		#next_interaction()
+		#next_area()
 		return interactable_array[to_interact_index].player_state
 	return "nothing"
 	
@@ -80,12 +84,25 @@ func not_null(Component : InteractionComponent):
 func set_Callable(Component : InteractionComponent):
 	return Callable(parent.get_node(Component.object),Component.function_name)
 	
+func connect_new_signal(Component_array : Array[InteractionComponent],index : int,type : int):
+	if type == types.INTERACTION and Component_array[index].next_interaction_signal != "":
+		if index > 0:
+			parent.get_node(Component_array[index-1].object).disconnect(Component_array[index-1].next_interaction_signal,next_interaction)
+		parent.get_node(Component_array[index].object).connect(Component_array[index].next_interaction_signal,next_interaction)
+		print("connected")
+	if type == types.IN_AREA and Component_array[index].next_interaction_signal != "":
+		if index > 0:
+			parent.get_node(Component_array[index-1].object).disconnect(Component_array[index-1].next_interaction_signal,next_interaction)
+		parent.get_node(Component_array[index].object).connect(Component_array[index].next_interaction_signal,next_area)
+		
 func next_interaction():
 	if more_interactions:
 		if to_interact_index < len(interactable_array) - 1:
 			if not_null(interactable_array[to_interact_index+1]):
 				to_interact_index += 1
 				to_interact = set_Callable(interactable_array[to_interact_index])
+				connect_new_signal(interactable_array,to_interact_index,types.INTERACTION)
+				print("Next Interaction")
 				
 func next_area():
 	if more_area:
@@ -93,5 +110,6 @@ func next_area():
 			if not_null(in_area_array[in_area_of_interaction_index+1]):
 				in_area_of_interaction_index += 1
 				in_area_of_interaction = set_Callable(in_area_array[in_area_of_interaction_index])
-				
+				connect_new_signal(in_area_array,in_area_of_interaction_index,types.IN_AREA)
+				print("Next Interaction")
 		

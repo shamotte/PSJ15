@@ -23,20 +23,22 @@ func _process(delta):
 	#Removing older
 	for i in old_Areas_to_interact:
 		if i not in Areas_to_interact:
-			if i != null:
+			if i != null and i.has_method("in_area"):
 				i.in_area(false)
 	if len(Areas_to_interact) > 0:
 		var Component : Area2D = min_distance(Areas_to_interact)
-		Component.in_area(true)
+		if Component.has_method("in_area"):
+			Component.in_area(true)
 	
 func _input(event):
 	if event.is_action_pressed("interact"):
 		Areas = get_overlapping_areas()
 		if len(Areas) > 0:
 			Interacted_component = min_distance(Areas)
-			current_state = Interacted_component.interacted()
-			get_parent().change_state(current_state)
-			#Component.in_area(false)
+			if Interacted_component.has_method("interacted"):
+				current_state = Interacted_component.interacted()
+				get_parent().change_state(current_state)
+				#Component.in_area(false)
 		
 func interacted():
 	current_state = Interacted_component.end_interaction()

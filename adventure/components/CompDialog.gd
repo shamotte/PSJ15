@@ -3,6 +3,7 @@ extends Control
 @export var character : Node
 
 @export_group("Dialog Options")
+@export var writing_speed : float = 0.1
 @export_multiline var text : Array[String] = ["Jakis tam tekst"] 
 var text_index : int = -1
 
@@ -11,18 +12,19 @@ var index : int = 0
 
 var in_dialog : bool = false
 
-@export_group("Next Interaction")
-@export var object : Node
-@export var function_name : String 
-var next_interaction : Callable
 var number_of_interactions : int
+
+signal dialog_start
+signal dialog_end
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Timer.wait_time = writing_speed
 	$DialogTime.connect("timeout",hide_panel)
 	$Timer.connect("timeout",write)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +35,7 @@ func _process(delta):
 	#if $Timer.get_time_left()
 
 func dialog_on():
+	emit_signal("dialog_start")
 	next_text()
 	in_dialog = true
 	show_tip(false)
@@ -50,6 +53,7 @@ func hide_panel():
 	$Label.visible = false
 	$DialogTime.stop()
 	in_dialog = false
+	emit_signal("dialog_end")
 	print("dialog stop")
 	
 func write():
