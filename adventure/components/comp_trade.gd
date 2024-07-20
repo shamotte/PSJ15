@@ -21,10 +21,10 @@ func trade(character : Node):
 	print("trade")
 	if cost.type == Goods.GOODS.HP:
 		var component : Node2D = character.get_node("CompHealth")
-		component.deal_damage(1)
-	if cost.type == Goods.GOODS.SANITY:
+		component.deal_damage(cost.amount)
+	if to_buy.type == Goods.GOODS.SANITY:
 		var component : Node2D = character.get_node("CompSanity")
-		component.increase_sanity(60)
+		component.increase_sanity(to_buy.amount)
 	#TODO miejsce na wymianę rzeczy
 	emit_signal("trading")
 	show_trade(false)
