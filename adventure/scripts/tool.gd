@@ -8,9 +8,16 @@ class_name tool
 var active : bool = true
 
 
-func _on_area_entered(area : Area2D):
+func _on_body_entered(area):
+	print("enterd")
 	if active: 
 		var rec : Receiver= area.get_node(receiver)
 		if rec:
-			pass
+			rec.interacted(self);
 			
+func _on_area_entered(area : Area2D):
+	print("enterd")
+	if active: 
+		var rec : Receiver= area.get_node(receiver)
+		if rec:
+			rec.interacted(self);

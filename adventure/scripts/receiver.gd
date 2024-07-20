@@ -11,6 +11,6 @@ func _ready():
 		to_interact = Callable(object,function_name)
 
 
-func interacted():
+func interacted(context):
 	if to_interact != null:
-		to_interact.call()
+		to_interact.call(context)

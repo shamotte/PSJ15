@@ -33,6 +33,10 @@ func _input(event):
 	elif  event.is_action_pressed("five"):
 		change_equipd_items(4)
 		
+	elif event.is_action_pressed("adventure_use_item"):
+		
+		animation_player.play("swing")
+		
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
