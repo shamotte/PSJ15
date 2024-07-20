@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://l3u3jexjoacx"]
+[gd_scene load_steps=21 format=3 uid="uid://l3u3jexjoacx"]
 
 [ext_resource type="Texture2D" uid="uid://drhw15uj7daal" path="res://Table/sprites/parchment_one.png" id="1_3wvni"]
 [ext_resource type="FontFile" uid="uid://dsff5wci1cifk" path="res://fonts/BLKCHCRY.TTF" id="1_uwilq"]
+[ext_resource type="Script" path="res://Table/objects/table_item.gd" id="3_4nh2u"]
 [ext_resource type="Texture2D" uid="uid://dcco5mq1tsr0r" path="res://Table/sprites/parchment_full.png" id="3_l848e"]
+[ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="4_10n5s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vr7jy"]
 texture = ExtResource("1_3wvni")
@@ -122,6 +124,9 @@ func _ready():
 
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukrml"]
+size = Vector2(155, 222)
+
 [node name="Journal" type="Control"]
 custom_minimum_size = Vector2(200, 230)
 layout_mode = 3
@@ -130,6 +135,8 @@ offset_right = 200.0
 offset_bottom = 230.0
 mouse_filter = 1
 theme = SubResource("Theme_1aqui")
+script = ExtResource("3_4nh2u")
+item_name = "Journal"
 
 [node name="PagesBg" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -295,3 +302,15 @@ offset_top = 6.0
 offset_right = 112.0
 offset_bottom = 27.0
 text = "Recipes"
+
+[node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("4_10n5s")]
+position = Vector2(22.56, 44.5)
+grab_area = NodePath("../Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(80.5, 117)
+shape = SubResource("RectangleShape2D_ukrml")

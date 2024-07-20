@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://8a48yfmbrbtd"]
+[gd_scene load_steps=4 format=3 uid="uid://cfskwfnoqj8j6"]
 
 [ext_resource type="Script" path="res://scenes/combined_scenes.gd" id="1_jfe4o"]
 [ext_resource type="PackedScene" uid="uid://b2crbh04dmg5d" path="res://adventure/scenes/world.tscn" id="1_ms1ah"]
@@ -9,7 +9,5 @@ script = ExtResource("1_jfe4o")
 
 [node name="World" parent="." instance=ExtResource("1_ms1ah")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Crafting" parent="CanvasLayer" instance=ExtResource("3_s8y3n")]
+[node name="Crafting" parent="." instance=ExtResource("3_s8y3n")]
 position = Vector2(320, 180)
