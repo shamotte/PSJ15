@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var world = $World
-@onready var crafting = $CanvasLayer
+@onready var crafting = $Crafting
 enum STATE{ WORLD, CRAFTING}
 var state = STATE.WORLD
 
