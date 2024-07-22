@@ -321,12 +321,12 @@ max_hp = 4
 shape = SubResource("CircleShape2D_gx2d2")
 
 [node name="RightHand" type="Sprite2D" parent="."]
-position = Vector2(8.23227, 10)
+position = Vector2(14.3333, 10)
 rotation = 1.5708
 texture = ExtResource("2_1cqtu")
 
 [node name="LeftHand" type="Sprite2D" parent="."]
-position = Vector2(11.4445, -9)
+position = Vector2(4.73333, -9)
 rotation = 1.5708
 scale = Vector2(-1, 1)
 texture = ExtResource("2_1cqtu")

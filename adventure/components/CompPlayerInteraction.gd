@@ -21,6 +21,8 @@ func _process(delta):
 	var old_Areas_to_interact : Array[Area2D] = Areas_to_interact
 	Areas_to_interact = get_overlapping_areas()
 	#Removing older
+	
+	#TODO to wywala jakiś błąd, nie wiem dlaczego ale przydalo by się coś z tym zrobić
 	for i in old_Areas_to_interact:
 		if i not in Areas_to_interact:
 			if i != null and i.has_method("in_area"):
