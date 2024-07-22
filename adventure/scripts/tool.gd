@@ -21,3 +21,8 @@ func _on_area_entered(area : Area2D):
 		var rec : Receiver= area.get_node(receiver)
 		if rec:
 			rec.interacted(self);
+
+
+
+func set_active(state : bool)->void:
+	active = state

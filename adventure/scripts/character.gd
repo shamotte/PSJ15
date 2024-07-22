@@ -1,45 +1,32 @@
 extends CharacterBody2D
 
 
-@export var Comp_interaction : Area2D
-
-@export var speed : int = 100
+@export var base_speed : int = 100
 var current_speed : int
 
-var current_state : String = "normal"
 
-const JUMP_VELOCITY = -400.0
+
+
+
+@onready var state_machine := $PlayerStateMachine
 
 func _ready():
-	$AnimationPlayer.play("idle")
-	current_speed = speed
-
-func _physics_process(delta):
-
-	if current_state == "gathering":
-		gathering()
-	else:	
-		normal()
-
-func change_state(new_state : String):
-	current_state = new_state
-
-func gathering():
-	$AnimationPlayer.play("gathering")
+	for state in state_machine.states.values():
+		state.new_velocity.connect(change_velocity)
 	
-func normal():
-	var vertical := Input.get_axis("left", "right")
-	var horizontal := Input.get_axis("up","down")
-	
-	#if horizontal == 0 and vertical == 0:
-		#if $AnimationPlayer.current_animation != "idle":
-			#$AnimationPlayer.play("idle")
-	#else:
-		#if $AnimationPlayer.current_animation != "move":
-			#$AnimationPlayer.play("move")
-	 
-	velocity = Vector2(vertical,horizontal)*current_speed
-	look_at(get_global_mouse_position())
 
+func _process(delta):
+	if state_machine.curent_state.name != "gather":
+		look_at(get_global_mouse_position())
 	move_and_slide()
+
+func change_velocity(direction : Vector2,speed : float) -> void:
+	velocity = direction * speed * base_speed
+
+
+
+
+	
+
+	
 	

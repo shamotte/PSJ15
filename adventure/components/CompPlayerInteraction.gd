@@ -30,23 +30,29 @@ func _process(delta):
 		if Component.has_method("in_area"):
 			Component.in_area(true)
 	
-func _input(event):
-	if event.is_action_pressed("interact"):
-		Areas = get_overlapping_areas()
-		if len(Areas) > 0:
-			Interacted_component = min_distance(Areas)
-			if Interacted_component.has_method("interacted"):
-				current_state = Interacted_component.interacted(get_parent())
-				get_parent().change_state(current_state)
+#func _input(event):
+	#if event.is_action_pressed("interact"):
+		#Areas = get_overlapping_areas()
+		#if len(Areas) > 0:
+			#Interacted_component = min_distance(Areas)
+			#if Interacted_component.has_method("interacted"):
+				#current_state = Interacted_component.interacted(get_parent())
+				#get_parent().change_state(current_state)
 				#Component.in_area(false)
-		
+
+func interact() -> String:
+	Areas = get_overlapping_areas()
+	if len(Areas) > 0:
+		Interacted_component = min_distance(Areas)
+		if Interacted_component.has_method("interacted"):
+			current_state = Interacted_component.interacted(get_parent())
+			return current_state
+	return "idle"
+	
 func interacted():
 	if Interacted_component != null:
 		current_state = Interacted_component.end_interaction()
-		get_parent().change_state(current_state)
-	else:
-		get_parent().change_state("normal")
-		
+
 func min_distance(area_array : Array[Area2D] ):
 	var min_dist : float = 99999
 	var index : Area2D
