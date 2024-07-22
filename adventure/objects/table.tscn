@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhkju04x5wwm1"]
+
+[ext_resource type="PackedScene" uid="uid://f02hyfsoskxo" path="res://adventure/objects/Decoration/table.tscn" id="1_w0mgn"]
+[ext_resource type="Script" path="res://adventure/scripts/open_table.gd" id="2_jg71a"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/Press E.png" id="3_32qn0"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="4_h5v0j"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_irvtv"]
+
+[sub_resource type="Resource" id="Resource_qh83n"]
+script = ExtResource("5_irvtv")
+object = "OpenTable"
+function_name = "switch"
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_wyhsv"]
+script = ExtResource("5_irvtv")
+object = "OpenTable"
+function_name = "show_tip"
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_kj3ns"]
+script = ExtResource("5_irvtv")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
+
+[node name="Table" type="Node2D"]
+
+[node name="Table" parent="." instance=ExtResource("1_w0mgn")]
+
+[node name="OpenTable" type="Node2D" parent="."]
+script = ExtResource("2_jg71a")
+
+[node name="PressE" type="Sprite2D" parent="OpenTable"]
+visible = false
+position = Vector2(0, -26)
+texture = ExtResource("3_32qn0")
+
+[node name="CompInteractable" parent="." instance=ExtResource("4_h5v0j")]
+interactable_array = Array[ExtResource("5_irvtv")]([SubResource("Resource_qh83n")])
+in_area_array = Array[ExtResource("5_irvtv")]([SubResource("Resource_wyhsv")])
+end_interaction_array = Array[ExtResource("5_irvtv")]([SubResource("Resource_kj3ns")])
