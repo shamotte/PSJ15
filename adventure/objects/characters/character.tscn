@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
 [ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/leather_hand2.png" id="2_1cqtu"]
-[ext_resource type="PackedScene" path="res://adventure/components/comp_health.tscn" id="2_uc7ae"]
-[ext_resource type="PackedScene" path="res://adventure/components/comp_sanity.tscn" id="3_ry7vy"]
+[ext_resource type="PackedScene" uid="uid://ditvd1r1d1ldu" path="res://adventure/components/comp_health.tscn" id="2_uc7ae"]
+[ext_resource type="PackedScene" uid="uid://c1ian0tcm85ij" path="res://adventure/components/comp_sanity.tscn" id="3_ry7vy"]
 [ext_resource type="Texture2D" uid="uid://dyeih6h3xvi14" path="res://adventure/sprites/rizzard2.png" id="3_u1jc7"]
 [ext_resource type="PackedScene" uid="uid://bqu1gwna33sb2" path="res://adventure/components/CompPlayerInteraction.tscn" id="4_17uh0"]
 [ext_resource type="Texture2D" uid="uid://bn0y75m3ddgd1" path="res://adventure/sprites/Leather_hand_axe.png" id="5_yqv2i"]
@@ -329,7 +329,7 @@ texture = SubResource("GradientTexture2D_caqlq")
 libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
-blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"gathering", &"idle", 0.5, &"move", &"gathering", 0.5, &"move", &"move", 0.5, &"move", &"idle", 1.0, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"idle", &"idle", 0.5]
+blend_times = [&"idle", &"idle", 0.5, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"move", &"idle", 1.0, &"move", &"gathering", 0.5, &"move", &"move", 0.5]
 
 [node name="ToolManager" type="Node2D" parent="." node_paths=PackedStringArray("hand")]
 script = ExtResource("8_yvhg5")
