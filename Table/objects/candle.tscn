@@ -81,7 +81,6 @@ func _on_animation_finished(anim_name):
 size = Vector2(61, 115)
 
 [node name="Candle" type="CharacterBody2D"]
-position = Vector2(-265, 104)
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("1_7xw7u")
@@ -115,7 +114,7 @@ grab_area = NodePath("../Area2D")
 [node name="Comp_LightEmitter" parent="." instance=ExtResource("4_vqjrr")]
 position = Vector2(-5, -54)
 light_color = Color(1, 0.772549, 0.317647, 1)
-light_radius = 160
+light_radius = 180
 flicker = 30
 
 [connection signal="animation_finished" from="Fire/AnimationPlayer" to="Fire/AnimationPlayer" method="_on_animation_finished"]
