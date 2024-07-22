@@ -29,7 +29,7 @@ var crafting = {
 		tree.add_child(e),
 		
 	"Candle+FairyCandy": func(components: Array):
-		var pos_avg = average_position(components)
+		var pos_avg = components[1].position
 		var tree = components[0].get_parent()
 		
 		components[1].queue_free()
@@ -40,7 +40,7 @@ var crafting = {
 		tree.add_child(h),
 		
 	"Candle+Mushrooms": func(components: Array):
-		var pos_avg = average_position(components)
+		var pos_avg = components[1].position
 		var tree = components[0].get_parent()
 		
 		components[1].queue_free()
@@ -49,12 +49,28 @@ var crafting = {
 		var b = burnshrooms.instantiate()
 		b.position = pos_avg
 		tree.add_child(b),
+	
+	"EmptyBottle+JadeEye": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		
+		for comp in components:
+			comp.queue_free()
+			
+		var eyebottle = load("res://Table/objects/eye_bottle.tscn")
+		var e = eyebottle.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
 }
 
 func _ready():
 	pass
 
 func _physics_process(delta):
+	
+	# Reset grabbable modulate
+	for g in get_tree().get_nodes_in_group("comp_grabbable"):
+		g.get_parent().modulate = Color.WHITE
 	
 	if mouse_grab:
 		
@@ -63,18 +79,22 @@ func _physics_process(delta):
 		var pos := get_viewport().get_mouse_position() - mouse_grab_offset
 		currently_grabbing.get_parent().set_global_position(round(pos))
 		
+		# Highlingt things in collision
+		var overlap_areas = currently_grabbing.grab_area.get_overlapping_areas()
+		overlap_areas.append(currently_grabbing.grab_area)
+		
+		var overlap = []
+		var overlap_names = []
+		for oa in overlap_areas:
+			overlap.append(oa.get_parent())
+			overlap_names.append(str(oa.get_parent().item_name))
+
+		for o in overlap:
+			o.modulate = Color(1.5, 1.5, 1.5, 1.0)
+		
 		if Input.is_action_just_released("craft_grab"):
 			mouse_grab = false
 			
-			var overlap_areas = currently_grabbing.grab_area.get_overlapping_areas()
-			overlap_areas.append(currently_grabbing.grab_area)
-			
-			var overlap = []
-			var overlap_names = []
-			for oa in overlap_areas:
-				overlap.append(oa.get_parent())
-				overlap_names.append(str(oa.get_parent().item_name))
-
 			overlap.sort_custom(sort_nodes_by_name)
 			overlap_names.sort()
 			

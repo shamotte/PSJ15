@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg3bu75mmymrk"]
+[gd_scene load_steps=11 format=3 uid="uid://cg3bu75mmymrk"]
 
 [ext_resource type="Texture2D" uid="uid://drbv7s7c825ih" path="res://Table/sprites/very_bad_table.png" id="1_ts6cc"]
 [ext_resource type="PackedScene" uid="uid://cccf2rk8g5icj" path="res://Table/objects/mushrooms.tscn" id="2_52143"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c6nlgywib5v6x" path="res://Table/objects/fairy_candy.tscn" id="4_71w76"]
 [ext_resource type="PackedScene" uid="uid://l3u3jexjoacx" path="res://scenes/journal.tscn" id="4_igplr"]
 [ext_resource type="PackedScene" uid="uid://cc85lq3f0eo1c" path="res://Table/objects/candle.tscn" id="6_m1i1r"]
+[ext_resource type="PackedScene" uid="uid://dr3efsxdubdmw" path="res://Table/objects/empty_bottle.tscn" id="7_cvnh4"]
 [ext_resource type="Texture2D" uid="uid://dokxidcxbbbir" path="res://Table/sprites/X.png" id="7_wpw36"]
+[ext_resource type="PackedScene" uid="uid://b16t2im1kguth" path="res://Table/objects/jade_eye.tscn" id="9_81b0x"]
 
 [sub_resource type="GDScript" id="GDScript_3n8am"]
 script/source = "extends TextureButton
@@ -25,28 +27,40 @@ texture = ExtResource("1_ts6cc")
 [node name="MovableObjects" type="Node2D" parent="."]
 
 [node name="Mushrooms" parent="MovableObjects" instance=ExtResource("2_52143")]
+position = Vector2(181, -114)
 
 [node name="Mushrooms2" parent="MovableObjects" instance=ExtResource("2_52143")]
+position = Vector2(141, -133)
 
 [node name="Mushrooms3" parent="MovableObjects" instance=ExtResource("2_52143")]
+position = Vector2(151, -101)
 
 [node name="Mushrooms4" parent="MovableObjects" instance=ExtResource("2_52143")]
+position = Vector2(114, -113)
 
 [node name="Eyes" parent="MovableObjects" instance=ExtResource("3_5eemx")]
+position = Vector2(282, -6)
 
 [node name="Eyes2" parent="MovableObjects" instance=ExtResource("3_5eemx")]
+position = Vector2(251, -34)
 
 [node name="Eyes3" parent="MovableObjects" instance=ExtResource("3_5eemx")]
+position = Vector2(251, -9)
 
 [node name="Eyes4" parent="MovableObjects" instance=ExtResource("3_5eemx")]
+position = Vector2(274, -44)
 
 [node name="FairyCandy" parent="MovableObjects" instance=ExtResource("4_71w76")]
+position = Vector2(184, 93)
 
 [node name="FairyCandy2" parent="MovableObjects" instance=ExtResource("4_71w76")]
+position = Vector2(168, 142)
 
 [node name="FairyCandy3" parent="MovableObjects" instance=ExtResource("4_71w76")]
+position = Vector2(244, 140)
 
 [node name="FairyCandy4" parent="MovableObjects" instance=ExtResource("4_71w76")]
+position = Vector2(232, 77)
 
 [node name="Journal" parent="MovableObjects" instance=ExtResource("4_igplr")]
 offset_left = -273.0
@@ -55,6 +69,9 @@ offset_right = -73.0
 offset_bottom = 140.0
 
 [node name="Candle" parent="MovableObjects" instance=ExtResource("6_m1i1r")]
+position = Vector2(-262, 101)
+
+[node name="EmptyBottle" parent="MovableObjects" instance=ExtResource("7_cvnh4")]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(-339.94, 141)
@@ -77,5 +94,8 @@ texture_hover = ExtResource("7_wpw36")
 texture_disabled = ExtResource("7_wpw36")
 texture_focused = ExtResource("7_wpw36")
 script = SubResource("GDScript_3n8am")
+
+[node name="JadeEye" parent="." instance=ExtResource("9_81b0x")]
+position = Vector2(104, -4)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
