@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b8osndo80rp2f" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
 [ext_resource type="PackedScene" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
 [ext_resource type="PackedScene" uid="uid://venqst8gqqsx" path="res://adventure/objects/Interactable/Gatherable.tscn" id="6_japwo"]
-[ext_resource type="Resource" path="res://both/Ingridients/shroom.tres" id="6_vms6x"]
+[ext_resource type="Resource" uid="uid://bu74f08qvh7k2" path="res://both/Ingridients/shroom.tres" id="6_vms6x"]
 [ext_resource type="Resource" uid="uid://ct76mem0rld0u" path="res://both/Ingridients/spikezalea.tres" id="7_01t23"]
 [ext_resource type="Resource" uid="uid://d20hh5ld28dpf" path="res://both/Ingridients/Fairycandy.tres" id="11_81bix"]
 [ext_resource type="PackedScene" uid="uid://bqila4rgvmh2y" path="res://adventure/objects/Set_of_scenes/writer_and_table.tscn" id="17_6cfga"]
@@ -47,7 +47,7 @@ texture = SubResource("GradientTexture2D_kuyoi")
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_pr2oj")]
 position = Vector2(6.06475, -6.94122)
 
-[node name="latarnia" type="PointLight2D" parent="PlayerCharacter"]
+[node name="lantern" type="PointLight2D" parent="PlayerCharacter"]
 position = Vector2(18.9352, 2.94122)
 blend_mode = 2
 shadow_enabled = true
@@ -168,8 +168,8 @@ position = Vector2(249, -233)
 [node name="Table" parent="." instance=ExtResource("17_kbep6")]
 position = Vector2(51, -69)
 
-[node name="Node2D" parent="." instance=ExtResource("18_n2mjm")]
-position = Vector2(120, 153)
+[node name="fireflies" parent="." instance=ExtResource("18_n2mjm")]
+position = Vector2(115, 107)
 
 [editable path="Decoration/StaticBody2D4"]
 [editable path="Decoration/StaticBody2D4/GPUParticles2D"]
