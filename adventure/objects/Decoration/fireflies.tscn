@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://qaw2hiw5hxt"]
+
+[ext_resource type="Script" path="res://adventure/objects/Decoration/fireflies.gd" id="1_hhh86"]
+[ext_resource type="Texture2D" uid="uid://bttbc8mk6kxac" path="res://adventure/sprites/firefly.png" id="1_kypsm"]
+[ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="2_88yu8"]
+
+[sub_resource type="Curve" id="Curve_rt5bi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.10767, 1), 0.0, 0.0, 0, 0, Vector2(0.876106, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_je77q"]
+curve = SubResource("Curve_rt5bi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x2oo3"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.3
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_je77q")
+
+[sub_resource type="Gradient" id="Gradient_i7ulp"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.62987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m1qut"]
+gradient = SubResource("Gradient_i7ulp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yov51"]
+radius = 14.0
+
+[node name="Node2D" type="Area2D"]
+collision_layer = 5
+script = ExtResource("1_hhh86")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_x2oo3")
+texture = ExtResource("1_kypsm")
+lifetime = 20.0
+preprocess = 20.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 2
+scale = Vector2(0.875, 0.828125)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_m1qut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yov51")
+
+[node name="NetReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
+script = ExtResource("2_88yu8")
+object = NodePath("..")
+function_name = "cought"

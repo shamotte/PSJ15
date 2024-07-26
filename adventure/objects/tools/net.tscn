@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://day4ai0nk3c62"]
+
+[ext_resource type="Script" path="res://adventure/scripts/tool.gd" id="1_isyal"]
+[ext_resource type="Texture2D" uid="uid://budoldkaq1y8k" path="res://adventure/sprites/net.png" id="2_jgyht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaj3d"]
+size = Vector2(13, 14)
+
+[node name="net" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_isyal")
+ui_name = "net"
+receiver = "NetReceiver"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 2)
+shape = SubResource("RectangleShape2D_aaj3d")
+
+[node name="Net" type="Sprite2D" parent="."]
+position = Vector2(14, 3)
+texture = ExtResource("2_jgyht")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

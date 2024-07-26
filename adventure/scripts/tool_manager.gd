@@ -7,6 +7,7 @@ class_name ToolManager
 
 @export var axe: PackedScene
 @export var pick : PackedScene
+@export var net : PackedScene
 
 
 var currnet_tool : Node2D
@@ -19,6 +20,7 @@ func _ready():
 	tools.resize(5)
 	tools[0] = axe.instantiate()
 	tools[1] = pick.instantiate()
+	tools[2] = net.instantiate()
 
 
 func _process(delta):

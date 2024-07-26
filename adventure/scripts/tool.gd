@@ -6,22 +6,23 @@ class_name tool
 
 
 var active : bool = true
-
+var player : Node2D
 
 func _on_body_entered(area):
-	print("enterd")
 	if active: 
 		var rec : Receiver= area.get_node(receiver)
 		if rec:
 			rec.interacted(self);
 			
 func _on_area_entered(area : Area2D):
-	print("enterd")
 	if active: 
 		var rec : Receiver= area.get_node(receiver)
 		if rec:
 			rec.interacted(self);
 
+
+func get_player() -> Node2D:
+	return player
 
 
 func set_active(state : bool)->void:
