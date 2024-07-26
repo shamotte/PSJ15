@@ -21,7 +21,13 @@ func gather():
 	in_interaction = true
 	
 func end_gathering():
-	#TODO Miejsce na dodanie zasobów
+	
+	var table_item = get_parent().type.table_item
+	if table_item != null:
+		var t = table_item.instantiate()
+		t.position = Vector2(randf_range(-200, 200), randf_range(-200,200))
+		get_tree().get_root().get_node("world_manager").crafting.add_child(t)
+	
 	if destroy_object:
 		anim.play("disappear")
 	else:

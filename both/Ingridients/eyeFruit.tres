@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Ingridient" load_steps=3 format=3 uid="uid://ryed3fkkbjrd"]
+[gd_resource type="Resource" script_class="Ingridient" load_steps=4 format=3 uid="uid://ryed3fkkbjrd"]
 
 [ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_guhlf"]
 [ext_resource type="Texture2D" uid="uid://meqtbqhj6mgk" path="res://adventure/sprites/eye_fruit2.png" id="1_y1epq"]
+[ext_resource type="PackedScene" uid="uid://b7wy81pqksj1x" path="res://Table/objects/eyes.tscn" id="3_q3rau"]
 
 [resource]
 script = ExtResource("1_guhlf")
 name = "EyeFruit"
 adventure_sprite = ExtResource("1_y1epq")
+table_item = ExtResource("3_q3rau")
