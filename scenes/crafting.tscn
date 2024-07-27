@@ -1,14 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg3bu75mmymrk"]
+[gd_scene load_steps=19 format=3 uid="uid://cg3bu75mmymrk"]
 
 [ext_resource type="Texture2D" uid="uid://drbv7s7c825ih" path="res://Table/sprites/very_bad_table.png" id="1_ts6cc"]
 [ext_resource type="PackedScene" uid="uid://cccf2rk8g5icj" path="res://Table/objects/mushrooms.tscn" id="2_52143"]
 [ext_resource type="PackedScene" uid="uid://b7wy81pqksj1x" path="res://Table/objects/eyes.tscn" id="3_5eemx"]
 [ext_resource type="PackedScene" uid="uid://c6nlgywib5v6x" path="res://Table/objects/fairy_candy.tscn" id="4_71w76"]
 [ext_resource type="PackedScene" uid="uid://l3u3jexjoacx" path="res://scenes/journal.tscn" id="4_igplr"]
+[ext_resource type="PackedScene" uid="uid://duku2ap5bbbnd" path="res://Table/objects/suspicious_note.tscn" id="5_xhkk2"]
 [ext_resource type="PackedScene" uid="uid://cc85lq3f0eo1c" path="res://Table/objects/candle.tscn" id="6_m1i1r"]
 [ext_resource type="PackedScene" uid="uid://dr3efsxdubdmw" path="res://Table/objects/empty_bottle.tscn" id="7_cvnh4"]
 [ext_resource type="Texture2D" uid="uid://dokxidcxbbbir" path="res://Table/sprites/X.png" id="7_wpw36"]
 [ext_resource type="PackedScene" uid="uid://b16t2im1kguth" path="res://Table/objects/jade_eye.tscn" id="9_81b0x"]
+[ext_resource type="PackedScene" uid="uid://dliofjwfma8xq" path="res://Table/objects/heart_rose.tscn" id="10_eoame"]
+[ext_resource type="PackedScene" uid="uid://ciomo18652ip5" path="res://Table/objects/spikezalea.tscn" id="11_ktyq6"]
+[ext_resource type="PackedScene" uid="uid://d1oh1s71phgcb" path="res://Table/objects/twig.tscn" id="13_8eqc2"]
+[ext_resource type="PackedScene" uid="uid://q73j0dg6kqv1" path="res://Table/objects/shoutrake.tscn" id="14_65mwv"]
+[ext_resource type="PackedScene" uid="uid://wh02ggte4dbc" path="res://Table/objects/mortar.tscn" id="15_cr6wp"]
+[ext_resource type="PackedScene" uid="uid://ccs0pb57q5n2a" path="res://Table/objects/knife.tscn" id="15_wojyl"]
+[ext_resource type="PackedScene" uid="uid://drk6n2cvvvo63" path="res://Table/objects/eyeple.tscn" id="16_mme3x"]
 
 [sub_resource type="GDScript" id="GDScript_3n8am"]
 script/source = "extends TextureButton
@@ -62,6 +70,9 @@ position = Vector2(244, 140)
 [node name="FairyCandy4" parent="MovableObjects" instance=ExtResource("4_71w76")]
 position = Vector2(232, 77)
 
+[node name="SuspiciousNote" parent="MovableObjects" instance=ExtResource("5_xhkk2")]
+position = Vector2(-182, 71)
+
 [node name="Journal" parent="MovableObjects" instance=ExtResource("4_igplr")]
 offset_left = -273.0
 offset_top = -90.0
@@ -72,8 +83,49 @@ offset_bottom = 140.0
 position = Vector2(-262, 101)
 
 [node name="EmptyBottle" parent="MovableObjects" instance=ExtResource("7_cvnh4")]
+position = Vector2(-76, -127)
+
+[node name="JadeEye" parent="MovableObjects" instance=ExtResource("9_81b0x")]
+position = Vector2(42, -126)
+
+[node name="Spikezalea" parent="MovableObjects" instance=ExtResource("10_eoame")]
+position = Vector2(64, 107)
+
+[node name="Spikezalea2" parent="MovableObjects" instance=ExtResource("11_ktyq6")]
+position = Vector2(161, -43)
+
+[node name="Spikezalea3" parent="MovableObjects" instance=ExtResource("11_ktyq6")]
+position = Vector2(178, -13)
+
+[node name="Twig" parent="MovableObjects" instance=ExtResource("13_8eqc2")]
+position = Vector2(-26, 137)
+
+[node name="Twig2" parent="MovableObjects" instance=ExtResource("13_8eqc2")]
+position = Vector2(-81, 143)
+
+[node name="Spikezalea4" parent="MovableObjects" instance=ExtResource("11_ktyq6")]
+position = Vector2(133, 1)
+
+[node name="Shoutrake" parent="MovableObjects" instance=ExtResource("14_65mwv")]
+position = Vector2(109, 67)
+
+[node name="Knife" parent="MovableObjects" instance=ExtResource("15_wojyl")]
+position = Vector2(-71, 30)
+
+[node name="Mortar" parent="MovableObjects" instance=ExtResource("15_cr6wp")]
+position = Vector2(-244, -105)
+
+[node name="Eyeple" parent="MovableObjects" instance=ExtResource("16_mme3x")]
+position = Vector2(247, -102)
+
+[node name="Eyeple2" parent="MovableObjects" instance=ExtResource("16_mme3x")]
+position = Vector2(218, 18)
+
+[node name="Eyeple3" parent="MovableObjects" instance=ExtResource("16_mme3x")]
+position = Vector2(112, -64)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 position = Vector2(-339.94, 141)
 blend_mode = 1
 
@@ -94,8 +146,5 @@ texture_hover = ExtResource("7_wpw36")
 texture_disabled = ExtResource("7_wpw36")
 texture_focused = ExtResource("7_wpw36")
 script = SubResource("GDScript_3n8am")
-
-[node name="JadeEye" parent="." instance=ExtResource("9_81b0x")]
-position = Vector2(104, -4)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc85lq3f0eo1c"]
+[gd_scene load_steps=12 format=3 uid="uid://cc85lq3f0eo1c"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_7xw7u"]
 [ext_resource type="Texture2D" uid="uid://clee74vumjxjd" path="res://Table/sprites/candle.png" id="1_pbenh"]
@@ -77,6 +77,9 @@ func _on_animation_finished(anim_name):
 	play(\"fire\")
 "
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxmpl"]
+radius = 15.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fhnk"]
 size = Vector2(61, 115)
 
@@ -93,12 +96,25 @@ texture = ExtResource("1_pbenh")
 modulate = Color(1, 1, 1, 0.74902)
 position = Vector2(-5, -60)
 texture = ExtResource("2_7ia43")
+script = ExtResource("1_7xw7u")
+item_name = "Fire"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fire"]
 libraries = {
 "": SubResource("AnimationLibrary_korgc")
 }
 script = SubResource("GDScript_7dynl")
+
+[node name="Area2D" type="Area2D" parent="Fire"]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire/Area2D"]
+shape = SubResource("CircleShape2D_fxmpl")
+
+[node name="Comp_Grabbable" parent="Fire" node_paths=PackedStringArray("grab_area") instance=ExtResource("3_5oqgd")]
+grab_area = NodePath("../Area2D")
+can_grab = false
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2147483648
@@ -110,6 +126,7 @@ shape = SubResource("RectangleShape2D_0fhnk")
 
 [node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("3_5oqgd")]
 grab_area = NodePath("../Area2D")
+can_craft = false
 
 [node name="Comp_LightEmitter" parent="." instance=ExtResource("4_vqjrr")]
 position = Vector2(-5, -54)

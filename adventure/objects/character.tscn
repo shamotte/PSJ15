@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://i4qr0l0m2fpi"]
+[gd_scene load_steps=13 format=3 uid="uid://wtylyqncgj6c"]
 
 [ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
 [ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/leather_hand2.png" id="2_1cqtu"]
@@ -114,7 +114,7 @@ _data = {
 "move": SubResource("Animation_b8gik")
 }
 
-[node name="Wizard" type="CharacterBody2D"]
+[node name="Wizard" type="CharacterBody2D" groups=["wizard"]]
 motion_mode = 1
 script = ExtResource("1_0ax45")
 
@@ -153,6 +153,6 @@ texture = SubResource("GradientTexture2D_caqlq")
 libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
-blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"gathering", &"idle", 0.5, &"move", &"gathering", 0.5, &"move", &"move", 0.5, &"move", &"idle", 1.0, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"idle", &"idle", 0.5]
+blend_times = [&"move", &"move", 0.5, &"move", &"gathering", 0.5, &"move", &"idle", 1.0, &"gathering", &"move", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"idle", 0.5, &"idle", &"move", 0.5, &"idle", &"gathering", 0.5, &"idle", &"idle", 0.5]
 
 [node name="Node2D" type="Node2D" parent="."]
