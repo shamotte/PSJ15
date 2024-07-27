@@ -26,3 +26,4 @@ shape = SubResource("CircleShape2D_ohfo3")
 
 [node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("3_y4qfx")]
 grab_area = NodePath("../Area2D")
+can_craft = false

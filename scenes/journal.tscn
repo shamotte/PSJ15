@@ -306,6 +306,7 @@ text = "Recipes"
 [node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("4_10n5s")]
 position = Vector2(22.56, 44.5)
 grab_area = NodePath("../Area2D")
+can_craft = false
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2147483648

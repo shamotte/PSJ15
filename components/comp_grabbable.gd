@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var grab_area: Node
+@export var can_grab: bool = true
+@export var can_craft: bool = true
 
 var mouse_hovering: bool = false
 

@@ -16,6 +16,47 @@ func sort_nodes_by_name(a: Node, b: Node):
 	return str(a.get_name()) < str(b.get_name())
 
 var crafting = {
+	"CutMushrooms+EyepleSlices": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+			
+		var scene = load("res://Table/objects/sauce.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+	
+	"Eyeple+Knife": func(components: Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		components[0].queue_free()
+			
+		var scene = load("res://Table/objects/eyeple_slices.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+	
+	"Knife+Mushrooms": func(components: Array):
+		var pos_avg = components[1].position
+		var tree = components[1].get_parent()
+		components[1].queue_free()
+			
+		var scene = load("res://Table/objects/cut_mushrooms.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+	
+	"Eyes+Mortar": func(components: Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		components[0].queue_free()
+			
+		var scene = load("res://Table/objects/eye_jelly.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+	
 	"Eyes+Mushrooms": func(components: Array):
 		var pos_avg = average_position(components)
 		var tree = components[0].get_parent()
@@ -28,22 +69,21 @@ var crafting = {
 		e.position = pos_avg
 		tree.add_child(e),
 		
-	"Candle+FairyCandy": func(components: Array):
-		var pos_avg = components[1].position
+	"FairyCandy+Fire": func(components: Array):
+		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
-		
-		components[1].queue_free()
+		components[0].queue_free()
 		
 		var hell_candy = load("res://Table/objects/hell_candy.tscn")
 		var h = hell_candy.instantiate()
 		h.position = pos_avg
 		tree.add_child(h),
 		
-	"Candle+Mushrooms": func(components: Array):
-		var pos_avg = components[1].position
+	"Mushrooms+Fire": func(components: Array):
+		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
 		
-		components[1].queue_free()
+		components[0].queue_free()
 		
 		var burnshrooms = load("res://Table/objects/burnshrooms.tscn")
 		var b = burnshrooms.instantiate()
@@ -81,13 +121,18 @@ func _physics_process(delta):
 		
 		# Highlingt things in collision
 		var overlap_areas = currently_grabbing.grab_area.get_overlapping_areas()
-		overlap_areas.append(currently_grabbing.grab_area)
+		#print(overlap_areas)
 		
 		var overlap = []
 		var overlap_names = []
-		for oa in overlap_areas:
-			overlap.append(oa.get_parent())
-			overlap_names.append(str(oa.get_parent().item_name))
+		
+		if currently_grabbing.get_parent().get_node("Comp_Grabbable").can_craft:
+			overlap_areas.append(currently_grabbing.grab_area)
+			
+			for oa in overlap_areas:
+				if oa.get_parent().get_node("Comp_Grabbable").can_craft:
+					overlap.append(oa.get_parent())
+					overlap_names.append(str(oa.get_parent().item_name))
 
 		for o in overlap:
 			o.modulate = Color(1.5, 1.5, 1.5, 1.0)
@@ -116,7 +161,7 @@ func _physics_process(delta):
 				
 				Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 				
-				if Input.is_action_just_pressed("craft_grab"):
+				if Input.is_action_just_pressed("craft_grab") and grabbable.can_grab:
 					mouse_grab = true
 					currently_grabbing = grabbable
 					mouse_grab_offset = get_viewport().get_mouse_position() - currently_grabbing.grab_area.get_global_position()
