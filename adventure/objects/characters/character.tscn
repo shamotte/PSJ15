@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dulcf8h1hbabn"]
+[gd_scene load_steps=34 format=3 uid="uid://dulcf8h1hbabn"]
 
 [ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
 [ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/leather_hand2.png" id="2_1cqtu"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/gather.gd" id="14_748to"]
 [ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/swing.gd" id="15_8sypp"]
 [ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/change_item.gd" id="16_rml2b"]
+[ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/charge_throw.gd" id="18_wfdbu"]
+[ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/throw.gd" id="19_e2crj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
 radius = 8.0
@@ -52,26 +54,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LeftHand:position")
+tracks/1/path = NodePath("RightHand:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, -8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RightHand:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 4.43828),
 "update": 0,
 "values": [1.5708, 1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, -8)]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -106,14 +108,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LeftHand:position")
+tracks/1/path = NodePath("RightHand:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5),
+"transitions": PackedFloat32Array(1, 4.59479, 3.13834, 6.06286, 2, 4.5948, 1.62451, 6.06286, 2),
 "update": 0,
-"values": [Vector2(16, -8)]
+"values": [1.5708, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -124,20 +126,20 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1, 8),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [ExtResource("2_1cqtu"), ExtResource("5_yqv2i"), ExtResource("2_1cqtu")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RightHand:rotation")
+tracks/3/path = NodePath("LeftHand:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5),
-"transitions": PackedFloat32Array(1, 4.59479, 3.13834, 6.06286, 2, 4.5948, 1.62451, 6.06286, 2),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.5708, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0, 1.5708, 0.0]
+"values": [Vector2(16, -8)]
 }
 
 [sub_resource type="Animation" id="Animation_j2khf"]
@@ -257,26 +259,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LeftHand:position")
+tracks/1/path = NodePath("RightHand:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(16, -8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("RightHand:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5),
 "transitions": PackedFloat32Array(1, 4.59479, 3.13834, 6.06286),
 "update": 0,
 "values": [1.5708, 1.5708, 0.0, 1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, -8)]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -296,14 +298,100 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_5fgsx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_alkxg"]
+resource_name = "charge_throw"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.5708, 2.32827, 3.14159]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(17, 7), Vector2(9, 16), Vector2(3, 19)]
+}
+
+[sub_resource type="Animation" id="Animation_lkpss"]
+resource_name = "throw"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 18), Vector2(22, 11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.85021, 1.77024]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s8jga"]
 _data = {
+"RESET": SubResource("Animation_5fgsx"),
 "Take_item": SubResource("Animation_xlr86"),
+"charge_throw": SubResource("Animation_alkxg"),
 "choping": SubResource("Animation_2fpro"),
 "gathering": SubResource("Animation_j2khf"),
 "idle": SubResource("Animation_kuk7j"),
 "move": SubResource("Animation_b8gik"),
-"swing": SubResource("Animation_w6516")
+"swing": SubResource("Animation_w6516"),
+"throw": SubResource("Animation_lkpss")
 }
 
 [node name="Wizard" type="CharacterBody2D"]
@@ -322,7 +410,7 @@ max_hp = 4
 shape = SubResource("CircleShape2D_gx2d2")
 
 [node name="RightHand" type="Sprite2D" parent="."]
-position = Vector2(16, 8)
+position = Vector2(17, 7)
 rotation = 1.5708
 texture = ExtResource("2_1cqtu")
 
@@ -352,7 +440,7 @@ texture = SubResource("GradientTexture2D_caqlq")
 libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
-blend_times = [&"move", &"move", 0.5, &"move", &"gathering", 0.5, &"move", &"idle", 1.0, &"gathering", &"move", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"idle", 0.5, &"idle", &"move", 0.5, &"idle", &"gathering", 0.5, &"idle", &"idle", 0.5]
+blend_times = [&"idle", &"idle", 0.5, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"move", &"idle", 1.0, &"move", &"gathering", 0.5, &"move", &"move", 0.5]
 
 [node name="ToolManager" type="Node2D" parent="." node_paths=PackedStringArray("hand")]
 script = ExtResource("8_yvhg5")
@@ -361,7 +449,7 @@ axe = ExtResource("9_5bi5l")
 pick = ExtResource("10_mdbs7")
 net = ExtResource("11_klu1s")
 
-[node name="PlayerStateMachine" type="Node" parent="."]
+[node name="PlayerStateMachine" type="Node2D" parent="."]
 script = ExtResource("11_vvgyi")
 
 [node name="idle" type="Node" parent="PlayerStateMachine"]
@@ -378,3 +466,9 @@ script = ExtResource("15_8sypp")
 
 [node name="change_item" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("16_rml2b")
+
+[node name="charge_throw" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("18_wfdbu")
+
+[node name="throw" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("19_e2crj")

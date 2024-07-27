@@ -20,9 +20,8 @@ func _process(delta):
 		look_at(get_global_mouse_position())
 	move_and_slide()
 
-func change_velocity(direction : Vector2,speed : float) -> void:
-	velocity = direction * speed * base_speed
-
+func change_velocity(direction : Vector2,speed_factor : float) -> void:
+	velocity = direction * speed_factor * base_speed
 
 
 

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2crbh04dmg5d" path="res://adventure/scenes/world.tscn" id="1_ms1ah"]
 [ext_resource type="PackedScene" uid="uid://cg3bu75mmymrk" path="res://scenes/crafting.tscn" id="3_s8y3n"]
 
-[node name="world_manager" type="Node2D"]
+[node name="WorldManager" type="Node2D"]
 script = ExtResource("1_jfe4o")
 
 [node name="World" parent="." instance=ExtResource("1_ms1ah")]

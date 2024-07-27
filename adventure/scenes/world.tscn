@@ -171,5 +171,7 @@ position = Vector2(51, -69)
 [node name="fireflies" parent="." instance=ExtResource("18_n2mjm")]
 position = Vector2(115, 107)
 
+[node name="ProjectileManager" type="Node2D" parent="."]
+
 [editable path="Decoration/StaticBody2D4"]
 [editable path="Decoration/StaticBody2D4/GPUParticles2D"]

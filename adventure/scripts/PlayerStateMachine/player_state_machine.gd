@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 @onready var curent_state  :PlayerBehaviourState= $idle as PlayerBehaviourState
@@ -8,7 +8,9 @@ var input : InputObject
 	"walk" :$walk,
 	"gather":$gather,
 	"swing":$swing,
-	"change_item":$change_item
+	"change_item":$change_item,
+	"charge_throw" : $charge_throw,
+	"throw": $throw
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -42,6 +44,8 @@ func gather_input() -> InputObject:
 	input.direction = Vector2(Input.get_axis("left", "right"),Input.get_axis("up","down"))
 	input.action = Input.is_action_pressed("adventure_use_item")
 	input.interact = Input.is_action_just_released("interact")
+	input.fwd = global_transform.x
+	
 	
 	if Input.is_action_pressed("one"):
 		input.new_item_slot = 0

@@ -8,3 +8,6 @@ func chop(context : Area2D):
 	hp-=1
 	if hp<=0:
 		queue_free()
+		
+func start_fire(context : Node2D):
+	print("burning")
