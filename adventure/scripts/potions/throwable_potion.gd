@@ -20,7 +20,6 @@ func throw(dir : Vector2):
 func _process(delta):
 	position += direction * delta * speed
 	if flying:
-		print(duration)
 		duration -= delta
 		if duration<0 :
 			shatter()

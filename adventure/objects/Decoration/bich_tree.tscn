@@ -80,5 +80,6 @@ function_name = "chop"
 script = ExtResource("2_gag3d")
 object = NodePath("..")
 function_name = "start_fire"
+
 [connection signal="body_entered" from="Leaves/HideArea" to="Leaves" method="_on_hide_area_body_entered"]
 [connection signal="body_exited" from="Leaves/HideArea" to="Leaves" method="_on_hide_area_body_exited"]
