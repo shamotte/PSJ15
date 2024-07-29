@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drlre5aevcfro"
-path="res://.godot/imported/Rock1.png-129e1ae5a0c0346b3383506db4319d91.ctex"
+uid="uid://cepca3cd0fug5"
+path="res://.godot/imported/candle_small.png-953ae9b82cb0ba01decfc24a01e9d620.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://adventure/sprites/decorations/Rock1.png"
-dest_files=["res://.godot/imported/Rock1.png-129e1ae5a0c0346b3383506db4319d91.ctex"]
+source_file="res://adventure/sprites/decorations/candle_small.png"
+dest_files=["res://.godot/imported/candle_small.png-953ae9b82cb0ba01decfc24a01e9d620.ctex"]
 
 [params]
 

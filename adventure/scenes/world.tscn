@@ -1,7 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=29 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
-[ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/characters/friend.tscn" id="2_476r1"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
 [ext_resource type="PackedScene" uid="uid://mtfyfu7tyd8a" path="res://adventure/interface/DialogManager.tscn" id="4_q0cwu"]
 [ext_resource type="Texture2D" uid="uid://buyl5jk1d453g" path="res://adventure/sprites/UI/wizard.png" id="5_3wsd2"]
@@ -14,11 +13,17 @@
 [ext_resource type="Resource" uid="uid://ct76mem0rld0u" path="res://both/Ingridients/spikezalea.tres" id="7_01t23"]
 [ext_resource type="Resource" uid="uid://d20hh5ld28dpf" path="res://both/Ingridients/Fairycandy.tres" id="11_81bix"]
 [ext_resource type="PackedScene" uid="uid://bqila4rgvmh2y" path="res://adventure/objects/Set_of_scenes/writer_and_table.tscn" id="17_6cfga"]
-[ext_resource type="PackedScene" uid="uid://bhkju04x5wwm1" path="res://adventure/objects/table.tscn" id="17_kbep6"]
+[ext_resource type="PackedScene" uid="uid://bhkju04x5wwm1" path="res://adventure/objects/Interactable/table.tscn" id="17_kbep6"]
 [ext_resource type="PackedScene" uid="uid://qaw2hiw5hxt" path="res://adventure/objects/Decoration/fireflies.tscn" id="18_n2mjm"]
-[ext_resource type="PackedScene" uid="uid://dsg1moaauq3xd" path="res://adventure/objects/Decoration/Rock1.tscn" id="18_xdrsl"]
+[ext_resource type="PackedScene" uid="uid://dsg1moaauq3xd" path="res://adventure/objects/Interactable/Rock1.tscn" id="18_xdrsl"]
 [ext_resource type="PackedScene" uid="uid://kun77gl1w0en" path="res://adventure/objects/Set_of_scenes/Trader_shop.tscn" id="19_6q5ja"]
-[ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Decoration/Rock2.tscn" id="19_4156c"]
+[ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Interactable/Rock2.tscn" id="19_4156c"]
+[ext_resource type="PackedScene" uid="uid://54uub5ildwl" path="res://adventure/objects/Interactable/Note1.tscn" id="20_flw2p"]
+[ext_resource type="PackedScene" uid="uid://d215mvtpk43t6" path="res://adventure/objects/Interactable/Note2.tscn" id="21_v82u7"]
+[ext_resource type="PackedScene" uid="uid://met16om6bggm" path="res://adventure/objects/Interactable/Note3.tscn" id="22_kx4jw"]
+[ext_resource type="PackedScene" uid="uid://dx1ux6mwoyljc" path="res://adventure/objects/Interactable/Note4.tscn" id="23_0a6vq"]
+[ext_resource type="PackedScene" uid="uid://beks6f1e2apid" path="res://adventure/objects/Interactable/Note5.tscn" id="24_fkouu"]
+[ext_resource type="PackedScene" uid="uid://by5tjtavts5oi" path="res://adventure/objects/Set_of_scenes/Camp.tscn" id="25_wgk3j"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 offsets = PackedFloat32Array(1)
@@ -42,6 +47,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="World" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 34)
 scale = Vector2(100, 100)
 texture = SubResource("GradientTexture2D_kuyoi")
 
@@ -57,6 +63,12 @@ texture = SubResource("GradientTexture2D_0fphx")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 
+[node name="Locations" type="Node2D" parent="."]
+
+[node name="Camp" parent="Locations" node_paths=PackedStringArray("player") instance=ExtResource("25_wgk3j")]
+position = Vector2(-594, -103)
+player = NodePath("../../PlayerCharacter")
+
 [node name="Decoration" type="Node2D" parent="."]
 
 [node name="StaticBody2D" parent="Decoration" instance=ExtResource("2_wwnik")]
@@ -71,11 +83,22 @@ position = Vector2(-68, 73)
 [node name="StaticBody2D4" parent="Decoration" instance=ExtResource("2_wwnik")]
 position = Vector2(178, -74)
 
-[node name="NPC" type="Node2D" parent="."]
+[node name="Note" parent="Decoration" instance=ExtResource("20_flw2p")]
+position = Vector2(-435, 184)
 
-[node name="Friend" parent="NPC" instance=ExtResource("2_476r1")]
-position = Vector2(44, -162)
-rotation = -0.785398
+[node name="Note2" parent="Decoration" instance=ExtResource("21_v82u7")]
+position = Vector2(-373, 186)
+
+[node name="Note3" parent="Decoration" instance=ExtResource("22_kx4jw")]
+position = Vector2(-307, 191)
+
+[node name="Note4" parent="Decoration" instance=ExtResource("23_0a6vq")]
+position = Vector2(-247, 192)
+
+[node name="Note5" parent="Decoration" instance=ExtResource("24_fkouu")]
+position = Vector2(-190, 193)
+
+[node name="NPC" type="Node2D" parent="."]
 
 [node name="Gatharable" type="Node2D" parent="."]
 
@@ -94,6 +117,12 @@ type = ExtResource("6_vms6x")
 [node name="Flower4" parent="Gatharable" instance=ExtResource("6_japwo")]
 position = Vector2(-100, -166)
 type = ExtResource("7_01t23")
+
+[node name="Rock1" parent="Gatharable" instance=ExtResource("18_xdrsl")]
+position = Vector2(385, -85)
+
+[node name="Rock2" parent="Gatharable" instance=ExtResource("19_4156c")]
+position = Vector2(531, -58)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
@@ -161,9 +190,3 @@ position = Vector2(51, -69)
 position = Vector2(115, 107)
 
 [node name="ProjectileManager" type="Node2D" parent="."]
-
-[node name="Rock1" parent="." instance=ExtResource("18_xdrsl")]
-position = Vector2(385, -85)
-
-[node name="Rock2" parent="." instance=ExtResource("19_4156c")]
-position = Vector2(531, -58)

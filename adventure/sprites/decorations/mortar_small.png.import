@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnulnfjkyxrus"
-path="res://.godot/imported/broken_rock2.png-3aa158c704622107d57f48a6fa7607ce.ctex"
+uid="uid://6mlyq6gfiwin"
+path="res://.godot/imported/mortar_small.png-357080f2517075ad19674d1ff86d3c81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://adventure/sprites/decorations/broken_rock2.png"
-dest_files=["res://.godot/imported/broken_rock2.png-3aa158c704622107d57f48a6fa7607ce.ctex"]
+source_file="res://adventure/sprites/decorations/mortar_small.png"
+dest_files=["res://.godot/imported/mortar_small.png-357080f2517075ad19674d1ff86d3c81.ctex"]
 
 [params]
 

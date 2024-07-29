@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d08m1scs4q1b"]
+
+[ext_resource type="Texture2D" uid="uid://d0pe16twj32mt" path="res://adventure/sprites/decorations/rock4.png" id="1_iqowv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtedx"]
+radius = 29.0
+height = 58.0
+
+[node name="Rock4" type="StaticBody2D"]
+
+[node name="object" type="Sprite2D" parent="."]
+texture = ExtResource("1_iqowv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1)
+shape = SubResource("CapsuleShape2D_wtedx")
