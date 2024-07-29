@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bhkju04x5wwm1" path="res://adventure/objects/Interactable/table.tscn" id="2_d6q6o"]
 [ext_resource type="PackedScene" uid="uid://co8e2pu8pfmsv" path="res://adventure/objects/Decoration/Candle.tscn" id="2_ss3ab"]
 [ext_resource type="Texture2D" uid="uid://6mlyq6gfiwin" path="res://adventure/sprites/decorations/mortar_small.png" id="3_5a4st"]
-[ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/characters/friend.tscn" id="3_7b7oi"]
+[ext_resource type="PackedScene" uid="uid://sbkwqqkhpy5j" path="res://adventure/objects/characters/friend.tscn" id="3_7b7oi"]
 [ext_resource type="PackedScene" uid="uid://54uub5ildwl" path="res://adventure/objects/Interactable/Note1.tscn" id="4_s80uc"]
 [ext_resource type="Texture2D" uid="uid://d16l7qo260nva" path="res://adventure/sprites/decorations/journal_small.png" id="4_wppyw"]
 [ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="5_07p6h"]
@@ -100,12 +100,12 @@ scale = Vector2(1.1, 1.1)
 position = Vector2(-92, 44)
 rotation = -0.671952
 
+[node name="Friend" parent="Rocks" instance=ExtResource("3_7b7oi")]
+position = Vector2(-14, 100)
+rotation = 0.0
+
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Rocks"]
 occluder = SubResource("OccluderPolygon2D_cgul4")
-
-[node name="Friend" parent="." instance=ExtResource("3_7b7oi")]
-position = Vector2(-15, 99)
-rotation = 0.0
 
 [node name="Campfire" parent="." instance=ExtResource("10_fnq0q")]
 position = Vector2(91, 142)

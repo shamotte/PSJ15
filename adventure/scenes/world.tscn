@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=30 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://met16om6bggm" path="res://adventure/objects/Interactable/Note3.tscn" id="22_kx4jw"]
 [ext_resource type="PackedScene" uid="uid://dx1ux6mwoyljc" path="res://adventure/objects/Interactable/Note4.tscn" id="23_0a6vq"]
 [ext_resource type="PackedScene" uid="uid://beks6f1e2apid" path="res://adventure/objects/Interactable/Note5.tscn" id="24_fkouu"]
+[ext_resource type="PackedScene" uid="uid://bhxi5pro2f7lw" path="res://adventure/objects/Set_of_scenes/MF_cargo.tscn" id="25_3mi03"]
 [ext_resource type="PackedScene" uid="uid://by5tjtavts5oi" path="res://adventure/objects/Set_of_scenes/Camp.tscn" id="25_wgk3j"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
@@ -190,3 +191,6 @@ position = Vector2(51, -69)
 position = Vector2(115, 107)
 
 [node name="ProjectileManager" type="Node2D" parent="."]
+
+[node name="MfCargo" parent="." instance=ExtResource("25_3mi03")]
+position = Vector2(-57, -316)
