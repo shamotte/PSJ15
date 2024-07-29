@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://duqm3jnr4sru"]
 
-[ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/shadow_knight_hand1.png" id="1_u80f3"]
-[ext_resource type="Texture2D" uid="uid://d2kqq844ppryr" path="res://adventure/sprites/shadow_knight_hand2.png" id="2_cr5bc"]
-[ext_resource type="Texture2D" uid="uid://bdi2kh3yr688v" path="res://adventure/sprites/shadow_knight.png" id="3_w3l2n"]
+[ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/characters/hands/shadow_knight_hand1.png" id="1_u80f3"]
+[ext_resource type="Texture2D" uid="uid://d2kqq844ppryr" path="res://adventure/sprites/characters/hands/shadow_knight_hand2.png" id="2_cr5bc"]
+[ext_resource type="Texture2D" uid="uid://bdi2kh3yr688v" path="res://adventure/sprites/characters/bodies/shadow_knight.png" id="3_w3l2n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2fxcn"]
 

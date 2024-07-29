@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhrjxnkuxh8gf"]
 
-[ext_resource type="Texture2D" uid="uid://c700a8k37couu" path="res://adventure/sprites/spider.png" id="1_e66fi"]
-[ext_resource type="Texture2D" uid="uid://bgngk2hslb8l" path="res://adventure/sprites/spider_leg.png" id="1_r7xs1"]
+[ext_resource type="Texture2D" uid="uid://c700a8k37couu" path="res://adventure/sprites/characters/bodies/spider.png" id="1_e66fi"]
+[ext_resource type="Texture2D" uid="uid://bgngk2hslb8l" path="res://adventure/sprites/characters/hands/spider_leg.png" id="1_r7xs1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pb266"]
 radius = 14.0

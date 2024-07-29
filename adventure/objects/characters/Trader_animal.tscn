@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://cxpsocagneje3"]
 
-[ext_resource type="Texture2D" uid="uid://cxdmppb4l2at2" path="res://adventure/sprites/trader_animal2.png" id="1_7louo"]
-[ext_resource type="Texture2D" uid="uid://buslscd2h3rnq" path="res://adventure/sprites/trader_animal1.png" id="1_ltrxp"]
+[ext_resource type="Texture2D" uid="uid://cxdmppb4l2at2" path="res://adventure/sprites/characters/bodies/trader_animal2.png" id="1_7louo"]
+[ext_resource type="Texture2D" uid="uid://buslscd2h3rnq" path="res://adventure/sprites/characters/bodies/trader_animal1.png" id="1_ltrxp"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_m131h"]
 [ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="3_h6wri"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="3_j76vd"]
-[ext_resource type="Texture2D" uid="uid://cpeenmjrj0l8u" path="res://adventure/sprites/trader_animal4.png" id="5_ajofi"]
-[ext_resource type="Texture2D" uid="uid://ckstnd865uc7p" path="res://adventure/sprites/trader_animal3.png" id="7_jh6xy"]
+[ext_resource type="Texture2D" uid="uid://cpeenmjrj0l8u" path="res://adventure/sprites/characters/bodies/trader_animal4.png" id="5_ajofi"]
+[ext_resource type="Texture2D" uid="uid://ckstnd865uc7p" path="res://adventure/sprites/characters/bodies/trader_animal3.png" id="7_jh6xy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7v84"]
 size = Vector2(40, 22)

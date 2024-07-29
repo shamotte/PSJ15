@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://day4ai0nk3c62"]
 
 [ext_resource type="Script" path="res://adventure/scripts/tool.gd" id="1_isyal"]
-[ext_resource type="Texture2D" uid="uid://budoldkaq1y8k" path="res://adventure/sprites/net.png" id="2_jgyht"]
+[ext_resource type="Texture2D" uid="uid://budoldkaq1y8k" path="res://adventure/sprites/UI/net.png" id="2_jgyht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaj3d"]
 size = Vector2(13, 14)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfoy0k5ilmoqn"]
 
-[ext_resource type="Texture2D" uid="uid://1v5bjlukni24" path="res://adventure/sprites/hp2.png" id="1_tmuu7"]
+[ext_resource type="Texture2D" uid="uid://1v5bjlukni24" path="res://adventure/sprites/UI/hp2.png" id="1_tmuu7"]
 [ext_resource type="Script" path="res://adventure/components/comp_trade.gd" id="1_ychie"]
-[ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/sanity1.png" id="2_nkmgq"]
-[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/Press E.png" id="3_e0pp8"]
+[ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/UI/sanity1.png" id="2_nkmgq"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/UI/Press E.png" id="3_e0pp8"]
 
 [node name="CompTrade" type="Control"]
 layout_mode = 3

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bt3v82tnr4ar8"]
 
 [ext_resource type="Script" path="res://adventure/scripts/tool.gd" id="1_k86kk"]
-[ext_resource type="Texture2D" uid="uid://bxokmrlyfkjxq" path="res://adventure/sprites/Leather_hand_pickaxe.png" id="2_mgx56"]
+[ext_resource type="Texture2D" uid="uid://bxokmrlyfkjxq" path="res://adventure/sprites/tools/Leather_hand_pickaxe.png" id="2_mgx56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaj3d"]
 size = Vector2(13, 14)

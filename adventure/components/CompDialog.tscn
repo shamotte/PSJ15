@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d41p7qywcn26"]
 
 [ext_resource type="Script" path="res://adventure/components/CompDialog.gd" id="1_igqus"]
-[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/Press E.png" id="2_exkoo"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/UI/Press E.png" id="2_1aqo0"]
 
 [node name="CompDialog" type="Control"]
 layout_mode = 3
@@ -39,4 +39,4 @@ wait_time = 0.1
 [node name="PressE" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(75, 80)
-texture = ExtResource("2_exkoo")
+texture = ExtResource("2_1aqo0")

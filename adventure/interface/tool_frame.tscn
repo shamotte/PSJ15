@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xejr8r6a2fl7"]
 
-[ext_resource type="Texture2D" uid="uid://myg7pde7xxvm" path="res://adventure/sprites/Frame.png" id="1_pietu"]
+[ext_resource type="Texture2D" uid="uid://myg7pde7xxvm" path="res://adventure/sprites/UI/Frame.png" id="1_pietu"]
 
 [node name="ToolFrame" type="Control"]
 custom_minimum_size = Vector2(32, 32)

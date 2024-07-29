@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://qaw2hiw5hxt"]
 
 [ext_resource type="Script" path="res://adventure/objects/Decoration/fireflies.gd" id="1_hhh86"]
-[ext_resource type="Texture2D" uid="uid://bttbc8mk6kxac" path="res://adventure/sprites/firefly.png" id="1_kypsm"]
+[ext_resource type="Texture2D" uid="uid://bttbc8mk6kxac" path="res://adventure/sprites/decorations/firefly.png" id="1_kypsm"]
 [ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="2_88yu8"]
 
 [sub_resource type="Curve" id="Curve_rt5bi"]

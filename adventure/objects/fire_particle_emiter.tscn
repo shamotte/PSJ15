@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://kinlskftsg0k"]
 
-[ext_resource type="Texture2D" uid="uid://cq77qq3ifwg2h" path="res://adventure/sprites/fire_particles.png" id="1_yn01l"]
+[ext_resource type="Texture2D" uid="uid://cq77qq3ifwg2h" path="res://adventure/sprites/decorations/fire_particles.png" id="1_yn01l"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h73bf"]
 particles_animation = true

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://f02hyfsoskxo" path="res://adventure/objects/Decoration/table.tscn" id="1_w0mgn"]
 [ext_resource type="Script" path="res://adventure/scripts/open_table.gd" id="2_jg71a"]
-[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/Press E.png" id="3_32qn0"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/UI/Press E.png" id="3_32qn0"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="4_h5v0j"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_irvtv"]
 

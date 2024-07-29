@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://r0h7akwf3nve"]
 
 [ext_resource type="Script" path="res://adventure/components/Comp_interactable.gd" id="1_jk8kw"]
-[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/Press E.png" id="2_uhu21"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/UI/Press E.png" id="2_hqghx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pi6vh"]
 radius = 26.0
@@ -16,4 +16,4 @@ shape = SubResource("CircleShape2D_pi6vh")
 
 [node name="PressE" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_uhu21")
+texture = ExtResource("2_hqghx")

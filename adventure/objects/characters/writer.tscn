@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=3 uid="uid://cbl5im8gamr6g"]
 
 [ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_6nkub"]
-[ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/leather_hand2.png" id="2_b80f8"]
-[ext_resource type="Texture2D" uid="uid://4yy5yaifcn04" path="res://adventure/sprites/writer.png" id="3_jyddq"]
+[ext_resource type="Texture2D" uid="uid://4yy5yaifcn04" path="res://adventure/sprites/characters/bodies/writer.png" id="3_jyddq"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="4_7hyip"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_fhd2j"]
+[ext_resource type="Texture2D" uid="uid://copghctdtuibr" path="res://adventure/sprites/decorations/book.png" id="5_t6uge"]
+[ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/characters/hands/leather_hand2.png" id="6_3rpo2"]
 [ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="6_p6jvl"]
-[ext_resource type="Texture2D" uid="uid://copghctdtuibr" path="res://adventure/sprites/book.png" id="7_bs3af"]
-[ext_resource type="Texture2D" uid="uid://sk3w51rufihu" path="res://adventure/sprites/gyattree.png" id="8_pchpu"]
+[ext_resource type="Texture2D" uid="uid://sk3w51rufihu" path="res://adventure/sprites/decorations/gyattree.png" id="8_ftmnq"]
 [ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/Decoration/fire_particle_emiter.tscn" id="9_uwb8q"]
 
 [sub_resource type="Resource" id="Resource_mdn0b"]
@@ -210,18 +210,18 @@ shape = SubResource("CircleShape2D_gx2d2")
 [node name="book" type="Sprite2D" parent="."]
 position = Vector2(17, -6.29425e-05)
 rotation = 1.5708
-texture = ExtResource("7_bs3af")
+texture = ExtResource("5_t6uge")
 
 [node name="RightHand" type="Sprite2D" parent="."]
 position = Vector2(9.74345, 9.99998)
 rotation = 1.5708
-texture = ExtResource("2_b80f8")
+texture = ExtResource("6_3rpo2")
 
 [node name="LeftHand" type="Sprite2D" parent="."]
 position = Vector2(10.735, -8.00001)
 rotation = 1.5708
 scale = Vector2(-1, 1)
-texture = ExtResource("2_b80f8")
+texture = ExtResource("6_3rpo2")
 
 [node name="Body" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -232,7 +232,7 @@ texture = ExtResource("3_jyddq")
 [node name="Torch" type="Sprite2D" parent="."]
 position = Vector2(10.9999, -16)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_pchpu")
+texture = ExtResource("8_ftmnq")
 
 [node name="GPUParticles2D" parent="Torch" instance=ExtResource("9_uwb8q")]
 position = Vector2(1, 0.999994)

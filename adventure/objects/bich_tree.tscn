@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dur4bdot3lm6n"]
 
-[ext_resource type="Texture2D" uid="uid://sk3w51rufihu" path="res://adventure/sprites/gyattree.png" id="1_h5hpe"]
+[ext_resource type="Texture2D" uid="uid://sk3w51rufihu" path="res://adventure/sprites/decorations/gyattree.png" id="1_h5hpe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_umyog"]
 radius = 4.0

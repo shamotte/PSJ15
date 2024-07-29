@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b0iqf07ahk4nt"]
 
-[ext_resource type="Texture2D" uid="uid://ktl31pprahd7" path="res://adventure/sprites/shadow_hand.png" id="1_n50gq"]
-[ext_resource type="Texture2D" uid="uid://ddsa4mdb3qfje" path="res://adventure/sprites/shadow.png" id="2_ik30m"]
+[ext_resource type="Texture2D" uid="uid://ktl31pprahd7" path="res://adventure/sprites/characters/hands/shadow_hand.png" id="1_n50gq"]
+[ext_resource type="Texture2D" uid="uid://ddsa4mdb3qfje" path="res://adventure/sprites/characters/bodies/shadow.png" id="2_ik30m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfgf2"]
 

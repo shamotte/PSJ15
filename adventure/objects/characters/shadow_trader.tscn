@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_4o8ix"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="1_7old3"]
-[ext_resource type="Texture2D" uid="uid://bm308vgpgso7j" path="res://adventure/sprites/MrL.png" id="1_8j720"]
-[ext_resource type="Texture2D" uid="uid://bn5ljqp0qjkhd" path="res://adventure/sprites/trader_hand.png" id="1_nmwit"]
+[ext_resource type="Texture2D" uid="uid://bn5ljqp0qjkhd" path="res://adventure/sprites/characters/hands/trader_hand.png" id="1_nmwit"]
 [ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="1_sgvv1"]
-[ext_resource type="Texture2D" uid="uid://ddlesbus4duh1" path="res://adventure/sprites/trader_eye.png" id="3_milo7"]
+[ext_resource type="Texture2D" uid="uid://bm308vgpgso7j" path="res://adventure/sprites/characters/bodies/MrL.png" id="3_v8hbn"]
+[ext_resource type="Texture2D" uid="uid://ddlesbus4duh1" path="res://adventure/sprites/decorations/trader_eye.png" id="4_q63aa"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="6_4tjdg"]
-[ext_resource type="PackedScene" path="res://adventure/components/comp_trade.tscn" id="7_hqvog"]
+[ext_resource type="PackedScene" uid="uid://dfoy0k5ilmoqn" path="res://adventure/components/comp_trade.tscn" id="7_hqvog"]
+[ext_resource type="Texture2D" uid="uid://1v5bjlukni24" path="res://adventure/sprites/UI/hp2.png" id="9_1l5j6"]
 [ext_resource type="Script" path="res://both/Resources/Goods.gd" id="9_jiv7h"]
-[ext_resource type="Texture2D" uid="uid://1v5bjlukni24" path="res://adventure/sprites/hp2.png" id="9_rl6mt"]
-[ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/sanity1.png" id="11_05oys"]
+[ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/UI/sanity1.png" id="11_fapjn"]
 
 [sub_resource type="Gradient" id="Gradient_sr5pj"]
 interpolation_mode = 2
@@ -212,13 +212,13 @@ first_argument = ""
 script = ExtResource("9_jiv7h")
 type = 0
 amount = 1
-icon = ExtResource("9_rl6mt")
+icon = ExtResource("9_1l5j6")
 
 [sub_resource type="Resource" id="Resource_rm6s6"]
 script = ExtResource("9_jiv7h")
 type = 1
 amount = 60
-icon = ExtResource("11_05oys")
+icon = ExtResource("11_fapjn")
 
 [node name="MrL" type="CharacterBody2D"]
 rotation = 1.5708
@@ -240,12 +240,12 @@ texture = ExtResource("1_nmwit")
 texture_filter = 1
 position = Vector2(-3, 0)
 rotation = 1.5708
-texture = ExtResource("1_8j720")
+texture = ExtResource("3_v8hbn")
 
 [node name="eye1" type="Sprite2D" parent="."]
 position = Vector2(16, -9.00006)
 rotation = -1.5708
-texture = ExtResource("3_milo7")
+texture = ExtResource("4_q63aa")
 
 [node name="PointLight2D2" type="PointLight2D" parent="eye1"]
 light_mask = 2
@@ -256,7 +256,7 @@ texture = SubResource("GradientTexture2D_caqlq")
 [node name="eye2" type="Sprite2D" parent="."]
 position = Vector2(16, 7.99994)
 rotation = -1.5708
-texture = ExtResource("3_milo7")
+texture = ExtResource("4_q63aa")
 
 [node name="PointLight2D" type="PointLight2D" parent="eye2"]
 light_mask = 2

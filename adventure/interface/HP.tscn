@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://djyswjk4op0av"]
 
-[ext_resource type="Texture2D" uid="uid://1v5bjlukni24" path="res://adventure/sprites/hp2.png" id="1_55xlh"]
+[ext_resource type="Texture2D" uid="uid://1v5bjlukni24" path="res://adventure/sprites/UI/hp2.png" id="1_55xlh"]
 
 [node name="Hp" type="TextureRect"]
 custom_minimum_size = Vector2(16, 16)

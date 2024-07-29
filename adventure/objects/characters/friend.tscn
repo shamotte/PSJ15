@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://wjsduwhnwpuu"]
 
-[ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/shadow_knight_hand1.png" id="1_c5f7t"]
+[ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/characters/hands/shadow_knight_hand1.png" id="1_c5f7t"]
 [ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_sislh"]
-[ext_resource type="Texture2D" uid="uid://e3ubuosu5wd6" path="res://adventure/sprites/friend.png" id="2_yrm6g"]
+[ext_resource type="Texture2D" uid="uid://e3ubuosu5wd6" path="res://adventure/sprites/characters/bodies/friend.png" id="2_yrm6g"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="3_tx2em"]
 [ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="5_4bqov"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_qobch"]

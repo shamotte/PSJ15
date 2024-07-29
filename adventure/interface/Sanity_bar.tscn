@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8osndo80rp2f"]
 
 [ext_resource type="Script" path="res://adventure/interface/Sanity_bar.gd" id="1_awcki"]
-[ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/sanity1.png" id="1_i8ph2"]
+[ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/UI/sanity1.png" id="1_i8ph2"]
 [ext_resource type="Texture2D" uid="uid://ditohjuxumgk1" path="res://adventure/sprites/white.png" id="2_1hisr"]
-[ext_resource type="Texture2D" uid="uid://b6nx4iwd510ca" path="res://adventure/sprites/sanity2.png" id="3_br8sv"]
-[ext_resource type="Texture2D" uid="uid://b5ifi2hi8t21x" path="res://adventure/sprites/sanity3.png" id="4_5ncjd"]
-[ext_resource type="Texture2D" uid="uid://cbk4o8ld3cxj5" path="res://adventure/sprites/sanity4.png" id="5_er8bd"]
+[ext_resource type="Texture2D" uid="uid://b6nx4iwd510ca" path="res://adventure/sprites/UI/sanity2.png" id="3_br8sv"]
+[ext_resource type="Texture2D" uid="uid://b5ifi2hi8t21x" path="res://adventure/sprites/UI/sanity3.png" id="4_5ncjd"]
+[ext_resource type="Texture2D" uid="uid://cbk4o8ld3cxj5" path="res://adventure/sprites/UI/sanity4.png" id="5_er8bd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_riqou"]
 
