@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://sk3w51rufihu" path="res://adventure/sprites/decorations/gyattree.png" id="1_h5hpe"]
 [ext_resource type="Script" path="res://adventure/objects/Decoration/bich_tree.gd" id="1_j0e08"]
 [ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="2_gag3d"]
-[ext_resource type="Texture2D" uid="uid://cfa1dmnngn8fj" path="res://adventure/sprites/gyattree-leaves.png" id="3_iivt7"]
+[ext_resource type="Texture2D" uid="uid://cfa1dmnngn8fj" path="res://adventure/sprites/decorations/gyattree-leaves.png" id="3_iivt7"]
 [ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/Decoration/fire_particle_emiter.tscn" id="5_njsrv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_umyog"]

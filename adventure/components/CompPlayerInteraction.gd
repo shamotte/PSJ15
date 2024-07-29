@@ -22,11 +22,11 @@ func _process(delta):
 	Areas_to_interact = get_overlapping_areas()
 	#Removing older
 	
-	#TODO to wywala jakiś błąd, nie wiem dlaczego ale przydalo by się coś z tym zrobić
 	for i in old_Areas_to_interact:
-		if i not in Areas_to_interact:
-			if i != null and i.has_method("in_area"):
-				i.in_area(false)
+		if i != null:
+			if i not in Areas_to_interact:
+				if i.has_method("in_area"):
+					i.in_area(false)
 	if len(Areas_to_interact) > 0:
 		var Component : Area2D = min_distance(Areas_to_interact)
 		if Component.has_method("in_area"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=24 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/characters/friend.tscn" id="2_476r1"]
@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://bqila4rgvmh2y" path="res://adventure/objects/Set_of_scenes/writer_and_table.tscn" id="17_6cfga"]
 [ext_resource type="PackedScene" uid="uid://bhkju04x5wwm1" path="res://adventure/objects/table.tscn" id="17_kbep6"]
 [ext_resource type="PackedScene" uid="uid://qaw2hiw5hxt" path="res://adventure/objects/Decoration/fireflies.tscn" id="18_n2mjm"]
+[ext_resource type="PackedScene" uid="uid://dsg1moaauq3xd" path="res://adventure/objects/Decoration/Rock1.tscn" id="18_xdrsl"]
 [ext_resource type="PackedScene" uid="uid://kun77gl1w0en" path="res://adventure/objects/Set_of_scenes/Trader_shop.tscn" id="19_6q5ja"]
+[ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Decoration/Rock2.tscn" id="19_4156c"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 offsets = PackedFloat32Array(1)
@@ -43,8 +45,9 @@ fill_from = Vector2(0.5, 0.5)
 scale = Vector2(100, 100)
 texture = SubResource("GradientTexture2D_kuyoi")
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("1_pr2oj")]
+[node name="PlayerCharacter" parent="." node_paths=PackedStringArray("tool_bar") instance=ExtResource("1_pr2oj")]
 position = Vector2(6.06475, -6.94122)
+tool_bar = NodePath("../UI/ToolBar")
 
 [node name="lantern" type="PointLight2D" parent="PlayerCharacter"]
 position = Vector2(18.9352, 2.94122)
@@ -158,3 +161,9 @@ position = Vector2(51, -69)
 position = Vector2(115, 107)
 
 [node name="ProjectileManager" type="Node2D" parent="."]
+
+[node name="Rock1" parent="." instance=ExtResource("18_xdrsl")]
+position = Vector2(385, -85)
+
+[node name="Rock2" parent="." instance=ExtResource("19_4156c")]
+position = Vector2(531, -58)

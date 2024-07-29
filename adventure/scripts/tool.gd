@@ -3,6 +3,7 @@ class_name tool
 
 @export var ui_name : String
 @export var receiver : String
+@export var ui_icon : CompressedTexture2D 
 
 
 var active : bool = true
@@ -27,3 +28,7 @@ func get_player() -> Node2D:
 
 func set_active(state : bool)->void:
 	active = state
+	
+func get_icon():
+	if ui_icon != null:
+		return ui_icon

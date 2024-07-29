@@ -8,7 +8,7 @@ class_name ToolManager
 @export var axe: PackedScene
 @export var pick : PackedScene
 @export var net : PackedScene
-@onready var fp := preload("res://adventure/scripts/potions/simple_throwable_potion.tscn")
+@onready var fp := preload("res://adventure/scripts/potions/fire_potion.tscn")
 
 
 var currnet_tool : Node2D
@@ -16,13 +16,22 @@ var wanted_tool : Node2D
 
 @export var tools : Array
 
+var tool_bar : Node 
 
 func _ready():
+	tool_bar = get_parent().get_tool_bar()
+	tool_bar.connect("tool_bar_loaded",load_test_tools)
+	
+func load_test_tools():
 	tools.resize(5)
 	tools[0] = axe.instantiate()
 	tools[1] = pick.instantiate()
 	tools[2] = net.instantiate()
 	tools[3] = fp.instantiate()
+	for i in range(len(tools)):
+		if i < 4:
+			tool_bar.set_tool_bar_icon(i,tools[i].get_icon())
+			
 	
 
 

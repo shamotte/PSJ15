@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsg1moaauq3xd"]
+
+[ext_resource type="Texture2D" uid="uid://drlre5aevcfro" path="res://adventure/sprites/decorations/Rock1.png" id="1_2tgcy"]
+[ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="1_rkdhn"]
+[ext_resource type="Script" path="res://adventure/objects/Decoration/Rock.gd" id="1_w3ly3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u061e"]
+radius = 16.0
+height = 32.0
+
+[node name="Rock1" type="StaticBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_w3ly3")
+
+[node name="object" type="Sprite2D" parent="."]
+texture = ExtResource("1_2tgcy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_u061e")
+
+[node name="PickaxeReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
+script = ExtResource("1_rkdhn")
+object = NodePath("..")
+function_name = "mine"

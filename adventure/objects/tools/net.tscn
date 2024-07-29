@@ -12,6 +12,7 @@ collision_mask = 4
 script = ExtResource("1_isyal")
 ui_name = "net"
 receiver = "NetReceiver"
+ui_icon = ExtResource("2_jgyht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, 2)
