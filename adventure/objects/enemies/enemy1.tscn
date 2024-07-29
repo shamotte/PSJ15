@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://diojne6xikk1l"]
+
+[ext_resource type="Script" path="res://adventure/scripts/enemies/Shadow_night_state_macine/shadow_knight.gd" id="1_0d5qm"]
+[ext_resource type="Texture2D" uid="uid://bdi2kh3yr688v" path="res://adventure/sprites/characters/bodies/shadow_knight.png" id="1_j5awb"]
+[ext_resource type="Script" path="res://adventure/scripts/enemies/Shadow_night_state_macine/StateMachine.gd" id="2_thnu8"]
+[ext_resource type="Script" path="res://adventure/scripts/enemies/Shadow_night_state_macine/wander.gd" id="3_irvvg"]
+[ext_resource type="Texture2D" uid="uid://d2kqq844ppryr" path="res://adventure/sprites/characters/hands/shadow_knight_hand2.png" id="3_yynoh"]
+[ext_resource type="Script" path="res://adventure/scripts/enemies/Shadow_night_state_macine/chase.gd" id="4_j7olf"]
+[ext_resource type="Script" path="res://adventure/scripts/enemies/Shadow_night_state_macine/attack.gd" id="5_0rvut"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cc8o"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8e56i"]
+radius = 201.002
+
+[sub_resource type="Animation" id="Animation_hbcw3"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3fn0f"]
+_data = {
+"attack": SubResource("Animation_hbcw3")
+}
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 17
+motion_mode = 1
+script = ExtResource("1_0d5qm")
+
+[node name="body" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_j5awb")
+
+[node name="weapon" type="Sprite2D" parent="."]
+texture = ExtResource("3_yynoh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5cc8o")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_thnu8")
+
+[node name="wander" type="Node" parent="StateMachine"]
+script = ExtResource("3_irvvg")
+
+[node name="chase" type="Node" parent="StateMachine"]
+script = ExtResource("4_j7olf")
+
+[node name="attack" type="Node" parent="StateMachine"]
+script = ExtResource("5_0rvut")
+
+[node name="noticing_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="noticing_area"]
+shape = SubResource("CircleShape2D_8e56i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3fn0f")
+}

@@ -8,7 +8,7 @@ func shatter():
 	visual_effect.emitting = true
 	var affected_objects := get_overlaping_objects()
 	for obj in affected_objects:
-		var node :Receiver= obj.get_node(receiver)
+		var node :Receiver= obj.get_node_or_null(receiver)
 		if node != null:
 			node.interacted(self)
 	await visual_effect.finished

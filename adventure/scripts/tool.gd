@@ -10,13 +10,13 @@ var player : Node2D
 
 func _on_body_entered(area):
 	if active: 
-		var rec : Receiver= area.get_node(receiver)
+		var rec : Receiver= area.get_node_or_null(receiver)
 		if rec:
 			rec.interacted(self);
 			
 func _on_area_entered(area : Area2D):
 	if active: 
-		var rec : Receiver= area.get_node(receiver)
+		var rec : Receiver= area.get_node_or_null(receiver)
 		if rec:
 			rec.interacted(self);
 

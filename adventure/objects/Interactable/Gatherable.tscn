@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://adventure/objects/Interactable/Gatherable.gd" id="1_4wuxf"]
 [ext_resource type="Texture2D" uid="uid://dicc2dk0wemma" path="res://adventure/sprites/decorations/flower1.png" id="1_5wgjv"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_itcb5"]
-[ext_resource type="PackedScene" uid="uid://bmljq2sergiyk" path="res://adventure/components/comp_gatherable.tscn" id="3_eae0q"]
+[ext_resource type="PackedScene" path="res://adventure/components/comp_gatherable.tscn" id="3_eae0q"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="4_enb65"]
 
 [sub_resource type="Resource" id="Resource_8okrq"]
