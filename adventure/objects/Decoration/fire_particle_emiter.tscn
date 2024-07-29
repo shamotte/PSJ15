@@ -40,7 +40,6 @@ process_material = SubResource("ParticleProcessMaterial_is2to")
 texture = ExtResource("1_yn01l")
 
 [node name="latarnia" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(18.9352, 2.94122)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_h63sn")

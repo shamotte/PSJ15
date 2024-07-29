@@ -22,8 +22,8 @@ func _process(delta):
 	if flying:
 		duration -= delta
 		if duration<0 :
+			flying = false
 			shatter()
-			queue_free()
 
 func shatter():
 	pass
