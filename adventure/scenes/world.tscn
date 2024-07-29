@@ -204,6 +204,7 @@ position = Vector2(-230, -88)
 
 [node name="MfCargo" parent="." instance=ExtResource("25_3mi03")]
 position = Vector2(-57, -316)
+
 [node name="BichTree" parent="." instance=ExtResource("2_wwnik")]
 position = Vector2(-409, 31)
 
