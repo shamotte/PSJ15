@@ -1,22 +1,31 @@
-[gd_scene load_steps=19 format=3 uid="uid://cg3bu75mmymrk"]
+[gd_scene load_steps=20 format=3 uid="uid://cg3bu75mmymrk"]
 
 [ext_resource type="Texture2D" uid="uid://drbv7s7c825ih" path="res://Table/sprites/very_bad_table.png" id="1_ts6cc"]
 [ext_resource type="PackedScene" uid="uid://cccf2rk8g5icj" path="res://Table/objects/mushrooms.tscn" id="2_52143"]
 [ext_resource type="PackedScene" uid="uid://b7wy81pqksj1x" path="res://Table/objects/eyes.tscn" id="3_5eemx"]
 [ext_resource type="PackedScene" uid="uid://c6nlgywib5v6x" path="res://Table/objects/fairy_candy.tscn" id="4_71w76"]
 [ext_resource type="PackedScene" uid="uid://l3u3jexjoacx" path="res://scenes/journal.tscn" id="4_igplr"]
-[ext_resource type="PackedScene" path="res://Table/objects/suspicious_note.tscn" id="5_xhkk2"]
+[ext_resource type="PackedScene" uid="uid://duku2ap5bbbnd" path="res://Table/objects/suspicious_note.tscn" id="5_xhkk2"]
 [ext_resource type="PackedScene" uid="uid://cc85lq3f0eo1c" path="res://Table/objects/candle.tscn" id="6_m1i1r"]
-[ext_resource type="PackedScene" path="res://Table/objects/empty_bottle.tscn" id="7_cvnh4"]
+[ext_resource type="PackedScene" uid="uid://dr3efsxdubdmw" path="res://Table/objects/empty_bottle.tscn" id="7_cvnh4"]
 [ext_resource type="Texture2D" uid="uid://dokxidcxbbbir" path="res://Table/sprites/X.png" id="7_wpw36"]
-[ext_resource type="PackedScene" path="res://Table/objects/jade_eye.tscn" id="9_81b0x"]
-[ext_resource type="PackedScene" path="res://Table/objects/heart_rose.tscn" id="10_eoame"]
-[ext_resource type="PackedScene" path="res://Table/objects/spikezalea.tscn" id="11_ktyq6"]
-[ext_resource type="PackedScene" path="res://Table/objects/twig.tscn" id="13_8eqc2"]
-[ext_resource type="PackedScene" path="res://Table/objects/shoutrake.tscn" id="14_65mwv"]
-[ext_resource type="PackedScene" path="res://Table/objects/mortar.tscn" id="15_cr6wp"]
-[ext_resource type="PackedScene" path="res://Table/objects/knife.tscn" id="15_wojyl"]
-[ext_resource type="PackedScene" path="res://Table/objects/eyeple.tscn" id="16_mme3x"]
+[ext_resource type="PackedScene" uid="uid://b16t2im1kguth" path="res://Table/objects/jade_eye.tscn" id="9_81b0x"]
+[ext_resource type="PackedScene" uid="uid://dliofjwfma8xq" path="res://Table/objects/heart_rose.tscn" id="10_eoame"]
+[ext_resource type="PackedScene" uid="uid://ciomo18652ip5" path="res://Table/objects/spikezalea.tscn" id="11_ktyq6"]
+[ext_resource type="PackedScene" uid="uid://d1oh1s71phgcb" path="res://Table/objects/twig.tscn" id="13_8eqc2"]
+[ext_resource type="PackedScene" uid="uid://q73j0dg6kqv1" path="res://Table/objects/shoutrake.tscn" id="14_65mwv"]
+[ext_resource type="PackedScene" uid="uid://wh02ggte4dbc" path="res://Table/objects/mortar.tscn" id="15_cr6wp"]
+[ext_resource type="PackedScene" uid="uid://ccs0pb57q5n2a" path="res://Table/objects/knife.tscn" id="15_wojyl"]
+[ext_resource type="PackedScene" uid="uid://drk6n2cvvvo63" path="res://Table/objects/eyeple.tscn" id="16_mme3x"]
+
+[sub_resource type="GDScript" id="GDScript_7hkr6"]
+script/source = "extends DirectionalLight2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	visible = true
+"
 
 [sub_resource type="GDScript" id="GDScript_3n8am"]
 script/source = "extends TextureButton
@@ -128,6 +137,7 @@ position = Vector2(112, -64)
 visible = false
 position = Vector2(-339.94, 141)
 blend_mode = 1
+script = SubResource("GDScript_7hkr6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
