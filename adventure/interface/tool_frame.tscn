@@ -12,8 +12,10 @@ offset_bottom = 44.0
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_right = 44.0
-offset_bottom = 44.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 38.0
+offset_bottom = 38.0
 
 [node name="Frame" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(32, 32)

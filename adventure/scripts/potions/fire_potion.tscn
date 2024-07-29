@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4tvaisbb1lm7"]
+[gd_scene load_steps=7 format=3 uid="uid://c4tvaisbb1lm7"]
 
-[ext_resource type="Script" path="res://adventure/scripts/potions/simple_throwable_potion.gd" id="1_je6bp"]
-[ext_resource type="Texture2D" uid="uid://cq77qq3ifwg2h" path="res://adventure/sprites/fire_particles.png" id="2_emgq1"]
+[ext_resource type="Script" path="res://adventure/scripts/potions/simple_throwable_potion.gd" id="1_d6tmn"]
+[ext_resource type="Texture2D" uid="uid://c1l3dia2ohymw" path="res://adventure/sprites/UI/fire_potion_icon.png" id="2_xbrdg"]
+[ext_resource type="Texture2D" uid="uid://cq77qq3ifwg2h" path="res://adventure/sprites/decorations/fire_particles.png" id="3_ltcqn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kydb3"]
 radius = 90.0
@@ -22,8 +23,9 @@ gravity = Vector3(0, 0, 0)
 anim_offset_max = 1.0
 
 [node name="ThrowablePotion" type="Node2D"]
-script = ExtResource("1_je6bp")
+script = ExtResource("1_d6tmn")
 receiver = "FirePotionReceiver"
+ui_icon = ExtResource("2_xbrdg")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
@@ -37,6 +39,6 @@ material = SubResource("CanvasItemMaterial_22578")
 emitting = false
 amount = 150
 process_material = SubResource("ParticleProcessMaterial_5b6ri")
-texture = ExtResource("2_emgq1")
+texture = ExtResource("3_ltcqn")
 one_shot = true
 explosiveness = 0.96

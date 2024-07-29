@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ikhlebarfhp4"]
+
+[ext_resource type="Script" path="res://adventure/components/comp_fuel.gd" id="1_fo8ho"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/UI/Press E.png" id="2_wc7hy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yychw"]
+light_mode = 1
+
+[node name="CompFuel" type="Node2D"]
+script = ExtResource("1_fo8ho")
+
+[node name="PressE" type="Sprite2D" parent="."]
+visible = false
+z_index = 4
+material = SubResource("CanvasItemMaterial_yychw")
+position = Vector2(0, -25)
+texture = ExtResource("2_wc7hy")

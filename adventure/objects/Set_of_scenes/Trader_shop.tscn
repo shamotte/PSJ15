@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://kun77gl1w0en"]
+[gd_scene load_steps=5 format=3 uid="uid://kun77gl1w0en"]
 
 [ext_resource type="PackedScene" uid="uid://c1fafp4eg0h6u" path="res://adventure/objects/characters/shadow_trader.tscn" id="1_4e3fp"]
-[ext_resource type="PackedScene" path="res://adventure/objects/characters/Trader_animal.tscn" id="2_sivfu"]
-[ext_resource type="PackedScene" path="res://adventure/objects/Decoration/tent.tscn" id="3_knc64"]
+[ext_resource type="PackedScene" uid="uid://cxpsocagneje3" path="res://adventure/objects/characters/Trader_animal.tscn" id="2_sivfu"]
+[ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="3_knc64"]
+[ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="4_e81rq"]
 
 [node name="TraderShop" type="Node2D"]
 
@@ -13,3 +14,12 @@ position = Vector2(96, -35)
 
 [node name="Tent" parent="." instance=ExtResource("3_knc64")]
 position = Vector2(54, -51)
+
+[node name="Box" parent="." instance=ExtResource("4_e81rq")]
+position = Vector2(114, -44)
+
+[node name="Box2" parent="." instance=ExtResource("4_e81rq")]
+position = Vector2(140, -43)
+
+[node name="Box3" parent="." instance=ExtResource("4_e81rq")]
+position = Vector2(135, -19)

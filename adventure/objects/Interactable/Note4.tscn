@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://dx1ux6mwoyljc"]
+
+[ext_resource type="Texture2D" uid="uid://rrv7tvoefqjv" path="res://adventure/sprites/decorations/Note.png" id="1_a443c"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_t2yog"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="3_8r1ql"]
+[ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="4_h0sn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx74g"]
+size = Vector2(22, 22)
+
+[sub_resource type="Animation" id="Animation_j2khf"]
+resource_name = "gathering"
+length = 2.5
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_kuk7j"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_b8gik"]
+resource_name = "moving"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8jga"]
+_data = {
+"gathering": SubResource("Animation_j2khf"),
+"idle": SubResource("Animation_kuk7j"),
+"moving": SubResource("Animation_b8gik")
+}
+
+[sub_resource type="Resource" id="Resource_mdn0b"]
+script = ExtResource("3_8r1ql")
+object = "CompDialog"
+function_name = "dialog_on"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_jar6c"]
+script = ExtResource("3_8r1ql")
+object = "CompDialog"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_vu2ba"]
+script = ExtResource("3_8r1ql")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
+
+[node name="Note" type="StaticBody2D"]
+rotation = 1.5708
+
+[node name="Body" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-3, 0)
+rotation = 1.5708
+texture = ExtResource("1_a443c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.99998, -2.19781e-05)
+shape = SubResource("RectangleShape2D_jx74g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s8jga")
+}
+
+[node name="CompInteractable" parent="." instance=ExtResource("2_t2yog")]
+scale = Vector2(0.75, 0.75)
+interactable_array = Array[ExtResource("3_8r1ql")]([SubResource("Resource_mdn0b")])
+in_area_array = Array[ExtResource("3_8r1ql")]([SubResource("Resource_jar6c")])
+end_interaction_array = Array[ExtResource("3_8r1ql")]([SubResource("Resource_vu2ba")])
+
+[node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_h0sn0")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -110.0
+offset_right = -75.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(75, 110)
+character = NodePath("..")
+writing_speed = 0.03
+text = Array[String](["Note 4
+Patrick's Alchem Journal", "I don't know how long I'm here...", "I see shadow and other creatures... ", "But I don't know are they real...", "I know the goal this Darkness...", "It want to break our sanity and devour us.", "Potions helps me deal with forces of Darkness... ", "but I don't know how long can I endure this"])

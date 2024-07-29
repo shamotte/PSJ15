@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://wjsduwhnwpuu"]
+[gd_scene load_steps=18 format=3 uid="uid://sbkwqqkhpy5j"]
 
-[ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/characters/hands/shadow_knight_hand1.png" id="1_c5f7t"]
-[ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_sislh"]
-[ext_resource type="Texture2D" uid="uid://e3ubuosu5wd6" path="res://adventure/sprites/characters/bodies/friend.png" id="2_yrm6g"]
-[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="3_tx2em"]
-[ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="5_4bqov"]
-[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_qobch"]
+[ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_tufsu"]
+[ext_resource type="Texture2D" uid="uid://dblo311d4xg1h" path="res://adventure/sprites/characters/hands/shadow_knight_hand1.png" id="2_5vgaa"]
+[ext_resource type="Texture2D" uid="uid://e3ubuosu5wd6" path="res://adventure/sprites/characters/bodies/friend.png" id="3_cymbu"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="4_yrvh1"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_2bw11"]
+[ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="6_keyj4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
 radius = 14.0
@@ -117,7 +117,7 @@ _data = {
 }
 
 [sub_resource type="Resource" id="Resource_mdn0b"]
-script = ExtResource("5_qobch")
+script = ExtResource("5_2bw11")
 object = "CompDialog"
 function_name = "dialog_on"
 player_state = "normal"
@@ -125,7 +125,7 @@ next_interaction_signal = ""
 first_argument = ""
 
 [sub_resource type="Resource" id="Resource_jar6c"]
-script = ExtResource("5_qobch")
+script = ExtResource("5_2bw11")
 object = "CompDialog"
 function_name = "show_tip"
 player_state = "normal"
@@ -133,7 +133,7 @@ next_interaction_signal = ""
 first_argument = ""
 
 [sub_resource type="Resource" id="Resource_vu2ba"]
-script = ExtResource("5_qobch")
+script = ExtResource("5_2bw11")
 object = ""
 function_name = ""
 player_state = ""
@@ -143,24 +143,24 @@ first_argument = ""
 [node name="Friend" type="CharacterBody2D"]
 rotation = 1.5708
 motion_mode = 1
-script = ExtResource("1_sislh")
+script = ExtResource("1_tufsu")
 
 [node name="RightHand" type="Sprite2D" parent="."]
 position = Vector2(16, 9)
 rotation = 1.5708
-texture = ExtResource("1_c5f7t")
+texture = ExtResource("2_5vgaa")
 
 [node name="LeftHand" type="Sprite2D" parent="."]
 position = Vector2(16, -8)
 rotation = 1.5708
 scale = Vector2(-1, 1)
-texture = ExtResource("1_c5f7t")
+texture = ExtResource("2_5vgaa")
 
 [node name="Body" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-3, 0)
 rotation = 1.5708
-texture = ExtResource("2_yrm6g")
+texture = ExtResource("3_cymbu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -180,12 +180,12 @@ libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
 
-[node name="CompInteractable" parent="." instance=ExtResource("3_tx2em")]
-interactable_array = Array[ExtResource("5_qobch")]([SubResource("Resource_mdn0b")])
-in_area_array = Array[ExtResource("5_qobch")]([SubResource("Resource_jar6c")])
-end_interaction_array = Array[ExtResource("5_qobch")]([SubResource("Resource_vu2ba")])
+[node name="CompInteractable" parent="." instance=ExtResource("4_yrvh1")]
+interactable_array = Array[ExtResource("5_2bw11")]([SubResource("Resource_mdn0b")])
+in_area_array = Array[ExtResource("5_2bw11")]([SubResource("Resource_jar6c")])
+end_interaction_array = Array[ExtResource("5_2bw11")]([SubResource("Resource_vu2ba")])
 
-[node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("5_4bqov")]
+[node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_keyj4")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -200,4 +200,4 @@ grow_vertical = 2
 rotation = -1.5708
 pivot_offset = Vector2(75, 110)
 character = NodePath("..")
-text = Array[String](["witaj piękna noc. ", "są tutaj piękne kwiatki", "będziesz tak stać?"])
+text = Array[String](["Camp is ready but we need more resources if we want to survive.", "On the table you can find some useful things for making mixtures", "If you plan to go further don't forget about taking some potions. ", "I would protect camp while you looking for something valuable."])

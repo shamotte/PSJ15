@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://co8e2pu8pfmsv"]
+
+[ext_resource type="Texture2D" uid="uid://cepca3cd0fug5" path="res://adventure/sprites/decorations/candle_small.png" id="1_fvk74"]
+[ext_resource type="PackedScene" uid="uid://da5ahdoab4uyn" path="res://adventure/objects/Decoration/small_fire_particle_emiter.tscn" id="2_qdpgk"]
+
+[node name="Candle" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fvk74")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("2_qdpgk")]

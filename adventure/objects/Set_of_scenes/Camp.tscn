@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://by5tjtavts5oi"]
+
+[ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="1_t5mgp"]
+[ext_resource type="Script" path="res://adventure/objects/Set_of_scenes/Camp.gd" id="1_tf8mh"]
+[ext_resource type="PackedScene" uid="uid://bhkju04x5wwm1" path="res://adventure/objects/Interactable/table.tscn" id="2_d6q6o"]
+[ext_resource type="PackedScene" uid="uid://co8e2pu8pfmsv" path="res://adventure/objects/Decoration/Candle.tscn" id="2_ss3ab"]
+[ext_resource type="Texture2D" uid="uid://6mlyq6gfiwin" path="res://adventure/sprites/decorations/mortar_small.png" id="3_5a4st"]
+[ext_resource type="PackedScene" uid="uid://sbkwqqkhpy5j" path="res://adventure/objects/characters/friend.tscn" id="3_7b7oi"]
+[ext_resource type="PackedScene" uid="uid://54uub5ildwl" path="res://adventure/objects/Interactable/Note1.tscn" id="4_s80uc"]
+[ext_resource type="Texture2D" uid="uid://d16l7qo260nva" path="res://adventure/sprites/decorations/journal_small.png" id="4_wppyw"]
+[ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="5_07p6h"]
+[ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="6_q0ebi"]
+[ext_resource type="PackedScene" uid="uid://nmftbd08d6vt" path="res://adventure/objects/Decoration/campfire.tscn" id="10_fnq0q"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cgul4"]
+polygon = PackedVector2Array(-43, 96, -41, 88, -44, 74, -46, 64, -46, 56, -56, 52, -48, 42, -36, 29, -28, 22, -16, 20, -1, 22, 20, 15, 28, 5, 25, -5, 34, -14, 45, -10, 51, -3, 64, -2, 74, -3, 88, -9, 97, -12, 103, -2, 110, -4, 117, -7, 130, -9, 142, -10, 144, -1, 152, 2, 157, 22, 152, 35, 160, 57, 171, 68, 179, 82, 179, 96, 193, 100, 206, 101, 210, 91, 206, 77, 203, 64, 192, 56, 185, 43, 189, 32, 176, 12, 169, 0, 190, -28, 184, -39, 164, -40, 148, -43, 130, -41, 109, -43, 115, -58, 108, -66, 93, -68, 75, -70, 64, -62, 55, -50, 36, -43, 16, -45, -3, -35, -21, -31, -29, -49, -37, -44, -46, -32, -53, -23, -46, -9, -53, 6, -64, 8, -70, 18, -93, 25, -111, 30, -113, 38, -97, 49, -98, 70, -87, 69, -74, 74, -70, 89, -52, 98)
+
+[node name="Camp" type="Node2D"]
+script = ExtResource("1_tf8mh")
+
+[node name="table_parts" type="Node2D" parent="."]
+
+[node name="Table" parent="table_parts" instance=ExtResource("2_d6q6o")]
+position = Vector2(120, 32)
+
+[node name="Candle" parent="table_parts" instance=ExtResource("2_ss3ab")]
+position = Vector2(118, 38)
+
+[node name="MortarSmall" type="Sprite2D" parent="table_parts"]
+position = Vector2(132, 45)
+texture = ExtResource("3_5a4st")
+
+[node name="JournalSmall" type="Sprite2D" parent="table_parts"]
+position = Vector2(105, 46)
+texture = ExtResource("4_wppyw")
+
+[node name="MortarSmall2" type="Sprite2D" parent="table_parts"]
+position = Vector2(130, 39)
+texture = ExtResource("3_5a4st")
+
+[node name="Tent" parent="." instance=ExtResource("1_t5mgp")]
+position = Vector2(59, 29)
+
+[node name="Spawn_point" type="Node2D" parent="."]
+position = Vector2(62, 86)
+
+[node name="Note" parent="." instance=ExtResource("4_s80uc")]
+position = Vector2(51, 283)
+rotation = -1.5708
+
+[node name="Tent2" parent="." instance=ExtResource("1_t5mgp")]
+position = Vector2(-6, 58)
+rotation = -1.5708
+
+[node name="Rocks" type="Node2D" parent="."]
+
+[node name="Rock6" parent="Rocks" instance=ExtResource("5_07p6h")]
+position = Vector2(22, -31)
+rotation = 2.84314
+
+[node name="Rock7" parent="Rocks" instance=ExtResource("5_07p6h")]
+position = Vector2(120, -18)
+rotation = -1.83434
+
+[node name="Rock8" parent="Rocks" instance=ExtResource("6_q0ebi")]
+position = Vector2(169, 37)
+rotation = -4.0352
+
+[node name="Rock9" parent="Rocks" instance=ExtResource("6_q0ebi")]
+position = Vector2(69, -17)
+rotation = 0.549779
+
+[node name="Rock10" parent="Rocks" instance=ExtResource("5_07p6h")]
+position = Vector2(7, 10)
+rotation = -1.55858
+
+[node name="Rock11" parent="Rocks" instance=ExtResource("6_q0ebi")]
+position = Vector2(-51, 25)
+
+[node name="Rock12" parent="Rocks" instance=ExtResource("5_07p6h")]
+position = Vector2(-58, 80)
+
+[node name="Rock13" parent="Rocks" instance=ExtResource("6_q0ebi")]
+position = Vector2(166, -19)
+
+[node name="Rock14" parent="Rocks" instance=ExtResource("5_07p6h")]
+position = Vector2(189, 81)
+
+[node name="Rock4" parent="Rocks" instance=ExtResource("5_07p6h")]
+position = Vector2(82, -50)
+rotation = -1.05592
+scale = Vector2(1.2, 1.2)
+
+[node name="Rock5" parent="Rocks" instance=ExtResource("5_07p6h")]
+position = Vector2(-36, -25)
+rotation = 0.733038
+scale = Vector2(1.1, 1.1)
+
+[node name="Rock3" parent="Rocks" instance=ExtResource("6_q0ebi")]
+position = Vector2(-92, 44)
+rotation = -0.671952
+
+[node name="Friend" parent="Rocks" instance=ExtResource("3_7b7oi")]
+position = Vector2(-14, 100)
+rotation = 0.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Rocks"]
+occluder = SubResource("OccluderPolygon2D_cgul4")
+
+[node name="Campfire" parent="." instance=ExtResource("10_fnq0q")]
+position = Vector2(91, 142)

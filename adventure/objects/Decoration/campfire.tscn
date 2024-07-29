@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://nmftbd08d6vt"]
+
+[ext_resource type="Texture2D" uid="uid://4ncbij8nskoq" path="res://adventure/sprites/decorations/Campfire.png" id="1_dypko"]
+[ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/Decoration/fire_particle_emiter.tscn" id="2_ocbed"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="4_4ti0r"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="4_ekyfj"]
+[ext_resource type="PackedScene" uid="uid://ikhlebarfhp4" path="res://adventure/components/comp_fuel.tscn" id="5_xmm8r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kaxev"]
+radius = 16.0
+
+[sub_resource type="Resource" id="Resource_0f2o2"]
+script = ExtResource("4_4ti0r")
+object = "CompFuel"
+function_name = "add_fuel"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_gyxhg"]
+script = ExtResource("4_4ti0r")
+object = "CompFuel"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_yqaib"]
+script = ExtResource("4_4ti0r")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
+
+[node name="Campfire" type="StaticBody2D"]
+
+[node name="camp fire" type="Sprite2D" parent="."]
+texture = ExtResource("1_dypko")
+
+[node name="fire" parent="." instance=ExtResource("2_ocbed")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_kaxev")
+
+[node name="CompInteractable" parent="." instance=ExtResource("4_ekyfj")]
+position = Vector2(-1, 0)
+scale = Vector2(0.75, 0.75)
+interactable_array = Array[ExtResource("4_4ti0r")]([SubResource("Resource_0f2o2")])
+in_area_array = Array[ExtResource("4_4ti0r")]([SubResource("Resource_gyxhg")])
+end_interaction_array = Array[ExtResource("4_4ti0r")]([SubResource("Resource_yqaib")])
+
+[node name="CompFuel" parent="." node_paths=PackedStringArray("character", "fire") instance=ExtResource("5_xmm8r")]
+character = NodePath("..")
+fire = NodePath("../fire")
+max_fuel = 120.0
+fuel = 120.0
+add_fuel_value = 40.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="CompFuel" method="_on_timer_timeout"]

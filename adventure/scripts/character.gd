@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 
+@export var tool_bar : Node
 @export var base_speed : int = 100
 var current_speed : int
 
@@ -22,6 +23,9 @@ func _process(delta):
 
 func change_velocity(direction : Vector2,speed_factor : float) -> void:
 	velocity = direction * speed_factor * base_speed
+	
+func get_tool_bar():
+	return tool_bar
 
 
 

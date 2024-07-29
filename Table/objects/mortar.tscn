@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://wh02ggte4dbc"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_v7a0p"]
-[ext_resource type="Texture2D" uid="uid://ci4iw8tiss2jh" path="res://Table/sprites/twig.png" id="2_4fieh"]
+[ext_resource type="Texture2D" uid="uid://cwir1ddoxbr45" path="res://Table/sprites/Mortar.png" id="2_up852"]
 [ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="3_hexjq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1bij"]
-size = Vector2(120, 104)
+size = Vector2(48, 55)
 
 [node name="Mortar" type="CharacterBody2D"]
 collision_layer = 2147483648
@@ -14,14 +14,14 @@ script = ExtResource("1_v7a0p")
 item_name = "Mortar"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_4fieh")
+texture = ExtResource("2_up852")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2147483648
 collision_mask = 2147483648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0)
+position = Vector2(3, 0.5)
 shape = SubResource("RectangleShape2D_v1bij")
 
 [node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("3_hexjq")]

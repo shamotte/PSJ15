@@ -1332,19 +1332,19 @@ rotation = -0.174533
 texture = ExtResource("1_r7xs1")
 
 [node name="FrontLeftLeg" type="Sprite2D" parent="LeftLeg1"]
-position = Vector2(12.4075, -0.192412)
+position = Vector2(13.3923, -0.0621758)
 rotation = 0.174533
-scale = Vector2(0.75, 1)
+scale = Vector2(0.25, 1)
 texture = ExtResource("1_r7xs1")
 
 [node name="LeftLeg2" type="Sprite2D" parent="."]
 position = Vector2(7, -4)
-rotation = -1.22173
+rotation = -0.872665
 texture = ExtResource("1_r7xs1")
 
 [node name="LeftLeg3" type="Sprite2D" parent="."]
 position = Vector2(7, -4)
-rotation = -1.5708
+rotation = -1.91986
 texture = ExtResource("1_r7xs1")
 
 [node name="LeftLeg4" type="Sprite2D" parent="."]
@@ -1355,7 +1355,7 @@ texture = ExtResource("1_r7xs1")
 [node name="BackLeftLeg" type="Sprite2D" parent="LeftLeg4"]
 position = Vector2(15.619, 0.562)
 rotation = -1.0472
-scale = Vector2(0.25, 1)
+scale = Vector2(0.75, 1)
 texture = ExtResource("1_r7xs1")
 
 [node name="RightLeg1" type="Sprite2D" parent="."]
