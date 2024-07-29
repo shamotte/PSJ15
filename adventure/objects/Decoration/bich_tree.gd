@@ -2,6 +2,8 @@ extends StaticBody2D
 
 
 var hp = 3
+@onready var fire_effect := $FireEffect
+@onready var occluder := $LightOccluder2D
 
 func chop(context : Area2D):
 	print("choping")
@@ -10,4 +12,7 @@ func chop(context : Area2D):
 		queue_free()
 		
 func start_fire(context : Node2D):
-	print("burning")
+	print("burining")
+	occluder.visible = false
+	fire_effect.visible = true
+	fire_effect.emitting = true
