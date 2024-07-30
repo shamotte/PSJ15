@@ -239,7 +239,7 @@ grow_vertical = 2
 rotation = -1.5708
 pivot_offset = Vector2(75, 110)
 character = NodePath("..")
-text = Array[String](["Good morning! good night? I don't know what time is but hello", "I have many things to deliver but my horse escaped", "Do you see mandrake here? They are really rare. ", "One guy wanted a knife from me but you know. Problems.", "eyepples are really delicious. "])
+text = Array[String](["Good morning! good night? I don't know what time is but hello", "I have many nets for catching insects. If you want you can take one", "I have many things to deliver but my horse escaped", "Do you see mandrake here? They are really rare. ", "One guy wanted a knife from me but you know. Problems.", "eyepples are really delicious. "])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

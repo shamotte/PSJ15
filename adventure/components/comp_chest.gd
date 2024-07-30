@@ -4,7 +4,7 @@ extends Node2D
 @export var anim : AnimationPlayer
 
 var items_inside : Array[tool_item]
-
+var chest_menu : Node
 
 func _process(delta):
 	var body_rotation : float = object.rotation
@@ -12,7 +12,7 @@ func _process(delta):
 	
 func open_chest_menu(character :Node):
 	anim.play("open")
-	var chest_menu : Node = character.get_chest_menu()
+	chest_menu = character.get_chest_menu()
 	chest_menu.open_window(self)
 	chest_menu.set_items(items_inside)
 	print("Open chest")
@@ -27,3 +27,7 @@ func close_chest():
 
 func show_tip(show : bool):
 	$PressE.visible = show
+	if chest_menu == null:
+		return
+	if !show and chest_menu.is_active():
+		chest_menu.exit_window()

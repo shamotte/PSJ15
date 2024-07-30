@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqb40205mq87h"]
+[gd_scene load_steps=8 format=3 uid="uid://dqb40205mq87h"]
 
 [ext_resource type="PackedScene" uid="uid://dhnta5v7aygwj" path="res://adventure/objects/characters/lumberjack.tscn" id="1_yef0c"]
 [ext_resource type="PackedScene" uid="uid://nmftbd08d6vt" path="res://adventure/objects/Decoration/campfire.tscn" id="2_0sw46"]
 [ext_resource type="PackedScene" uid="uid://nqgnd7ha6td3" path="res://adventure/objects/Decoration/trunk.tscn" id="3_4fne4"]
 [ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="3_t7wiw"]
 [ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="5_crsfa"]
+[ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="6_xqcdq"]
+[ext_resource type="Resource" uid="uid://bbw1mseoo8pb2" path="res://both/Tools/Axe.tres" id="7_od3fm"]
 
 [node name="LumberjackCamp" type="Node2D"]
 
@@ -56,3 +58,7 @@ position = Vector2(2, -22)
 
 [node name="Box2" parent="." instance=ExtResource("5_crsfa")]
 position = Vector2(32, -16)
+
+[node name="Crate" parent="." instance=ExtResource("6_xqcdq")]
+position = Vector2(-106, 30)
+items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("7_od3fm")])

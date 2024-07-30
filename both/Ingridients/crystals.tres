@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=5 format=3 uid="uid://b2sluqa7v2hp7"]
+
+[ext_resource type="Texture2D" uid="uid://drlre5aevcfro" path="res://adventure/sprites/decorations/Rock1a.png" id="1_2843g"]
+[ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_ykug1"]
+[ext_resource type="Texture2D" uid="uid://dty3wsjc4yog5" path="res://Table/sprites/crystals.png" id="2_taiur"]
+[ext_resource type="PackedScene" uid="uid://bhca8yqhj86mp" path="res://Table/objects/crystals.tscn" id="4_vy0w0"]
+
+[resource]
+script = ExtResource("1_ykug1")
+name = "crystal"
+icon = ExtResource("2_taiur")
+adventure_sprite = ExtResource("1_2843g")
+table_item = ExtResource("4_vy0w0")

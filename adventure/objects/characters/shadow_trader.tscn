@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c1fafp4eg0h6u"]
+[gd_scene load_steps=43 format=3 uid="uid://c1fafp4eg0h6u"]
 
 [ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_4o8ix"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="1_7old3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://0022p1tmvvol" path="res://adventure/sprites/UI/sanity1.png" id="11_fapjn"]
 [ext_resource type="Texture2D" uid="uid://d3vxi135aiesx" path="res://adventure/sprites/UI/eye_icon.png" id="11_s5mqq"]
 [ext_resource type="Resource" uid="uid://ckcn2k248vfax" path="res://both/Ingridients/evil_eye.tres" id="12_uqqrw"]
+[ext_resource type="Resource" uid="uid://dacy13ixlyxgk" path="res://both/Ingridients/sus_note.tres" id="13_ibe6h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
 radius = 14.0
@@ -331,6 +332,7 @@ cost_list = Array[ExtResource("9_jiv7h")]([SubResource("Resource_uqp02"), SubRes
 to_buy_list = Array[ExtResource("9_jiv7h")]([SubResource("Resource_lodnf"), SubResource("Resource_4keoa"), SubResource("Resource_x8vkd"), SubResource("Resource_ke8ha"), SubResource("Resource_nidfb")])
 cost = SubResource("Resource_hp3sc")
 to_buy = SubResource("Resource_rm6s6")
+note = ExtResource("13_ibe6h")
 
 [node name="CompDialog2" parent="." node_paths=PackedStringArray("character") instance=ExtResource("1_sgvv1")]
 anchors_preset = 8
