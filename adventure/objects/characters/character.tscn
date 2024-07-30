@@ -1,12 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://dulcf8h1hbabn"]
+[gd_scene load_steps=38 format=3 uid="uid://dulcf8h1hbabn"]
 
 [ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
 [ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/characters/hands/leather_hand2.png" id="2_1cqtu"]
-[ext_resource type="PackedScene" uid="uid://ditvd1r1d1ldu" path="res://adventure/components/comp_health.tscn" id="2_uc7ae"]
-[ext_resource type="PackedScene" uid="uid://c1ian0tcm85ij" path="res://adventure/components/comp_sanity.tscn" id="3_ry7vy"]
+[ext_resource type="PackedScene" path="res://adventure/components/comp_health.tscn" id="2_uc7ae"]
+[ext_resource type="PackedScene" path="res://adventure/components/comp_sanity.tscn" id="3_ry7vy"]
 [ext_resource type="Texture2D" uid="uid://dyeih6h3xvi14" path="res://adventure/sprites/characters/bodies/rizzard2.png" id="3_u1jc7"]
 [ext_resource type="PackedScene" uid="uid://bqu1gwna33sb2" path="res://adventure/components/CompPlayerInteraction.tscn" id="4_17uh0"]
-[ext_resource type="PackedScene" uid="uid://b2ikhaqyqisgn" path="res://adventure/components/comp_aura_receiver.tscn" id="5_k21g6"]
+[ext_resource type="PackedScene" path="res://adventure/components/comp_aura_receiver.tscn" id="5_k21g6"]
 [ext_resource type="Texture2D" uid="uid://bn0y75m3ddgd1" path="res://adventure/sprites/tools/Leather_hand_axe.png" id="5_yqv2i"]
 [ext_resource type="Script" path="res://adventure/scripts/tool_manager.gd" id="8_yvhg5"]
 [ext_resource type="PackedScene" uid="uid://dabgqjb4drvnm" path="res://adventure/objects/tools/axe.tscn" id="9_5bi5l"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/change_item.gd" id="16_rml2b"]
 [ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/charge_throw.gd" id="18_wfdbu"]
 [ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/throw.gd" id="19_e2crj"]
+[ext_resource type="Script" path="res://adventure/scripts/PlayerStateMachine/drink.gd" id="21_idr7p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
 radius = 8.0
@@ -469,7 +470,7 @@ libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
 autoplay = "Take_item"
-blend_times = [&"idle", &"idle", 0.5, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"move", &"idle", 1.0, &"move", &"gathering", 0.5, &"move", &"move", 0.5]
+blend_times = [&"idle", &"idle", 0.5, &"idle", &"move", 0.5, &"idle", &"gathering", 0.5, &"move", &"idle", 1.0, &"move", &"move", 0.5, &"move", &"gathering", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"move", 0.5, &"gathering", &"gathering", 0.5]
 
 [node name="ToolManager" type="Node2D" parent="." node_paths=PackedStringArray("hand")]
 script = ExtResource("8_yvhg5")
@@ -501,3 +502,6 @@ script = ExtResource("18_wfdbu")
 
 [node name="throw" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("19_e2crj")
+
+[node name="drink" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("21_idr7p")

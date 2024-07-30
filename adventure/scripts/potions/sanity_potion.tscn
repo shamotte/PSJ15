@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bke7h7b4e5xio"]
+
+[ext_resource type="Script" path="res://adventure/scripts/potions/sanity_potion.gd" id="1_ivejk"]
+[ext_resource type="Texture2D" uid="uid://dpj8g3nvl8usw" path="res://sanity_potion_icon.png" id="2_gcu2l"]
+
+[node name="sanity_potion" type="Node2D"]
+script = ExtResource("1_ivejk")
+ui_icon = ExtResource("2_gcu2l")

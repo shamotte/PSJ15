@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var tool_bar : Node
 @export var chest_menu : Node
 @export var base_speed : int = 100
-var current_speed : int
 
 
 

@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgupc3kb4d0gv"]
+
+[ext_resource type="Texture2D" uid="uid://dyi27vn28qr7f" path="res://adventure/sprites/decorations/treefall.png" id="1_5grcj"]
+[ext_resource type="Script" path="res://adventure/objects/Interactable/Gatherable.gd" id="1_6kr8n"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_w7u26"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="3_d8ryt"]
+[ext_resource type="PackedScene" uid="uid://bmljq2sergiyk" path="res://adventure/components/comp_gatherable.tscn" id="3_yxxdp"]
+[ext_resource type="Resource" uid="uid://der65i8v6r4s2" path="res://both/Ingridients/eyepple.tres" id="5_8jnyy"]
+
+[sub_resource type="Resource" id="Resource_pdps2"]
+script = ExtResource("3_d8ryt")
+object = "CompGatherable"
+function_name = "gather"
+player_state = "gather"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_83g0r"]
+script = ExtResource("3_d8ryt")
+object = "CompGatherable"
+function_name = "show_tip"
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_i676h"]
+script = ExtResource("3_d8ryt")
+object = "CompGatherable"
+function_name = "end_gathering"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6kr8n")
+type = ExtResource("5_8jnyy")
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_5grcj")
+
+[node name="CompInteractable" parent="." instance=ExtResource("2_w7u26")]
+position = Vector2(27, -9)
+scale = Vector2(1.75, 1.75)
+interactable_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_pdps2")])
+in_area_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_83g0r")])
+end_interaction_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_i676h")])
+
+[node name="CompGatherable" parent="." node_paths=PackedStringArray("comp_interactable") instance=ExtResource("3_yxxdp")]
+position = Vector2(0, -43)
+resource_type = ExtResource("5_8jnyy")
+comp_interactable = NodePath("../CompInteractable")

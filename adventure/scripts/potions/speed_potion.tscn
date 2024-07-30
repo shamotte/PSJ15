@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chu0nj6b5adqg"]
+
+[ext_resource type="Script" path="res://adventure/scripts/potions/speed_potion.gd" id="1_i1d3o"]
+
+[node name="speed_potion" type="Node2D"]
+script = ExtResource("1_i1d3o")
