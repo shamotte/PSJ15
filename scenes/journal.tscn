@@ -186,8 +186,7 @@ text = "C"
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
-text = "R
-"
+text = "E"
 
 [node name="PagesFg" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -301,7 +300,32 @@ offset_left = 32.0
 offset_top = 6.0
 offset_right = 112.0
 offset_bottom = 27.0
-text = "Recipes"
+text = "Exploration
+"
+
+[node name="Label2" type="Label" parent="Panes/Control3"]
+offset_left = -6.0
+offset_top = 42.0
+offset_right = 138.0
+offset_bottom = 87.0
+text = "Explore these barren
+lands in search of items."
+
+[node name="Label3" type="Label" parent="Panes/Control3"]
+offset_left = 3.0
+offset_top = 97.0
+offset_right = 147.0
+offset_bottom = 142.0
+text = "Those can help you
+discover new recipes."
+
+[node name="Label4" type="Label" parent="Panes/Control3"]
+offset_left = -4.0
+offset_top = 154.0
+offset_right = 140.0
+offset_bottom = 199.0
+text = "Maybe they're the key
+to escaping these lands?"
 
 [node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("4_10n5s")]
 position = Vector2(22.56, 44.5)

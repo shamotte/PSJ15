@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=46 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://bnmvo4qjsu6a0" path="res://adventure/objects/Interactable/shroom.tscn" id="31_2kfbd"]
 [ext_resource type="PackedScene" uid="uid://boa5g6mitylg1" path="res://adventure/objects/Interactable/spikezalea.tscn" id="32_58bii"]
 [ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="33_70roo"]
+[ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="34_afodl"]
 [ext_resource type="Resource" uid="uid://bbw1mseoo8pb2" path="res://both/Tools/Axe.tres" id="34_kan15"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
@@ -559,7 +560,7 @@ collision_layer = 128
 collision_mask = 128
 script = ExtResource("25_ud3jl")
 objs = Array[PackedScene]([ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("19_4156c"), ExtResource("29_0wg6m")])
-secondaey_objects = Array[PackedScene]([ExtResource("18_n2mjm"), ExtResource("29_k7c55"), ExtResource("30_wwtk6"), ExtResource("31_2kfbd"), ExtResource("32_58bii"), ExtResource("19_4156c")])
+secondaey_objects = Array[PackedScene]([ExtResource("18_n2mjm"), ExtResource("29_k7c55"), ExtResource("30_wwtk6"), ExtResource("31_2kfbd"), ExtResource("32_58bii"), ExtResource("19_4156c"), ExtResource("34_afodl")])
 create_forest = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world_generation"]

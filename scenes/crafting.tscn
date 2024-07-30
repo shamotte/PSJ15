@@ -42,10 +42,10 @@ offset_bottom = 140.0
 position = Vector2(-262, 101)
 
 [node name="Knife" parent="MovableObjects" instance=ExtResource("15_wojyl")]
-position = Vector2(-71, 30)
+position = Vector2(243, 73)
 
 [node name="Mortar" parent="MovableObjects" instance=ExtResource("15_cr6wp")]
-position = Vector2(-244, -105)
+position = Vector2(171, 110)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false

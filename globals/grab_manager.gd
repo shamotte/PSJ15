@@ -16,37 +16,6 @@ func sort_nodes_by_name(a: Node, b: Node):
 	return str(a.get_name()) < str(b.get_name())
 
 var crafting = {
-	"Eyeshrooms+Firefly": func(components: Array):
-		var pos_avg = average_position(components)
-		var tree = components[0].get_parent()
-		for comp in components:
-			comp.queue_free()
-			
-		var scene = load("res://Table/objects/mushroom_lamp.tscn")
-		var e = scene.instantiate()
-		e.position = pos_avg
-		tree.add_child(e),
-	
-	"CutMushrooms+EyepleSlices": func(components: Array):
-		var pos_avg = average_position(components)
-		var tree = components[0].get_parent()
-		for comp in components:
-			comp.queue_free()
-			
-		var scene = load("res://Table/objects/sauce.tscn")
-		var e = scene.instantiate()
-		e.position = pos_avg
-		tree.add_child(e),
-	
-	"Eyeple+Knife": func(components: Array):
-		var pos_avg = components[0].position
-		var tree = components[0].get_parent()
-		components[0].queue_free()
-			
-		var scene = load("res://Table/objects/eyeple_slices.tscn")
-		var e = scene.instantiate()
-		e.position = pos_avg
-		tree.add_child(e),
 	
 	"Knife+Mushrooms": func(components: Array):
 		var pos_avg = components[1].position
@@ -57,16 +26,27 @@ var crafting = {
 		var e = scene.instantiate()
 		e.position = pos_avg
 		tree.add_child(e),
-	
-	"Eyes+Mortar": func(components: Array):
+		
+	"Mushrooms+Fire": func(components: Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		
+		components[0].queue_free()
+		
+		var burnshrooms = load("res://Table/objects/burnshrooms.tscn")
+		var b = burnshrooms.instantiate()
+		b.position = pos_avg
+		tree.add_child(b),
+		
+	"FairyCandy+Fire": func(components: Array):
 		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
 		components[0].queue_free()
-			
-		var scene = load("res://Table/objects/eye_jelly.tscn")
-		var e = scene.instantiate()
-		e.position = pos_avg
-		tree.add_child(e),
+		
+		var hell_candy = load("res://Table/objects/hell_candy.tscn")
+		var h = hell_candy.instantiate()
+		h.position = pos_avg
+		tree.add_child(h),
 	
 	"Eyes+Mushrooms": func(components: Array):
 		var pos_avg = average_position(components)
@@ -80,26 +60,61 @@ var crafting = {
 		e.position = pos_avg
 		tree.add_child(e),
 		
-	"FairyCandy+Fire": func(components: Array):
+	"Eyes+Mortar": func(components: Array):
 		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
 		components[0].queue_free()
+			
+		var scene = load("res://Table/objects/eye_jelly.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
 		
-		var hell_candy = load("res://Table/objects/hell_candy.tscn")
-		var h = hell_candy.instantiate()
-		h.position = pos_avg
-		tree.add_child(h),
-		
-	"Mushrooms+Fire": func(components: Array):
+	"Eyeple+Knife": func(components: Array):
 		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
-		
 		components[0].queue_free()
+			
+		var scene = load("res://Table/objects/eyeple_slices.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
 		
-		var burnshrooms = load("res://Table/objects/burnshrooms.tscn")
-		var b = burnshrooms.instantiate()
-		b.position = pos_avg
-		tree.add_child(b),
+	"CutMushrooms+EyepleSlices": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+			
+		var scene = load("res://Table/objects/sauce.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"Eyeshrooms+Firefly": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+			
+		var scene = load("res://Table/objects/mushroom_lamp.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"FairyCandy+Firefly": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+			
+		var scene = load("res://Table/objects/firefly_candy.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	
+	
 	
 	"EmptyBottle+JadeEye": func(components: Array):
 		var pos_avg = average_position(components)

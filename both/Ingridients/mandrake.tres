@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_fnkq2"]
 [ext_resource type="Texture2D" uid="uid://cmhc6654e8cfq" path="res://adventure/sprites/decorations/mandrake_firstver.png" id="1_ldg2q"]
-[ext_resource type="PackedScene" uid="uid://q73j0dg6kqv1" path="res://Table/objects/shoutrake.tscn" id="3_dpcso"]
+[ext_resource type="PackedScene" uid="uid://q73j0dg6kqv1" path="res://Table/objects/mandrake.tscn" id="3_dpcso"]
 
 [resource]
 script = ExtResource("1_fnkq2")
-name = ""
+name = "Mandrake"
 adventure_sprite = ExtResource("1_ldg2q")
 table_item = ExtResource("3_dpcso")
