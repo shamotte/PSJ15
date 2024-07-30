@@ -10,6 +10,12 @@ func _ready():
 func _process(delta):
 	var world_manager = get_tree().get_root().get_node_or_null("WorldManager")
 	
+	if not $ExplorationMusic.playing and not $ExplorationMusic.stream_paused:
+		$ExplorationMusic.play()
+		
+	if not $CraftingMusic.playing and not $CraftingMusic.stream_paused:
+		$CraftingMusic.play()
+	
 	if world_manager != null:
 		match world_manager.state:
 			
