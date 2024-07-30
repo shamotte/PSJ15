@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dntptrq112sxk"]
+
+[ext_resource type="Script" path="res://adventure/components/comp_chest.gd" id="1_7qd4f"]
+[ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/UI/Press E.png" id="2_f50r1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8tblx"]
+light_mode = 1
+
+[node name="CompChest" type="Node2D"]
+script = ExtResource("1_7qd4f")
+
+[node name="PressE" type="Sprite2D" parent="."]
+visible = false
+z_index = 4
+material = SubResource("CanvasItemMaterial_8tblx")
+position = Vector2(0, -20)
+texture = ExtResource("2_f50r1")

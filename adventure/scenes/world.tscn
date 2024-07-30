@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=37 format=3 uid="uid://b2crbh04dmg5d"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://54uub5ildwl" path="res://adventure/objects/Interactable/Note1.tscn" id="20_flw2p"]
 [ext_resource type="Texture2D" uid="uid://bi3hqyt88r54j" path="res://adventure/sprites/UI/Background.png" id="20_x46jl"]
 [ext_resource type="PackedScene" uid="uid://d215mvtpk43t6" path="res://adventure/objects/Interactable/Note2.tscn" id="21_v82u7"]
+[ext_resource type="PackedScene" uid="uid://c7yy86n778w1f" path="res://adventure/interface/chest_menu.tscn" id="22_3rykl"]
 [ext_resource type="PackedScene" uid="uid://met16om6bggm" path="res://adventure/objects/Interactable/Note3.tscn" id="22_kx4jw"]
 [ext_resource type="PackedScene" uid="uid://dx1ux6mwoyljc" path="res://adventure/objects/Interactable/Note4.tscn" id="23_0a6vq"]
 [ext_resource type="PackedScene" uid="uid://beks6f1e2apid" path="res://adventure/objects/Interactable/Note5.tscn" id="24_fkouu"]
@@ -115,9 +116,10 @@ position = Vector2(-3, -55)
 scale = Vector2(100, 100)
 texture = SubResource("GradientTexture2D_kuyoi")
 
-[node name="PlayerCharacter" parent="." node_paths=PackedStringArray("tool_bar") instance=ExtResource("1_pr2oj")]
+[node name="PlayerCharacter" parent="." node_paths=PackedStringArray("tool_bar", "chest_menu") instance=ExtResource("1_pr2oj")]
 position = Vector2(6.06475, -6.94122)
 tool_bar = NodePath("../UI/ToolBar")
+chest_menu = NodePath("../UI/ChestMenu")
 
 [node name="lantern2" type="PointLight2D" parent="PlayerCharacter"]
 visible = false
@@ -152,7 +154,7 @@ position = Vector2(-247, 192)
 position = Vector2(-190, 193)
 
 [node name="BichTree" parent="Decoration" instance=ExtResource("2_wwnik")]
-position = Vector2(-409, 31)
+position = Vector2(-219, 8)
 
 [node name="BichTree2" parent="Decoration" instance=ExtResource("2_wwnik")]
 position = Vector2(-277, 22)
@@ -524,6 +526,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="ChestMenu" parent="UI" instance=ExtResource("22_3rykl")]
+
 [node name="TraderShop" parent="." instance=ExtResource("19_6q5ja")]
 position = Vector2(-171, -259)
 
@@ -539,4 +543,4 @@ position = Vector2(-230, -88)
 position = Vector2(-111, 99)
 
 [node name="LumberjackCamp" parent="." instance=ExtResource("25_yj1mx")]
-position = Vector2(-561, 367)
+position = Vector2(-546, 447)

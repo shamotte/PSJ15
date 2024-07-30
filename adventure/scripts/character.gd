@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var tool_bar : Node
+@export var chest_menu : Node
 @export var base_speed : int = 100
 var current_speed : int
 
@@ -26,6 +27,9 @@ func change_velocity(direction : Vector2,speed_factor : float) -> void:
 	
 func get_tool_bar():
 	return tool_bar
+	
+func get_chest_menu():
+	return chest_menu
 
 
 

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://nqgnd7ha6td3"]
+
+[ext_resource type="Texture2D" uid="uid://du8rhwcwb2aeq" path="res://adventure/sprites/decorations/gyattree_root.png" id="2_3k6xe"]
+[ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="4_eufi3"]
+[ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/Decoration/fire_particle_emiter.tscn" id="5_rb1n2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umyog"]
+radius = 8.0
+
+[node name="trunk" type="StaticBody2D"]
+collision_layer = 13
+collision_mask = 9
+
+[node name="Gyattree" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_3k6xe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_umyog")
+
+[node name="AxeReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
+script = ExtResource("4_eufi3")
+object = NodePath("..")
+function_name = "chop"
+
+[node name="FirePotionReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
+script = ExtResource("4_eufi3")
+object = NodePath("..")
+function_name = "start_fire"
+
+[node name="FireEffect" parent="." instance=ExtResource("5_rb1n2")]
+visible = false
+emitting = false
