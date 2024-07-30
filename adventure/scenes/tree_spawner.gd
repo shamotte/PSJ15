@@ -2,10 +2,10 @@ extends Area2D
 
 var active_points : Array[Vector2]
 var all_points : Array[Vector2]
-var rad :float = 80
+var rad :float = 64
 
-var max_dist := 2000
-@export var obj : PackedScene
+var max_dist := 1024
+@export var objs : Array[PackedScene]
 @export var secondaey_objects : Array[PackedScene]
 @export var repeats : int = 10
 @onready var holder :Node2D = $"../Decoration"
@@ -49,7 +49,7 @@ func check_restricted_area(point : Vector2) -> bool:
 	var physics = get_world_2d().direct_space_state
 	var params : PhysicsPointQueryParameters2D  = PhysicsPointQueryParameters2D.new()
 	params.position = point
-	params.collision_mask = 64
+	params.collision_mask = 128
 	params.collide_with_areas = true
 	var results : =physics.intersect_point(params)
 	return len(results) == 0
@@ -63,9 +63,10 @@ func place_trees(points : Array[Vector2], radius : float) -> Array[Vector2]:
 		var counter := repeats
 		var point :Vector2= points.pop_front()
 		while rep:
-			var spawned_object :Node2D= obj.instantiate()
+			var spawned_object :Node2D= objs.pick_random().instantiate()
 			var new_point = point + Vector2(randf_range(-1,1),randf_range(-1,1)).normalized() * randf_range(radius,2*radius)
 			spawned_object.global_position = new_point
+			spawned_object.rotation = randi_range(0, 3) * PI/2
 			holder.add_child(spawned_object)
 
 			if check_restricted_area(new_point) and check_radius_own(trees,radius,new_point) and in_bounding_box(new_point):
@@ -83,7 +84,7 @@ func place_trees(points : Array[Vector2], radius : float) -> Array[Vector2]:
 	
 func place_gatherables(points : Array[Vector2], radius : float):
 	
-	for x in range(100):
+	for x in range(256):
 		var spawned_object = secondaey_objects.pick_random().instantiate()
 		var point = points.pick_random()
 		var new_point = point + Vector2(randf_range(-1,1),randf_range(-1,1)).normalized() * randf_range(radius * 0.5,radius)

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://03j66ww550y"]
+[gd_scene load_steps=7 format=3 uid="uid://03j66ww550y"]
 
 [ext_resource type="Script" path="res://adventure/interface/tool_bar.gd" id="1_c8kyi"]
 [ext_resource type="PackedScene" uid="uid://xejr8r6a2fl7" path="res://adventure/interface/tool_frame.tscn" id="2_m56is"]
+[ext_resource type="Resource" uid="uid://bbw1mseoo8pb2" path="res://both/Tools/Axe.tres" id="3_plnfp"]
+[ext_resource type="Resource" uid="uid://byb4lx6edea62" path="res://both/Tools/Pickaxe.tres" id="4_n7bj0"]
+[ext_resource type="Resource" uid="uid://cxux22uj43l60" path="res://both/Tools/net.tres" id="5_gt8hc"]
+[ext_resource type="Resource" uid="uid://76pmweos6el6" path="res://both/Tools/no_item.tres" id="6_k1fh0"]
 
 [node name="ToolBar" type="Control"]
 custom_minimum_size = Vector2(180, 32)
@@ -10,6 +14,7 @@ anchors_preset = 0
 script = ExtResource("1_c8kyi")
 tool_frame = ExtResource("2_m56is")
 number_of_items = 5
+tool_bar_items = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("3_plnfp"), ExtResource("4_n7bj0"), ExtResource("5_gt8hc"), ExtResource("6_k1fh0"), ExtResource("6_k1fh0")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(160, 32)

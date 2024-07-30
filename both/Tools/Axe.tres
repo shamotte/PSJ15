@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="tool" load_steps=4 format=3 uid="uid://bbw1mseoo8pb2"]
+[gd_resource type="Resource" script_class="tool_item" load_steps=4 format=3 uid="uid://bbw1mseoo8pb2"]
 
 [ext_resource type="Texture2D" uid="uid://bwvgkmloqblak" path="res://adventure/sprites/UI/axe_icon.png" id="1_mki2j"]
 [ext_resource type="Script" path="res://both/Resources/tools.gd" id="1_muxql"]

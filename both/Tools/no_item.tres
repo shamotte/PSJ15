@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tool_item" load_steps=4 format=3 uid="uid://76pmweos6el6"]
+
+[ext_resource type="Texture2D" uid="uid://cga7dvy3wjdba" path="res://adventure/sprites/null.png" id="1_2en1l"]
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="1_eajek"]
+[ext_resource type="PackedScene" uid="uid://oeifcabkjdni" path="res://adventure/objects/tools/no_item.tscn" id="2_kug8m"]
+
+[resource]
+script = ExtResource("1_eajek")
+name = "Null"
+player_tool = ExtResource("2_kug8m")
+icon = ExtResource("1_2en1l")

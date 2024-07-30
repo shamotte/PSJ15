@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://btn2uyjo6vxn8"]
+
+[ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_l1x6c"]
+[ext_resource type="Texture2D" uid="uid://c2fbov2v4nexv" path="res://Table/sprites/firefly_candy.png" id="2_w47nh"]
+[ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="3_wsm4q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vby4s"]
+radius = 29.1548
+
+[node name="FireflyCandy" type="CharacterBody2D"]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_l1x6c")
+item_name = "FireflyCandy"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w47nh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vby4s")
+
+[node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("3_wsm4q")]
+grab_area = NodePath("../Area2D")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjd270ydmkher"]
+
+[ext_resource type="Script" path="res://adventure/interface/item_slot.gd" id="1_jpwa7"]
+[ext_resource type="Texture2D" uid="uid://myg7pde7xxvm" path="res://adventure/sprites/UI/Frame.png" id="1_ktgco"]
+[ext_resource type="Texture2D" uid="uid://bwvgkmloqblak" path="res://adventure/sprites/UI/axe_icon.png" id="2_w32sp"]
+
+[node name="ItemSlot" type="Button"]
+custom_minimum_size = Vector2(36, 36)
+offset_right = 36.0
+offset_bottom = 36.0
+script = ExtResource("1_jpwa7")
+
+[node name="Frame" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 34.0
+offset_bottom = 34.0
+texture = ExtResource("1_ktgco")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 34.0
+offset_bottom = 34.0
+texture = ExtResource("2_w32sp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
