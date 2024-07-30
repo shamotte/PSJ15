@@ -29,12 +29,9 @@ func _process(delta):
 	#interactable object
 	if len(Areas_to_interact) > 0:
 		var Component : Area2D = min_distance(Areas_to_interact)
-		if Component.has_method("in_area"):
-			Component.in_area(true)
-		#Aura
-		#for i in Areas_to_interact:
-		#	if Component.has_method("aura"):
-		#		Component.aura(get_parent())
+		if Component!= null:
+			if Component.has_method("in_area"):
+				Component.in_area(true)
 	
 #func _input(event):
 	#if event.is_action_pressed("interact"):
