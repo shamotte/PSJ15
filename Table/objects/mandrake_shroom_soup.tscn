@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcgknsfoqmghi"]
+
+[ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_arq2u"]
+[ext_resource type="Texture2D" uid="uid://ick6oobdemy1" path="res://Table/sprites/mandrake_soup.png" id="2_c7kub"]
+[ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="3_jbn8i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohfo3"]
+radius = 64.0078
+
+[node name="MandrakeSoup" type="CharacterBody2D"]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_arq2u")
+item_name = "MandrakeSoup"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c7kub")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 2)
+shape = SubResource("CircleShape2D_ohfo3")
+
+[node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("3_jbn8i")]
+grab_area = NodePath("../Area2D")
