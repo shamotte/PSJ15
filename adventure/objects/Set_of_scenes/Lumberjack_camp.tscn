@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqb40205mq87h"]
+
+[ext_resource type="PackedScene" uid="uid://dhnta5v7aygwj" path="res://adventure/objects/characters/lumberjack.tscn" id="1_yef0c"]
+[ext_resource type="PackedScene" uid="uid://nmftbd08d6vt" path="res://adventure/objects/Decoration/campfire.tscn" id="2_0sw46"]
+[ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="3_t7wiw"]
+[ext_resource type="Texture2D" uid="uid://sk3w51rufihu" path="res://adventure/sprites/decorations/gyattree.png" id="4_uhlx1"]
+[ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="5_crsfa"]
+
+[node name="LumberjackCamp" type="Node2D"]
+
+[node name="lumberjack" parent="." instance=ExtResource("1_yef0c")]
+position = Vector2(14, 16)
+
+[node name="Campfire" parent="." instance=ExtResource("2_0sw46")]
+position = Vector2(-46, 57)
+
+[node name="Tent" parent="." instance=ExtResource("3_t7wiw")]
+position = Vector2(-44, -2)
+
+[node name="Gyattree" type="Sprite2D" parent="."]
+position = Vector2(93, 39)
+texture = ExtResource("4_uhlx1")
+
+[node name="Gyattree2" type="Sprite2D" parent="."]
+position = Vector2(110, -10)
+texture = ExtResource("4_uhlx1")
+
+[node name="Gyattree3" type="Sprite2D" parent="."]
+position = Vector2(145, 22)
+texture = ExtResource("4_uhlx1")
+
+[node name="Gyattree4" type="Sprite2D" parent="."]
+position = Vector2(60, -39)
+texture = ExtResource("4_uhlx1")
+
+[node name="Gyattree5" type="Sprite2D" parent="."]
+position = Vector2(122, -53)
+texture = ExtResource("4_uhlx1")
+
+[node name="Gyattree6" type="Sprite2D" parent="."]
+position = Vector2(171, -28)
+texture = ExtResource("4_uhlx1")
+
+[node name="Box" parent="." instance=ExtResource("5_crsfa")]
+position = Vector2(2, -22)
+
+[node name="Box2" parent="." instance=ExtResource("5_crsfa")]
+position = Vector2(32, -16)

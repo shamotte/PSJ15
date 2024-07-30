@@ -21,13 +21,7 @@ func gather():
 	in_interaction = true
 	
 func end_gathering():
-	
-	var table_item = get_parent().type.table_item
-	if table_item != null:
-		var t = table_item.instantiate()
-		t.position = Vector2(randf_range(-200, 200), randf_range(-200,200))
-		get_tree().get_root().get_node("WorldManager").crafting.get_node("MovableObjects").add_child(t)
-	
+	Global.add_to_table(get_parent().type)
 	if destroy_object:
 		anim.play("disappear")
 	else:

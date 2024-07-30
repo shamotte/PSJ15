@@ -37,10 +37,7 @@ func trade(character : Node):
 		var component : Node2D = character.get_node("CompSanity")
 		component.increase_sanity(to_buy.amount)
 	if to_buy.type == Goods.GOODS.EYE:
-		if to_buy.ingridient.table_item != null:
-			var t = to_buy.ingridient.table_item.instantiate()
-			t.position = Vector2(randf_range(-200, 200), randf_range(-200,200))
-			get_tree().get_root().get_node("WorldManager").crafting.get_node("MovableObjects").add_child(t)
+		Global.add_to_table(to_buy.ingridient)
 	emit_signal("trading")
 	generate_trade()
 	show_trade(false)

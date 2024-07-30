@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://20mjts40xif7"]
+
+[ext_resource type="Script" path="res://adventure/components/comp_sanity_aura.gd" id="1_bwux1"]
+
+[node name="CompSanityAura" type="Node2D"]
+script = ExtResource("1_bwux1")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

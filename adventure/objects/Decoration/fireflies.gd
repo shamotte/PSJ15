@@ -1,16 +1,13 @@
 extends Area2D
 
-@export var firefly : PackedScene
+@export var firefly : Ingridient
 
 func _ready():
 	$AnimationPlayer.play("idle")
 
 func cought(t : tool):
 	print("fiefly cought")
-	if firefly != null:
-		var loot = firefly.instantiate()
-		loot.position = Vector2(randf_range(-200, 200), randf_range(-200,200))
-		get_tree().get_root().get_node("WorldManager").crafting.get_node("MovableObjects").add_child(loot)
+	Global.add_to_table(firefly)
 	t.get_player()
 	$AnimationPlayer.play("disappear")
 	

@@ -109,3 +109,4 @@ occluder = SubResource("OccluderPolygon2D_cgul4")
 
 [node name="Campfire" parent="." instance=ExtResource("10_fnq0q")]
 position = Vector2(91, 142)
+extingushable = true

@@ -1,0 +1,309 @@
+[gd_scene load_steps=20 format=3 uid="uid://dhnta5v7aygwj"]
+
+[ext_resource type="Script" path="res://adventure/scripts/friend.gd" id="1_1v61h"]
+[ext_resource type="Texture2D" uid="uid://3tc47a8wgm41" path="res://adventure/sprites/decorations/open_box.png" id="2_gt4nn"]
+[ext_resource type="Texture2D" uid="uid://bn0y75m3ddgd1" path="res://adventure/sprites/tools/Leather_hand_axe.png" id="2_rcmu8"]
+[ext_resource type="Texture2D" uid="uid://dw4ojpofca2hq" path="res://adventure/sprites/decorations/axe_small.png" id="3_bevwl"]
+[ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/characters/hands/leather_hand2.png" id="3_gm0ci"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="4_5yybh"]
+[ext_resource type="Texture2D" uid="uid://jbxgughdw34f" path="res://adventure/sprites/characters/bodies/lumberjack.png" id="4_fbaag"]
+[ext_resource type="Texture2D" uid="uid://sk3w51rufihu" path="res://adventure/sprites/decorations/gyattree.png" id="5_q6pkr"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_uosux"]
+[ext_resource type="PackedScene" uid="uid://d41p7qywcn26" path="res://adventure/components/CompDialog.tscn" id="6_l4d7y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pa6my"]
+size = Vector2(24, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gx2d2"]
+radius = 14.0
+
+[sub_resource type="Animation" id="Animation_j2khf"]
+resource_name = "gathering"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1, 1.3, 1.5, 1.8, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, -8), Vector2(17, -4), Vector2(17, -3), Vector2(17, -4), Vector2(17, -3), Vector2(17, -4), Vector2(17, -3), Vector2(17, -4), Vector2(16, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1, 1.3, 1.5, 1.8, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 9), Vector2(17, 5), Vector2(17, 4), Vector2(17, 5), Vector2(17, 4), Vector2(17, 5), Vector2(17, 4), Vector2(17, 5), Vector2(16, 9)]
+}
+
+[sub_resource type="Animation" id="Animation_kuk7j"]
+resource_name = "idle"
+length = 12.0
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6, 7, 8, 9, 10, 11, 11.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-8.99998, -11.0002), Vector2(-8.99998, -11.0002), Vector2(-9.52261, -15.9728), Vector2(-9.41809, -14.9783), Vector2(-9.7369, -10.0062), Vector2(-8.99998, -11.0002), Vector2(-8.99998, -12.0002), Vector2(-8.99998, -11.0002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 6.01, 7, 8, 9, 10, 11.09, 11.1),
+"transitions": PackedFloat32Array(0.196, 1, 0.2, 1, 0.25, 1, 1, 1, 1, 1, 1, 1, 1, 0.196),
+"update": 0,
+"values": [Vector2(15.9998, -11), Vector2(5.99977, -21.9999), Vector2(15.9998, -11), Vector2(5.99977, -21.9999), Vector2(15.9998, -11), Vector2(5.99977, -21.9999), Vector2(15.9998, -11), Vector2(7.99985, -11), Vector2(7.85829, -17.1761), Vector2(9.4866, -15.9409), Vector2(8.44926, -11.405), Vector2(7.22456, -11.2025), Vector2(7.22456, -11.2025), Vector2(15.9998, -11)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/RightHand:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 11.1),
+"transitions": PackedFloat32Array(0.196146, 1, 0.2, 1, 0.25, 1, 1, 0.196146),
+"update": 0,
+"values": [0.0, -1.5708, 0.0, -1.5708, 0.0, -1.5708, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Axe:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6, 11.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/RightHand:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.01, 11.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_rcmu8"), ExtResource("3_gm0ci"), ExtResource("2_rcmu8")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6.1, 7, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.5708, 1.5708, 1.46608, -0.382227, 1.5708]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6.1, 7, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, 0), Vector2(-3, 0), Vector2(3.99999, -4.00003), Vector2(1.59996, -11.2), Vector2(-3, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("tree:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 7, 8, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(24, -9.00009), Vector2(24, -9.00009), Vector2(-5.00012, -31), Vector2(-5.00012, -31), Vector2(24, -9.00009)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("tree:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("tree:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_b8gik"]
+resource_name = "moving"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/LeftHand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(15, -9), Vector2(4, -9), Vector2(15, -9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, 10), Vector2(15, 10), Vector2(5, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8jga"]
+_data = {
+"gathering": SubResource("Animation_j2khf"),
+"idle": SubResource("Animation_kuk7j"),
+"moving": SubResource("Animation_b8gik")
+}
+
+[sub_resource type="Resource" id="Resource_mdn0b"]
+script = ExtResource("5_uosux")
+object = "CompDialog"
+function_name = "dialog_on"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_jar6c"]
+script = ExtResource("5_uosux")
+object = "CompDialog"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_vu2ba"]
+script = ExtResource("5_uosux")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
+
+[node name="lumberjack" type="CharacterBody2D"]
+rotation = 1.5708
+motion_mode = 1
+script = ExtResource("1_1v61h")
+
+[node name="Box" type="StaticBody2D" parent="."]
+position = Vector2(-6.0001, -29)
+
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+texture = ExtResource("2_gt4nn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Box"]
+position = Vector2(0.999999, -0.999983)
+shape = SubResource("RectangleShape2D_pa6my")
+
+[node name="Axe" type="Sprite2D" parent="."]
+position = Vector2(8.0001, 15.9999)
+rotation = 1.5708
+scale = Vector2(-1, 1)
+texture = ExtResource("3_bevwl")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(24, -9.00009)
+texture = ExtResource("5_q6pkr")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.478629, -1.4408)
+rotation = 1.53308
+texture = ExtResource("4_fbaag")
+
+[node name="LeftHand" type="Sprite2D" parent="Body"]
+position = Vector2(-9.22167, -13.1094)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("3_gm0ci")
+
+[node name="RightHand" type="Sprite2D" parent="Body"]
+position = Vector2(7.94063, -13.5838)
+texture = ExtResource("3_gm0ci")
+
+[node name="tree" type="Sprite2D" parent="."]
+position = Vector2(24, -9.00009)
+texture = ExtResource("5_q6pkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_gx2d2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s8jga")
+}
+
+[node name="CompInteractable" parent="." instance=ExtResource("4_5yybh")]
+interactable_array = Array[ExtResource("5_uosux")]([SubResource("Resource_mdn0b")])
+in_area_array = Array[ExtResource("5_uosux")]([SubResource("Resource_jar6c")])
+end_interaction_array = Array[ExtResource("5_uosux")]([SubResource("Resource_vu2ba")])
+
+[node name="CompDialog" parent="." node_paths=PackedStringArray("character") instance=ExtResource("6_l4d7y")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -110.0
+offset_right = -75.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(75, 110)
+character = NodePath("..")
+writing_speed = 0.04
+text = Array[String](["Nice night for chopping!", "Campfires helps me in calming down", "Trees gives us many resources", "It would be nice to know alchemy"])
