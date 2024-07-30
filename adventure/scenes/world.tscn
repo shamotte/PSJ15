@@ -531,7 +531,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="ChestMenu" parent="UI" instance=ExtResource("22_3rykl")]
+[node name="ChestMenu" parent="UI" node_paths=PackedStringArray("tool_bar") instance=ExtResource("22_3rykl")]
+tool_bar = NodePath("../ToolBar")
 
 [node name="TraderShop" parent="." instance=ExtResource("19_6q5ja")]
 position = Vector2(-171, -259)

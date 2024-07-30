@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7yy86n778w1f"]
+[gd_scene load_steps=8 format=3 uid="uid://c7yy86n778w1f"]
 
 [ext_resource type="Script" path="res://adventure/interface/ChestMenu.gd" id="1_d05ed"]
 [ext_resource type="Texture2D" uid="uid://bi3hqyt88r54j" path="res://adventure/sprites/UI/Background.png" id="2_5ol8l"]
+[ext_resource type="Resource" uid="uid://76pmweos6el6" path="res://both/Tools/no_item.tres" id="3_enrjm"]
+[ext_resource type="PackedScene" uid="uid://bjd270ydmkher" path="res://adventure/interface/item_slot.tscn" id="3_folva"]
 [ext_resource type="Texture2D" uid="uid://dokxidcxbbbir" path="res://Table/sprites/X.png" id="3_mm2eo"]
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="3_sl848"]
+
+[sub_resource type="Resource" id="Resource_oo5em"]
+script = ExtResource("3_sl848")
+name = ""
 
 [node name="ChestMenu" type="Control"]
 layout_mode = 3
@@ -12,8 +19,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d05ed")
+item_slot = ExtResource("3_folva")
+items_inside = Array[ExtResource("3_sl848")]([SubResource("Resource_oo5em")])
+no_item = ExtResource("3_enrjm")
 
 [node name="Container" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,14 +41,21 @@ offset_right = 517.0
 offset_bottom = 234.0
 texture = ExtResource("2_5ol8l")
 
-[node name="GridContainer" type="GridContainer" parent="Container/chest"]
-layout_mode = 0
-offset_left = 21.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Container/chest"]
+custom_minimum_size = Vector2(340, 150)
+layout_mode = 2
+offset_left = 22.0
 offset_top = 21.0
 offset_right = 362.0
 offset_bottom = 171.0
 
-[node name="ItemSlot" type="Control" parent="Container/chest/GridContainer"]
+[node name="chestGrid" type="GridContainer" parent="Container/chest/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 150)
+layout_mode = 2
+columns = 8
+
+[node name="ItemSlot" parent="Container/chest/ScrollContainer/chestGrid" instance=ExtResource("3_folva")]
 layout_mode = 2
 
 [node name="player\'s tools" type="TextureRect" parent="Container"]
@@ -49,12 +67,20 @@ offset_right = 519.0
 offset_bottom = 303.0
 texture = ExtResource("2_5ol8l")
 
-[node name="GridContainer" type="GridContainer" parent="Container/player\'s tools"]
+[node name="playerGrid" type="HBoxContainer" parent="Container/player\'s tools"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 36)
 layout_mode = 0
-offset_left = 21.0
-offset_top = 21.0
-offset_right = 362.0
-offset_bottom = 171.0
+offset_left = 23.0
+offset_top = 14.0
+offset_right = 363.0
+offset_bottom = 50.0
+
+[node name="ItemSlot" parent="Container/player\'s tools/playerGrid" instance=ExtResource("3_folva")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="Container/player\'s tools/playerGrid" instance=ExtResource("3_folva")]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="Container"]
 layout_mode = 0
