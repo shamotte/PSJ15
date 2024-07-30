@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://adventure/scenes/tree_spawner.gd" id="25_ud3jl"]
 [ext_resource type="PackedScene" uid="uid://by5tjtavts5oi" path="res://adventure/objects/Set_of_scenes/Camp.tscn" id="25_wgk3j"]
 [ext_resource type="PackedScene" uid="uid://dqb40205mq87h" path="res://adventure/objects/Set_of_scenes/Lumberjack_camp.tscn" id="25_yj1mx"]
+[ext_resource type="PackedScene" uid="uid://nqgnd7ha6td3" path="res://adventure/objects/Decoration/trunk.tscn" id="29_0wg6m"]
 [ext_resource type="PackedScene" uid="uid://dnoumkxs23frt" path="res://adventure/objects/Interactable/EyeFruit.tscn" id="29_k7c55"]
 [ext_resource type="PackedScene" uid="uid://be5wt544mf3ov" path="res://adventure/objects/Interactable/fairyCandy.tscn" id="30_wwtk6"]
 [ext_resource type="PackedScene" uid="uid://bnmvo4qjsu6a0" path="res://adventure/objects/Interactable/shroom.tscn" id="31_2kfbd"]
@@ -557,8 +558,9 @@ position = Vector2(-546, 447)
 collision_layer = 128
 collision_mask = 128
 script = ExtResource("25_ud3jl")
-obj = ExtResource("2_wwnik")
-secondaey_objects = Array[PackedScene]([ExtResource("18_n2mjm"), ExtResource("29_k7c55"), ExtResource("30_wwtk6"), ExtResource("31_2kfbd"), ExtResource("32_58bii")])
+objs = Array[PackedScene]([ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtResource("19_4156c"), ExtResource("29_0wg6m")])
+secondaey_objects = Array[PackedScene]([ExtResource("18_n2mjm"), ExtResource("29_k7c55"), ExtResource("30_wwtk6"), ExtResource("31_2kfbd"), ExtResource("32_58bii"), ExtResource("19_4156c")])
+create_forest = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world_generation"]
 polygon = PackedVector2Array(-817, -117, -660, 297, -667, 558, -667, 561, -344, 601, -299, 361, -7, 314, -7, 314, 208, 31, 150, -310, -52, -470, -288, -434, -692, -308)
