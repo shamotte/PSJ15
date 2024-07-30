@@ -31,7 +31,6 @@ func _ready():
 func _process(delta):
 	var body_rotation : float = character.rotation
 	rotation = -body_rotation
-	#print($Timer.get_time_left())
 	#if $Timer.get_time_left()
 
 func dialog_on():

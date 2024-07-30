@@ -8,7 +8,6 @@ func _ready():
 	$fire.set_energy(energy_value())
 	
 func energy_value():
-	print(fuel/max_fuel)
 	return float(fuel/max_fuel)
 	
 

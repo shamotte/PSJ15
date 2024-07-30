@@ -32,13 +32,13 @@ colors = PackedColorArray(0.325441, 0.325441, 0.325441, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kuyoi"]
 gradient = SubResource("Gradient_w0p8n")
 
-[sub_resource type="Gradient" id="Gradient_nvuxq"]
+[sub_resource type="Gradient" id="Gradient_8c0ty"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.62987, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0fphx"]
-gradient = SubResource("Gradient_nvuxq")
+gradient = SubResource("Gradient_8c0ty")
 width = 400
 height = 400
 fill = 1
@@ -64,7 +64,8 @@ texture = SubResource("GradientTexture2D_kuyoi")
 position = Vector2(6.06475, -6.94122)
 tool_bar = NodePath("../UI/ToolBar")
 
-[node name="lantern" type="PointLight2D" parent="PlayerCharacter"]
+[node name="lantern2" type="PointLight2D" parent="PlayerCharacter"]
+visible = false
 position = Vector2(18.9352, 2.94122)
 blend_mode = 2
 shadow_enabled = true
@@ -94,6 +95,261 @@ position = Vector2(-247, 192)
 
 [node name="Note5" parent="Decoration" instance=ExtResource("24_fkouu")]
 position = Vector2(-190, 193)
+
+[node name="BichTree" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-409, 31)
+
+[node name="BichTree2" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-277, 22)
+
+[node name="BichTree37" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-259, -33)
+
+[node name="BichTree38" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-283, -116)
+
+[node name="BichTree39" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-317, -158)
+
+[node name="BichTree40" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-350, -205)
+
+[node name="BichTree47" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-176, -307)
+
+[node name="BichTree48" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-56, -343)
+
+[node name="BichTree49" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-110, -364)
+
+[node name="BichTree50" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-175, -360)
+
+[node name="BichTree51" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-224, -265)
+
+[node name="BichTree52" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-4, -320)
+
+[node name="BichTree53" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(8, -240)
+
+[node name="BichTree59" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-550, 247)
+
+[node name="BichTree60" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-497, 250)
+
+[node name="BichTree61" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-458, 279)
+
+[node name="BichTree62" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-515, 288)
+
+[node name="BichTree63" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-402, 276)
+
+[node name="BichTree64" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-350, 303)
+
+[node name="BichTree65" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-294, 284)
+
+[node name="BichTree66" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-250, 300)
+
+[node name="BichTree67" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-194, 279)
+
+[node name="BichTree68" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-147, 280)
+
+[node name="BichTree69" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-100, 241)
+
+[node name="BichTree70" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-53, 225)
+
+[node name="BichTree71" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-18, 182)
+
+[node name="BichTree72" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(23, 139)
+
+[node name="BichTree73" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(63, 100)
+
+[node name="BichTree74" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(100, 57)
+
+[node name="BichTree75" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(96, 4)
+
+[node name="BichTree76" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(96, -51)
+
+[node name="BichTree77" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(87, -103)
+
+[node name="BichTree78" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(67, -147)
+
+[node name="BichTree79" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(39, -194)
+
+[node name="BichTree80" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(56, -241)
+
+[node name="BichTree81" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(28, -289)
+
+[node name="BichTree82" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(93, -192)
+
+[node name="BichTree83" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(112, -145)
+
+[node name="BichTree84" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(139, -82)
+
+[node name="BichTree85" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(147, -26)
+
+[node name="BichTree54" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(2, -367)
+
+[node name="BichTree55" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-51, -384)
+
+[node name="BichTree56" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-145, -405)
+
+[node name="BichTree57" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-231, -327)
+
+[node name="BichTree58" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-230, -385)
+
+[node name="BichTree41" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-442, -232)
+
+[node name="BichTree42" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-553, -244)
+
+[node name="BichTree43" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-613, -238)
+
+[node name="BichTree44" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-674, -223)
+
+[node name="BichTree45" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-715, -174)
+
+[node name="BichTree46" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-765, -134)
+
+[node name="BichTree5" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-553, 103)
+
+[node name="BichTree6" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-613, 159)
+
+[node name="BichTree7" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-700, 104)
+
+[node name="BichTree18" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-649, 79)
+
+[node name="BichTree19" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-612, 119)
+
+[node name="BichTree20" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-554, 146)
+
+[node name="BichTree21" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-693, 47)
+
+[node name="BichTree22" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-692, -7)
+
+[node name="BichTree23" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-738, -35)
+
+[node name="BichTree24" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-715, -104)
+
+[node name="BichTree25" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-654, -171)
+
+[node name="BichTree26" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-560, -188)
+
+[node name="BichTree8" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-733, 19)
+
+[node name="BichTree9" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-757, -80)
+
+[node name="BichTree10" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-676, -130)
+
+[node name="BichTree11" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-603, -183)
+
+[node name="BichTree27" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-453, -180)
+
+[node name="BichTree28" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-374, -147)
+
+[node name="BichTree12" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-502, -216)
+
+[node name="BichTree13" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-403, -183)
+
+[node name="BichTree14" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-386, -96)
+
+[node name="BichTree29" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-362, -47)
+
+[node name="BichTree30" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-358, 15)
+
+[node name="BichTree31" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-309, -63)
+
+[node name="BichTree32" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-341, -104)
+
+[node name="BichTree33" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-662, 136)
+
+[node name="BichTree34" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-498, 122)
+
+[node name="BichTree15" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-318, -11)
+
+[node name="BichTree16" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-375, 74)
+
+[node name="BichTree17" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-322, 59)
+
+[node name="BichTree35" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-576, 202)
+
+[node name="BichTree36" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-576, 202)
+
+[node name="BichTree3" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-596, 78)
+
+[node name="BichTree4" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-645, 34)
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -192,7 +448,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="TraderShop" parent="." instance=ExtResource("19_6q5ja")]
-position = Vector2(-179, -262)
+position = Vector2(-171, -259)
 
 [node name="WriterAndTable" parent="." instance=ExtResource("17_6cfga")]
 position = Vector2(-67, -120)
@@ -203,259 +459,4 @@ position = Vector2(-230, -88)
 [node name="ProjectileManager" type="Node2D" parent="."]
 
 [node name="MfCargo" parent="." instance=ExtResource("25_3mi03")]
-position = Vector2(-57, -316)
-
-[node name="BichTree" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-409, 31)
-
-[node name="BichTree2" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-277, 22)
-
-[node name="BichTree37" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-259, -33)
-
-[node name="BichTree38" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-283, -116)
-
-[node name="BichTree39" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-317, -158)
-
-[node name="BichTree40" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-350, -205)
-
-[node name="BichTree47" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-176, -307)
-
-[node name="BichTree48" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-64, -327)
-
-[node name="BichTree49" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-110, -364)
-
-[node name="BichTree50" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-175, -360)
-
-[node name="BichTree51" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-224, -265)
-
-[node name="BichTree52" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-35, -279)
-
-[node name="BichTree53" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(8, -240)
-
-[node name="BichTree59" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-550, 247)
-
-[node name="BichTree60" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-497, 250)
-
-[node name="BichTree61" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-458, 279)
-
-[node name="BichTree62" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-515, 288)
-
-[node name="BichTree63" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-402, 276)
-
-[node name="BichTree64" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-350, 303)
-
-[node name="BichTree65" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-294, 284)
-
-[node name="BichTree66" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-250, 300)
-
-[node name="BichTree67" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-194, 279)
-
-[node name="BichTree68" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-147, 280)
-
-[node name="BichTree69" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-100, 241)
-
-[node name="BichTree70" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-53, 225)
-
-[node name="BichTree71" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-18, 182)
-
-[node name="BichTree72" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(23, 139)
-
-[node name="BichTree73" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(63, 100)
-
-[node name="BichTree74" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(100, 57)
-
-[node name="BichTree75" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(96, 4)
-
-[node name="BichTree76" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(96, -51)
-
-[node name="BichTree77" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(87, -103)
-
-[node name="BichTree78" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(67, -147)
-
-[node name="BichTree79" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(39, -194)
-
-[node name="BichTree80" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(56, -241)
-
-[node name="BichTree81" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(28, -289)
-
-[node name="BichTree82" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(93, -192)
-
-[node name="BichTree83" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(112, -145)
-
-[node name="BichTree84" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(139, -82)
-
-[node name="BichTree85" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(147, -26)
-
-[node name="BichTree54" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-3, -325)
-
-[node name="BichTree55" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-51, -384)
-
-[node name="BichTree56" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-145, -405)
-
-[node name="BichTree57" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-231, -327)
-
-[node name="BichTree58" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-230, -385)
-
-[node name="BichTree41" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-442, -232)
-
-[node name="BichTree42" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-553, -244)
-
-[node name="BichTree43" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-613, -238)
-
-[node name="BichTree44" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-674, -223)
-
-[node name="BichTree45" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-715, -174)
-
-[node name="BichTree46" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-765, -134)
-
-[node name="BichTree5" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-553, 103)
-
-[node name="BichTree6" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-613, 159)
-
-[node name="BichTree7" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-700, 104)
-
-[node name="BichTree18" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-649, 79)
-
-[node name="BichTree19" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-612, 119)
-
-[node name="BichTree20" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-554, 146)
-
-[node name="BichTree21" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-693, 47)
-
-[node name="BichTree22" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-692, -7)
-
-[node name="BichTree23" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-738, -35)
-
-[node name="BichTree24" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-715, -104)
-
-[node name="BichTree25" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-654, -171)
-
-[node name="BichTree26" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-560, -188)
-
-[node name="BichTree8" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-733, 19)
-
-[node name="BichTree9" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-757, -80)
-
-[node name="BichTree10" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-676, -130)
-
-[node name="BichTree11" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-603, -183)
-
-[node name="BichTree27" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-453, -180)
-
-[node name="BichTree28" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-374, -147)
-
-[node name="BichTree12" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-502, -216)
-
-[node name="BichTree13" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-403, -183)
-
-[node name="BichTree14" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-386, -96)
-
-[node name="BichTree29" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-362, -47)
-
-[node name="BichTree30" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-358, 15)
-
-[node name="BichTree31" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-309, -63)
-
-[node name="BichTree32" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-341, -104)
-
-[node name="BichTree33" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-662, 136)
-
-[node name="BichTree34" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-498, 122)
-
-[node name="BichTree15" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-318, -11)
-
-[node name="BichTree16" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-375, 74)
-
-[node name="BichTree17" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-322, 59)
-
-[node name="BichTree35" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-576, 202)
-
-[node name="BichTree36" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-576, 202)
-
-[node name="BichTree3" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-596, 78)
-
-[node name="BichTree4" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-645, 34)
+position = Vector2(-111, 99)

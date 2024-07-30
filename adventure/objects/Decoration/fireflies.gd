@@ -1,16 +1,18 @@
 extends Area2D
 
+@export var firefly : PackedScene
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	$AnimationPlayer.play("idle")
 
 func cought(t : tool):
 	print("fiefly cought")
+	if firefly != null:
+		var loot = firefly.instantiate()
+		loot.position = Vector2(randf_range(-200, 200), randf_range(-200,200))
+		get_tree().get_root().get_node("WorldManager").crafting.get_node("MovableObjects").add_child(loot)
 	t.get_player()
+	$AnimationPlayer.play("disappear")
+	
+func remove():
+	queue_free()
