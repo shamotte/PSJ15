@@ -3,7 +3,7 @@ extends Node2D
 @export var object : Node
 @export var anim : AnimationPlayer
 
-@export var items_inside : Array[tool_item]
+var items_inside : Array[tool_item]
 
 
 func _process(delta):

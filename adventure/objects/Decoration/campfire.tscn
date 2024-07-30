@@ -68,10 +68,11 @@ aura_component = "CompSanityAura"
 function_name = "increase_sanity"
 
 [node name="CompSanityAura" parent="." instance=ExtResource("8_pr4ss")]
+light_mask = 64
+visibility_layer = 64
 amount_of_restored_sanity = 3
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="CompFuel" method="_on_timer_timeout"]

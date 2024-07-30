@@ -22,10 +22,11 @@ var tool_bar : Node
 
 func _ready():
 	tool_bar = get_parent().get_tool_bar()
-	tool_bar.connect("tool_bar_loaded",load_test_tools)
+	#tool_bar.connect("tool_bar_loaded",load_test_tools)
+	tool_bar.connect("tool_bar_changed",load_tools)
+	tools.resize(5)
 	
 func load_test_tools():
-	tools.resize(5)
 	tools[0] = axe.instantiate()
 	tools[1] = pick.instantiate()
 	tools[2] = net.instantiate()
@@ -34,7 +35,9 @@ func load_test_tools():
 		if i < 4:
 			tool_bar.set_tool_bar_icon(i,tools[i].get_icon())
 			
-	
+func load_tools():
+	for i in range(len(tools)):
+		tools[i] = tool_bar.get_tool_bar_items()[i].player_tool.instantiate()
 
 
 func _process(delta):

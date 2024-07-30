@@ -98,6 +98,7 @@ rotation = 1.5708
 texture = ExtResource("1_1htl6")
 
 [node name="Blanket" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
 texture = ExtResource("2_l42hy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
