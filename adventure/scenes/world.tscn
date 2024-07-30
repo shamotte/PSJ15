@@ -1,12 +1,12 @@
-[gd_scene load_steps=36 format=3 uid="uid://b2crbh04dmg5d"]
+[gd_scene load_steps=42 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
 [ext_resource type="Texture2D" uid="uid://buyl5jk1d453g" path="res://adventure/sprites/UI/wizard.png" id="5_3wsd2"]
-[ext_resource type="PackedScene" uid="uid://03j66ww550y" path="res://adventure/interface/tool_bar.tscn" id="5_f25fo"]
+[ext_resource type="PackedScene" path="res://adventure/interface/tool_bar.tscn" id="5_f25fo"]
 [ext_resource type="Resource" uid="uid://ryed3fkkbjrd" path="res://both/Ingridients/eyeFruit.tres" id="5_g70gw"]
 [ext_resource type="PackedScene" uid="uid://b8osndo80rp2f" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
-[ext_resource type="PackedScene" uid="uid://ttwjdjkembi7" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
+[ext_resource type="PackedScene" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
 [ext_resource type="PackedScene" uid="uid://venqst8gqqsx" path="res://adventure/objects/Interactable/Gatherable.tscn" id="6_japwo"]
 [ext_resource type="Resource" uid="uid://bu74f08qvh7k2" path="res://both/Ingridients/shroom.tres" id="6_vms6x"]
 [ext_resource type="Resource" uid="uid://ct76mem0rld0u" path="res://both/Ingridients/spikezalea.tres" id="7_01t23"]
@@ -20,12 +20,18 @@
 [ext_resource type="PackedScene" uid="uid://54uub5ildwl" path="res://adventure/objects/Interactable/Note1.tscn" id="20_flw2p"]
 [ext_resource type="Texture2D" uid="uid://bi3hqyt88r54j" path="res://adventure/sprites/UI/Background.png" id="20_x46jl"]
 [ext_resource type="PackedScene" uid="uid://d215mvtpk43t6" path="res://adventure/objects/Interactable/Note2.tscn" id="21_v82u7"]
+[ext_resource type="PackedScene" path="res://adventure/interface/chest_menu.tscn" id="22_3rykl"]
 [ext_resource type="PackedScene" uid="uid://met16om6bggm" path="res://adventure/objects/Interactable/Note3.tscn" id="22_kx4jw"]
 [ext_resource type="PackedScene" uid="uid://dx1ux6mwoyljc" path="res://adventure/objects/Interactable/Note4.tscn" id="23_0a6vq"]
 [ext_resource type="PackedScene" uid="uid://beks6f1e2apid" path="res://adventure/objects/Interactable/Note5.tscn" id="24_fkouu"]
 [ext_resource type="PackedScene" uid="uid://bhxi5pro2f7lw" path="res://adventure/objects/Set_of_scenes/MF_cargo.tscn" id="25_3mi03"]
+[ext_resource type="Script" path="res://adventure/scenes/tree_spawner.gd" id="25_ud3jl"]
 [ext_resource type="PackedScene" uid="uid://by5tjtavts5oi" path="res://adventure/objects/Set_of_scenes/Camp.tscn" id="25_wgk3j"]
-[ext_resource type="PackedScene" uid="uid://dqb40205mq87h" path="res://adventure/objects/Set_of_scenes/Lumberjack_camp.tscn" id="25_yj1mx"]
+[ext_resource type="PackedScene" path="res://adventure/objects/Set_of_scenes/Lumberjack_camp.tscn" id="25_yj1mx"]
+[ext_resource type="PackedScene" uid="uid://dnoumkxs23frt" path="res://adventure/objects/Interactable/EyeFruit.tscn" id="29_k7c55"]
+[ext_resource type="PackedScene" uid="uid://be5wt544mf3ov" path="res://adventure/objects/Interactable/fairyCandy.tscn" id="30_wwtk6"]
+[ext_resource type="PackedScene" uid="uid://bnmvo4qjsu6a0" path="res://adventure/objects/Interactable/shroom.tscn" id="31_2kfbd"]
+[ext_resource type="PackedScene" uid="uid://boa5g6mitylg1" path="res://adventure/objects/Interactable/spikezalea.tscn" id="32_58bii"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 offsets = PackedFloat32Array(1)
@@ -115,9 +121,10 @@ position = Vector2(-3, -55)
 scale = Vector2(100, 100)
 texture = SubResource("GradientTexture2D_kuyoi")
 
-[node name="PlayerCharacter" parent="." node_paths=PackedStringArray("tool_bar") instance=ExtResource("1_pr2oj")]
+[node name="PlayerCharacter" parent="." node_paths=PackedStringArray("tool_bar", "chest_menu") instance=ExtResource("1_pr2oj")]
 position = Vector2(6.06475, -6.94122)
 tool_bar = NodePath("../UI/ToolBar")
+chest_menu = NodePath("../UI/ChestMenu")
 
 [node name="lantern2" type="PointLight2D" parent="PlayerCharacter"]
 visible = false
@@ -152,7 +159,7 @@ position = Vector2(-247, 192)
 position = Vector2(-190, 193)
 
 [node name="BichTree" parent="Decoration" instance=ExtResource("2_wwnik")]
-position = Vector2(-409, 31)
+position = Vector2(-219, 8)
 
 [node name="BichTree2" parent="Decoration" instance=ExtResource("2_wwnik")]
 position = Vector2(-277, 22)
@@ -524,6 +531,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="ChestMenu" parent="UI" node_paths=PackedStringArray("tool_bar") instance=ExtResource("22_3rykl")]
+tool_bar = NodePath("../ToolBar")
+
 [node name="TraderShop" parent="." instance=ExtResource("19_6q5ja")]
 position = Vector2(-171, -259)
 
@@ -532,11 +542,26 @@ position = Vector2(-67, -120)
 
 [node name="fireflies" parent="." instance=ExtResource("18_n2mjm")]
 position = Vector2(-230, -88)
-
-[node name="ProjectileManager" type="Node2D" parent="."]
+script = ExtResource("25_ud3jl")
+obj = null
+secondaey_objects = Array[PackedScene]([])
+repeats = 10
+create_forest = false
 
 [node name="MfCargo" parent="." instance=ExtResource("25_3mi03")]
 position = Vector2(-111, 99)
 
+[node name="ProjectileManager" type="Node2D" parent="."]
+
 [node name="LumberjackCamp" parent="." instance=ExtResource("25_yj1mx")]
-position = Vector2(-561, 367)
+position = Vector2(-546, 447)
+
+[node name="world_generation" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("25_ud3jl")
+obj = ExtResource("2_wwnik")
+secondaey_objects = Array[PackedScene]([ExtResource("18_n2mjm"), ExtResource("29_k7c55"), ExtResource("30_wwtk6"), ExtResource("31_2kfbd"), ExtResource("32_58bii")])
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world_generation"]
+polygon = PackedVector2Array(-817, -117, -660, 297, -667, 558, -667, 561, -344, 601, -299, 361, -7, 314, -7, 314, 208, 31, 150, -310, -52, -470, -288, -434, -692, -308)

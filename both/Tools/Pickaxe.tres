@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tool_item" load_steps=4 format=3 uid="uid://byb4lx6edea62"]
+
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="1_01wsk"]
+[ext_resource type="Texture2D" uid="uid://bk4shpnqc1rns" path="res://adventure/sprites/UI/pick_axe_icon.png" id="1_nae00"]
+[ext_resource type="PackedScene" uid="uid://bt3v82tnr4ar8" path="res://adventure/objects/tools/pickaxe.tscn" id="2_a3imm"]
+
+[resource]
+script = ExtResource("1_01wsk")
+name = "Pickaxe"
+player_tool = ExtResource("2_a3imm")
+icon = ExtResource("1_nae00")

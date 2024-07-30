@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj88l4d5qney"]
+
+[ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_8ss7x"]
+[ext_resource type="Texture2D" uid="uid://cxals5fe18k57" path="res://Table/sprites/Eye.png" id="2_tp5jx"]
+[ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="3_n4u5m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j14xv"]
+radius = 14.0
+
+[node name="JadeEye" type="CharacterBody2D"]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_8ss7x")
+item_name = "JadeEye"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tp5jx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_j14xv")
+
+[node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("3_n4u5m")]
+grab_area = NodePath("../Area2D")

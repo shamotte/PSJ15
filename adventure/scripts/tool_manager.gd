@@ -15,6 +15,8 @@ var currnet_tool : Node2D
 var wanted_tool : Node2D 
 
 @export var tools : Array
+@export var character_tools : Array[tool_item] #TODO to ma być główna tablica na narzędzia
+var tool_index : int
 
 var tool_bar : Node 
 
@@ -42,7 +44,7 @@ func _process(delta):
 
 func change_equipd_items(index : int):
 	wanted_tool = tools[index]
-	
+	tool_index = index
 	
 
 func change_item_scene():
@@ -60,6 +62,7 @@ func detach_potion():
 	hand.remove_child(currnet_tool)
 	get_tree().root.get_node("WorldManager/World/ProjectileManager").add_child(currnet_tool)
 	currnet_tool = null
+	tools[tool_index] = null
 		
 		
 func get_potion()-> Potion:

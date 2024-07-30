@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://be5wt544mf3ov"]
+
+[ext_resource type="Script" path="res://adventure/objects/Interactable/Gatherable.gd" id="1_dcxtq"]
+[ext_resource type="Resource" uid="uid://d20hh5ld28dpf" path="res://both/Ingridients/Fairycandy.tres" id="2_lfl72"]
+[ext_resource type="Texture2D" uid="uid://dicc2dk0wemma" path="res://adventure/sprites/decorations/flower1.png" id="3_plc08"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="4_16vyy"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="5_v8p30"]
+[ext_resource type="PackedScene" uid="uid://bmljq2sergiyk" path="res://adventure/components/comp_gatherable.tscn" id="6_yfmog"]
+
+[sub_resource type="Resource" id="Resource_8okrq"]
+script = ExtResource("5_v8p30")
+object = "CompGatherable"
+function_name = "gather"
+player_state = "gather"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_uvtlj"]
+script = ExtResource("5_v8p30")
+object = "CompGatherable"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_i1kpc"]
+script = ExtResource("5_v8p30")
+object = "CompGatherable"
+function_name = "end_gathering"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Animation" id="Animation_t3fw8"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CompGatherable")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy_parent"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_t8dfu"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_flkmv"]
+_data = {
+"disappear": SubResource("Animation_t3fw8"),
+"idle": SubResource("Animation_t8dfu")
+}
+
+[node name="Gatherable" type="Node2D"]
+script = ExtResource("1_dcxtq")
+type = ExtResource("2_lfl72")
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("3_plc08")
+
+[node name="CompInteractable" parent="." instance=ExtResource("4_16vyy")]
+scale = Vector2(0.905, 0.905)
+interactable_array = Array[ExtResource("5_v8p30")]([SubResource("Resource_8okrq")])
+in_area_array = Array[ExtResource("5_v8p30")]([SubResource("Resource_uvtlj")])
+end_interaction_array = Array[ExtResource("5_v8p30")]([SubResource("Resource_i1kpc")])
+
+[node name="CompGatherable" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("6_yfmog")]
+position = Vector2(0, -35)
+anim = NodePath("../AnimationPlayer")
+destroy_object = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_flkmv")
+}
