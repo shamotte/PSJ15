@@ -200,4 +200,4 @@ grow_vertical = 2
 rotation = -1.5708
 pivot_offset = Vector2(75, 110)
 character = NodePath("..")
-text = Array[String](["Camp is ready but we need more resources if we want to survive.", "On the table you can find some useful things for making mixtures", "If you plan to go further don't forget about taking some potions. ", "I would protect camp while you looking for something valuable."])
+text = Array[String](["Camp is ready but we need more resources if we want to survive.", "On the table you can find some useful things for making mixtures", "Don't forget to put your crafted potions into crate", "I've leved axe and pickaxe in our crate", "If you plan to go further don't forget about taking some potions. "])

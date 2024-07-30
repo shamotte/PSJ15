@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7u2bpny0lkp8"]
+[gd_scene load_steps=5 format=3 uid="uid://bhca8yqhj86mp"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_i6hdb"]
 [ext_resource type="Texture2D" uid="uid://dty3wsjc4yog5" path="res://Table/sprites/crystals.png" id="2_w4g2q"]

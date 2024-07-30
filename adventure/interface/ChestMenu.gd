@@ -97,8 +97,14 @@ func update_tool_bar():
 	return items
 		
 func _on_button_pressed():
+	exit_window()
+	
+func exit_window():
 	opened_chest.close_chest()
 	opened_chest.set_items_inside(update_items_inside())
 	tool_bar.set_tool_bar(update_tool_bar())
 	tool_bar.set_tool_bar_icons()
 	close_window()
+	
+func is_active():
+	return $Container.visible

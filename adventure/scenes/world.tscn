@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=45 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]

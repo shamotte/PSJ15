@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=5 format=3 uid="uid://dacy13ixlyxgk"]
+
+[ext_resource type="Texture2D" uid="uid://bm308vgpgso7j" path="res://adventure/sprites/characters/bodies/MrL.png" id="1_70532"]
+[ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_crmwg"]
+[ext_resource type="Texture2D" uid="uid://ddlesbus4duh1" path="res://adventure/sprites/decorations/trader_eye.png" id="2_i0fpx"]
+[ext_resource type="PackedScene" uid="uid://duku2ap5bbbnd" path="res://Table/objects/suspicious_note.tscn" id="4_0tws6"]
+
+[resource]
+script = ExtResource("1_crmwg")
+name = "burned note"
+icon = ExtResource("2_i0fpx")
+adventure_sprite = ExtResource("1_70532")
+table_item = ExtResource("4_0tws6")

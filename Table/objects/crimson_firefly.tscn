@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1o7iqisefhjx"]
+[gd_scene load_steps=5 format=3 uid="uid://yoo2grirmbn0"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_boe0d"]
 [ext_resource type="Texture2D" uid="uid://dgkqmimyqsjpq" path="res://Table/sprites/Firefly_igridient.png" id="2_x440d"]

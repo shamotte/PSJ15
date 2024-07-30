@@ -8,6 +8,9 @@ extends Control
 @export var cost : Goods
 @export var to_buy : Goods
 
+@export var note : Ingridient
+var number_of_transactions : int = 0
+
 
 signal trading
 
@@ -21,6 +24,9 @@ func _process(delta):
 	rotation = -body_rotation
 	
 func trade(character : Node):
+	number_of_transactions+=1
+	if number_of_transactions == 1:
+		Global.add_to_table(note)
 	print("trade")
 	#cost
 	if cost.type == Goods.GOODS.HP:
