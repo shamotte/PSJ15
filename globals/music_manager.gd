@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var world_manager = get_tree().get_root().get_node("WorldManager")
+	var world_manager = get_tree().get_root().get_node_or_null("WorldManager")
 	
 	if world_manager != null:
 		match world_manager.state:

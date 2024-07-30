@@ -10,6 +10,7 @@ light_mode = 1
 script = ExtResource("1_vffp6")
 
 [node name="PressE" type="Sprite2D" parent="."]
+visible = false
 z_index = 4
 material = SubResource("CanvasItemMaterial_c384y")
 texture = ExtResource("2_5uj86")
