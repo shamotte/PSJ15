@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GrabManager="*res://globals/grab_manager.tscn"
 Global="*res://adventure/scripts/Global.gd"
+MusicManager="*res://globals/music_manager.tscn"
 
 [display]
 

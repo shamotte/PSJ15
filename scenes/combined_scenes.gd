@@ -1,4 +1,5 @@
 extends Node2D
+class_name CombinedScenes
 
 @onready var world = $World
 @onready var crafting = $Crafting
@@ -6,6 +7,7 @@ enum STATE{ WORLD, CRAFTING}
 var state = STATE.WORLD
 
 func _input(event):
+	return
 	if event is InputEventKey:
 		if event.keycode == KEY_P:
 			change_to_world()
