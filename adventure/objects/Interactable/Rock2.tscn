@@ -25,7 +25,7 @@ texture = ExtResource("1_dqu07")
 position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_5w5im")
 
-[node name="AxeReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
+[node name="PickaxeReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
 script = ExtResource("3_blejj")
 object = NodePath("..")
 function_name = "mine"

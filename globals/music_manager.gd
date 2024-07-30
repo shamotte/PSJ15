@@ -1,5 +1,5 @@
 extends Node
-
+enum STATE{ WORLD, CRAFTING}
 func _ready():
 	$ExplorationMusic.play()
 	$CraftingMusic.play()
@@ -12,12 +12,11 @@ func _process(delta):
 	
 	if world_manager != null:
 		match world_manager.state:
-			
-			CombinedScenes.STATE.WORLD:
+			STATE.WORLD:
 				$ExplorationMusic.stream_paused = false
 				$CraftingMusic.stream_paused = true
 				
-			CombinedScenes.STATE.CRAFTING:
+			STATE.CRAFTING:
 				$ExplorationMusic.stream_paused = true
 				$CraftingMusic.stream_paused = false
 
