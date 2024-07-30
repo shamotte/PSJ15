@@ -17,20 +17,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#TODO czy nie dało by się tego wyłączania przenieść do sygnału wychodzenia z Area2D
+	
 	var old_Areas_to_interact : Array[Area2D] = Areas_to_interact
 	Areas_to_interact = get_overlapping_areas()
 	#Removing older
-	
 	for i in old_Areas_to_interact:
 		if i != null:
 			if i not in Areas_to_interact:
 				if i.has_method("in_area"):
 					i.in_area(false)
+	#interactable object
 	if len(Areas_to_interact) > 0:
 		var Component : Area2D = min_distance(Areas_to_interact)
-		if Component.has_method("in_area"):
-			Component.in_area(true)
+		if Component!= null:
+			if Component.has_method("in_area"):
+				Component.in_area(true)
 	
 #func _input(event):
 	#if event.is_action_pressed("interact"):
@@ -54,6 +55,7 @@ func interact() -> String:
 func interacted():
 	if Interacted_component != null:
 		current_state = Interacted_component.end_interaction()
+	
 
 func min_distance(area_array : Array[Area2D] ):
 	var min_dist : float = 99999

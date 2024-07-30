@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqb40205mq87h"]
+
+[ext_resource type="PackedScene" uid="uid://dhnta5v7aygwj" path="res://adventure/objects/characters/lumberjack.tscn" id="1_yef0c"]
+[ext_resource type="PackedScene" uid="uid://nmftbd08d6vt" path="res://adventure/objects/Decoration/campfire.tscn" id="2_0sw46"]
+[ext_resource type="PackedScene" uid="uid://nqgnd7ha6td3" path="res://adventure/objects/Decoration/trunk.tscn" id="3_4fne4"]
+[ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="3_t7wiw"]
+[ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="5_crsfa"]
+
+[node name="LumberjackCamp" type="Node2D"]
+
+[node name="lumberjack" parent="." instance=ExtResource("1_yef0c")]
+position = Vector2(14, 16)
+
+[node name="Campfire" parent="." instance=ExtResource("2_0sw46")]
+position = Vector2(-46, 57)
+
+[node name="Trunks" type="Node2D" parent="."]
+
+[node name="trunk" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(84, 42)
+rotation = -1.1013
+script = null
+
+[node name="trunk2" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(100, -30)
+rotation = -3.94444
+
+[node name="trunk3" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(169, 20)
+rotation = 0.506145
+
+[node name="trunk4" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(172, -51)
+rotation = -0.453786
+
+[node name="trunk5" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(45, -78)
+rotation = 0.767945
+
+[node name="trunk6" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(127, -112)
+rotation = 2.20086
+
+[node name="trunk7" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(-37, -84)
+rotation = -0.479966
+
+[node name="trunk8" parent="Trunks" instance=ExtResource("3_4fne4")]
+position = Vector2(162, 97)
+rotation = 0.148353
+
+[node name="Tent" parent="." instance=ExtResource("3_t7wiw")]
+position = Vector2(-44, -2)
+
+[node name="Box" parent="." instance=ExtResource("5_crsfa")]
+position = Vector2(2, -22)
+
+[node name="Box2" parent="." instance=ExtResource("5_crsfa")]
+position = Vector2(32, -16)

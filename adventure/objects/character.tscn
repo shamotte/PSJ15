@@ -153,6 +153,6 @@ texture = SubResource("GradientTexture2D_caqlq")
 libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
-blend_times = [&"move", &"move", 0.5, &"move", &"gathering", 0.5, &"move", &"idle", 1.0, &"gathering", &"move", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"idle", 0.5, &"idle", &"move", 0.5, &"idle", &"gathering", 0.5, &"idle", &"idle", 0.5]
+blend_times = [&"idle", &"idle", 0.5, &"idle", &"move", 0.5, &"idle", &"gathering", 0.5, &"move", &"idle", 1.0, &"move", &"move", 0.5, &"move", &"gathering", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"move", 0.5, &"gathering", &"gathering", 0.5]
 
 [node name="Node2D" type="Node2D" parent="."]

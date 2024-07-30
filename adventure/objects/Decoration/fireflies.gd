@@ -1,16 +1,15 @@
 extends Area2D
 
+@export var firefly : Ingridient
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	$AnimationPlayer.play("idle")
 
 func cought(t : tool):
 	print("fiefly cought")
+	Global.add_to_table(firefly)
 	t.get_player()
+	$AnimationPlayer.play("disappear")
+	
+func remove():
+	queue_free()

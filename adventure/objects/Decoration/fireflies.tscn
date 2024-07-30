@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qaw2hiw5hxt"]
+[gd_scene load_steps=14 format=3 uid="uid://qaw2hiw5hxt"]
 
 [ext_resource type="Script" path="res://adventure/objects/Decoration/fireflies.gd" id="1_hhh86"]
 [ext_resource type="Texture2D" uid="uid://bttbc8mk6kxac" path="res://adventure/sprites/decorations/firefly.png" id="1_kypsm"]
 [ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="2_88yu8"]
+[ext_resource type="Resource" uid="uid://cv8le2xcx0w0b" path="res://both/Ingridients/firefly.tres" id="2_mhnat"]
 
 [sub_resource type="Curve" id="Curve_rt5bi"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.10767, 1), 0.0, 0.0, 0, 0, Vector2(0.876106, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -33,10 +34,61 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_yov51"]
 radius = 14.0
 
+[sub_resource type="Animation" id="Animation_ve0m0"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 3.4822),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6m21i"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txteo"]
+_data = {
+"disappear": SubResource("Animation_ve0m0"),
+"idle": SubResource("Animation_6m21i")
+}
+
 [node name="fireflies" type="Area2D"]
 collision_layer = 13
 collision_mask = 9
 script = ExtResource("1_hhh86")
+firefly = ExtResource("2_mhnat")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 process_material = SubResource("ParticleProcessMaterial_x2oo3")
@@ -57,3 +109,8 @@ shape = SubResource("CircleShape2D_yov51")
 script = ExtResource("2_88yu8")
 object = NodePath("..")
 function_name = "cought"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_txteo")
+}
