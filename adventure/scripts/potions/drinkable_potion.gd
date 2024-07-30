@@ -3,6 +3,6 @@ class_name DrinkablePotion
 
 
 
-func drink():
+func drink(user : Node2D):
 	pass
 	
