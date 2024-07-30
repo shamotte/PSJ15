@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt3v82tnr4ar8"]
+[gd_scene load_steps=5 format=3 uid="uid://bt3v82tnr4ar8"]
 
 [ext_resource type="Script" path="res://adventure/scripts/tool.gd" id="1_k86kk"]
 [ext_resource type="Texture2D" uid="uid://bk4shpnqc1rns" path="res://adventure/sprites/UI/pick_axe_icon.png" id="2_lxd15"]
+[ext_resource type="Texture2D" uid="uid://bxokmrlyfkjxq" path="res://adventure/sprites/tools/Leather_hand_pickaxe.png" id="2_mgx56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaj3d"]
+size = Vector2(13, 19)
 
 [node name="pickaxe" type="Area2D"]
 collision_layer = 4
@@ -11,4 +15,13 @@ ui_name = "pickaxe"
 receiver = "PickaxeReceiver"
 ui_icon = ExtResource("2_lxd15")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13.5, 0.5)
+shape = SubResource("RectangleShape2D_aaj3d")
+
+[node name="LeatherHandPickaxe" type="Sprite2D" parent="."]
+position = Vector2(9, 1)
+texture = ExtResource("2_mgx56")
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

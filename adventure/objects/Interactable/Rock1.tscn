@@ -30,8 +30,3 @@ shape = SubResource("CapsuleShape2D_u061e")
 script = ExtResource("1_rkdhn")
 object = NodePath("..")
 function_name = "mine"
-
-[node name="AxeReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
-script = ExtResource("1_rkdhn")
-object = NodePath("..")
-function_name = "mine"
