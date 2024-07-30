@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cc85lq3f0eo1c" path="res://Table/objects/candle.tscn" id="6_m1i1r"]
 [ext_resource type="PackedScene" uid="uid://dr3efsxdubdmw" path="res://Table/objects/empty_bottle.tscn" id="7_cvnh4"]
 [ext_resource type="Texture2D" uid="uid://dokxidcxbbbir" path="res://Table/sprites/X.png" id="7_wpw36"]
-[ext_resource type="PackedScene" uid="uid://b16t2im1kguth" path="res://Table/objects/jade_eye.tscn" id="9_81b0x"]
+[ext_resource type="PackedScene" uid="uid://b16t2im1kguth" path="res://Table/objects/eye.tscn" id="9_81b0x"]
 [ext_resource type="PackedScene" uid="uid://dliofjwfma8xq" path="res://Table/objects/heart_rose.tscn" id="10_eoame"]
 [ext_resource type="PackedScene" uid="uid://ciomo18652ip5" path="res://Table/objects/spikezalea.tscn" id="11_ktyq6"]
 [ext_resource type="PackedScene" uid="uid://d1oh1s71phgcb" path="res://Table/objects/twig.tscn" id="13_8eqc2"]

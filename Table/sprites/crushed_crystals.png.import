@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwipe5qtiywha"
-path="res://.godot/imported/gyattree_root.png-901874d0da04d22af39e21cf519f1b24.ctex"
+uid="uid://dfvldo6ah1gfx"
+path="res://.godot/imported/crushed_crystals.png-bfed2bb508c1a84865074fc69e45bb92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://adventure/sprites/decorations/gyattree_root.png"
-dest_files=["res://.godot/imported/gyattree_root.png-901874d0da04d22af39e21cf519f1b24.ctex"]
+source_file="res://Table/sprites/crushed_crystals.png"
+dest_files=["res://.godot/imported/crushed_crystals.png-bfed2bb508c1a84865074fc69e45bb92.ctex"]
 
 [params]
 

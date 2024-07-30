@@ -56,9 +56,8 @@ func _ready():
 	
 "
 
-[sub_resource type="Animation" id="Animation_x2cxk"]
-resource_name = "show_info"
-length = 5.0
+[sub_resource type="Animation" id="Animation_ik4mq"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,10 +65,10 @@ tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 4, 5),
-"transitions": PackedFloat32Array(0.287175, 0.297302, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(700, 13), Vector2(499, 13), Vector2(508, 13), Vector2(508, 13), Vector2(700, 13)]
+"values": [Vector2(700, 13)]
 }
 
 [sub_resource type="Animation" id="Animation_cob44"]
@@ -87,8 +86,9 @@ tracks/0/keys = {
 "values": [Vector2(700, 13)]
 }
 
-[sub_resource type="Animation" id="Animation_ik4mq"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_x2cxk"]
+resource_name = "show_info"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,10 +96,10 @@ tracks/0/path = NodePath("TextureRect:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1, 1.5, 4, 5),
+"transitions": PackedFloat32Array(0.287175, 0.297302, 1, 1, 1),
 "update": 0,
-"values": [Vector2(700, 13)]
+"values": [Vector2(700, 13), Vector2(499, 13), Vector2(508, 13), Vector2(508, 13), Vector2(700, 13)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a6chn"]
