@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://adventure/components/comp_sanity.tscn" id="3_ry7vy"]
 [ext_resource type="Texture2D" uid="uid://dyeih6h3xvi14" path="res://adventure/sprites/characters/bodies/rizzard2.png" id="3_u1jc7"]
 [ext_resource type="PackedScene" uid="uid://bqu1gwna33sb2" path="res://adventure/components/CompPlayerInteraction.tscn" id="4_17uh0"]
-[ext_resource type="PackedScene" uid="uid://b2ikhaqyqisgn" path="res://adventure/components/comp_aura_receiver.tscn" id="5_k21g6"]
+[ext_resource type="PackedScene" path="res://adventure/components/comp_aura_receiver.tscn" id="5_k21g6"]
 [ext_resource type="Texture2D" uid="uid://bn0y75m3ddgd1" path="res://adventure/sprites/tools/Leather_hand_axe.png" id="5_yqv2i"]
 [ext_resource type="Script" path="res://adventure/scripts/tool_manager.gd" id="8_yvhg5"]
 [ext_resource type="PackedScene" uid="uid://dabgqjb4drvnm" path="res://adventure/objects/tools/axe.tscn" id="9_5bi5l"]
