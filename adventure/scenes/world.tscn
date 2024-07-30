@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=45 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -28,7 +28,7 @@
 [ext_resource type="Script" path="res://adventure/scenes/tree_spawner.gd" id="25_ud3jl"]
 [ext_resource type="PackedScene" uid="uid://by5tjtavts5oi" path="res://adventure/objects/Set_of_scenes/Camp.tscn" id="25_wgk3j"]
 [ext_resource type="PackedScene" uid="uid://dqb40205mq87h" path="res://adventure/objects/Set_of_scenes/Lumberjack_camp.tscn" id="25_yj1mx"]
-[ext_resource type="PackedScene" path="res://adventure/objects/Decoration/trunk.tscn" id="29_0wg6m"]
+[ext_resource type="PackedScene" uid="uid://nqgnd7ha6td3" path="res://adventure/objects/Decoration/trunk.tscn" id="29_0wg6m"]
 [ext_resource type="PackedScene" uid="uid://dnoumkxs23frt" path="res://adventure/objects/Interactable/EyeFruit.tscn" id="29_k7c55"]
 [ext_resource type="PackedScene" uid="uid://be5wt544mf3ov" path="res://adventure/objects/Interactable/fairyCandy.tscn" id="30_wwtk6"]
 [ext_resource type="PackedScene" uid="uid://bnmvo4qjsu6a0" path="res://adventure/objects/Interactable/shroom.tscn" id="31_2kfbd"]
