@@ -561,6 +561,7 @@ collision_mask = 64
 script = ExtResource("25_ud3jl")
 obj = ExtResource("2_wwnik")
 secondaey_objects = Array[PackedScene]([ExtResource("18_n2mjm"), ExtResource("29_k7c55"), ExtResource("30_wwtk6"), ExtResource("31_2kfbd"), ExtResource("32_58bii")])
+create_forest = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world_generation"]
 polygon = PackedVector2Array(-817, -117, -660, 297, -667, 558, -667, 561, -344, 601, -299, 361, -7, 314, -7, 314, 208, 31, 150, -310, -52, -470, -288, -434, -692, -308)
