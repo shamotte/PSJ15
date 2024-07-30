@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3wvos324e4yl"]
+
+[ext_resource type="Texture2D" uid="uid://cmhc6654e8cfq" path="res://adventure/sprites/decorations/mandrake_firstver.png" id="1_0rusv"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_uj78f"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="3_qdsjk"]
+[ext_resource type="PackedScene" uid="uid://bmljq2sergiyk" path="res://adventure/components/comp_gatherable.tscn" id="3_sltey"]
+[ext_resource type="Resource" uid="uid://b8ofv6clyunk2" path="res://both/Ingridients/mandrake.tres" id="5_54jwx"]
+
+[sub_resource type="Resource" id="Resource_ceiyy"]
+script = ExtResource("3_qdsjk")
+object = "CompGatherable"
+function_name = "gather"
+player_state = "gather"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_4rkx7"]
+script = ExtResource("3_qdsjk")
+object = "CompGatherable"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_riu8l"]
+script = ExtResource("3_qdsjk")
+object = "CompGatherable"
+function_name = "end_gathering"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0rusv")
+
+[node name="CompInteractable" parent="." instance=ExtResource("2_uj78f")]
+interactable_array = Array[ExtResource("3_qdsjk")]([SubResource("Resource_ceiyy")])
+in_area_array = Array[ExtResource("3_qdsjk")]([SubResource("Resource_4rkx7")])
+end_interaction_array = Array[ExtResource("3_qdsjk")]([SubResource("Resource_riu8l")])
+
+[node name="CompGatherable" parent="." instance=ExtResource("3_sltey")]
+resource_type = ExtResource("5_54jwx")
