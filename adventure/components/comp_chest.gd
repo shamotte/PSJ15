@@ -13,8 +13,14 @@ func _process(delta):
 func open_chest_menu(character :Node):
 	anim.play("open")
 	var chest_menu : Node = character.get_chest_menu()
-	chest_menu.window_active(true)
+	chest_menu.open_window(self)
+	chest_menu.set_items(items_inside)
 	print("Open chest")
+	
+func set_items_inside(new_items :Array[tool_item]):
+	items_inside = new_items
+	for i in range(len(items_inside)):
+		print(new_items[i].name)
 	
 func close_chest():
 	anim.play("close")
