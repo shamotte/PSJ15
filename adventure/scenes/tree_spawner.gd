@@ -49,7 +49,7 @@ func check_restricted_area(point : Vector2) -> bool:
 	var physics = get_world_2d().direct_space_state
 	var params : PhysicsPointQueryParameters2D  = PhysicsPointQueryParameters2D.new()
 	params.position = point
-	params.collision_mask = 64
+	params.collision_mask = 128
 	params.collide_with_areas = true
 	var results : =physics.intersect_point(params)
 	return len(results) == 0
