@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://nqgnd7ha6td3"]
 
-[ext_resource type="Texture2D" uid="uid://du8rhwcwb2aeq" path="res://adventure/sprites/decorations/gyattree_root.png" id="2_3k6xe"]
+[ext_resource type="Texture2D" uid="uid://dwipe5qtiywha" path="res://adventure/sprites/decorations/gyattree_root.png" id="2_3k6xe"]
 [ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="4_eufi3"]
 [ext_resource type="PackedScene" uid="uid://b1qs5nksv35qo" path="res://adventure/objects/Decoration/fire_particle_emiter.tscn" id="5_rb1n2"]
 
