@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource("1_wllf1")
-name = "suspicious shroom"
+name = "susshroom"
 adventure_sprite = ExtResource("1_x3a3i")
 table_item = ExtResource("3_stkp1")

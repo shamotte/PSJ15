@@ -419,6 +419,7 @@ script = ExtResource("1_0ax45")
 max_hp = 4
 
 [node name="CompSanity" parent="." node_paths=PackedStringArray("light") instance=ExtResource("3_ry7vy")]
+sanity = 320.0
 low_sight = true
 light = NodePath("../lantern")
 min_energy = 0.25
