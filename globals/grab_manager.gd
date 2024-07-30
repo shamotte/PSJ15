@@ -16,6 +16,17 @@ func sort_nodes_by_name(a: Node, b: Node):
 	return str(a.get_name()) < str(b.get_name())
 
 var crafting = {
+	"Eyeshrooms+Firefly": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+			
+		var scene = load("res://Table/objects/mushroom_lamp.tscn")
+		var e = scene.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+	
 	"CutMushrooms+EyepleSlices": func(components: Array):
 		var pos_avg = average_position(components)
 		var tree = components[0].get_parent()
