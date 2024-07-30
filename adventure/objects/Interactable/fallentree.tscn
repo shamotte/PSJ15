@@ -31,7 +31,7 @@ player_state = "normal"
 next_interaction_signal = ""
 first_argument = ""
 
-[node name="Node2D" type="Node2D"]
+[node name="ChoppedTree" type="Node2D"]
 script = ExtResource("1_6kr8n")
 type = ExtResource("5_8jnyy")
 
@@ -45,7 +45,7 @@ interactable_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_pdps2"
 in_area_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_83g0r")])
 end_interaction_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_i676h")])
 
-[node name="CompGatherable" parent="." node_paths=PackedStringArray("comp_interactable") instance=ExtResource("3_yxxdp")]
-position = Vector2(0, -43)
+[node name="CompGatherable" parent="." node_paths=PackedStringArray("character", "comp_interactable") instance=ExtResource("3_yxxdp")]
+character = NodePath("..")
 resource_type = ExtResource("5_8jnyy")
 comp_interactable = NodePath("../CompInteractable")

@@ -1,17 +1,13 @@
 #TODO plany na tą grę
 
 #WAŻNE dla całego projektu
-# - Generowanie świata
+# - Naprawa bugu w drzewach który daje nieskończoną liczbę eyepplów
 # - Potki - receptury i użycie
-# - Przeciwnicy
-# - Konsekwencje z tracenia psychy
 # - Śmierć Gracza
-# - Handlarz oczu
-# - DUŻO SPRITÓW
-# - 8 godzin snu
 # - działający Kilof
-# - wysyłanie Świetlików
-# - zakończenie
+# - Przenoszenie mikstur z stołu do skrzyni
+# - Ciemniejsza ziemia
+# - 
 
 
 

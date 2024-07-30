@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://by5tjtavts5oi"]
+[gd_scene load_steps=21 format=3 uid="uid://by5tjtavts5oi"]
 
 [ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="1_t5mgp"]
 [ext_resource type="Script" path="res://adventure/objects/Set_of_scenes/Camp.gd" id="1_tf8mh"]
@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="12_35stk"]
 [ext_resource type="Resource" uid="uid://bbw1mseoo8pb2" path="res://both/Tools/Axe.tres" id="13_u0ftc"]
 [ext_resource type="Resource" uid="uid://byb4lx6edea62" path="res://both/Tools/Pickaxe.tres" id="14_3ongc"]
+[ext_resource type="Resource" uid="uid://heqa7itfmcpu" path="res://both/Potions/Sanity_potion.tres" id="15_pkew4"]
+[ext_resource type="Resource" uid="uid://bnyo2ulhebl5s" path="res://both/Potions/fire_potion.tres" id="16_6cevw"]
+[ext_resource type="Resource" uid="uid://xd05tu7337u5" path="res://both/Potions/health_potion.tres" id="17_thlet"]
+[ext_resource type="Resource" uid="uid://2iv5vqctq0uf" path="res://both/Potions/speed_potion.tres" id="18_oauvh"]
+[ext_resource type="Resource" uid="uid://pqmvwd4e3ewo" path="res://both/Potions/ultimate_potion.tres" id="19_3j1yt"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cgul4"]
 polygon = PackedVector2Array(-43, 96, -41, 88, -44, 74, -46, 64, -46, 56, -56, 52, -48, 42, -36, 29, -28, 22, -16, 20, -1, 22, 20, 15, 28, 5, 25, -5, 34, -14, 45, -10, 51, -3, 64, -2, 74, -3, 88, -9, 97, -12, 103, -2, 110, -4, 117, -7, 130, -9, 142, -10, 144, -1, 152, 2, 157, 22, 152, 35, 160, 57, 171, 68, 179, 82, 179, 96, 193, 100, 206, 101, 210, 91, 206, 77, 203, 64, 192, 56, 185, 43, 189, 32, 176, 12, 169, 0, 190, -28, 184, -39, 164, -40, 148, -43, 130, -41, 109, -43, 115, -58, 108, -66, 93, -68, 75, -70, 64, -62, 55, -50, 36, -43, 16, -45, -3, -35, -21, -31, -29, -49, -37, -44, -46, -32, -53, -23, -46, -9, -53, 6, -64, 8, -70, 18, -93, 25, -111, 30, -113, 38, -97, 49, -98, 70, -87, 69, -74, 74, -70, 89, -52, 98)
@@ -116,4 +121,4 @@ extingushable = true
 
 [node name="Crate" parent="." instance=ExtResource("12_35stk")]
 position = Vector2(177, 110)
-items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("13_u0ftc"), ExtResource("14_3ongc")])
+items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("13_u0ftc"), ExtResource("14_3ongc"), ExtResource("15_pkew4"), ExtResource("16_6cevw"), ExtResource("17_thlet"), ExtResource("18_oauvh"), ExtResource("19_3j1yt")])

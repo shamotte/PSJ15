@@ -31,3 +31,4 @@ func show_tip(show : bool):
 		return
 	if !show and chest_menu.is_active():
 		chest_menu.exit_window()
+	

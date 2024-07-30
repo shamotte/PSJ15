@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tool_item" load_steps=4 format=3 uid="uid://pqmvwd4e3ewo"]
+
+[ext_resource type="Texture2D" uid="uid://bk176a73nifeo" path="res://adventure/sprites/UI/corupted_eye_potion_icon.png" id="1_jp2sn"]
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="1_sscno"]
+[ext_resource type="PackedScene" uid="uid://cmwo1dpk5547u" path="res://adventure/scripts/potions/ultimate_potion.tscn" id="2_p6ame"]
+
+[resource]
+script = ExtResource("1_sscno")
+name = "ultimate potion"
+player_tool = ExtResource("2_p6ame")
+icon = ExtResource("1_jp2sn")

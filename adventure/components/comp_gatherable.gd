@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var character : Node
+
 @export var anim : AnimationPlayer
 
 @export var resource_type : Ingridient
@@ -14,10 +16,9 @@ func _ready():
 	if anim != null:
 		anim.play("idle")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var body_rotation : float = character.rotation
+	rotation = -body_rotation
 	
 func gather():
 	if !used:
@@ -35,6 +36,7 @@ func end_gathering():
 	
 func show_tip(show : bool):
 	if used: 
+		$PressE.visible = false
 		return
 	if in_interaction:
 		$PressE.visible = false
@@ -43,3 +45,6 @@ func show_tip(show : bool):
 	
 func destroy_parent():
 	get_parent().queue_free()
+
+func set_character(new_character : Node):
+	character = new_character

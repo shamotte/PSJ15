@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tool_item" load_steps=4 format=3 uid="uid://heqa7itfmcpu"]
+
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="1_uk744"]
+[ext_resource type="Texture2D" uid="uid://d03yawb8rmr2x" path="res://adventure/sprites/UI/sanity_potion_icon.png" id="1_wqkdk"]
+[ext_resource type="PackedScene" uid="uid://bke7h7b4e5xio" path="res://adventure/scripts/potions/sanity_potion.tscn" id="2_7yy18"]
+
+[resource]
+script = ExtResource("1_uk744")
+name = "Sanity Potion"
+player_tool = ExtResource("2_7yy18")
+icon = ExtResource("1_wqkdk")

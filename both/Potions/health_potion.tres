@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tool_item" load_steps=4 format=3 uid="uid://xd05tu7337u5"]
+
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="1_xcbq0"]
+[ext_resource type="Texture2D" uid="uid://pqobfepopwpd" path="res://adventure/sprites/UI/heal_potion_icon.png" id="1_yo8gf"]
+[ext_resource type="PackedScene" uid="uid://don042o3pg62m" path="res://adventure/scripts/potions/health_potion.tscn" id="2_bnp7o"]
+
+[resource]
+script = ExtResource("1_xcbq0")
+name = "Health Potion"
+player_tool = ExtResource("2_bnp7o")
+icon = ExtResource("1_yo8gf")

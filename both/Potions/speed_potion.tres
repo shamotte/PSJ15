@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tool_item" load_steps=4 format=3 uid="uid://2iv5vqctq0uf"]
+
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="1_182ao"]
+[ext_resource type="Texture2D" uid="uid://sivde0330w3e" path="res://adventure/sprites/UI/dash_potion_icon.png" id="1_bjmyk"]
+[ext_resource type="PackedScene" uid="uid://chu0nj6b5adqg" path="res://adventure/scripts/potions/speed_potion.tscn" id="2_swgtm"]
+
+[resource]
+script = ExtResource("1_182ao")
+name = "speed_potion"
+player_tool = ExtResource("2_swgtm")
+icon = ExtResource("1_bjmyk")

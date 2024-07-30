@@ -17,7 +17,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	var old_Areas_to_interact : Array[Area2D] = Areas_to_interact
 	Areas_to_interact = get_overlapping_areas()
 	#Removing older
