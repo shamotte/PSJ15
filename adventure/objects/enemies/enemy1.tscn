@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://diojne6xikk1l"]
+[gd_scene load_steps=13 format=3 uid="uid://diojne6xikk1l"]
 
 [ext_resource type="Script" path="res://adventure/scripts/enemies/Shadow_night_state_macine/shadow_knight.gd" id="1_0d5qm"]
 [ext_resource type="Texture2D" uid="uid://bdi2kh3yr688v" path="res://adventure/sprites/characters/bodies/shadow_knight.png" id="1_j5awb"]
@@ -21,6 +21,9 @@ resource_name = "attack"
 _data = {
 "attack": SubResource("Animation_hbcw3")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qvkf"]
+size = Vector2(28, 56)
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 16
@@ -61,3 +64,10 @@ shape = SubResource("CircleShape2D_8e56i")
 libraries = {
 "": SubResource("AnimationLibrary_3fn0f")
 }
+
+[node name="attack_area" type="Area2D" parent="."]
+position = Vector2(31, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
+position = Vector2(-8, 1)
+shape = SubResource("RectangleShape2D_7qvkf")

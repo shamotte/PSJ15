@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://f6q1gb12qs8h" path="res://adventure/objects/Decoration/Rock_group1.tscn" id="35_h7ef2"]
 [ext_resource type="PackedScene" uid="uid://w6v45h5j3clu" path="res://adventure/objects/Decoration/Rock_group2.tscn" id="36_pookb"]
 [ext_resource type="PackedScene" uid="uid://dljtas2dq17pf" path="res://adventure/objects/Decoration/Rock_wall.tscn" id="37_7h1xr"]
-[ext_resource type="PackedScene" uid="uid://diojne6xikk1l" path="res://adventure/objects/enemies/enemy1.tscn" id="38_iha6k"]
+[ext_resource type="PackedScene" uid="uid://duqm3jnr4sru" path="res://adventure/objects/characters/shadow_knight.tscn" id="38_7pgom"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 interpolation_mode = 2
@@ -406,14 +406,17 @@ rotation = -1.56032
 [node name="Wall11" parent="." instance=ExtResource("37_7h1xr")]
 position = Vector2(-1202, -114)
 
-[node name="enemy" parent="." instance=ExtResource("38_iha6k")]
-position = Vector2(-339, 783)
+[node name="ShadowKnight" parent="." instance=ExtResource("38_7pgom")]
+position = Vector2(31, 658)
 
-[node name="enemy2" parent="." instance=ExtResource("38_iha6k")]
-position = Vector2(256, 584)
+[node name="ShadowKnight2" parent="." instance=ExtResource("38_7pgom")]
+position = Vector2(474, 277)
 
-[node name="enemy3" parent="." instance=ExtResource("38_iha6k")]
-position = Vector2(587, 352)
+[node name="ShadowKnight3" parent="." instance=ExtResource("38_7pgom")]
+position = Vector2(132, -869)
 
-[node name="enemy4" parent="." instance=ExtResource("38_iha6k")]
-position = Vector2(-1013, -425)
+[node name="ShadowKnight3" parent="ShadowKnight3" instance=ExtResource("38_7pgom")]
+position = Vector2(-1075, 482)
+
+[node name="ShadowKnight3" parent="ShadowKnight3/ShadowKnight3" instance=ExtResource("38_7pgom")]
+position = Vector2(-141, 1048)
