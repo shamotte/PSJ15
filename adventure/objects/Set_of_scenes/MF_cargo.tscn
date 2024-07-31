@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/characters/mf.tscn" id="1_l1kw7"]
 [ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="2_wlmi1"]
 [ext_resource type="Texture2D" uid="uid://db4ug75u64ub3" path="res://adventure/sprites/decorations/knife_small.png" id="3_0a00v"]
-[ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="4_2x6ub"]
+[ext_resource type="PackedScene" uid="uid://0vesrk05aa1" path="res://adventure/objects/Interactable/Crate.tscn" id="4_2x6ub"]
 [ext_resource type="Resource" uid="uid://cxux22uj43l60" path="res://both/Tools/net.tres" id="5_uyg2c"]
 [ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="6_4t7n1"]
 [ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="7_s6o1e"]

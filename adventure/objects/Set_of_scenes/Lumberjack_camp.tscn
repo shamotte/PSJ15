@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://krdhy8ox4efs" path="res://adventure/objects/Decoration/trunk.tscn" id="3_4fne4"]
 [ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="3_t7wiw"]
 [ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="5_crsfa"]
-[ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="6_xqcdq"]
+[ext_resource type="PackedScene" uid="uid://0vesrk05aa1" path="res://adventure/objects/Interactable/Crate.tscn" id="6_xqcdq"]
 [ext_resource type="Resource" uid="uid://bbw1mseoo8pb2" path="res://both/Tools/Axe.tres" id="7_od3fm"]
 
 [node name="LumberjackCamp" type="Node2D"]
