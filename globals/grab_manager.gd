@@ -225,7 +225,7 @@ var crafting = {
 		e.position = pos_avg
 		tree.add_child(e),
 	
-	"DeadEye+EyeShroom": func(components: Array):
+	"DeadEye+Eyeshrooms": func(components: Array):
 		var pos_avg = average_position(components)
 		var tree = components[0].get_parent()
 		for comp in components:
@@ -290,7 +290,7 @@ var crafting = {
 		e.position = pos_avg
 		tree.add_child(e),
 		
-	"EyeShroom+MandrakeSoup": func(components: Array):
+	"Eyeshrooms+MandrakeSoup": func(components: Array):
 		var pos_avg = average_position(components)
 		var tree = components[0].get_parent()
 		for comp in components:
