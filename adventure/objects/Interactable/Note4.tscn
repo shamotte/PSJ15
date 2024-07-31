@@ -94,4 +94,4 @@ pivot_offset = Vector2(75, 110)
 character = NodePath("..")
 writing_speed = 0.03
 text = Array[String](["Note 4
-Patrick's Alchem Journal", "I don't know how long I'm here...", "I see shadow and other creatures... ", "But I don't know are they real...", "I know the goal this Darkness...", "It want to break our sanity and devour us.", "Potions helps me deal with forces of Darkness... ", "but I don't know how long can I endure this"])
+Patrick's Alchem Journal", "I don't know how long I'm here...", "I see shadow and other creatures... ", "But I don't think there is a way to defeat them...", "I know the goal this Darkness...", "It want to break our sanity and devour us.", "Potions helps me deal with forces of Darkness... ", "but I don't know how long can I endure this"])
