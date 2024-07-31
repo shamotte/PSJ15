@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://adventure/objects/Interactable/Crate.gd" id="12_r1nrf"]
 [ext_resource type="Texture2D" uid="uid://67ifvbutdy5i" path="res://adventure/sprites/decorations/open_box2.png" id="14_skc7u"]
 [ext_resource type="Texture2D" uid="uid://d2kq1u7tl14ag" path="res://adventure/sprites/decorations/blanket.png" id="15_7x1aa"]
-[ext_resource type="PackedScene" path="res://adventure/components/comp_chest.tscn" id="16_7b5pl"]
+[ext_resource type="PackedScene" uid="uid://dntptrq112sxk" path="res://adventure/components/comp_chest.tscn" id="16_7b5pl"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="17_iu52v"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="18_83lv6"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="20_0axx5"]
