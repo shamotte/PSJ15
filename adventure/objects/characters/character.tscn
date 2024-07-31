@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dulcf8h1hbabn"]
+[gd_scene load_steps=40 format=3 uid="uid://dulcf8h1hbabn"]
 
 [ext_resource type="Script" path="res://adventure/scripts/character.gd" id="1_0ax45"]
 [ext_resource type="Texture2D" uid="uid://cbmrkxk1xa53j" path="res://adventure/sprites/characters/hands/leather_hand2.png" id="2_1cqtu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ikhaqyqisgn" path="res://adventure/components/comp_aura_receiver.tscn" id="5_k21g6"]
 [ext_resource type="Texture2D" uid="uid://bn0y75m3ddgd1" path="res://adventure/sprites/tools/Leather_hand_axe.png" id="5_yqv2i"]
 [ext_resource type="Script" path="res://adventure/scripts/tool_manager.gd" id="8_yvhg5"]
+[ext_resource type="Texture2D" uid="uid://o7jcsrvogtln" path="res://adventure/sprites/characters/hands/Potion.png" id="9_2igfq"]
 [ext_resource type="PackedScene" uid="uid://dabgqjb4drvnm" path="res://adventure/objects/tools/axe.tscn" id="9_5bi5l"]
 [ext_resource type="PackedScene" uid="uid://bt3v82tnr4ar8" path="res://adventure/objects/tools/pickaxe.tscn" id="10_mdbs7"]
 [ext_resource type="PackedScene" uid="uid://day4ai0nk3c62" path="res://adventure/objects/tools/net.tscn" id="11_klu1s"]
@@ -75,6 +76,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(17, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightHand:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1cqtu")]
 }
 
 [sub_resource type="Animation" id="Animation_xlr86"]
@@ -395,12 +408,41 @@ tracks/1/keys = {
 "values": [2.85021, 1.77024]
 }
 
+[sub_resource type="Animation" id="Animation_djv6y"]
+resource_name = "drinking"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightHand:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_2igfq"), ExtResource("2_1cqtu"), ExtResource("2_1cqtu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(17, 7), Vector2(10, 6), Vector2(10, 6), Vector2(17, 7)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s8jga"]
 _data = {
 "RESET": SubResource("Animation_5fgsx"),
 "Take_item": SubResource("Animation_xlr86"),
 "charge_throw": SubResource("Animation_alkxg"),
 "choping": SubResource("Animation_2fpro"),
+"drinking": SubResource("Animation_djv6y"),
 "gathering": SubResource("Animation_j2khf"),
 "idle": SubResource("Animation_kuk7j"),
 "move": SubResource("Animation_b8gik"),
@@ -470,7 +512,7 @@ libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
 autoplay = "Take_item"
-blend_times = [&"idle", &"idle", 0.5, &"idle", &"move", 0.5, &"idle", &"gathering", 0.5, &"move", &"idle", 1.0, &"move", &"move", 0.5, &"move", &"gathering", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"move", 0.5, &"gathering", &"gathering", 0.5]
+blend_times = [&"idle", &"idle", 0.5, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"move", &"idle", 1.0, &"move", &"gathering", 0.5, &"move", &"move", 0.5]
 
 [node name="ToolManager" type="Node2D" parent="." node_paths=PackedStringArray("hand")]
 script = ExtResource("8_yvhg5")
