@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://w6v45h5j3clu"]
+
+[ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="1_mrj7h"]
+[ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="2_lgli3"]
+[ext_resource type="PackedScene" uid="uid://dsg1moaauq3xd" path="res://adventure/objects/Interactable/Rock1.tscn" id="3_xrnlb"]
+[ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Interactable/Rock2.tscn" id="4_croe1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rock3" parent="." instance=ExtResource("1_mrj7h")]
+
+[node name="Rock5" parent="." instance=ExtResource("2_lgli3")]
+position = Vector2(43, 0)
+
+[node name="Rock6" parent="." instance=ExtResource("1_mrj7h")]
+position = Vector2(-35, -47)
+rotation = -0.153589
+
+[node name="Rock1" parent="." instance=ExtResource("3_xrnlb")]
+position = Vector2(-40, -3)
+rotation = -0.495674
+
+[node name="Rock2" parent="." instance=ExtResource("3_xrnlb")]
+position = Vector2(62, -38)
+rotation = 0.827286
+
+[node name="Rock7" parent="." instance=ExtResource("4_croe1")]
+position = Vector2(55, 71)
+
+[node name="Rock8" parent="." instance=ExtResource("3_xrnlb")]
+position = Vector2(-5, -83)
+
+[node name="Rock9" parent="." instance=ExtResource("2_lgli3")]
+position = Vector2(22, -48)

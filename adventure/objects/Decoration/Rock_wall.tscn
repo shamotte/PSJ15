@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dljtas2dq17pf"]
+
+[ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="1_2l64h"]
+[ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="2_7fndd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rock3" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(3, 1)
+rotation = 1.5324
+
+[node name="Rock4" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-1, 49)
+
+[node name="Rock5" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(9, -58)
+rotation = -1.83958
+
+[node name="Rock6" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-8, -114)
+
+[node name="Rock7" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(21, 100)
+
+[node name="Rock8" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-5, 155)
+rotation = -0.459022
+
+[node name="Rock9" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(32, 199)
+rotation = 1.83958
+
+[node name="Rock10" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-11, 256)
+
+[node name="Rock11" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-15, 205)
+rotation = 1.07338
+
+[node name="Rock12" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(15, 306)
+
+[node name="Rock13" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-4, 362)
+
+[node name="Rock14" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(16, -164)
+
+[node name="Rock15" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-11, -218)
+rotation = -0.459022
+
+[node name="Rock16" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(16, -268)
+
+[node name="Rock17" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-8, -324)
+rotation = 0.919789
+
+[node name="Rock18" parent="." instance=ExtResource("2_7fndd")]
+position = Vector2(-63, -281)
+
+[node name="Rock19" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(84, -108)
+rotation = 0.307178
+
+[node name="Rock20" parent="." instance=ExtResource("1_2l64h")]
+position = Vector2(8, -381)

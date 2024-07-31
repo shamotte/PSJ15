@@ -6,7 +6,7 @@ extends PlayerBehaviourState
 @onready var tool_manager : ToolManager = $"../../ToolManager"
 
 func update(input : InputObject,dleta : float):
-		pass
+		new_velocity.emit(input.direction, 0.6)
 	
 func enter(input : InputObject):
 	print("entering_drinking")
