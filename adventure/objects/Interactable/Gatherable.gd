@@ -9,7 +9,7 @@ func _ready():
 	$texture.texture = type.adventure_sprite
 	$CompGatherable.set_character(get_parent())
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	#print("comp_active",$CompGatherable.visible)

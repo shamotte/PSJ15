@@ -304,6 +304,7 @@ text = "Exploration
 "
 
 [node name="Label2" type="Label" parent="Panes/Control3"]
+layout_mode = 0
 offset_left = -6.0
 offset_top = 42.0
 offset_right = 138.0
@@ -312,6 +313,7 @@ text = "Explore these barren
 lands in search of items."
 
 [node name="Label3" type="Label" parent="Panes/Control3"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 97.0
 offset_right = 147.0
@@ -320,6 +322,7 @@ text = "Those can help you
 discover new recipes."
 
 [node name="Label4" type="Label" parent="Panes/Control3"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 154.0
 offset_right = 140.0

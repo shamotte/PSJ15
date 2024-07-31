@@ -89,8 +89,5 @@ function_name = "start_fire"
 visible = false
 emitting = false
 
-[node name="fallenTree" parent="." instance=ExtResource("2_wkl7i")]
-visible = false
-
 [connection signal="body_entered" from="Leaves/HideArea" to="Leaves" method="_on_hide_area_body_entered"]
 [connection signal="body_exited" from="Leaves/HideArea" to="Leaves" method="_on_hide_area_body_exited"]

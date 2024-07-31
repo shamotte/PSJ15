@@ -37,11 +37,13 @@
 [ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="34_afodl"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.325441, 0.325441, 0.325441, 1)
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0593607, 0.127854, 0.205479, 0.840183, 0.968037, 1)
+colors = PackedColorArray(0.298039, 0.329412, 0.427451, 1, 0.219608, 0.25098, 0.364706, 1, 0.160784, 0.176471, 0.254902, 1, 0.0941176, 0.0980392, 0.137255, 1, 0.298039, 0.329412, 0.427451, 1, 0.298039, 0.329412, 0.427451, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kuyoi"]
 gradient = SubResource("Gradient_w0p8n")
+fill_from = Vector2(0, 1)
 
 [sub_resource type="Gradient" id="Gradient_8c0ty"]
 interpolation_mode = 2
@@ -119,7 +121,7 @@ _data = {
 
 [node name="World" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="ground" type="Sprite2D" parent="."]
 position = Vector2(-3, -55)
 scale = Vector2(100, 100)
 texture = SubResource("GradientTexture2D_kuyoi")
@@ -567,3 +569,6 @@ polygon = PackedVector2Array(-817, -117, -660, 297, -667, 558, -667, 561, -344, 
 
 [node name="Crate" parent="." instance=ExtResource("33_70roo")]
 position = Vector2(-272, 119)
+
+[node name="Mandrake" parent="." instance=ExtResource("34_afodl")]
+position = Vector2(-207, 87)

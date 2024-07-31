@@ -113,8 +113,125 @@ var crafting = {
 		e.position = pos_avg
 		tree.add_child(e),
 		
+	"Crystals+Mortar": func(components: Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		components[0].queue_free()
+		
+		var es = load("res://Table/objects/crushed_crystals.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"Eye+Fire": func(components: Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		components[0].queue_free()
+		
+		var es = load("res://Table/objects/crimson_eye.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
 	
+	"Eye+Mortar": func(components: Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		components[0].queue_free()
+		
+		var es = load("res://Table/objects/dead_eye.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"CrushedCrystals+Eye": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/jade_crystal.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"CrimsonEye+Firefly": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/crimson_firefly.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
 	
+	"DeadEye+EyeShroom": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/oracle_shroom.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+	
+	"CrimsonFirefly+OracleShroom": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/crimson_oracle.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+	
+	#Karmazynowe wyrocznia + jadeitowy kryształ = cytrynowe (jako kryształ) przeznaczenie
+	
+	"EyeJelly+Sauce": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/eye_sauce.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"Knife+Mandrake": func(components: Array):
+		var pos_avg = components[1].position
+		var tree = components[1].get_parent()
+		components[1].queue_free()
+		
+		var es = load("res://Table/objects/sliced_mandrake.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"EyeSauce+SlicedMandrake": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/mandrake_soup.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
+	"EyeShroom+MandrakeSoup": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/mandrake_shroom_soup.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
+		
 	
 	"EmptyBottle+JadeEye": func(components: Array):
 		var pos_avg = average_position(components)

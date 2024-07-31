@@ -16,8 +16,9 @@ func chop(context : Area2D):
 			$Leaves.queue_free()
 			occluder.visible = false
 			chopped = true
-
-			$fallenTree.visible = true
+			var tree = fallen_tree.instantiate()
+			add_child(tree)
+			#$fallenTree.visible = true
 	
 func start_fire(context : Node2D):
 	print("burining")
