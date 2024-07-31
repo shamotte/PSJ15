@@ -27,7 +27,7 @@ func trade(character : Node):
 	number_of_transactions+=1
 	if number_of_transactions == 1:
 		Global.add_to_table(note)
-	print("trade")
+	#print("trade")
 	#cost
 	if cost.type == Goods.GOODS.HP:
 		var component : Node2D = character.get_node("CompHealth")

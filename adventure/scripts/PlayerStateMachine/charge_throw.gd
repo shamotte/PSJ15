@@ -22,7 +22,7 @@ func enter(input : InputObject):
 	
 	
 func exit():
-	print(charge_time)
+	#print(charge_time)
 	potion.charge_time = charge_time
 	
 	

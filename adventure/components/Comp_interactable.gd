@@ -99,7 +99,7 @@ func next_interaction():
 				to_interact = set_Callable(interactable_array[to_interact_index])
 				connect_new_signal(interactable_array,to_interact_index,types.INTERACTION)
 				next_interaction_signal.emit()
-				print("Next Interaction")
+				#print("Next Interaction")
 				
 func next_area():
 	if more_area:
@@ -109,7 +109,7 @@ func next_area():
 				in_area_of_interaction = set_Callable(in_area_array[in_area_of_interaction_index])
 				connect_new_signal(in_area_array,in_area_of_interaction_index,types.IN_AREA)
 				next_area_signal.emit()
-				print("Next Interaction")
+				#print("Next Interaction")
 				
 func next_end_interaction():
 	if more_end_interactions:
@@ -118,19 +118,19 @@ func next_end_interaction():
 				end_of_interaction_index += 1
 				in_area_of_interaction = set_Callable(end_interaction_array[end_of_interaction_index])
 				connect_new_signal(end_interaction_array,end_of_interaction_index,types.END_INTERACTION)
-				print("Next Interaction")
+				#print("Next Interaction")
 		
 func set_interaction(value : int):
 	to_interact_index = value
 	to_interact = set_Callable(interactable_array[to_interact_index])
 	connect_new_signal(interactable_array,to_interact_index,types.INTERACTION)
-	print("Set Interaction")
+	#print("Set Interaction")
 	
 func set_area(value : int):
 	in_area_of_interaction_index = value
 	in_area_of_interaction = set_Callable(in_area_array[in_area_of_interaction_index])
 	connect_new_signal(in_area_array,in_area_of_interaction_index,types.IN_AREA)
-	print("Set Area")
+	#print("Set Area")
 
 func get_interaction_index():
 	return to_interact_index

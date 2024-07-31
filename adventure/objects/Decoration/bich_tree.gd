@@ -10,7 +10,7 @@ var chopped := false
 
 func chop(context : Area2D):
 	if not chopped:
-		print("choping")
+		#print("choping")
 		hp-=1
 		if hp<=0:
 			$Leaves.queue_free()
@@ -21,7 +21,7 @@ func chop(context : Area2D):
 			#$fallenTree.visible = true
 	
 func start_fire(context : Node2D):
-	print("burining")
+	#print("burining")
 	occluder.visible = false
 	fire_effect.visible = true
 	fire_effect.emitting = true

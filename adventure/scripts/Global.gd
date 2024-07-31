@@ -3,7 +3,7 @@ extends Node
 signal item_send(resource : Ingridient)
 
 func add_to_table(resource : Ingridient):
-	print("Add table")
+	#print("Add table")
 	if resource.table_item != null:
 		var t = resource.table_item.instantiate()
 		t.position = Vector2(randf_range(-200, 200), randf_range(-150,150))

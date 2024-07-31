@@ -46,14 +46,14 @@ func dialog_on():
 	$DialogTime.start()
 	$DialogTime.stop()
 	$Timer.start()
-	print("dialog start")
+	#print("dialog start")
 	
 func hide_panel():
 	$Label.visible = false
 	$DialogTime.stop()
 	in_dialog = false
 	emit_signal("dialog_end")
-	print("dialog stop")
+	#print("dialog stop")
 	
 func write():
 	if index < len(text[text_index]): 

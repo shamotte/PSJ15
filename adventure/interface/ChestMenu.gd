@@ -35,7 +35,7 @@ func set_items(items: Array[tool_item]):
 			s.set_item(no_item)
 		%chestGrid.add_child(s) 
 	set_player_items()
-	print("set items")
+	#print("set items")
 	
 func set_player_items():
 	player_tool_bar = tool_bar.get_tool_bar_items()
@@ -73,7 +73,7 @@ func select_item(button : Node):
 		button.set_item(selected_item_slot.item)
 		selected_item_slot.set_item(item)
 		selected_item_slot = null
-	print("selected",button)
+	#print("selected",button)
 		
 func remove_nulls(items : Array[tool_item]):
 	var tidied_up_array : Array[tool_item]
