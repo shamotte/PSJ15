@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://xor06crk4imn"]
 
 [ext_resource type="Script" path="res://globals/music_manager.gd" id="1_n1sov"]
-[ext_resource type="AudioStream" uid="uid://y2gtm1y3y7iq" path="res://music/crafting.wav" id="2_xfdxv"]
-[ext_resource type="AudioStream" uid="uid://2o7kcimo0282" path="res://music/exploration.wav" id="3_1i1sh"]
+[ext_resource type="AudioStream" uid="uid://cj0wlru0ma7xs" path="res://music/crafting.mp3" id="2_wxuh6"]
+[ext_resource type="AudioStream" uid="uid://dvwc6x7xols3g" path="res://music/exploration.mp3" id="3_7bkta"]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_n1sov")
 
 [node name="CraftingMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_xfdxv")
+stream = ExtResource("2_wxuh6")
 
 [node name="ExplorationMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_1i1sh")
+stream = ExtResource("3_7bkta")
