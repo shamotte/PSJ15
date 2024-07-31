@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var max_hp : int = 10
-var current_hp : int 
+var current_hp : int = 4
 
 signal hp_changed
 signal damage_taken
@@ -11,7 +11,7 @@ signal dead
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_hp = max_hp
+	pass
 
 func deal_damage(damage : int):
 	current_hp -= damage
@@ -22,6 +22,7 @@ func deal_damage(damage : int):
 		emit_signal("damage_taken")
 	
 func heal(heal_amount : int):
+	print("healing", heal_amount)
 	current_hp += heal_amount
 	if current_hp > max_hp:
 		current_hp = max_hp
