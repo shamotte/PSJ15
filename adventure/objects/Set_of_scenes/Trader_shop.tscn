@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://kun77gl1w0en"]
+[gd_scene load_steps=12 format=3 uid="uid://kun77gl1w0en"]
 
 [ext_resource type="PackedScene" uid="uid://c1fafp4eg0h6u" path="res://adventure/objects/characters/shadow_trader.tscn" id="1_4e3fp"]
 [ext_resource type="PackedScene" uid="uid://cxpsocagneje3" path="res://adventure/objects/characters/Trader_animal.tscn" id="2_sivfu"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Interactable/Rock2.tscn" id="8_7eb6w"]
 [ext_resource type="PackedScene" uid="uid://venqst8gqqsx" path="res://adventure/objects/Interactable/Gatherable.tscn" id="9_hf83m"]
 [ext_resource type="Resource" uid="uid://ryed3fkkbjrd" path="res://both/Ingridients/eyeFruit.tres" id="10_238xj"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cgs3w"]
+polygon = PackedVector2Array(-112, -2, -106, -35, -121, -64, -100, -83, -79, -95, -74, -111, -33, -111, -9, -105, 23, -127, 58, -115, 89, -124, 105, -107, 140, -111, 158, -87, 186, -74, 193, -47, 193, 1, 147, 44, 126, 39, 138, 7, 163, 4, 175, -33, 169, -62, 110, -86, 63, -94, 21, -88, -18, -86, -36, -74, -55, -65, -71, -46, -86, -30, -95, -3)
 
 [node name="TraderShop" type="Node2D"]
 
@@ -85,3 +88,6 @@ type = ExtResource("10_238xj")
 [node name="Gatherable2" parent="." instance=ExtResource("9_hf83m")]
 position = Vector2(89, -149)
 type = ExtResource("10_238xj")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_cgs3w")

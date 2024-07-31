@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://8qje6aoefwd0"]
+
+[ext_resource type="Script" path="res://adventure/interface/Gathered_item_info.gd" id="1_yle0p"]
+[ext_resource type="Texture2D" uid="uid://bi3hqyt88r54j" path="res://adventure/sprites/UI/Background.png" id="2_fg84s"]
+
+[sub_resource type="Animation" id="Animation_ik4mq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(700, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_cob44"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(700, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_x2cxk"]
+resource_name = "show_info"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 4, 5),
+"transitions": PackedFloat32Array(0.287175, 0.297302, 1, 1, 1),
+"update": 0,
+"values": [Vector2(700, 13), Vector2(499, 13), Vector2(508, 13), Vector2(508, 13), Vector2(700, 13)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6chn"]
+_data = {
+"RESET": SubResource("Animation_ik4mq"),
+"hide": SubResource("Animation_cob44"),
+"show_info": SubResource("Animation_x2cxk")
+}
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -641.0
+offset_bottom = 361.0
+grow_horizontal = 0
+script = ExtResource("1_yle0p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a6chn")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 0
+offset_left = 700.0
+offset_top = 13.0
+offset_right = 828.001
+offset_bottom = 77.0
+texture = ExtResource("2_fg84s")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 121.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 10
+text = "Mandrake has been added to inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

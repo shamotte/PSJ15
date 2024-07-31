@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=43 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -16,8 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dsg1moaauq3xd" path="res://adventure/objects/Interactable/Rock1.tscn" id="18_xdrsl"]
 [ext_resource type="PackedScene" uid="uid://kun77gl1w0en" path="res://adventure/objects/Set_of_scenes/Trader_shop.tscn" id="19_6q5ja"]
 [ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Interactable/Rock2.tscn" id="19_4156c"]
-[ext_resource type="Script" path="res://adventure/interface/Gathered_item_info.gd" id="20_1mlox"]
-[ext_resource type="Texture2D" uid="uid://bi3hqyt88r54j" path="res://adventure/sprites/UI/Background.png" id="20_x46jl"]
+[ext_resource type="PackedScene" uid="uid://8qje6aoefwd0" path="res://adventure/interface/info.tscn" id="20_k6s5r"]
 [ext_resource type="PackedScene" uid="uid://d215mvtpk43t6" path="res://adventure/objects/Interactable/Note2.tscn" id="21_v82u7"]
 [ext_resource type="PackedScene" uid="uid://c7yy86n778w1f" path="res://adventure/interface/chest_menu.tscn" id="22_3rykl"]
 [ext_resource type="PackedScene" uid="uid://met16om6bggm" path="res://adventure/objects/Interactable/Note3.tscn" id="22_kx4jw"]
@@ -35,6 +34,9 @@
 [ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="33_70roo"]
 [ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="34_afodl"]
 [ext_resource type="Resource" uid="uid://xd05tu7337u5" path="res://both/Potions/health_potion.tres" id="35_b0plr"]
+[ext_resource type="PackedScene" uid="uid://f6q1gb12qs8h" path="res://adventure/objects/Decoration/Rock_group1.tscn" id="35_h7ef2"]
+[ext_resource type="PackedScene" uid="uid://w6v45h5j3clu" path="res://adventure/objects/Decoration/Rock_group2.tscn" id="36_pookb"]
+[ext_resource type="PackedScene" uid="uid://dljtas2dq17pf" path="res://adventure/objects/Decoration/Rock_wall.tscn" id="37_7h1xr"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 interpolation_mode = 2
@@ -66,63 +68,10 @@ func _ready():
 	
 "
 
-[sub_resource type="Animation" id="Animation_ik4mq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(700, 13)]
-}
-
-[sub_resource type="Animation" id="Animation_cob44"]
-resource_name = "hide"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(700, 13)]
-}
-
-[sub_resource type="Animation" id="Animation_x2cxk"]
-resource_name = "show_info"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 4, 5),
-"transitions": PackedFloat32Array(0.287175, 0.297302, 1, 1, 1),
-"update": 0,
-"values": [Vector2(700, 13), Vector2(499, 13), Vector2(508, 13), Vector2(508, 13), Vector2(700, 13)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6chn"]
-_data = {
-"RESET": SubResource("Animation_ik4mq"),
-"hide": SubResource("Animation_cob44"),
-"show_info": SubResource("Animation_x2cxk")
-}
-
 [node name="World" type="Node2D"]
 
 [node name="ground" type="Sprite2D" parent="."]
-position = Vector2(-3, -55)
+position = Vector2(-67, -67)
 scale = Vector2(100, 100)
 texture = SubResource("GradientTexture2D_kuyoi")
 
@@ -196,6 +145,30 @@ position = Vector2(-218, -78)
 
 [node name="BichTree11" parent="Decoration" instance=ExtResource("2_wwnik")]
 position = Vector2(-267, 40)
+
+[node name="RockGroup" parent="Decoration" instance=ExtResource("35_h7ef2")]
+position = Vector2(-974, -101)
+
+[node name="Node2D" parent="Decoration" instance=ExtResource("36_pookb")]
+position = Vector2(-235, 360)
+
+[node name="RockGroup2" parent="Decoration" instance=ExtResource("35_h7ef2")]
+position = Vector2(489, -212)
+
+[node name="RockGroup3" parent="Decoration" instance=ExtResource("35_h7ef2")]
+position = Vector2(544, -582)
+
+[node name="Node2D2" parent="Decoration" instance=ExtResource("36_pookb")]
+position = Vector2(-397, -775)
+
+[node name="RockGroup4" parent="Decoration" instance=ExtResource("35_h7ef2")]
+position = Vector2(-47, -907)
+
+[node name="Node2D3" parent="Decoration" instance=ExtResource("36_pookb")]
+position = Vector2(-680, -932)
+
+[node name="RockGroup5" parent="Decoration" instance=ExtResource("35_h7ef2")]
+position = Vector2(-1011, -682)
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -283,41 +256,7 @@ offset_left = 36.0
 offset_right = 36.0
 character = NodePath("../../../PlayerCharacter")
 
-[node name="Info" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -641.0
-offset_bottom = 361.0
-grow_horizontal = 0
-script = ExtResource("20_1mlox")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Info"]
-libraries = {
-"": SubResource("AnimationLibrary_a6chn")
-}
-
-[node name="TextureRect" type="TextureRect" parent="UI/Info"]
-custom_minimum_size = Vector2(128, 64)
-layout_mode = 0
-offset_left = 700.0
-offset_top = 13.0
-offset_right = 828.001
-offset_bottom = 77.0
-texture = ExtResource("20_x46jl")
-
-[node name="Label" type="Label" parent="UI/Info/TextureRect"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 12.0
-offset_right = 121.0
-offset_bottom = 53.0
-theme_override_font_sizes/font_size = 10
-text = "Mandrake has been added to inventory"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+[node name="Info" parent="UI" instance=ExtResource("20_k6s5r")]
 
 [node name="ChestMenu" parent="UI" node_paths=PackedStringArray("tool_bar") instance=ExtResource("22_3rykl")]
 tool_bar = NodePath("../ToolBar")
@@ -383,6 +322,85 @@ polygon = PackedVector2Array(104, -382, 194, -381, 190, -302, 95, -300)
 [node name="Note 5" type="CollisionPolygon2D" parent="world_generation"]
 polygon = PackedVector2Array(-38, 584, 80, 582, 89, 695, -43, 705)
 
+[node name="Rock1" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-1051, -76, -974, -42, -936, -31, -882, -53, -839, -106, -811, -175, -831, -222, -903, -228, -1000, -221, -1060, -171, -1069, -104)
+
+[node name="Rock2" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-292, 287, -242, 261, -197, 265, -138, 325, -142, 395, -147, 464, -192, 480, -242, 432, -285, 377, -325, 319)
+
+[node name="Rock3" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(404, -275, 466, -323, 565, -348, 639, -298, 642, -179, 569, -134, 474, -158, 394, -194)
+
+[node name="Rock4" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(460, -565, 495, -548, 568, -519, 630, -530, 669, -576, 689, -652, 660, -696, 563, -688, 508, -680, 458, -610, 453, -572)
+
+[node name="Rock5" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-24, -835, 39, -859, 96, -918, 118, -989, 66, -1049, -34, -1052, -122, -996, -150, -914, -60, -841, -34, -838)
+
+[node name="Rokc6" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-695, -1033, -590, -977, -594, -833, -660, -814, -743, -912, -763, -1014)
+
+[node name="Rock7" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-478, -814, -428, -735, -361, -679, -310, -668, -299, -714, -309, -810, -349, -874, -400, -897, -472, -859)
+
+[node name="Rock8" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-977, -610, -920, -646, -875, -728, -882, -789, -936, -798, -1021, -790, -1079, -734, -1096, -680, -1033, -617)
+
 [node name="Crate" parent="." instance=ExtResource("33_70roo")]
 position = Vector2(-374, -299)
 items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("35_b0plr")])
+
+[node name="Wall" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(-1407, 556)
+rotation = 0.642281
+
+[node name="Wall2" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(-1004, -840)
+rotation = 0.637045
+
+[node name="Wall3" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(-456, -1087)
+rotation = 1.52716
+
+[node name="Wall4" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(307, -944)
+rotation = -1.08909
+
+[node name="Wall5" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(804, -388)
+rotation = -0.410152
+
+[node name="Wall7" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(782, 359)
+rotation = 0.418879
+
+[node name="Wall8" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(236, 875)
+rotation = 1.07338
+
+[node name="Wall9" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(-483, 988)
+rotation = -1.46782
+
+[node name="Wall10" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(-1235, 906)
+rotation = -1.56032
+
+[node name="Wall11" parent="." instance=ExtResource("37_7h1xr")]
+position = Vector2(-1202, -114)
