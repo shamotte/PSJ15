@@ -26,7 +26,7 @@
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="24_3nujv"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cgul4"]
-polygon = PackedVector2Array(-43, 96, -41, 88, -44, 74, -46, 64, -46, 56, -56, 52, -48, 42, -36, 29, -28, 22, -16, 20, -1, 22, 20, 15, 28, 5, 25, -5, 34, -14, 45, -10, 51, -3, 64, -2, 74, -3, 88, -9, 97, -12, 103, -2, 110, -4, 117, -7, 130, -9, 142, -10, 144, -1, 152, 2, 157, 22, 152, 35, 160, 57, 171, 68, 179, 82, 179, 96, 193, 100, 206, 101, 210, 91, 206, 77, 203, 64, 192, 56, 185, 43, 189, 32, 176, 12, 169, 0, 190, -28, 184, -39, 164, -40, 148, -43, 130, -41, 109, -43, 115, -58, 108, -66, 93, -68, 75, -70, 64, -62, 55, -50, 36, -43, 16, -45, -3, -35, -21, -31, -29, -49, -37, -44, -46, -32, -53, -23, -46, -9, -53, 6, -64, 8, -70, 18, -93, 25, -111, 30, -113, 38, -97, 49, -98, 70, -87, 69, -74, 74, -70, 89, -52, 98)
+polygon = PackedVector2Array(-43, 96, -41, 88, -44, 74, -46, 64, -46, 56, -56, 52, -48, 42, -36, 29, -28, 22, -16, 20, -1, 22, 20, 15, 28, 5, 25, -5, 34, -14, 45, -10, 51, -3, 64, -2, 74, -3, 88, -9, 97, -12, 103, -2, 110, -4, 117, -7, 130, -9, 142, -10, 144, -1, 152, 2, 157, 22, 152, 35, 160, 57, 171, 68, 179, 82, 179, 96, 193, 100, 208, 167, 190, 234, 226, 252, 243, 186, 286, 157, 210, 91, 206, 77, 203, 64, 192, 56, 185, 43, 189, 32, 176, 12, 169, 0, 190, -28, 184, -39, 164, -40, 148, -43, 130, -41, 109, -43, 115, -58, 108, -66, 93, -68, 75, -70, 64, -62, 55, -50, 36, -43, 16, -45, -3, -35, -21, -31, -29, -49, -37, -44, -46, -32, -53, -23, -46, -9, -53, 6, -64, 8, -70, 18, -93, 25, -111, 30, -113, 38, -97, 49, -98, 70, -87, 69, -74, 74, -70, 89, -52, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx74g"]
 size = Vector2(23.9999, 24.0001)
@@ -237,3 +237,30 @@ anim = NodePath("../AnimationPlayer")
 interactable_array = Array[ExtResource("24_3nujv")]([SubResource("Resource_mdn0b")])
 in_area_array = Array[ExtResource("24_3nujv")]([SubResource("Resource_jar6c")])
 end_interaction_array = Array[ExtResource("24_3nujv")]([SubResource("Resource_vu2ba")])
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 129
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-122, 34, 18, -107, 190, -51, 296, 156, 195, 291, -50, 313)
+
+[node name="BichTree" parent="." instance=ExtResource("20_0axx5")]
+position = Vector2(-69, 142)
+
+[node name="BichTree2" parent="." instance=ExtResource("20_0axx5")]
+position = Vector2(-43, 205)
+
+[node name="BichTree3" parent="." instance=ExtResource("20_0axx5")]
+position = Vector2(-26, 274)
+
+[node name="Rock3" parent="." instance=ExtResource("6_q0ebi")]
+position = Vector2(222, 129)
+
+[node name="Rock4" parent="." instance=ExtResource("5_07p6h")]
+position = Vector2(218, 185)
+
+[node name="Rock5" parent="." instance=ExtResource("6_q0ebi")]
+position = Vector2(262, 160)
+
+[node name="Rock6" parent="." instance=ExtResource("5_07p6h")]
+position = Vector2(205, 228)

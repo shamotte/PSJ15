@@ -66,6 +66,7 @@ func detach_potion():
 	get_tree().root.get_node("WorldManager/World/ProjectileManager").add_child(currnet_tool)
 	currnet_tool = null
 	tools[tool_index] = null
+	tool_bar.remove_potion(tool_index)
 		
 		
 func get_potion()-> Potion:

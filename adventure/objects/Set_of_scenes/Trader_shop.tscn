@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://kun77gl1w0en"]
+[gd_scene load_steps=11 format=3 uid="uid://kun77gl1w0en"]
 
 [ext_resource type="PackedScene" uid="uid://c1fafp4eg0h6u" path="res://adventure/objects/characters/shadow_trader.tscn" id="1_4e3fp"]
 [ext_resource type="PackedScene" uid="uid://cxpsocagneje3" path="res://adventure/objects/characters/Trader_animal.tscn" id="2_sivfu"]
 [ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="3_knc64"]
 [ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="4_e81rq"]
+[ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="5_7bbp7"]
+[ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="6_huwee"]
+[ext_resource type="PackedScene" uid="uid://dsg1moaauq3xd" path="res://adventure/objects/Interactable/Rock1.tscn" id="7_hqn12"]
+[ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Interactable/Rock2.tscn" id="8_7eb6w"]
+[ext_resource type="PackedScene" uid="uid://venqst8gqqsx" path="res://adventure/objects/Interactable/Gatherable.tscn" id="9_hf83m"]
+[ext_resource type="Resource" uid="uid://ryed3fkkbjrd" path="res://both/Ingridients/eyeFruit.tres" id="10_238xj"]
 
 [node name="TraderShop" type="Node2D"]
 
@@ -23,3 +29,59 @@ position = Vector2(140, -43)
 
 [node name="Box3" parent="." instance=ExtResource("4_e81rq")]
 position = Vector2(135, -19)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(132, 87, 207, 38, 217, -75, 165, -116, 74, -170, -44, -172, -144, -102, -130, 16, -46, 60)
+
+[node name="rocks" type="Node2D" parent="."]
+
+[node name="Rock3" parent="rocks" instance=ExtResource("5_7bbp7")]
+position = Vector2(149, 25)
+
+[node name="Rock4" parent="rocks" instance=ExtResource("6_huwee")]
+position = Vector2(180, -8)
+
+[node name="Rock5" parent="rocks" instance=ExtResource("6_huwee")]
+position = Vector2(178, -63)
+
+[node name="Rock6" parent="rocks" instance=ExtResource("5_7bbp7")]
+position = Vector2(133, -95)
+
+[node name="Rock7" parent="rocks" instance=ExtResource("6_huwee")]
+position = Vector2(80, -106)
+
+[node name="Rock8" parent="rocks" instance=ExtResource("5_7bbp7")]
+position = Vector2(30, -108)
+
+[node name="Rock1" parent="rocks" instance=ExtResource("7_hqn12")]
+position = Vector2(126, 59)
+
+[node name="Rock2" parent="rocks" instance=ExtResource("8_7eb6w")]
+position = Vector2(-18, -137)
+
+[node name="Rock9" parent="rocks" instance=ExtResource("6_huwee")]
+position = Vector2(-25, -92)
+
+[node name="Rock10" parent="rocks" instance=ExtResource("5_7bbp7")]
+position = Vector2(-69, -63)
+
+[node name="Rock11" parent="rocks" instance=ExtResource("5_7bbp7")]
+position = Vector2(-100, -17)
+
+[node name="Rock12" parent="rocks" instance=ExtResource("6_huwee")]
+position = Vector2(-116, -68)
+
+[node name="Rock13" parent="rocks" instance=ExtResource("5_7bbp7")]
+position = Vector2(-72, -104)
+
+[node name="Gatherable" parent="." instance=ExtResource("9_hf83m")]
+position = Vector2(41, -151)
+type = ExtResource("10_238xj")
+
+[node name="Gatherable2" parent="." instance=ExtResource("9_hf83m")]
+position = Vector2(89, -149)
+type = ExtResource("10_238xj")

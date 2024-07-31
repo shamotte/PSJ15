@@ -86,7 +86,6 @@ script = ExtResource("1_ykikw")
 type = ExtResource("5_54jwx")
 
 [node name="texture" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("1_0rusv")
 
 [node name="CompInteractable" parent="." instance=ExtResource("2_uj78f")]

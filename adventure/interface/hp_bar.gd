@@ -20,10 +20,10 @@ func _ready():
 func _process(delta):
 	pass
 
-func refresh_hp():
+func refresh_hp(new_hp : int):
 	for i in $VBoxContainer.get_children():
 		i.queue_free()
-	for i in range(hp_component.get_current_hp()):
+	for i in range(new_hp):
 		var hp_icon = hp_scene.instantiate()
 		$VBoxContainer.add_child(hp_icon)
 

@@ -4,7 +4,6 @@ extends Node2D
 var timeout : bool = false
 
 func increase_sanity(character : Node):
-	print("sanity")
 	if timeout: 
 		var component : Node2D = character.get_node("CompSanity")
 		component.increase_sanity(amount_of_restored_sanity)

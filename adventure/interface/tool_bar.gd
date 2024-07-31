@@ -3,6 +3,7 @@ extends Control
 @export var tool_frame : PackedScene
 @export var number_of_items : int
 @export var tool_bar_items : Array[tool_item]
+@export var no_item : tool_item
 
 signal tool_bar_loaded
 signal tool_bar_changed
@@ -33,3 +34,7 @@ func set_tool_bar(tools :Array[tool_item]):
 
 func get_tool_bar_items():
 	return tool_bar_items
+
+func remove_potion(index: int):
+	tool_bar_items[index] = no_item
+	set_tool_bar_icons()

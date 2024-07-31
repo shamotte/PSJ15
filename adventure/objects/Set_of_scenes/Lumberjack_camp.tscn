@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhnta5v7aygwj" path="res://adventure/objects/characters/lumberjack.tscn" id="1_yef0c"]
 [ext_resource type="PackedScene" uid="uid://nmftbd08d6vt" path="res://adventure/objects/Decoration/campfire.tscn" id="2_0sw46"]
-[ext_resource type="PackedScene" uid="uid://nqgnd7ha6td3" path="res://adventure/objects/Decoration/trunk.tscn" id="3_4fne4"]
+[ext_resource type="PackedScene" uid="uid://krdhy8ox4efs" path="res://adventure/objects/Decoration/trunk.tscn" id="3_4fne4"]
 [ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="3_t7wiw"]
 [ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="5_crsfa"]
 [ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="6_xqcdq"]
@@ -62,3 +62,10 @@ position = Vector2(32, -16)
 [node name="Crate" parent="." instance=ExtResource("6_xqcdq")]
 position = Vector2(-106, 30)
 items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("7_od3fm")])
+
+[node name="surface" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="surface"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-144, 55, -125, 140, 14, 144, 129, 137, 187, 130, 203, -48, 133, -159, -40, -110, -146, 7)
