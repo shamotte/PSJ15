@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=44 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://f6q1gb12qs8h" path="res://adventure/objects/Decoration/Rock_group1.tscn" id="35_h7ef2"]
 [ext_resource type="PackedScene" uid="uid://w6v45h5j3clu" path="res://adventure/objects/Decoration/Rock_group2.tscn" id="36_pookb"]
 [ext_resource type="PackedScene" uid="uid://dljtas2dq17pf" path="res://adventure/objects/Decoration/Rock_wall.tscn" id="37_7h1xr"]
+[ext_resource type="PackedScene" uid="uid://diojne6xikk1l" path="res://adventure/objects/enemies/enemy1.tscn" id="38_iha6k"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 interpolation_mode = 2
@@ -404,3 +405,15 @@ rotation = -1.56032
 
 [node name="Wall11" parent="." instance=ExtResource("37_7h1xr")]
 position = Vector2(-1202, -114)
+
+[node name="enemy" parent="." instance=ExtResource("38_iha6k")]
+position = Vector2(-339, 783)
+
+[node name="enemy2" parent="." instance=ExtResource("38_iha6k")]
+position = Vector2(256, 584)
+
+[node name="enemy3" parent="." instance=ExtResource("38_iha6k")]
+position = Vector2(587, 352)
+
+[node name="enemy4" parent="." instance=ExtResource("38_iha6k")]
+position = Vector2(-1013, -425)
