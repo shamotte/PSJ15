@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_bo5ia"]
 [ext_resource type="Texture2D" uid="uid://d2kq1u7tl14ag" path="res://adventure/sprites/decorations/blanket.png" id="2_l42hy"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="3_f8le8"]
-[ext_resource type="PackedScene" path="res://adventure/components/comp_chest.tscn" id="3_niifs"]
+[ext_resource type="PackedScene" uid="uid://dntptrq112sxk" path="res://adventure/components/comp_chest.tscn" id="3_niifs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx74g"]
 size = Vector2(23.9999, 24.0001)
