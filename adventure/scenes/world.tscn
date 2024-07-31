@@ -567,3 +567,6 @@ polygon = PackedVector2Array(-817, -117, -660, 297, -667, 558, -667, 561, -344, 
 
 [node name="Crate" parent="." instance=ExtResource("33_70roo")]
 position = Vector2(-272, 119)
+
+[node name="Mandrake" parent="." instance=ExtResource("34_afodl")]
+position = Vector2(-207, 87)

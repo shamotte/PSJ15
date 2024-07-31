@@ -21,7 +21,8 @@ func _process(delta):
 	rotation = -body_rotation
 	
 func gather():
-	if !used:
+	print("gathering")
+	if !used and in_interaction:
 		in_interaction = true
 		used = true
 	
@@ -30,9 +31,9 @@ func end_gathering():
 	if destroy_object:
 		anim.play("disappear")
 	else:
-		comp_interactable.queue_free()
-		queue_free()
 		in_interaction = false
+		comp_interactable.queue_free()
+		self.queue_free()
 	
 func show_tip(show : bool):
 	if used: 
