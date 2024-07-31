@@ -16,6 +16,7 @@ func _ready():
 func deal_damage(damage : int):
 	current_hp -= damage
 	if current_hp <= 0:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 		emit_signal("dead")
 	if damage > 0:
 		hp_changed.emit(current_hp)

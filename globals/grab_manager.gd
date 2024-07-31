@@ -19,6 +19,7 @@ func sort_nodes_by_name(a: Node, b: Node):
 	
 	
 func add_to_chest(item : tool_item):
+	get_tree().root.get_node("WorldManager").crafting.get_node("CanvasLayer").get_node("Info").show_info_potion(item)
 	get_tree().root.get_node("WorldManager").chest.add_item(item)
 
 var crafting = {

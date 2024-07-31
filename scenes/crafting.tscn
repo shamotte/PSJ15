@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg3bu75mmymrk"]
+[gd_scene load_steps=10 format=3 uid="uid://cg3bu75mmymrk"]
 
 [ext_resource type="Texture2D" uid="uid://drbv7s7c825ih" path="res://Table/sprites/very_bad_table.png" id="1_ts6cc"]
 [ext_resource type="PackedScene" uid="uid://l3u3jexjoacx" path="res://scenes/journal.tscn" id="4_igplr"]
 [ext_resource type="PackedScene" uid="uid://cc85lq3f0eo1c" path="res://Table/objects/candle.tscn" id="6_m1i1r"]
+[ext_resource type="PackedScene" uid="uid://8qje6aoefwd0" path="res://adventure/interface/info.tscn" id="7_nbvjl"]
 [ext_resource type="Texture2D" uid="uid://dokxidcxbbbir" path="res://Table/sprites/X.png" id="7_wpw36"]
 [ext_resource type="PackedScene" uid="uid://wh02ggte4dbc" path="res://Table/objects/mortar.tscn" id="15_cr6wp"]
 [ext_resource type="PackedScene" uid="uid://ccs0pb57q5n2a" path="res://Table/objects/knife.tscn" id="15_wojyl"]
@@ -54,6 +55,13 @@ blend_mode = 1
 script = SubResource("GDScript_7hkr6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Info" parent="CanvasLayer" instance=ExtResource("7_nbvjl")]
+offset_left = -642.0
+offset_top = 45.0
+offset_right = -1.0
+offset_bottom = 406.0
+mouse_filter = 1
 
 [node name="Button" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 1
