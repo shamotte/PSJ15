@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cwxcnmrqmq12i"]
 
 [ext_resource type="Script" path="res://adventure/objects/Decoration/bich_tree.gd" id="1_j0e08"]
-[ext_resource type="Texture2D" uid="uid://du8rhwcwb2aeq" path="res://adventure/sprites/decorations/gyattree_root.png" id="2_dls3u"]
+[ext_resource type="Texture2D" uid="uid://dwipe5qtiywha" path="res://adventure/sprites/decorations/gyattree_root.png" id="2_dls3u"]
 [ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="2_gag3d"]
 [ext_resource type="PackedScene" uid="uid://cgupc3kb4d0gv" path="res://adventure/objects/Interactable/fallentree.tscn" id="2_wkl7i"]
 [ext_resource type="Texture2D" uid="uid://cfa1dmnngn8fj" path="res://adventure/sprites/decorations/gyattree-leaves.png" id="3_iivt7"]
