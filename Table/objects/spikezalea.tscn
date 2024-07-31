@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciomo18652ip5"]
+[gd_scene load_steps=5 format=3 uid="uid://drcybh228a7rv"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_bdkk3"]
 [ext_resource type="Texture2D" uid="uid://dk4u4odihnv2m" path="res://Table/sprites/spikezalea.png" id="2_qagaa"]
