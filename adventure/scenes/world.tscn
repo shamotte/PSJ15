@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=45 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://03j66ww550y" path="res://adventure/interface/tool_bar.tscn" id="5_f25fo"]
 [ext_resource type="Resource" uid="uid://ryed3fkkbjrd" path="res://both/Ingridients/eyeFruit.tres" id="5_g70gw"]
 [ext_resource type="PackedScene" uid="uid://b8osndo80rp2f" path="res://adventure/interface/Sanity_bar.tscn" id="5_tox11"]
-[ext_resource type="PackedScene" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
+[ext_resource type="PackedScene" uid="uid://ttwjdjkembi7" path="res://adventure/interface/hp_bar.tscn" id="5_wodux"]
 [ext_resource type="PackedScene" uid="uid://venqst8gqqsx" path="res://adventure/objects/Interactable/Gatherable.tscn" id="6_japwo"]
 [ext_resource type="Resource" uid="uid://bu74f08qvh7k2" path="res://both/Ingridients/shroom.tres" id="6_vms6x"]
 [ext_resource type="Resource" uid="uid://ct76mem0rld0u" path="res://both/Ingridients/spikezalea.tres" id="7_01t23"]
@@ -32,8 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://be5wt544mf3ov" path="res://adventure/objects/Interactable/fairyCandy.tscn" id="30_wwtk6"]
 [ext_resource type="PackedScene" uid="uid://bnmvo4qjsu6a0" path="res://adventure/objects/Interactable/shroom.tscn" id="31_2kfbd"]
 [ext_resource type="PackedScene" uid="uid://boa5g6mitylg1" path="res://adventure/objects/Interactable/spikezalea.tscn" id="32_58bii"]
-[ext_resource type="PackedScene" path="res://adventure/objects/Interactable/Crate.tscn" id="33_70roo"]
+[ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="33_70roo"]
 [ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="34_afodl"]
+[ext_resource type="Resource" uid="uid://xd05tu7337u5" path="res://both/Potions/health_potion.tres" id="35_b0plr"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 interpolation_mode = 2
@@ -146,21 +147,55 @@ position = Vector2(-594, -103)
 player = NodePath("../../PlayerCharacter")
 
 [node name="MfCargo" parent="Locations" instance=ExtResource("25_3mi03")]
-position = Vector2(-111, 99)
+position = Vector2(225, -726)
 
 [node name="Decoration" type="Node2D" parent="."]
 
 [node name="Note2" parent="Decoration" instance=ExtResource("21_v82u7")]
-position = Vector2(-373, 186)
+position = Vector2(-926, 204)
+rotation = 3.14159
 
 [node name="Note3" parent="Decoration" instance=ExtResource("22_kx4jw")]
-position = Vector2(-307, 191)
+position = Vector2(-931, -388)
 
 [node name="Note4" parent="Decoration" instance=ExtResource("23_0a6vq")]
-position = Vector2(-247, 192)
+position = Vector2(13, 640)
 
 [node name="Note5" parent="Decoration" instance=ExtResource("24_fkouu")]
-position = Vector2(-190, 193)
+position = Vector2(140, -339)
+
+[node name="BichTree" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-486, -223)
+
+[node name="BichTree2" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-412, -196)
+
+[node name="BichTree3" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-562, -208)
+
+[node name="BichTree4" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-618, -196)
+
+[node name="BichTree5" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-418, -265)
+
+[node name="BichTree6" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-363, -146)
+
+[node name="BichTree7" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-220, -139)
+
+[node name="BichTree8" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-355, -83)
+
+[node name="BichTree9" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-316, -16)
+
+[node name="BichTree10" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-218, -78)
+
+[node name="BichTree11" parent="Decoration" instance=ExtResource("2_wwnik")]
+position = Vector2(-267, 40)
 
 [node name="NPC" type="Node2D" parent="."]
 
@@ -288,10 +323,10 @@ autowrap_mode = 2
 tool_bar = NodePath("../ToolBar")
 
 [node name="TraderShop" parent="." instance=ExtResource("19_6q5ja")]
-position = Vector2(-171, -259)
+position = Vector2(-659, -581)
 
 [node name="WriterAndTable" parent="." instance=ExtResource("17_6cfga")]
-position = Vector2(-67, -120)
+position = Vector2(451, 218)
 
 [node name="fireflies2" parent="." instance=ExtResource("18_n2mjm")]
 position = Vector2(-57, -8)
@@ -299,7 +334,7 @@ position = Vector2(-57, -8)
 [node name="ProjectileManager" type="Node2D" parent="."]
 
 [node name="LumberjackCamp" parent="." instance=ExtResource("25_yj1mx")]
-position = Vector2(-546, 447)
+position = Vector2(-1264, 695)
 
 [node name="world_generation" type="Area2D" parent="."]
 collision_layer = 128
@@ -309,44 +344,45 @@ objs = Array[PackedScene]([ExtResource("2_wwnik"), ExtResource("2_wwnik"), ExtRe
 secondaey_objects = Array[PackedScene]([ExtResource("18_n2mjm"), ExtResource("29_k7c55"), ExtResource("30_wwtk6"), ExtResource("31_2kfbd"), ExtResource("32_58bii"), ExtResource("19_4156c"), ExtResource("34_afodl")])
 create_forest = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world_generation"]
+[node name="camp" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
 polygon = PackedVector2Array(-761, -80, -658, 295, -487, 263, -341, 191, -187, 39, -191, -261, -293, -319, -381, -317, -631, -229)
 
+[node name="mf" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(152, -646, 345, -562, 461, -609, 566, -766, 474, -915, 330, -941, 125, -917, 45, -717)
+
+[node name="writer" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(403, 162, 502, 161, 527, 312, 399, 312)
+
+[node name="lumberjack]" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-1442, 680, -1327, 561, -1141, 512, -1008, 645, -1007, 838, -1309, 887, -1449, 876)
+
+[node name="trader" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-819, -714, -717, -766, -549, -762, -431, -683, -426, -541, -514, -475, -728, -511, -804, -559)
+
+[node name="Note 2" type="CollisionPolygon2D" parent="world_generation"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-960, 178, -897, 172, -892, 237, -963, 243)
+
+[node name="Note 3" type="CollisionPolygon2D" parent="world_generation"]
+polygon = PackedVector2Array(-973, -422, -892, -422, -889, -350, -970, -349)
+
+[node name="Note 4" type="CollisionPolygon2D" parent="world_generation"]
+polygon = PackedVector2Array(104, -382, 194, -381, 190, -302, 95, -300)
+
+[node name="Note 5" type="CollisionPolygon2D" parent="world_generation"]
+polygon = PackedVector2Array(-38, 584, 80, 582, 89, 695, -43, 705)
+
 [node name="Crate" parent="." instance=ExtResource("33_70roo")]
-position = Vector2(-272, 119)
-
-[node name="Mandrake" parent="." instance=ExtResource("34_afodl")]
-position = Vector2(-207, 87)
-
-[node name="BichTree" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-486, -223)
-
-[node name="BichTree2" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-412, -196)
-
-[node name="BichTree3" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-562, -208)
-
-[node name="BichTree4" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-618, -196)
-
-[node name="BichTree5" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-418, -265)
-
-[node name="BichTree6" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-363, -146)
-
-[node name="BichTree7" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-220, -139)
-
-[node name="BichTree8" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-355, -83)
-
-[node name="BichTree9" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-316, -16)
-
-[node name="BichTree10" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-218, -78)
-
-[node name="BichTree11" parent="." instance=ExtResource("2_wwnik")]
-position = Vector2(-267, 40)
+position = Vector2(-374, -299)
+items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("35_b0plr")])

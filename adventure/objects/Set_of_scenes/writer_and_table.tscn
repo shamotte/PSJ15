@@ -9,3 +9,10 @@
 position = Vector2(3, 27)
 
 [node name="Writer" parent="." instance=ExtResource("2_vknu1")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-38, -43, 46, -45, 59, 80, -42, 83)

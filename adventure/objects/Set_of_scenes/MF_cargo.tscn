@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhxi5pro2f7lw"]
+[gd_scene load_steps=11 format=3 uid="uid://bhxi5pro2f7lw"]
 
 [ext_resource type="PackedScene" uid="uid://wjsduwhnwpuu" path="res://adventure/objects/characters/mf.tscn" id="1_l1kw7"]
 [ext_resource type="PackedScene" uid="uid://o57aodcr2ohy" path="res://adventure/objects/Decoration/Box.tscn" id="2_wlmi1"]
 [ext_resource type="Texture2D" uid="uid://db4ug75u64ub3" path="res://adventure/sprites/decorations/knife_small.png" id="3_0a00v"]
 [ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="4_2x6ub"]
 [ext_resource type="Resource" uid="uid://cxux22uj43l60" path="res://both/Tools/net.tres" id="5_uyg2c"]
+[ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="6_4t7n1"]
+[ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="7_s6o1e"]
+[ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="8_mixcs"]
+[ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="9_145qt"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_81vcg"]
+polygon = PackedVector2Array(-7, -75, 51, -83, 108, -86, 129, -64, 149, -18, 159, 28, 165, 65, 156, 86, 121, 40, 127, -8, 104, -50, 51, -54, -12, -37, -18, -51)
 
 [node name="MfCargo" type="Node2D"]
 
@@ -12,7 +19,7 @@
 position = Vector2(33, 36)
 
 [node name="Box" parent="." instance=ExtResource("2_wlmi1")]
-position = Vector2(86, 31)
+position = Vector2(86, -2)
 
 [node name="Box2" parent="." instance=ExtResource("2_wlmi1")]
 position = Vector2(59, -5)
@@ -34,6 +41,57 @@ position = Vector2(57, 30)
 texture = ExtResource("3_0a00v")
 
 [node name="Crate" parent="." instance=ExtResource("4_2x6ub")]
-position = Vector2(90, 0)
-rotation = 3.14159
+position = Vector2(91, 35)
+rotation = 0.0
 items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c"), ExtResource("5_uyg2c")])
+
+[node name="Mandrake" parent="." instance=ExtResource("6_4t7n1")]
+position = Vector2(189, -50)
+
+[node name="decorations" type="Node2D" parent="."]
+
+[node name="Rock3" parent="decorations" instance=ExtResource("7_s6o1e")]
+position = Vector2(4, -59)
+
+[node name="Rock4" parent="decorations" instance=ExtResource("8_mixcs")]
+position = Vector2(46, -63)
+
+[node name="Rock5" parent="decorations" instance=ExtResource("7_s6o1e")]
+position = Vector2(102, -68)
+
+[node name="Rock6" parent="decorations" instance=ExtResource("8_mixcs")]
+position = Vector2(131, -26)
+
+[node name="Rock7" parent="decorations" instance=ExtResource("7_s6o1e")]
+position = Vector2(143, 24)
+
+[node name="Rock8" parent="decorations" instance=ExtResource("8_mixcs")]
+position = Vector2(150, 66)
+
+[node name="BichTree" parent="decorations" instance=ExtResource("9_145qt")]
+position = Vector2(16, -123)
+
+[node name="BichTree2" parent="decorations" instance=ExtResource("9_145qt")]
+position = Vector2(91, -133)
+
+[node name="BichTree3" parent="decorations" instance=ExtResource("9_145qt")]
+position = Vector2(170, -115)
+
+[node name="BichTree4" parent="decorations" instance=ExtResource("9_145qt")]
+position = Vector2(224, -30)
+
+[node name="BichTree5" parent="decorations" instance=ExtResource("9_145qt")]
+position = Vector2(-61, -15)
+
+[node name="BichTree6" parent="decorations" instance=ExtResource("9_145qt")]
+position = Vector2(-42, 36)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_81vcg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+light_mask = 128
+visibility_layer = 128
+polygon = PackedVector2Array(-93, -10, -11, -153, 96, -169, 194, -136, 260, -32, 174, 100, -64, 68)
