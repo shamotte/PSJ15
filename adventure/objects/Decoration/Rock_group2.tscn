@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://w6v45h5j3clu"]
+[gd_scene load_steps=6 format=3 uid="uid://w6v45h5j3clu"]
 
 [ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="1_mrj7h"]
 [ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="2_lgli3"]
 [ext_resource type="PackedScene" uid="uid://dsg1moaauq3xd" path="res://adventure/objects/Interactable/Rock1.tscn" id="3_xrnlb"]
 [ext_resource type="PackedScene" uid="uid://cmfn8t6q33l2x" path="res://adventure/objects/Interactable/Rock2.tscn" id="4_croe1"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b0wvy"]
+polygon = PackedVector2Array(-33, -51, -17, -52, 18, -51, 36, -38, 46, -9, 30, 5, 3, 6, -12, 6, -45, -32)
+
+[node name="RockGroup" type="Node2D"]
 
 [node name="Rock3" parent="." instance=ExtResource("1_mrj7h")]
 
@@ -32,3 +35,6 @@ position = Vector2(-5, -83)
 
 [node name="Rock9" parent="." instance=ExtResource("2_lgli3")]
 position = Vector2(22, -48)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_b0wvy")
