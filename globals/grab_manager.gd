@@ -5,6 +5,8 @@ var currently_grabbing: Node = null
 var mouse_grab: bool = false
 var mouse_grab_offset: Vector2
 
+var chest
+
 func average_position(nodes: Array):
 	var pos_avg = Vector2.ZERO
 	for n in nodes:
@@ -14,6 +16,10 @@ func average_position(nodes: Array):
 
 func sort_nodes_by_name(a: Node, b: Node):
 	return str(a.get_name()) < str(b.get_name())
+	
+	
+func add_to_chest(item : tool_item):
+	get_tree().root.get_node("WorldManager").chest.add_item(item)
 
 var crafting = {
 	
@@ -27,6 +33,59 @@ var crafting = {
 		e.position = pos_avg
 		tree.add_child(e),
 		
+		
+	"CutMushrooms+FairyCandy" : func(components : Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		
+		components[0].queue_free()
+		components[1].queue_free()
+		
+		var health_potion = load("res://both/Potions/health_potion.tres")
+		add_to_chest(health_potion)
+		,
+	
+	"Burnshroom+FairyCandy" : func(components : Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		
+		components[0].queue_free()
+		components[1].queue_free()
+		
+		var health_potion = load("res://both/Potions/Sanity_potion.tres")
+		add_to_chest(health_potion)
+		,
+	"Burnshroom+HellCandy" : func(components : Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		
+		components[0].queue_free()
+		components[1].queue_free()
+		
+		var health_potion = load("res://both/Potions/fire_potion.tres")
+		add_to_chest(health_potion)
+		,
+	"CitrussyDestiny+MandrakeSoup" : func(components : Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		
+		components[0].queue_free()
+		components[1].queue_free()
+		
+		var health_potion = load("res://both/Potions/ultimate_potion.tres")
+		add_to_chest(health_potion)
+		,
+	"JadeCrystal+Spikezalea" : func(components : Array):
+		var pos_avg = components[0].position
+		var tree = components[0].get_parent()
+		
+		components[0].queue_free()
+		components[1].queue_free()
+		
+		var health_potion = load("res://both/Potions/speed_potion.tres")
+		add_to_chest(health_potion)
+		,
+	
 	"Mushrooms+Fire": func(components: Array):
 		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
@@ -246,8 +305,6 @@ var crafting = {
 		tree.add_child(e),
 }
 
-func _ready():
-	pass
 
 func _physics_process(delta):
 	

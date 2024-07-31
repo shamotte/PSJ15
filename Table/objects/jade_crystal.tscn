@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://p2p2hlpc4dvm"]
+[gd_scene load_steps=5 format=3 uid="uid://ck0hehhhknt20"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_d4cub"]
 [ext_resource type="Texture2D" uid="uid://6h0qig8mbfvw" path="res://Table/sprites/jade_crystal.png" id="2_a72nb"]

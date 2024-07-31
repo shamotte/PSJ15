@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbj480yrascnx"]
+[gd_scene load_steps=5 format=3 uid="uid://d25aqstaxpp4"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_cwfwn"]
 [ext_resource type="Texture2D" uid="uid://1kvkg464j6vj" path="res://Table/sprites/oracle_shroom.png" id="2_vqh6k"]
