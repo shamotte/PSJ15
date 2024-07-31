@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cmwo1dpk5547u"]
+[gd_scene load_steps=2 format=3 uid="uid://cmwo1dpk5547u"]
+
+[ext_resource type="Script" path="res://adventure/scripts/potions/ultimate_potion.gd" id="1_evbn8"]
 
 [node name="ultimate_potion" type="Node2D"]
+script = ExtResource("1_evbn8")

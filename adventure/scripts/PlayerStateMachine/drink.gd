@@ -9,6 +9,7 @@ func update(input : InputObject,dleta : float):
 		pass
 	
 func enter(input : InputObject):
+	print("entering_drinking")
 	animation_player.play("drink")
 	await animation_player.animation_finished
 	var potion : DrinkablePotion = tool_manager.get_potion()

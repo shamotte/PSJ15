@@ -10,7 +10,8 @@ var input : InputObject
 	"swing":$swing,
 	"change_item":$change_item,
 	"charge_throw" : $charge_throw,
-	"throw": $throw
+	"throw": $throw,
+	"drink" : $drink
 }
 
 # Called when the node enters the scene tree for the first time.

@@ -75,6 +75,7 @@ func get_desired_animation()-> String:
 	if currnet_tool is tool:
 		return "swing"
 	if currnet_tool is ThrowablePotion:
-		print("xxx")
 		return "charge_throw"
+	if currnet_tool is DrinkablePotion:
+		return "drink"
 	return "idel"
