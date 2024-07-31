@@ -10,11 +10,11 @@ var current_index : int = 0
 func _ready():
 	$object.texture = object_sprites[current_index]
 	if len(stage) != len(object_sprites):
-		print("Rock arrays resized")
+		#print("Rock arrays resized")
 		stage.resize(len(object_sprites))
 
 func mine(context : Area2D):
-	print("mining")
+	#print("mining")
 	hp-=1
 	if hp < stage[current_index]:
 		next_stage()

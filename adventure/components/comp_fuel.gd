@@ -35,7 +35,7 @@ func amount_of_particles():
 	#current_particles = 
 	
 func add_fuel():
-	print("add fuel")
+	#print("add fuel")
 	fuel+=add_fuel_value
 	if fuel > max_fuel:
 		fuel = max_fuel

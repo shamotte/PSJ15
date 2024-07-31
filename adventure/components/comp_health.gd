@@ -21,10 +21,10 @@ func deal_damage(damage : int):
 		hp_changed.emit(current_hp)
 		#emit_signal("hp_changed")
 		emit_signal("damage_taken")
-	print("hp",current_hp)
+	#print("hp",current_hp)
 	
 func heal(heal_amount : int):
-	print("healing", heal_amount)
+	#print("healing", heal_amount)
 	current_hp += heal_amount
 	if current_hp > max_hp:
 		current_hp = max_hp
@@ -32,7 +32,7 @@ func heal(heal_amount : int):
 		hp_changed.emit(current_hp)
 		#emit_signal("hp_changed")
 		emit_signal("healed")
-	print("hp",current_hp)
+	#print("hp",current_hp)
 	
 func get_current_hp():
 	return current_hp

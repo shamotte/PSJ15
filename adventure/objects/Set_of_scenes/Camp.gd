@@ -4,7 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Position")
+	#print("Position")
 	player.position = $Spawn_point.global_position
 
 

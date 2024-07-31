@@ -21,7 +21,7 @@ func _process(delta):
 	rotation = -body_rotation
 	
 func gather():
-	print("gathering")
+	#print("gathering")
 	if !used and in_interaction:
 		in_interaction = true
 		used = true

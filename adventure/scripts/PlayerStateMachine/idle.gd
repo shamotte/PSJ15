@@ -15,7 +15,7 @@ func update(input : InputObject,dleta : float):
 	
 	
 func enter(input : InputObject):
-	print("entering idle")
+	#print("entering idle")
 	new_velocity.emit(Vector2.ZERO,0)
 	animation_player.play("idle")
 func exit():
