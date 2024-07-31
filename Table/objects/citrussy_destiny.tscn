@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://d25aqstaxpp4"]
 
 [ext_resource type="Script" path="res://Table/objects/table_item.gd" id="1_cwfwn"]
-[ext_resource type="Texture2D" uid="uid://1kvkg464j6vj" path="res://Table/sprites/oracle_shroom.png" id="2_vqh6k"]
+[ext_resource type="Texture2D" uid="uid://dbkq7t6rkvsot" path="res://Table/sprites/citrussy_oracle.png" id="2_l1vwi"]
 [ext_resource type="PackedScene" uid="uid://c3qdu6uy0j81c" path="res://components/comp_grabbable.tscn" id="3_pj7gt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ohfo3"]
-radius = 24.0
+radius = 27.0
 
 [node name="CitrussyDestiny" type="CharacterBody2D"]
 collision_layer = 2147483648
@@ -14,14 +14,14 @@ script = ExtResource("1_cwfwn")
 item_name = "CitrussyDestiny"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vqh6k")
+texture = ExtResource("2_l1vwi")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2147483648
 collision_mask = 2147483648
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0)
+position = Vector2(4, 5)
 shape = SubResource("CircleShape2D_ohfo3")
 
 [node name="Comp_Grabbable" parent="." node_paths=PackedStringArray("grab_area") instance=ExtResource("3_pj7gt")]

@@ -46,7 +46,7 @@ var crafting = {
 		add_to_chest(health_potion)
 		,
 	
-	"Burnshroom+FairyCandy" : func(components : Array):
+	"Burnshrooms+FairyCandy" : func(components : Array):
 		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
 		
@@ -56,7 +56,7 @@ var crafting = {
 		var health_potion = load("res://both/Potions/Sanity_potion.tres")
 		add_to_chest(health_potion)
 		,
-	"Burnshroom+HellCandy" : func(components : Array):
+	"Burnshrooms+HellCandy" : func(components : Array):
 		var pos_avg = components[0].position
 		var tree = components[0].get_parent()
 		
