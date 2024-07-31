@@ -17,10 +17,13 @@ func open_chest_menu(character :Node):
 	chest_menu.set_items(items_inside)
 	print("Open chest")
 	
+func add_item(item : tool_item):
+	print("adding",item.name)
+	items_inside.push_back(item)
+	
 func set_items_inside(new_items :Array[tool_item]):
 	items_inside = new_items
-	for i in range(len(items_inside)):
-		print(new_items[i].name)
+	
 	
 func close_chest():
 	anim.play("close")

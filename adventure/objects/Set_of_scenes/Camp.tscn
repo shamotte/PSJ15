@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://by5tjtavts5oi"]
+[gd_scene load_steps=36 format=3 uid="uid://by5tjtavts5oi"]
 
 [ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="1_t5mgp"]
 [ext_resource type="Script" path="res://adventure/objects/Set_of_scenes/Camp.gd" id="1_tf8mh"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d08m1scs4q1b" path="res://adventure/objects/Decoration/Rock4.tscn" id="5_07p6h"]
 [ext_resource type="PackedScene" uid="uid://di4681ltp68sv" path="res://adventure/objects/Decoration/Rock3.tscn" id="6_q0ebi"]
 [ext_resource type="PackedScene" uid="uid://nmftbd08d6vt" path="res://adventure/objects/Decoration/campfire.tscn" id="10_fnq0q"]
-[ext_resource type="PackedScene" uid="uid://b8awh6pciioeo" path="res://adventure/objects/Interactable/Crate.tscn" id="12_35stk"]
+[ext_resource type="Script" path="res://adventure/objects/Interactable/Crate.gd" id="12_r1nrf"]
 [ext_resource type="Resource" uid="uid://bbw1mseoo8pb2" path="res://both/Tools/Axe.tres" id="13_u0ftc"]
 [ext_resource type="Resource" uid="uid://byb4lx6edea62" path="res://both/Tools/Pickaxe.tres" id="14_3ongc"]
 [ext_resource type="Resource" uid="uid://heqa7itfmcpu" path="res://both/Potions/Sanity_potion.tres" id="15_pkew4"]
@@ -19,9 +19,94 @@
 [ext_resource type="Resource" uid="uid://xd05tu7337u5" path="res://both/Potions/health_potion.tres" id="17_thlet"]
 [ext_resource type="Resource" uid="uid://2iv5vqctq0uf" path="res://both/Potions/speed_potion.tres" id="18_oauvh"]
 [ext_resource type="Resource" uid="uid://pqmvwd4e3ewo" path="res://both/Potions/ultimate_potion.tres" id="19_3j1yt"]
+[ext_resource type="Texture2D" uid="uid://67ifvbutdy5i" path="res://adventure/sprites/decorations/open_box2.png" id="20_ks6to"]
+[ext_resource type="Texture2D" uid="uid://d2kq1u7tl14ag" path="res://adventure/sprites/decorations/blanket.png" id="21_w8by8"]
+[ext_resource type="PackedScene" path="res://adventure/components/comp_chest.tscn" id="22_56n1s"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="23_ujnvq"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="24_3nujv"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cgul4"]
 polygon = PackedVector2Array(-43, 96, -41, 88, -44, 74, -46, 64, -46, 56, -56, 52, -48, 42, -36, 29, -28, 22, -16, 20, -1, 22, 20, 15, 28, 5, 25, -5, 34, -14, 45, -10, 51, -3, 64, -2, 74, -3, 88, -9, 97, -12, 103, -2, 110, -4, 117, -7, 130, -9, 142, -10, 144, -1, 152, 2, 157, 22, 152, 35, 160, 57, 171, 68, 179, 82, 179, 96, 193, 100, 206, 101, 210, 91, 206, 77, 203, 64, 192, 56, 185, 43, 189, 32, 176, 12, 169, 0, 190, -28, 184, -39, 164, -40, 148, -43, 130, -41, 109, -43, 115, -58, 108, -66, 93, -68, 75, -70, 64, -62, 55, -50, 36, -43, 16, -45, -3, -35, -21, -31, -29, -49, -37, -44, -46, -32, -53, -23, -46, -9, -53, 6, -64, 8, -70, 18, -93, 25, -111, 30, -113, 38, -97, 49, -98, 70, -87, 69, -74, 74, -70, 89, -52, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx74g"]
+size = Vector2(23.9999, 24.0001)
+
+[sub_resource type="Animation" id="Animation_iomxh"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blanket:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -7), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j2khf"]
+resource_name = "gathering"
+length = 2.5
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_kuk7j"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_b8gik"]
+resource_name = "moving"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_m1c8s"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blanket:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-2.57492e-05, -7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8jga"]
+_data = {
+"close": SubResource("Animation_iomxh"),
+"gathering": SubResource("Animation_j2khf"),
+"idle": SubResource("Animation_kuk7j"),
+"moving": SubResource("Animation_b8gik"),
+"open": SubResource("Animation_m1c8s")
+}
+
+[sub_resource type="Resource" id="Resource_mdn0b"]
+script = ExtResource("24_3nujv")
+object = "CompChest"
+function_name = "open_chest_menu"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = "character"
+
+[sub_resource type="Resource" id="Resource_jar6c"]
+script = ExtResource("24_3nujv")
+object = "CompChest"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_vu2ba"]
+script = ExtResource("24_3nujv")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
 
 [node name="Camp" type="Node2D"]
 script = ExtResource("1_tf8mh")
@@ -119,6 +204,36 @@ occluder = SubResource("OccluderPolygon2D_cgul4")
 position = Vector2(91, 142)
 extingushable = true
 
-[node name="Crate" parent="." instance=ExtResource("12_35stk")]
+[node name="Crate" type="StaticBody2D" parent="."]
 position = Vector2(177, 110)
+rotation = 1.5708
+script = ExtResource("12_r1nrf")
 items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("13_u0ftc"), ExtResource("14_3ongc"), ExtResource("15_pkew4"), ExtResource("16_6cevw"), ExtResource("17_thlet"), ExtResource("18_oauvh"), ExtResource("19_3j1yt")])
+
+[node name="Crate" type="Sprite2D" parent="Crate"]
+texture_filter = 1
+position = Vector2(0.999996, -1.00001)
+rotation = 1.5708
+texture = ExtResource("20_ks6to")
+
+[node name="Blanket" type="Sprite2D" parent="Crate"]
+position = Vector2(0, -7)
+texture = ExtResource("21_w8by8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+position = Vector2(1, -3.38157e-06)
+shape = SubResource("RectangleShape2D_jx74g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Crate"]
+libraries = {
+"": SubResource("AnimationLibrary_s8jga")
+}
+
+[node name="CompChest" parent="Crate" node_paths=PackedStringArray("object", "anim") groups=["crafting_chest"] instance=ExtResource("22_56n1s")]
+object = NodePath("..")
+anim = NodePath("../AnimationPlayer")
+
+[node name="CompInteractable" parent="Crate" instance=ExtResource("23_ujnvq")]
+interactable_array = Array[ExtResource("24_3nujv")]([SubResource("Resource_mdn0b")])
+in_area_array = Array[ExtResource("24_3nujv")]([SubResource("Resource_jar6c")])
+end_interaction_array = Array[ExtResource("24_3nujv")]([SubResource("Resource_vu2ba")])

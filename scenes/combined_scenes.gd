@@ -6,6 +6,8 @@ class_name CombinedScenes
 enum STATE{ WORLD, CRAFTING}
 var state = STATE.WORLD
 
+var chest
+
 func _input(event):
 	return
 	if event is InputEventKey:
@@ -15,7 +17,9 @@ func _input(event):
 			change_to_crafting()
 
 func _ready():
+	chest = get_tree().get_first_node_in_group("crafting_chest")
 	remove_child(crafting)
+	
 	
 	
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=60 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -33,8 +33,13 @@
 [ext_resource type="PackedScene" uid="uid://be5wt544mf3ov" path="res://adventure/objects/Interactable/fairyCandy.tscn" id="30_wwtk6"]
 [ext_resource type="PackedScene" uid="uid://bnmvo4qjsu6a0" path="res://adventure/objects/Interactable/shroom.tscn" id="31_2kfbd"]
 [ext_resource type="PackedScene" uid="uid://boa5g6mitylg1" path="res://adventure/objects/Interactable/spikezalea.tscn" id="32_58bii"]
-[ext_resource type="PackedScene" path="res://adventure/objects/Interactable/Crate.tscn" id="33_70roo"]
 [ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="34_afodl"]
+[ext_resource type="Script" path="res://adventure/objects/Interactable/Crate.gd" id="35_bucko"]
+[ext_resource type="Texture2D" uid="uid://67ifvbutdy5i" path="res://adventure/sprites/decorations/open_box2.png" id="36_batot"]
+[ext_resource type="Texture2D" uid="uid://d2kq1u7tl14ag" path="res://adventure/sprites/decorations/blanket.png" id="37_o1wew"]
+[ext_resource type="PackedScene" path="res://adventure/components/comp_chest.tscn" id="38_iss87"]
+[ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="39_r1cpu"]
+[ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="40_10f7a"]
 
 [sub_resource type="Gradient" id="Gradient_w0p8n"]
 interpolation_mode = 2
@@ -118,6 +123,86 @@ _data = {
 "hide": SubResource("Animation_cob44"),
 "show_info": SubResource("Animation_x2cxk")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx74g"]
+size = Vector2(23.9999, 24.0001)
+
+[sub_resource type="Animation" id="Animation_iomxh"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blanket:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -7), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j2khf"]
+resource_name = "gathering"
+length = 2.5
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_kuk7j"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_b8gik"]
+resource_name = "moving"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_m1c8s"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blanket:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-2.57492e-05, -7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8jga"]
+_data = {
+"close": SubResource("Animation_iomxh"),
+"gathering": SubResource("Animation_j2khf"),
+"idle": SubResource("Animation_kuk7j"),
+"moving": SubResource("Animation_b8gik"),
+"open": SubResource("Animation_m1c8s")
+}
+
+[sub_resource type="Resource" id="Resource_mdn0b"]
+script = ExtResource("40_10f7a")
+object = "CompChest"
+function_name = "open_chest_menu"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = "character"
+
+[sub_resource type="Resource" id="Resource_jar6c"]
+script = ExtResource("40_10f7a")
+object = "CompChest"
+function_name = "show_tip"
+player_state = "normal"
+next_interaction_signal = ""
+first_argument = ""
+
+[sub_resource type="Resource" id="Resource_vu2ba"]
+script = ExtResource("40_10f7a")
+object = ""
+function_name = ""
+player_state = ""
+next_interaction_signal = ""
+first_argument = ""
 
 [node name="World" type="Node2D"]
 
@@ -567,8 +652,38 @@ create_forest = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world_generation"]
 polygon = PackedVector2Array(-817, -117, -660, 297, -667, 558, -667, 561, -344, 601, -299, 361, -7, 314, -7, 314, 208, 31, 150, -310, -52, -470, -288, -434, -692, -308)
 
-[node name="Crate" parent="." instance=ExtResource("33_70roo")]
+[node name="Crate" type="StaticBody2D" parent="."]
 position = Vector2(-272, 119)
+rotation = 1.5708
+script = ExtResource("35_bucko")
+
+[node name="Crate" type="Sprite2D" parent="Crate"]
+texture_filter = 1
+position = Vector2(0.999996, -1.00001)
+rotation = 1.5708
+texture = ExtResource("36_batot")
+
+[node name="Blanket" type="Sprite2D" parent="Crate"]
+position = Vector2(0, -7)
+texture = ExtResource("37_o1wew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+position = Vector2(1, -3.38157e-06)
+shape = SubResource("RectangleShape2D_jx74g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Crate"]
+libraries = {
+"": SubResource("AnimationLibrary_s8jga")
+}
+
+[node name="CompChest" parent="Crate" node_paths=PackedStringArray("object", "anim") instance=ExtResource("38_iss87")]
+object = NodePath("..")
+anim = NodePath("../AnimationPlayer")
+
+[node name="CompInteractable" parent="Crate" instance=ExtResource("39_r1cpu")]
+interactable_array = Array[ExtResource("40_10f7a")]([SubResource("Resource_mdn0b")])
+in_area_array = Array[ExtResource("40_10f7a")]([SubResource("Resource_jar6c")])
+end_interaction_array = Array[ExtResource("40_10f7a")]([SubResource("Resource_vu2ba")])
 
 [node name="Mandrake" parent="." instance=ExtResource("34_afodl")]
 position = Vector2(-207, 87)
