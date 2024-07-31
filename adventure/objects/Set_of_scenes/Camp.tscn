@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://by5tjtavts5oi"]
+[gd_scene load_steps=32 format=3 uid="uid://by5tjtavts5oi"]
 
 [ext_resource type="PackedScene" uid="uid://cya8y786mbfvc" path="res://adventure/objects/Decoration/tent.tscn" id="1_t5mgp"]
 [ext_resource type="Script" path="res://adventure/objects/Set_of_scenes/Camp.gd" id="1_tf8mh"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://nmftbd08d6vt" path="res://adventure/objects/Decoration/campfire.tscn" id="10_fnq0q"]
 [ext_resource type="Script" path="res://adventure/objects/Interactable/Crate.gd" id="12_r1nrf"]
 [ext_resource type="Texture2D" uid="uid://67ifvbutdy5i" path="res://adventure/sprites/decorations/open_box2.png" id="14_skc7u"]
+[ext_resource type="Resource" uid="uid://bbw1mseoo8pb2" path="res://both/Tools/Axe.tres" id="14_uh8ks"]
 [ext_resource type="Texture2D" uid="uid://d2kq1u7tl14ag" path="res://adventure/sprites/decorations/blanket.png" id="15_7x1aa"]
+[ext_resource type="Resource" uid="uid://byb4lx6edea62" path="res://both/Tools/Pickaxe.tres" id="15_17dt2"]
 [ext_resource type="PackedScene" uid="uid://dntptrq112sxk" path="res://adventure/components/comp_chest.tscn" id="16_7b5pl"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="17_iu52v"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="18_83lv6"]
@@ -230,6 +232,7 @@ position = Vector2(205, 228)
 position = Vector2(170, 124)
 rotation = 1.5708
 script = ExtResource("12_r1nrf")
+items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("14_uh8ks"), ExtResource("15_17dt2")])
 
 [node name="Crate" type="Sprite2D" parent="Crate"]
 texture_filter = 1

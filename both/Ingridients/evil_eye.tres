@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://ddlesbus4duh1" path="res://adventure/sprites/decorations/trader_eye.png" id="1_c5tbf"]
 [ext_resource type="Script" path="res://both/Resources/Ingridients.gd" id="1_rb4ii"]
 [ext_resource type="Texture2D" uid="uid://d3vxi135aiesx" path="res://adventure/sprites/UI/eye_icon.png" id="2_1u6sv"]
-[ext_resource type="PackedScene" uid="uid://dj88l4d5qney" path="res://Table/objects/jade_eye.tscn" id="4_u7a5f"]
+[ext_resource type="PackedScene" path="res://Table/objects/eye.tscn" id="4_2t4qa"]
 
 [resource]
 script = ExtResource("1_rb4ii")
 name = "Evil Eye"
 icon = ExtResource("2_1u6sv")
 adventure_sprite = ExtResource("1_c5tbf")
-table_item = ExtResource("4_u7a5f")
+table_item = ExtResource("4_2t4qa")
