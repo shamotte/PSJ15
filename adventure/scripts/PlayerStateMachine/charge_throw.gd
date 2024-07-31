@@ -8,6 +8,7 @@ var potion : ThrowablePotion
 
 var charge_time := 0.0
 func update(input : InputObject,delta : float):
+	new_velocity.emit(input.direction, 0.7)
 	charge_time += delta
 	if not input.action:
 		transition_state.emit("throw")
