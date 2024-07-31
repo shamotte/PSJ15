@@ -247,7 +247,16 @@ var crafting = {
 		e.position = pos_avg
 		tree.add_child(e),
 	
-	#Karmazynowe wyrocznia + jadeitowy kryształ = cytrynowe (jako kryształ) przeznaczenie
+	"CrimsonOracle+JadeCrystal": func(components: Array):
+		var pos_avg = average_position(components)
+		var tree = components[0].get_parent()
+		for comp in components:
+			comp.queue_free()
+		
+		var es = load("res://Table/objects/citrussy_destiny.tscn")
+		var e = es.instantiate()
+		e.position = pos_avg
+		tree.add_child(e),
 	
 	"EyeJelly+Sauce": func(components: Array):
 		var pos_avg = average_position(components)
