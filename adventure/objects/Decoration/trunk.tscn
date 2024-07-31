@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://nqgnd7ha6td3"]
+[gd_scene load_steps=5 format=3 uid="uid://krdhy8ox4efs"]
 
 [ext_resource type="Texture2D" uid="uid://dwipe5qtiywha" path="res://adventure/sprites/decorations/gyattree_root.png" id="2_3k6xe"]
 [ext_resource type="Script" path="res://adventure/scripts/receiver.gd" id="4_eufi3"]
@@ -23,11 +23,6 @@ shape = SubResource("CircleShape2D_umyog")
 script = ExtResource("4_eufi3")
 object = NodePath("..")
 function_name = "chop"
-
-[node name="FirePotionReceiver" type="Node" parent="." node_paths=PackedStringArray("object")]
-script = ExtResource("4_eufi3")
-object = NodePath("..")
-function_name = "start_fire"
 
 [node name="FireEffect" parent="." instance=ExtResource("5_rb1n2")]
 visible = false

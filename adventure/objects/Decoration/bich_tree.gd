@@ -24,3 +24,5 @@ func start_fire(context : Node2D):
 	occluder.visible = false
 	fire_effect.visible = true
 	fire_effect.emitting = true
+	$Leaves.queue_free()
+	
