@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmljq2sergiyk"]
+[gd_scene load_steps=6 format=3 uid="uid://bmljq2sergiyk"]
 
 [ext_resource type="Script" path="res://adventure/components/comp_gatherable.gd" id="1_vffp6"]
 [ext_resource type="Texture2D" uid="uid://cf3b3q2nda8fi" path="res://adventure/sprites/UI/Press E.png" id="2_5uj86"]
+[ext_resource type="AudioStream" uid="uid://cwjml2tl0dwu5" path="res://sounds/gather.wav" id="3_o6vsy"]
+[ext_resource type="AudioStream" uid="uid://clqojlnp8vyk3" path="res://sounds/gather_start.wav" id="4_cuajo"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c384y"]
 light_mode = 1
@@ -14,3 +16,9 @@ visible = false
 z_index = 4
 material = SubResource("CanvasItemMaterial_c384y")
 texture = ExtResource("2_5uj86")
+
+[node name="GatherFinishSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_o6vsy")
+
+[node name="GatherStartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cuajo")

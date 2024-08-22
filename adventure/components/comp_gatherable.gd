@@ -22,12 +22,14 @@ func _process(delta):
 	
 func gather():
 	#print("gathering")
+	$GatherStartSound.play()
 	if !used and in_interaction:
 		in_interaction = true
 		used = true
 	
 func end_gathering():
 	Global.add_to_table(get_parent().type)
+	$GatherFinishSound.play()
 	if destroy_object:
 		anim.play("disappear")
 	else:

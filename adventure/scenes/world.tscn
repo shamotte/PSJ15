@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://g8pusqq7gvjf"]
+[gd_scene load_steps=45 format=3 uid="uid://g8pusqq7gvjf"]
 
 [ext_resource type="PackedScene" uid="uid://dulcf8h1hbabn" path="res://adventure/objects/characters/character.tscn" id="1_pr2oj"]
 [ext_resource type="PackedScene" uid="uid://cwxcnmrqmq12i" path="res://adventure/objects/Decoration/bich_tree.tscn" id="2_wwnik"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://b3wvos324e4yl" path="res://adventure/objects/Interactable/mandrake.tscn" id="34_afodl"]
 [ext_resource type="Resource" uid="uid://xd05tu7337u5" path="res://both/Potions/health_potion.tres" id="35_b0plr"]
 [ext_resource type="PackedScene" uid="uid://f6q1gb12qs8h" path="res://adventure/objects/Decoration/Rock_group1.tscn" id="35_h7ef2"]
+[ext_resource type="Script" path="res://both/Resources/tools.gd" id="36_fuyrk"]
 [ext_resource type="PackedScene" uid="uid://w6v45h5j3clu" path="res://adventure/objects/Decoration/Rock_group2.tscn" id="36_pookb"]
 [ext_resource type="PackedScene" uid="uid://dljtas2dq17pf" path="res://adventure/objects/Decoration/Rock_wall.tscn" id="37_7h1xr"]
 [ext_resource type="PackedScene" uid="uid://duqm3jnr4sru" path="res://adventure/objects/characters/shadow_knight.tscn" id="38_7pgom"]
@@ -365,7 +366,7 @@ polygon = PackedVector2Array(-977, -610, -920, -646, -875, -728, -882, -789, -93
 
 [node name="Crate" parent="." instance=ExtResource("33_70roo")]
 position = Vector2(-374, -299)
-items_inside = Array[Resource("res://both/Resources/tools.gd")]([ExtResource("35_b0plr")])
+items_inside = Array[ExtResource("36_fuyrk")]([ExtResource("35_b0plr")])
 
 [node name="Wall" parent="." instance=ExtResource("37_7h1xr")]
 position = Vector2(-1407, 556)

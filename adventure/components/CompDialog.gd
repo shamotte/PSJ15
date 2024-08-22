@@ -74,4 +74,3 @@ func next_text():
 	text_index += 1
 	if text_index >= len(text):
 		text_index = 0
-

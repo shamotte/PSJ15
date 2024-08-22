@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://nmftbd08d6vt"]
+[gd_scene load_steps=15 format=3 uid="uid://nmftbd08d6vt"]
 
 [ext_resource type="Script" path="res://adventure/objects/Decoration/campfire_eternal.gd" id="1_174jc"]
 [ext_resource type="Texture2D" uid="uid://4ncbij8nskoq" path="res://adventure/sprites/decorations/Campfire.png" id="1_dypko"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ikhlebarfhp4" path="res://adventure/components/comp_fuel.tscn" id="5_xmm8r"]
 [ext_resource type="PackedScene" uid="uid://c7qnt6vqvobbh" path="res://adventure/components/comp_aura.tscn" id="7_kk6i4"]
 [ext_resource type="PackedScene" uid="uid://20mjts40xif7" path="res://adventure/components/comp_sanity_aura.tscn" id="8_pr4ss"]
+[ext_resource type="AudioStream" uid="uid://blil4hd23vrap" path="res://sounds/fire_idle.wav" id="9_2f3gj"]
+[ext_resource type="AudioStream" uid="uid://cskfr618f2map" path="res://sounds/fire.wav" id="9_07m8m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kaxev"]
 radius = 16.0
@@ -74,5 +76,12 @@ amount_of_restored_sanity = 3
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="IdleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_2f3gj")
+max_distance = 200.0
+
+[node name="FuelSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_07m8m")
 
 [connection signal="timeout" from="Timer" to="CompFuel" method="_on_timer_timeout"]

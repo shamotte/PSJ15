@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://byjh2xsl06u0p"]
+[gd_scene load_steps=3 format=3 uid="uid://byjh2xsl06u0p"]
 
 [ext_resource type="Script" path="res://globals/grab_manager.gd" id="1_mgsm8"]
+[ext_resource type="AudioStream" uid="uid://cr3g3bdosxhu5" path="res://sounds/table_grab.wav" id="2_1dxh6"]
 
 [node name="GrabManager" type="Node2D"]
 script = ExtResource("1_mgsm8")
+
+[node name="GrabSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1dxh6")
+
+[node name="ReleaseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1dxh6")
+pitch_scale = 0.75

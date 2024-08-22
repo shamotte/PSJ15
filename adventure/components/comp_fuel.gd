@@ -26,6 +26,8 @@ func _on_timer_timeout():
 		fuel -= 1
 		fire.set_energy(energy_value())
 		fire.set_amount_of_particles(amount_of_particles())
+		
+		$"../IdleSound".play()
 	
 func energy_value():
 	return float(fuel/max_fuel)
@@ -40,6 +42,8 @@ func add_fuel():
 	if fuel > max_fuel:
 		fuel = max_fuel
 		fire.set_energy(energy_value())
+		
+	$"../FuelSound".play()
 		
 func show_tip(show : bool):
 	if get_parent().can_extinguish():
