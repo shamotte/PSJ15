@@ -25,4 +25,3 @@ func _process(delta):
 			STATE.CRAFTING:
 				$ExplorationMusic.stream_paused = true
 				$CraftingMusic.stream_paused = false
-

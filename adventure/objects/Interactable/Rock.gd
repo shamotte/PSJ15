@@ -26,5 +26,3 @@ func next_stage():
 		current_index += 1
 		$object.texture = object_sprites[current_index]
 		
-
-

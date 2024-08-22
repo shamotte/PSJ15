@@ -100,4 +100,3 @@ func min_distance2(Areas : Array,method_name : String):
 func get_current_state():
 	return current_state
 			
-
