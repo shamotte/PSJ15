@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgupc3kb4d0gv"]
+[gd_scene load_steps=13 format=3 uid="uid://cgupc3kb4d0gv"]
 
-[ext_resource type="Texture2D" uid="uid://dyi27vn28qr7f" path="res://adventure/sprites/decorations/treefall.png" id="1_5grcj"]
 [ext_resource type="Script" path="res://adventure/objects/Interactable/Gatherable.gd" id="1_6kr8n"]
 [ext_resource type="PackedScene" uid="uid://r0h7akwf3nve" path="res://adventure/components/Comp_interactable.tscn" id="2_w7u26"]
 [ext_resource type="Script" path="res://both/Resources/interaction_component_data.gd" id="3_d8ryt"]
+[ext_resource type="Texture2D" uid="uid://dwipe5qtiywha" path="res://adventure/sprites/decorations/gyattree_root.png" id="3_s4rx8"]
 [ext_resource type="PackedScene" uid="uid://bmljq2sergiyk" path="res://adventure/components/comp_gatherable.tscn" id="3_yxxdp"]
 [ext_resource type="Resource" uid="uid://der65i8v6r4s2" path="res://both/Ingridients/eyepple.tres" id="5_8jnyy"]
 
@@ -31,21 +31,90 @@ player_state = "normal"
 next_interaction_signal = ""
 first_argument = ""
 
+[sub_resource type="Animation" id="Animation_kf1m8"]
+resource_name = "disappear"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.03333, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 6.28319, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_g5jay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mka2j"]
+_data = {
+"RESET": SubResource("Animation_g5jay"),
+"disappear": SubResource("Animation_kf1m8")
+}
+
 [node name="ChoppedTree" type="Node2D"]
 script = ExtResource("1_6kr8n")
 type = ExtResource("5_8jnyy")
 
 [node name="texture" type="Sprite2D" parent="."]
-texture = ExtResource("1_5grcj")
+texture_filter = 1
+texture = ExtResource("3_s4rx8")
 
 [node name="CompInteractable" parent="." instance=ExtResource("2_w7u26")]
-position = Vector2(27, -9)
+position = Vector2(1.90735e-06, -9.53674e-07)
 scale = Vector2(1.75, 1.75)
 interactable_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_pdps2")])
 in_area_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_83g0r")])
 end_interaction_array = Array[ExtResource("3_d8ryt")]([SubResource("Resource_i676h")])
 
-[node name="CompGatherable" parent="." node_paths=PackedStringArray("character", "comp_interactable") instance=ExtResource("3_yxxdp")]
+[node name="CompGatherable" parent="." node_paths=PackedStringArray("character", "anim", "comp_interactable") instance=ExtResource("3_yxxdp")]
 character = NodePath("..")
+anim = NodePath("../AnimationPlayer")
 resource_type = ExtResource("5_8jnyy")
+destroy_object = true
 comp_interactable = NodePath("../CompInteractable")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mka2j")
+}

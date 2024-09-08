@@ -512,7 +512,7 @@ libraries = {
 "": SubResource("AnimationLibrary_s8jga")
 }
 autoplay = "Take_item"
-blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"move", 0.5, &"gathering", &"idle", 0.5, &"move", &"gathering", 0.5, &"move", &"move", 0.5, &"move", &"idle", 1.0, &"idle", &"gathering", 0.5, &"idle", &"move", 0.5, &"idle", &"idle", 0.5]
+blend_times = [&"gathering", &"gathering", 0.5, &"gathering", &"idle", 0.5, &"gathering", &"move", 0.5, &"idle", &"gathering", 0.5, &"idle", &"idle", 0.5, &"idle", &"move", 0.5, &"move", &"gathering", 0.5, &"move", &"idle", 1.0, &"move", &"move", 0.5]
 
 [node name="ToolManager" type="Node2D" parent="." node_paths=PackedStringArray("hand")]
 script = ExtResource("8_yvhg5")

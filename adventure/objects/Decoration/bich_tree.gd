@@ -17,7 +17,9 @@ func chop(context : Area2D):
 			occluder.visible = false
 			chopped = true
 			var tree = fallen_tree.instantiate()
-			add_child(tree)
+			tree.global_position = global_position
+			get_tree().get_root().get_node("WorldManager").world.get_node("Gatharable").add_child(tree)
+			queue_free()
 			#$fallenTree.visible = true
 	
 func start_fire(context : Node2D):
